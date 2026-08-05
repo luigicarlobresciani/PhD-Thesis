@@ -1,0 +1,46 @@
+\chapter{Introduction}
+
+\begin{equation}
+    \begin{tikzpicture}[baseline={(current bounding box.center)}]
+                \begin{feynman}[small]
+                \node [draw=red!80!black, circle, minimum size=0.5cm,
+           fill=red!15] (a) {\(F_j\)};
+                \vertex [below right=1.7cm of a] (b) {\(y\)};
+                \vertex [above right=1.7cm of a] (c) {\(x\)} ;
+                \vertex [below left=1.7cm of a] (d) {\(2\)} ;
+                \vertex [above left=1.7cm of a] (e) {\(1\)};
+                \diagram*{
+                    (b) -- [] (a),
+                    (a) -- [] (c),
+                    (a) -- [] (d),
+                    (a) -- [] (e),
+                };
+                \end{feynman}
+                \end{tikzpicture}
+                \,
+	\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\draw[dashed,red,very thick] (0.0, -1.4) -- (0.0, 1.4);
+	\end{tikzpicture}
+	\,
+    \begin{tikzpicture}[baseline={(current bounding box.center)}]
+                \begin{feynman}[small]
+                \node [draw=blue!80!black, circle, minimum size=0.5cm,
+           fill=blue!15] (a) {\(\mathcal M\)};
+                \vertex [below right=1.7cm of a] (b) {\(4\)};
+                \vertex [above right=1.7cm of a] (c) {\(3\)} ;
+                \vertex [below left=1.7cm of a] (d) {} ;
+                \vertex [above left=1.7cm of a] (e) {};
+                \diagram*{
+                    (a) -- [] (b),
+                    (a) -- [] (c),
+                    (a) -- [] (d),
+                    (a) -- [] (e),
+                };
+                \end{feynman}
+                \end{tikzpicture}
+\end{equation}
+
+
+\section*{Synopsis}
+
+The thesis is organized as follows.

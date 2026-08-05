@@ -1,0 +1,153 @@
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[svgnames,dvipsnames,table,x11names]{xcolor}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{slashed}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{afterpage}
+\usepackage{physics}
+\usepackage{comment}
+\usepackage{emptypage}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage{longtable}
+%\usepackage[backend=biber, style=numeric-comp]{biblatex}
+\usepackage{csquotes}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+\usepackage{lipsum}  
+\usepackage{appendix}
+\usepackage{bbold}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{setspace}
+\usepackage{svg}
+\usepackage{nicematrix}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{sectsty}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage[numbers, sort&compress]{natbib}
+%\usepackage{mathpazo} % Palatino font
+
+\makeatletter\g@addto@macro\bfseries{\boldmath}\makeatother
+
+\hypersetup{
+    pdfencoding=unicode,
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=blue,
+    %linkcolor=MidnightBlue,
+	citecolor=blue,
+	pdftitle={The On-Shell Path to Effective Field Theories},
+	pdfauthor={Luigi Carlo Bresciani},
+	pdfdisplaydoctitle=true,
+	pdfstartview=FitH,
+	linktocpage=true
+}
+
+\captionsetup{font=small}
+
+\allowdisplaybreaks
+
+\DeclareDocumentCommand\derivative{ s o m g d() }
+{ % Total derivative
+    % s: star for \flatfrac flat derivative
+    % o: optional n for nth derivative
+    % m: mandatory (x in df/dx)
+    % g: optional (f in df/dx)
+    % d: long-form d/dx(...)
+    \IfBooleanTF{#1}
+    {\let\fractype\flatfrac}
+    {\let\fractype\frac}
+    \IfNoValueTF{#4}
+    {
+        \IfNoValueTF{#5}
+        {\fractype{\diffd \IfNoValueTF{#2}{}{^{#2}}}{\diffd #3\IfNoValueTF{#2}{}{^{#2}}}}
+        {\fractype{\diffd \IfNoValueTF{#2}{}{^{#2}}}{\diffd #3\IfNoValueTF{#2}{}{^{#2}}} \argopen(#5\argclose)}
+    }
+    {\fractype{\diffd \IfNoValueTF{#2}{}{^{#2}} #3}{\diffd #4\IfNoValueTF{#2}{}{^{#2}}}\IfValueT{#5}{(#5)}}
+}
+
+\addto{\captionsenglish}{\renewcommand{\bibname}{References}}
+
+\newenvironment{dedication}
+  {\cleardoublepage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top 
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \cleardoublepage           % finish off the page
+  }
+
+  %\usepackage{palatino}
+  %\usepackage{times}
+  %\usepackage{newtxtext}
+
+%\newcommand{\fontsections}{\usefont{T1}{pnc}{b}{n}}
+
+%\newcommand{\fontsections}{\usefont{T1}{pbk}{b}{n}}
+
+%\newcommand{\fontsections}{\usefont{T1}{pzc}{b}{n}}
+
+\newcommand{\fontsections}{\usefont{T1}{lmr}{b}{n}}
+
+
+\begin{comment}
+\makeatletter
+\def\cleardoublepage{%
+  \clearpage
+  \ifodd\c@page
+  \else
+    \hbox{}
+    \thispagestyle{empty}
+    \newpage
+  \fi
+}
+\makeatother
+\end{comment}
+
+\newcommand{\agl}[2]{\langle #1 #2 \rangle}
+\newcommand{\sqr}[2]{\lbrack #1 #2 \rbrack}
+\newcommand{\Mpl}[0]{M_{\text{P}}}
+\newcommand{\hf}[0]{\tfrac{1}{2}}
+\def\coef#1#2#3{ {\vphantom{A^2}}^{#1}\!{{C}}^{#3}_{#2} }
+\def\op#1#2#3{ {\vphantom{A^2}}^{#1}\!{{Q}}^{#3}_{#2} }
+
+%\definecolor{hdrcolor}{gray}{0.9}
+\definecolor{hdrcolor}{gray}{0.9}
+\newcommand{\ccol}{\cellcolor{gray!30}}
+\newcommand{\wb}{\bar{w}}
+
+%==================== macros ====================
+\newcommand{\Op}{\mathcal{O}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\MSbar}{\overline{\rm MS}}
+\newcommand{\Eq}[1]{Eq.~\eqref{#1}}
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+
+\colorlet{chapterpaperrule}{black!55}
+
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}

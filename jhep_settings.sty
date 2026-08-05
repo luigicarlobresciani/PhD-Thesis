@@ -1,0 +1,105 @@
+% Page layout
+\renewcommand{\baselinestretch}{1.1}\normalsize
+\setlength\lineskip{1\p@}
+\setlength\parindent{1.2\parindent}
+\setlength\normallineskip{1\p@}
+\setlength\parskip{0\p@ \@plus \p@}
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\widowpenalty 1000
+\clubpenalty 1000
+
+\setcounter{topnumber}{4}
+\renewcommand\topfraction{1}
+\setcounter{bottomnumber}{1}
+\renewcommand\bottomfraction{.6}
+\setcounter{totalnumber}{5}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{0.8}
+
+\textwidth  .72\paperwidth
+\setlength\@tempdima{.76\paperheight}
+\divide\@tempdima\baselineskip
+\@tempcnta=\@tempdima
+\setlength\textheight{\@tempcnta\baselineskip}
+\addtolength\textheight{\topskip}
+
+\voffset -1in
+\topmargin   .05\paperheight
+\headheight  .02\paperheight
+\headsep     .03\paperheight
+\footskip    .07\paperheight
+
+\marginparsep 9\p@
+\marginparpush 6\p@
+
+\hoffset -1in
+\oddsidemargin .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+
+\setlength\arraycolsep{2\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\doublerulesep{2\p@}
+\setlength\tabbingsep{\labelsep}
+\skip\@mpfootins = \skip\footins
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.4\p@}
+
+
+% Footer and header of the body
+% the command ``\pagestyle{myplain}'' must be inserted
+% just after ``\begin{document}''
+%\begin{comment}
+\newcommand\ps@myplain{
+\renewcommand\@oddfoot{\hfill--~\thepage~--\hfill}
+\renewcommand\@oddhead{}
+\renewcommand\@evenfoot{\hfill--~\thepage~--\hfill}
+\renewcommand\@evenhead{}
+}
+\let\ps@plain=\ps@myplain
+%\end{comment}
+
+
+%Caption of figure and table
+%\def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
+%\def\fnum@table{\textbf{\tablename\nobreakspace\thetable}}
+\def\fnum@figure{{\fontsections\figurename\nobreakspace\thefigure}}
+\def\fnum@table{{\fontsections\tablename\nobreakspace\thetable}}
+
+%redefining \@makecaption, to have captions with \small font size
+%taken from article.cls l.489--498
+%the only differences are the ``\small '' commands added on two lines
+
+% \long\def\@makecaption#1#2{%
+%   \vskip\abovecaptionskip
+%   \sbox\@tempboxa{\small #1. #2}%
+%   \ifdim \wd\@tempboxa >\hsize
+%     \small #1. #2\par
+%   \else
+%     \global \@minipagefalse
+%     \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%   \fi
+%   \vskip\belowcaptionskip}
+
+
+
+
+
+%apply some formatting on the biblio
+%without redefining the whole env
+\let\oldthebibliography=\thebibliography
+\let\endoldthebibliography=\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+\begin{oldthebibliography}{#1}%
+%\small%
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\raggedright%
+%\setlength{\itemsep}{5pt plus 0.2ex minus 0.05ex}%
+}%
+{%
+\end{oldthebibliography}%
+}

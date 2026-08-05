@@ -1,0 +1,108 @@
+\DocumentMetadata{pdfstandard=A-3a}
+\documentclass[a4paper, 11pt, oneside, final]{book}
+\usepackage{packages}
+\usepackage{jhep_settings}
+
+\title{PhD Thesis}
+\author{Luigi Carlo Bresciani}
+
+\begin{document}
+\allsectionsfont{\fontsections}
+\pagestyle{myplain}
+%\pagestyle{headings}
+\selectlanguage{english}
+\flushbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\input{titlepages/titlepage3}
+
+\begin{dedication}
+A mia mamma
+\setcounter{page}{2}
+\end{dedication}
+
+\input{chapters/00_abstract}
+\input{chapters/00_acknowledgments}
+\input{chapters/00_publications}
+
+\tableofcontents
+
+%\listoffigures
+%\listoftables
+
+\mainmatter
+
+\input{chapters/01_intro}
+
+\chapter{Effective Field Theories}
+
+\chapter{On-Shell Amplitudes}
+
+\part{Anomalous Dimensions via On-Shell Methods}
+
+\chapter{Formalism}
+
+\chapter{General Operator Mixing and Leading Mass Effects}
+
+\begin{flushright}
+\small
+
+{\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
+
+\textit{This chapter is based on}\\[0.5em]
+L.~C.~Bresciani, G.~Levati, P.~Mastrolia and P.~Paradisi,\\
+``Anomalous dimensions via on-shell methods: Operator mixing and leading mass effects,''\\
+\href{https://doi.org/10.1103/PhysRevD.110.056041}{Phys. Rev. D \textbf{110} (2024) no.5, 056041}
+[\href{https://doi.org/10.48550/arXiv.2312.05206}{arXiv:2312.05206} [hep-ph]].
+
+{\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
+\end{flushright}
+
+
+
+\chapter{Anomalous Dimensions of the Axion-Like Particle Effective Field Theory}
+
+\chapter{Anomalous Dimensions of a General Effective Gauge Theory}
+
+\section{Operator Classification}
+
+\subsection{Renormalizable Interactions}
+
+\subsection{Non-Renormalizable Interactions}
+
+\subsubsection{Dimension-Five Operators}
+
+\subsubsection{Dimension-Six Operators}
+
+\input{chapters/04_two-loop_zeros}
+
+\part{Partial-Wave Unitarity Bounds via On-Shell Methods}
+
+\input{chapters/05_generalized_unitarity_bounds}
+
+\input{chapters/06_ALP_bounds}
+
+\input{chapters/07_SMEFT_bounds}
+
+
+%\backmatter
+
+\part*{Back Matter\phantomsection\addcontentsline{toc}{part}{Back Matter}}
+
+\appendix
+
+\input{chapters/app_2-to-3_basis}
+
+\input{chapters/app_ALP_amplitudes}
+
+\input{chapters/app_UV_extension_positivity}
+
+
+\bibliographystyle{JHEP}
+\bibliography{references.bib}
+
+
+
+
+\end{document}
