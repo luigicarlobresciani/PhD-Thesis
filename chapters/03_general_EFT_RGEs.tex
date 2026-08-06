@@ -1,0 +1,439 @@
+\chapter{Anomalous Dimensions of a General Effective Gauge Theory}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Effective Gauge Theory}
+\label{sec:EFT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we set the stage for writing down the general EFT. 
+We introduce the renormalizable
+interactions and the higher-dimensional operators, together with the corresponding notation that is used in subsequent sections.
+The complete Lagrangian takes the form
+\begin{equation}\label{eq:fullEFT}
+    \mathcal{L}_{\text{EFT}} = \mathcal{L}^{(4)}+\mathcal{L}^{(5)}+\mathcal{L}^{(6)}\,, 
+\end{equation}
+where the individual parts are defined in the following subsections in Eqs.~\eqref{eq:L4}, \eqref{eq:L5}, and \eqref{eq:L6}.
+
+
+%%%%%%%%%%%%%%%%
+\subsection{Renormalizable Interactions}
+%%%%%%%%%%%%%%%%
+
+We start by introducing the most general Lagrangian up to mass dimension four that contains an arbitrary number of real scalar fields $\phi_a$, gauge fields with field strengths $F_{\mu\nu}^{A_\alpha}$, and left-handed Weyl spinors $\psi_i$:\footnote{For the two-component notation we follow the conventions in \cite{Dreiner:2008tw}.}
+\begin{align}\label{eq:L4}
+\mathcal{L}^{(4)} &=  \mathcal{L}^{(4)}_{\text{bos}} + \mathcal{L}^{(4)}_{\text{fer}}\,,\\
+    \mathcal{L}^{(4)}_{\text{bos}} &= -\frac{1}{4}\sum_{\alpha=1}^{N_G}\sum_{\beta=1}^{N_G}\xi^{A_\alpha B_\beta} F^{A_\alpha}_{\mu\nu}F^{{B_\beta}\mu\nu}+ \sum_{\alpha=1}^{N_G}\sum_{\beta=1}^{N_G} \tildee \xi^{A_\alpha B_\beta} F^{A_\alpha}_{\mu\nu}\tildee F^{{B_\beta}\,\mu\nu}  + \frac{1}{2} \eta_{ab} (D_\mu\phi)_{a}(D^\mu\phi)_b\nonumber\\
+    &\quad -\Lambda-t_a \phi_a-\frac{m^2_{ab}}{2!}\phi_{a}\phi_{b}-\frac{h_{abc}}{3!}\phi_a \phi_b\phi_c
+    -\frac{\lambda_{abcd}}{4!}\phi_{a}\phi_{b}\phi_{c}\phi_{d}\,,\\
+    \mathcal{L}^{(4)}_{\text{fer}} &= i\, \kappa_{ij}\,  \psi^\dagger_i \overline{\sigma}^\mu (D_\mu \psi)_j - \frac{1}{2!}\left (m_{ij} \psi_i \psi_j + m_{ij}^* \psi_i^\dagger \psi_j^\dagger \right) - \frac{1}{2!}\left (y_{ija} \psi_i \psi_j + y_{ija}^* \psi_i^\dagger \psi_j^\dagger \right)\phi_a  \,.
+\end{align}
+Here, $\overline \sigma^\mu = (\mathbb{1}_{2\times 2}, -\vec \sigma)$, where $\vec \sigma$ are the Pauli matrices.
+%
+In addition to all kinetic and mass terms for scalars and fermions, the Lagrangian includes topological terms, the vacuum energy, $\Lambda$, the tadpole interactions, $\{t_a\}$, triple and quartic scalar interactions, $\{h_{abc}\}$ and $\{\lambda_{abcd}\}$, and Yukawa terms, $\{y_{ija}\}$. In particular, the real parameters $m^2_{ab}$, $h_{abc}$, and $\lambda_{abcd}$ are totally symmetric, and the same is true for the complex fermion mass matrix $m_{ij}$ and the Yukawa matrices $y_{ija}$.
+
+The gauge group $G$ is assumed to be a direct product of an arbitrary number of simple and compact gauge groups $G_\alpha$
+\begin{equation}
+    G = \prod_{\alpha=1}^{N_G} G_\alpha\,.
+    \label{eq:full_gauge_group}
+\end{equation}
+In the following, the adjoint indices of the gauge groups $G_\alpha$ are denoted by $A_\alpha,B_\alpha,\dotsc \in \{1,\dotsc,\dime G_\alpha\}$,
+while scalars and fermions are taken to transform in (possibly reducible) representations $S_\alpha$ and $F_\alpha$, respectively. 
+The corresponding gauge indices are
+$a_{\alpha},b_{\alpha},\dotsc \in \{1,\dotsc,\dime S_{\alpha}\}$ and $i_\alpha,j_\alpha,\dotsc \in \{1,\dotsc,\dime F_{\alpha}\}$, and for notational simplicity their collections over the different gauge-group factors are denoted by $a,b,\dotsc$ and $i,j,\dotsc$, respectively.
+Moreover, the covariant derivatives of the scalar and fermion fields are defined by
+\begin{align}
+    (D_\mu\phi)_{a} &= \partial_\mu\phi_{a} -i\sum_{\alpha=1}^{N_G} g_\alpha A^{A_\alpha}_\mu \theta^{A_\alpha}_{ab}\phi_{b}\,,\label{eq:cov_der_phi} \\
+    (D_\mu\psi)_{i} &= \partial_\mu\psi_{i} -i\sum_{\alpha=1}^{N_G} g_\alpha A^{A_\alpha}_\mu t^{A_\alpha}_{ij}\psi_{j}\label{eq:cov_der_psi}\,,
+\end{align}
+where $g_\alpha$ denotes the gauge couplings and $\theta^{A_\alpha}$ and $t^{A_\alpha}$ are the Hermitian generators acting on the scalar and fermion fields, respectively. They satisfy: 
+\begin{gather}
+    [\theta^{A_\alpha},\theta^{B_\alpha}] = i\, f^{A_\alpha B_\alpha C_\alpha}\,\theta^{C_\alpha} \,, \quad
+    [t^{A_\alpha},t^{B_\alpha}] = i\, f^{A_\alpha B_\alpha C_\alpha}\,t^{C_\alpha} \,,
+\end{gather}
+%
+with the totally anti-symmetric structure constants $f^{A_\alpha B_\alpha C_\alpha}$. The field-strength tensors read\footnote{We use the convention $\epsilon^{0123} =-\epsilon_{0123}= 1$.}
+\begin{gather}
+    F^{A_\alpha}_{\mu\nu}=\partial_\mu A^{A_\alpha}_\nu - \partial_\nu A^{A_\alpha}_\mu + g_\alpha f^{A_\alpha B_\alpha C_\alpha}A^{B_\alpha}_\mu A^{C_\alpha}_\nu\,,\label{eq:field_strength}\\
+    \tildee F^{A_\alpha}_{\mu\nu}= \frac{1}{2}\epsilon_{\mu\nu\rho\sigma}  F^{A_\alpha\rho\sigma}\,.
+\end{gather}
+%
+Finally, due to gauge invariance, the gauge kinetic and topological terms take the following form
+\begin{equation}
+\xi^{A_\alpha B_\beta} = \delta_{\alpha\beta}\delta^{A_\alpha B_\beta}\,,\quad \tildee \xi^{A_\alpha B_\beta} = \frac{\vartheta_\alpha g_\alpha^2}{32\pi^2} \delta_{\alpha\beta}\delta^{A_\alpha B_\beta} \,,
+\end{equation}
+with the adjoint indices $A_\alpha$ and $B_\beta$ belonging to non-Abelian gauge factors. 
+We normalized the topological angles $\vartheta_\alpha$ in a canonical way using $g^2/(32\pi^2) \int \dd^4x\, F \tildee F \in \mathbb{Z}$.
+
+In the case of Abelian $U(1)$ factors that lead to off-diagonal kinetic and topological terms~\cite{Holdom:1985ag,delAguila:1988jz}, the gauge couplings $g_{\alpha}$ need to be generalized to a matrix $g^{A_\alpha B_\beta}$. In order to allow for this possibility, the simple substitution
+\begin{equation}
+    g_\alpha \theta^{A_\alpha} \to \sum_{\beta=1}^{N_G} g^{A_\alpha B_\beta} \theta^{B_\beta}
+\end{equation} 
+can be made in the RGEs below,
+and similarly with the fermionic generators.
+
+For convenience, the following definitions are introduced
+\begin{align}
+    T^\alpha_{abcd} &= \theta^{A_\alpha}_{ab}\theta^{A_\alpha}_{cd}\,,\\
+    Y^{A_\alpha B_\beta}_{ab} &= \theta^{A_\alpha}_{ac}\theta^{B_\beta}_{cb}\,,\\
+    F^{A_\alpha B_\alpha C_\alpha D_\alpha} &= f^{A_\alpha B_\alpha E_\alpha} f^{C_\alpha D_\alpha E_\alpha}\,,
+\end{align}
+which occur in several of the RGEs reported in Section~\ref{sec:gEFTresults}.
+
+\subsubsection{Collinear Anomalous Dimensions}
+
+The infrared collinear anomalous dimensions, relevant for the multiplicative renormalization factors, are computed using the on-shell method reviewed in Chapter~\ref{ch:RGEmethod} and exploiting the fact that the stress-energy tensor does not renormalize multiplicatively, as done in \cite{Caron-Huot:2016cwu,EliasMiro:2020tdv,AccettulliHuber:2021uoa,Bresciani:2024shu,Baratella:2022nog,Aebischer:2025zxg}.
+They are given by
+\begin{align}
+    \gamma_{c,v}^{A_\alpha B_\alpha} &= -g_\alpha^2 \left[b_{0,\alpha}\right]^{A_\alpha B_\alpha} \,, \label{eq:coll_vector}  \\
+    \gamma_{c,s}^{ab} &= -4\sum_{\alpha=1}^{N_G} g_\alpha^2 \left[C_2(S_\alpha)\right]_{a_{\alpha}b_{\alpha}} + \frac{1}{2}\left( y_{ija}y_{jib}^*+y_{ijb}y_{jia}^* \right) \,, \label{eq:coll_scalar} \\
+    \gamma_{c,f}^{ij} &= -3\sum_{\alpha=1}^{N_G} [C_2(F_\alpha)]_{i_\alpha j_\alpha}+\frac{1}{2}y_{ika}y^*_{kja} \,, \label{eq:coll_fermion}
+\end{align}
+for gauge boson, scalar, and fermion fields, respectively,
+with the one-loop $\beta$-function coefficient
+\begin{equation}
+    \left[b_{0,\alpha}\right]^{A_\alpha B_\alpha} = \frac{11}{3}[C_2(G_\alpha)]^{A_\alpha B_\alpha} - \frac{1}{6} [S_2(S_\alpha)]^{A_\alpha B_\alpha} -\frac{2}{3}[S_2(F_\alpha)]^{A_\alpha B_\alpha}\,.
+\end{equation}
+The quadratic Casimir $C_2$ and Dynkin indices $S_2$ for the different scalar and fermion representations, $S_\alpha$ and $F_\alpha$, are given by
+\begin{align}
+    \left[C_2(G_\alpha)\right]^{A_\alpha B_\alpha} &= f^{A_\alpha C_\alpha D_\alpha}f^{B_\alpha C_\alpha D_\alpha}\,,\\
+    \left[S_2(S_\alpha)\right]^{A_\alpha B_\alpha} &= \Tr(\theta^{A_\alpha}\theta^{B_\alpha})\,, \\ 
+    \left[C_2(S_\alpha)\right]_{a_{\alpha}b_{\alpha}} &= \theta^{A_\alpha}_{a_{\alpha}c_{\alpha}} \theta^{A_\alpha}_{c_{\alpha}b_{\alpha}}\,,\\
+    \left[S_2(F_\alpha)\right]^{A_\alpha B_\alpha} &= \Tr(t^{A_\alpha}t^{B_\alpha})\,, \\
+    \left[C_2(F_\alpha)\right]_{i_{\alpha}j_{\alpha}} &= t^{A_\alpha}_{j_{\alpha}k_{\alpha}} t^{A_\alpha}_{k_{\alpha}i_{\alpha}}\,.
+\end{align}
+
+\subsection{Higher-Dimensional Operator Classification}
+
+A basis of physical operators at a given mass dimension can be conveniently constructed by analyzing the independent kinematic structures associated with the contact amplitudes of the EFT~\cite{Shadmi:2018xan,Cheung:2016drk,Falkowski:2019zdo,Durieux:2019siw,Li:2022tec,DeAngelis:2022qco,Durieux:2019eor}.
+In the following, we perform such a construction for operators up to mass dimension six.
+
+We work with the massless spinor-helicity formalism, where a light-like momentum $p$ is decomposed in terms of the helicity spinors $\lambda$ and $\tildee \lambda$ as
+\begin{equation}
+    p_{\alpha\dot\alpha} = p_\mu \sigma^\mu_{\alpha\dot\alpha} = \lambda_\alpha \tildee \lambda_{\dot\alpha} \,.
+\end{equation}
+Here, $\sigma^\mu = (\mathbb 1_{2\times 2},\vec \sigma)$ and the spinors $\lambda_\alpha$ and $\tildee \lambda^{\dot\alpha}$ transform in the $(1/2,0)$ and $(0,1/2)$ representations of $SL(2,\mathbb C)$, respectively.
+In this framework, the Lorentz-invariant inner products are given by\footnote{We use the convention $\epsilon^{12}=\epsilon^{\dot 1 \dot 2} = -\epsilon_{12}=-\epsilon_{\dot 1 \dot 2} = 1$.}
+\begin{gather}
+    \agl{i}{j} = \lambda_i{}^\alpha \lambda_j{}_\alpha = \epsilon_{\alpha\beta} \lambda_i{}^\alpha \lambda_j{}^\beta = -\agl{j}{i}\,,\\
+    \sqr{i}{j} = \tildee \lambda_i{}_{\dot\alpha} \tildee \lambda_j{}^{\dot \alpha} = -\epsilon_{\dot\alpha\dot\beta} \tildee \lambda_i{}^{\dot\alpha} \tildee \lambda_j{}^{\dot \beta} = -\sqr{j}{i}\,.
+\end{gather}
+The Mandelstam invariants can then be expressed as 
+\begin{equation}
+    s_{ij}=2p_i\cdot p_j = \agl{i}{j}\sqr{j}{i}\,.
+\end{equation}
+Additionally, for real momenta, square and angle products are related via 
+\begin{equation}
+    \agl{i}{j} = \sqr{j}{i}^*\,.
+\end{equation}
+Such angle and square brackets are very useful when decomposing scattering amplitudes. In four spacetime dimensions, $n$-point amplitudes have mass dimension $[\mathcal M_n]=4-n$. Furthermore, contact amplitudes $\mathcal{M}$ are polynomials in the inner products and can be schematically written as
+\begin{equation}
+    \mathcal M = C_i \times \mathcal K_i\,,
+\end{equation}
+where $C_i$ denotes the Wilson coefficient associated with the operator $\mathcal O_i$, and $\mathcal K_i$ is a kinematic polynomial, $\mathcal K_i = \mathcal K_i(\{\agl{i}{j},\sqr{i}{j}\})$. The mass dimension of $\mathcal K_i$ is fixed by the properties of the operator $\mathcal O_i$:
+\begin{equation}
+    [\mathcal K_i] = [\mathcal O_i] - \ell(\mathcal O_i) \ge 0\,.
+\end{equation}
+Here, $\ell(\mathcal O_i)$ denotes the length of the operator, namely the number of fundamental fields it is composed of.
+Different kinematic structures can be related via momentum conservation, $\sum_{i=1}^n p_i = 0$, or Schouten identities,
+\begin{align}
+    \agl{i}{j}\agl{k}{\ell} + \agl{k}{i}\agl{j}{\ell} + \agl{j}{k}\agl{i}{\ell} &= 0\,,\label{eq:schhoutenid1}\\
+    \sqr{i}{j}\sqr{k}{\ell} + \sqr{k}{i}\sqr{j}{\ell} + \sqr{j}{k}\sqr{i}{\ell} &= 0\label{eq:schhoutenid2}\,.
+\end{align}
+Moreover, on-shell three-particle amplitudes vanish due to momentum conservation.
+Nevertheless, they can be constructed by assuming complex momenta~\cite{Witten:2003nn}, and, once the particle helicities $\{h_1,h_2,h_3\}$ are fixed, they are uniquely determined by Poincaré invariance, locality, and dimensional analysis~\cite{Benincasa:2007xk}:
+\begin{equation}
+    \mathcal M(1^{h_1},2^{h_2},3^{h_3}) = 
+    \begin{cases}
+        C_{\text{H}}\, \agl{1}{2}^{a_3} \agl{2}{3}^{a_1} \agl{3}{1}^{a_2} & \text{if }h_1+h_2+h_3<0\,,\\  C_{\text{A}}\, \sqr{1}{2}^{-a_3} \sqr{2}{3}^{-a_1} \sqr{3}{1}^{-a_2} & \text{if }h_1+h_2+h_3>0\,,
+    \end{cases}
+\end{equation}
+with
+\begin{equation}
+    a_1 = h_1-h_2-h_3\,,\qquad
+    a_2 = h_2-h_3-h_1\,,\qquad
+    a_3 = h_3-h_1-h_2\,,
+\end{equation}
+and $C_{\text{H}}$ and $C_{\text{A}}$ are arbitrary coefficients with mass dimension given by
+\begin{equation}
+    [C_{\text{H}}] = 1+h_1+h_2+h_3\,,\qquad 
+    [C_{\text{A}}] = 1-h_1-h_2-h_3\,.
+\end{equation}
+
+Therefore, we can classify all \emph{on-shell} independent kinematic polynomials and the corresponding \emph{physical} operators as follows:
+\begin{itemize}
+    \item For dimension-five operators, where we have $[\mathcal K_i] = 5 - \ell(\mathcal O_i)$:
+    \begin{align}
+        \ell_i &= 5
+        &&
+        \implies 
+        &
+        \mathcal K_i &=
+        \begin{cases}
+            1
+        \end{cases} 
+        &&
+        \implies 
+        &
+        \mathcal O_i &=
+        \begin{cases}
+            \phi_1\, \phi_2\, \phi_3\, \phi_4\, \phi_5\,,
+        \end{cases}
+        \\
+        \ell_i &= 4 
+        &&
+        \implies
+        &
+        \mathcal K_i &= 
+        \begin{cases}
+             \agl{1}{2}
+        \end{cases}
+        &&
+        \implies 
+        &
+        \mathcal O_i &=
+        \begin{cases}
+            \psi_1{}_L\,  \psi_2{}_L\,  \phi_3\,  \phi_4  \,,
+        \end{cases}
+        \\
+        \ell_i &= 3 
+        &&
+        \implies
+        &
+        \mathcal K_i &=
+        \begin{cases}
+            \agl{1}{2}^2 \\
+            \agl{1}{2}\agl{1}{3}
+        \end{cases}
+        &&
+        \implies 
+        &
+        \mathcal O_i &= 
+        \begin{cases}
+            F_1{}_L\,  F_2{}_L\,  \phi_3\,, \\
+            F_1{}_L\,  \psi_2{}_L\,  \psi_3{}_L \,.
+        \end{cases}
+    \end{align}
+    
+    \item For dimension-six operators $[\mathcal K_i] = 6 -\ell(\mathcal O_i)$:
+    \begin{align}
+        \ell_i &= 6
+        &&
+        \implies 
+        &
+        \mathcal K_i &=
+        \begin{cases}
+            1
+        \end{cases} 
+        &&
+        \implies 
+        &
+        \mathcal O_i &=
+        \begin{cases}
+            \phi_1\, \phi_2\, \phi_3\, \phi_4\, \phi_5\, \phi_6\,,
+        \end{cases}
+         \\
+        \ell_i &= 5
+        &&
+        \implies 
+        &
+        \mathcal K_i &=
+        \begin{cases}
+            \agl{1}{2}
+        \end{cases}
+        &&
+        \implies 
+        &
+        \mathcal O_i &=
+        \begin{cases}
+            \psi_1{}_L\,  \psi_2{}_L\,  \phi_3\,  \phi_4\,  \phi_5 \,,
+        \end{cases}
+        \\
+        \ell_i &= 4
+        &&
+        \implies 
+        &
+        \mathcal K_i &= 
+        \begin{cases}
+            \agl{1}{2}^2 \\
+            \agl{1}{2}\agl{1}{3}\\
+            \agl{1}{2}\agl{3}{4}\\
+            \agl{1}{2}\sqr{3}{4}\\
+            \agl{1}{2}\sqr{2}{3} \\
+            \agl{1}{2}\sqr{1}{2}
+        \end{cases}
+        &&
+        \implies 
+        &
+        \mathcal O_i &= 
+        \begin{cases}
+            F_1{}_L\,  F_2{}_L\,  \phi_3\,  \phi_4\,, \\
+            F_1{}_L\,  \psi_2{}_L\,  \psi_3{}_L\,  \phi_4 \,,\\
+            \psi_1{}_L\,  \psi_2{}_L\, \psi_3{}_L\,  \psi_4{}_L\,,\\
+            \psi_1{}_L\,  \psi_2{}_L\, \psi_3{}_R\,  \psi_4{}_R\,,\\
+            \psi_1{}_L\,  D\phi_2\,  \psi_3{}_R\,  \phi_4\,,\\
+            D\phi_1\,  D\phi_2\,  \phi_3\,  \phi_4\,.
+        \end{cases}
+        \\
+        \ell_i &= 3
+        &&
+        \implies 
+        &
+        \mathcal K_i &=
+        \begin{cases}
+            \agl{1}{2}\agl{2}{3}\agl{1}{3}
+        \end{cases}
+        &&
+        \implies 
+        &
+        \mathcal O_i &=
+        \begin{cases}
+            F_1{}_L\,  F_2{}_L\,  F_3{}_L\,.
+        \end{cases}
+    \end{align}
+\end{itemize}
+The scalar and fermion fields are denoted with $\phi$ and $\psi$, respectively, while we use $F$ for the gauge field strengths. The kinematic polynomials with angle brackets substituted by square ones correspond to operators with right-handed fields. 
+
+Finally, the symmetries of the Wilson coefficients are inherited by those of the kinematic structures.
+This implies that, for bosonic operators, if a kinematic polynomial is (anti-)symmetric under the exchange of two spinors, then the Wilson coefficient must also be (anti-)symmetric in the associated pair of gauge indices.
+For fermionic operators, instead, Fermi-Dirac statistics requires the amplitude to be antisymmetric under the exchange of two identical fermions, so that the above conclusion is reversed: a kinematic polynomial that is symmetric (antisymmetric) under the exchange of two spinors must be contracted with a Wilson coefficient that is antisymmetric (symmetric) in the associated pair of gauge indices.
+
+In the following, we report the basis of operators adopted in this thesis.
+Regarding the bosonic operators, we choose to work with Hermitian operators so that all the components of the Wilson coefficients are real.
+
+
+\subsubsection{Dimension-Five Operators}
+
+The dimension-five Lagrangian can again be split into a bosonic and a fermionic part. It takes the form
+%\begingroup
+%\interdisplaylinepenalty=10000
+\begin{align}
+    \mathcal{L}^{(5)} &= \mathcal{L}^{(5)}_{\text{bos}} + \mathcal{L}^{(5)}_{\text{fer}}\,,\label{eq:L5}\\
+    \mathcal{L}^{(5)}_{\text{bos}}&=\sum_{\alpha=1}^{N_G}\sum_{\beta=1}^\alpha \left(\left[C_{\phi F^2}\right]^{A_\alpha B_\beta}_{a}\phi_{a}F^{A_\alpha}_{\mu\nu}F^{B_\beta  \mu\nu}+\left[C_{\phi \tildee F^2}\right]^{A_\alpha B_\beta}_{a}\phi_{a}F^{A_\alpha}_{\mu\nu}\tildee F^{B_\beta  \mu\nu}\right)
+    \nonumber\\&\quad 
+    + \left[C_{\phi^5}\right]_{abcde}\phi_{a}\phi_{b}\phi_{c}\phi_{d}\phi_{e}\,,\\
+    \mathcal{L}^{(5)}_{\text{fer}} &= \left[C_{\psi^2\phi^2}\right]_{ijab} \psi_i \psi_j \phi_a \phi_b + \sum_{\alpha=1}^{N_G} \left[C_{\psi^2F}\right]_{ij}^{A_\alpha} \psi_i \sigma^{\mu\nu} \psi_j F_{\mu\nu}^{A_\alpha}  + \text{H.c.}\,,
+\end{align}
+%\endgroup\ignorespacesafterend
+where $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \overline \sigma^\nu - \sigma^\nu \overline \sigma^\mu)$. In particular, the fermionic operators exhibit non-trivial symmetry properties due to various Dirac relations, which are equivalently reflected in the corresponding kinematic structures. For instance, for anti-commuting spinor fields, one finds:
+%
+\begin{gather}
+    \psi_i \psi_j = \psi_j\psi_i\,, \quad
+    \psi_i \sigma^{\mu\nu} \psi_j = -\psi_j \sigma^{\mu\nu}\psi_i\,,
+\end{gather}
+and analogously for the right-handed spinors. The symmetries of the dimension-five operators together with their minimal form factors are given in Table~\ref{tab:dim5}.
+
+\input{tables/generalEFT_dim5}
+
+\subsubsection{Dimension-Six Operators}
+
+The dimension-six interactions are given by the following Lagrangian
+%\begingroup
+%\interdisplaylinepenalty=10000
+\begin{align}\label{eq:L6}
+    \mathcal{L}^{(6)} &= \mathcal{L}^{(6)}_{\text{bos}}+\mathcal{L}^{(6)}_{\text{fer}}\,,\\
+    \mathcal{L}^{(6)}_{\text{bos}}&=\sum_{\alpha=1}^{N_G}\sum_{\beta=1}^\alpha \left(\left[C_{\phi^2 F^2}\right]^{A_\alpha B_\beta}_{ab}\phi_{a}\phi_{b}F^{A_\alpha}_{\mu\nu}F^{B_\beta  \mu\nu}+\left[C_{\phi^2 \tildee F^2}\right]^{A_\alpha B_\beta}_{ab}\phi_{a}\phi_{b}F^{A_\alpha}_{\mu\nu}\tildee F^{B_\beta  \mu\nu}\right)
+    \nonumber\\&\quad  \nonumber
+    + \left[C_{\phi^6}\right]_{abcdef}\phi_{a}\phi_{b}\phi_{c}\phi_{d}\phi_{e}\phi_{f}+\left[C_{D^2\phi^4}\right]_{abcd}(D_\mu \phi)_{a}(D^\mu \phi)_{b}\phi_{c}\phi_{d}\\&\quad
+    +\sum_{\alpha=1}^{N_G}\left(\left[C_{F^3}\right]^{A_\alpha B_\alpha C_\alpha}F^{A_\alpha \nu}_{\mu}F^{B_\alpha \rho}_{ \nu} F^{C_\alpha \mu}_{\rho}+\left[C_{\widetilde F^3}\right]^{A_\alpha B_\alpha C_\alpha}F^{A_\alpha \nu}_{\mu}F^{B_\alpha\rho}_{ \nu} \widetilde F^{C_\alpha\mu}_{\rho}\right)\,,\\
+    \mathcal{L}^{(6)}_{\text{fer}} &= \bigg(\left[C_{\psi^2\phi^3}\right]_{ijabc} \psi_i \psi_j \phi_a \phi_b \phi_c + \sum_{\alpha=1}^{N_G} \left[C_{\psi^2 \phi F}\right]_{ija}^{A_\alpha} \psi_i \sigma^{\mu\nu} \psi_j \phi_a F_{\mu\nu}^{A_\alpha}  \nonumber \\&\quad + \left[C_{\psi^4}\right]_{ijkl} (\psi_i \psi_j)(\psi_k\psi_l) + \text{H.c.}\bigg) + \left[C_{\overline \psi^2 \psi^2}\right]_{ijkl}(\psi_i^\dagger \overline \sigma^\mu \psi_j)(\psi_k^\dagger \overline \sigma_\mu \psi_l)\nonumber \\&\quad
+    + i\left[C_{D\overline \psi \psi \phi^2}\right]_{ijab}(\psi^\dagger_i \overline \sigma^\mu \psi_j)\left[(D_\mu \phi)_a \phi_b - \phi_a (D_\mu \phi)_b\right]\,.
+\end{align}
+%\endgroup\ignorespacesafterend
+The symmetries of the corresponding Wilson coefficients are collected for bosonic and fermionic operators in Table~\ref{tab:dim6}, and the minimal form factors are given in Table~\ref{tab:dim6FFs}. 
+
+\input{tables/generalEFT_dim6}
+\input{tables/generalEFT_dim6FFs}
+
+For instance, the four-fermion operator $\mathcal{O}_{\overline \psi^2 \psi^2}$ satisfies the following Fierz relation:
+%
+\begin{equation}
+    (\psi_i^\dagger \overline \sigma_\mu \psi_j)(\psi_k^\dagger \overline \sigma^\mu \psi_l) = 2 (\psi_i^\dagger \psi_k^\dagger)( \psi_l \psi_j) \,,
+\end{equation}
+which leads to several symmetry relations. Furthermore, using the identity
+%
+\begin{equation}
+    (\psi_i^\dagger \overline \sigma_\mu \psi_j) = - (\psi_j \sigma_\mu \psi_i^\dagger)\,,
+\end{equation}
+the operator $\mathcal{O}_{\overline \psi^2 \psi^2}$ describes four-fermion vector operators with both equal and mixed chiralities. 
+Moreover, as a consequence of the Schouten identities in Eqs.~\eqref{eq:schhoutenid1} and \eqref{eq:schhoutenid2},
+the Wilson coefficient associated with the operator $\mathcal O_{\psi^4}$ satisfies
+\begin{equation}
+    \left[C_{\psi^4}\right]_{ijkl} + \left[C_{\psi^4}\right]_{iklj} + \left[C_{\psi^4}\right]_{iljk} = 0\,,
+\end{equation}
+in addition to the identities reported in Table~\ref{tab:dim6}.
+
+Let us further note a subtlety that involves the $D^2\phi^4$-class operator $[\mathcal O_{D^2\phi^4}]_{abcd} = (D_\mu \phi)_a (D^\mu \phi)_b \phi_c \phi_d$. 
+For this, we define the following combination of Wilson coefficients:
+\begin{equation}\label{eq:hatCD2phi4}
+\left[\widehat C_{D^2\phi^4}\right]_{abcd}=\left[C_{D^2\phi^4}\right]_{abcd}+\left[C_{D^2\phi^4}\right]_{cdab}-\left[C_{D^2\phi^4}\right]_{adbc}-\left[C_{D^2\phi^4}\right]_{bcad}\,.
+\end{equation}
+Adopting a geometric approach, this combination can be shown to be proportional to the Riemann tensor of the scalar metric,\footnote{For a scalar metric $g_{ab}(\phi) = \delta_{ab} + 2[C_{D^2\phi^4}]_{abcd}\phi^c \phi^d$, the corresponding Riemann tensor $R_{abcd}$ is proportional to $[\widehat C_{D^2\phi^4}]_{acbd} = [C_{D^2\phi^4}]_{acbd}+[C_{D^2\phi^4}]_{bdac}-[C_{D^2\phi^4}]_{adbc}-[C_{D^2\phi^4}]_{bcad}$.} which implies the following symmetries
+\begin{gather}
+    \left[\widehat C_{D^2\phi^4}\right]_{abcd} = \left[\widehat C_{D^2\phi^4}\right]_{badc} = -\left[\widehat C_{D^2\phi^4}\right]_{adcb} = -\left[\widehat C_{D^2\phi^4}\right]_{cbad}\,,\\
+    \left[\widehat C_{D^2\phi^4}\right]_{abcd} + \left[\widehat C_{D^2\phi^4}\right]_{acdb} + \left[\widehat C_{D^2\phi^4}\right]_{adbc} = 0\,.
+\end{gather}
+Furthermore, by introducing the redundant operator
+\begin{equation}
+\left[\mathcal R_{D^2\phi^4}\right]_{abcd} = (\Box \phi)_a \phi_b \phi_c \phi_d
+\end{equation}
+and by using integration by parts, one finds the relations
+\begin{align}
+    \left[\mathcal O_{D^2\phi^4}\right]_{abcd} - \left[\mathcal O_{D^2\phi^4}\right]_{cdab} &= -\frac{1}{2}\left(
+    \left[\mathcal R_{D^2\phi^4}\right]_{abcd} + \left[\mathcal R_{D^2\phi^4}\right]_{bacd}\right.\nonumber\\
+    &\left.\qquad\,\,-\left[\mathcal R_{D^2\phi^4}\right]_{cabd}-\left[\mathcal R_{D^2\phi^4}\right]_{dabc}\,
+    \right)
+\end{align}
+and
+\begin{equation}
+    \left[\mathcal O_{D^2\phi^4}\right]_{abcd} + \left[\mathcal O_{D^2\phi^4}\right]_{adbc} +
+    \left[\mathcal O_{D^2\phi^4}\right]_{acdb}  = -\left[\mathcal R_{D^2\phi^4}\right]_{abcd}\,,\label{eq:D2phi4symmetric}
+\end{equation}
+implying
+\begin{equation}
+\left[\mathcal O_{D^2\phi^4}\right]_{(abcd)} = -\frac{1}{3}\left[\mathcal R_{D^2\phi^4}\right]_{(abcd)}\,.
+\end{equation}
+One can then show, by using the equation of motion of the scalar field,
+\begin{equation}
+    (\Box \phi)_a = -t_a -m^2_{ab}\,\phi_b - \frac{1}{2!}h_{abc}\,\phi_b\phi_c - \frac{1}{3!}\lambda_{abcd}\,\phi_b\phi_c\phi_d
+    -\frac{1}{2!}\left(y_{ija}\psi_i \psi_j + y_{ija}^* \psi_i^\dagger \psi_j^\dagger
+    \right)
+    \,,
+\end{equation}
+that the redundant operator $\mathcal R_{D^2\phi^4}$ is a linear combination of $\mathcal O_{\phi^6}$, $\mathcal O_{\phi^5}$, $\mathcal O_{\phi^4}$, $\mathcal O_{\phi^3}$, and $\mathcal O_{\psi^2\phi^3}$.
+Consequently, generating $\mathcal R_{D^2\phi^4}$ at the one-loop level influences the RGEs of the coefficients $C_{\phi^6}$, $C_{\phi^5}$, $\lambda$, $h$, and $C_{\psi^2\phi^3}$.
+To illustrate this point, we write the Wilson coefficient $[C_{D^2\phi^4}]_{abcd}$ as
+\begin{equation}
+    \left[C_{D^2\phi^4}\right]_{abcd} = \frac{1}{6}\left(
+    2\left[\widehat C_{D^2\phi^4}\right]_{abcd}-\left[\widehat C_{D^2\phi^4}\right]_{acbd}
+    \right)+\left[\tildee C_{D^2\phi^4}\right]_{abcd}+\left[\overline C_{D^2\phi^4}\right]_{abcd}\,,
+    \label{eq:decomposition}
+\end{equation}
+where we introduced the combinations
+\begin{align}
+    \left[\tildee C_{D^2\phi^4}\right]_{abcd} &= \left[ C_{D^2\phi^4}\right]_{(abcd)}\,,\label{eq:Ctilde_def}\\
+    \left[\overline C_{D^2\phi^4}\right]_{abcd} &= \frac{1}{2}\left(
+    \left[C_{D^2\phi^4}\right]_{abcd} - \left[C_{D^2\phi^4}\right]_{cdab}
+    \right)\,.\label{eq:Cbar_def}
+\end{align}
+In this notation, one finds the following contributions from $\mathcal R_{D^2\phi^4}$
+\begin{align}
+    \left[\dot C_{\psi^2\phi^3}\right]_{ijabc} &\supset \frac{1}{3!}\frac{1}{2!}\sum_{\sigma(\{a,b,c\})}y_{ijd} \left(
+    \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{dabc}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{dabc}
+    \right)\,,\label{eq:psi2phi3<-Ctildeandbar}\\
+    \left[\dot C_{\phi^6}\right]_{abcdef} &\supset \frac{1}{6!}\frac{1}{3!}\sum_{\sigma(\{a,b,c,d,e,f\})}\lambda_{abcg}\left(
+    \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{gdef}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{gdef}
+    \right)\,,\label{eq:phi6<-Ctildeandbar}\\
+    \left[\dot C_{\phi^5}\right]_{abcde} &\supset \frac{1}{5!}\frac{1}{2!}\sum_{\sigma(\{a,b,c,d,e\})}h_{abf}\left(
+    \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{fcde}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{fcde}
+    \right)\,,\label{eq:phi5<-Ctildeandbar}\\
+    \dot \lambda_{abcd} &\supset - \sum_{\sigma(\{a,b,c,d\})}m^2_{ae}\left(
+    \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{ebcd}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{ebcd}
+    \right)\,,\label{eq:phi4<-Ctildeandbar}\\
+    \dot h_{abc} &\supset -  \sum_{\sigma(\{a,b,c\})} t_d \left(
+    \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{dabc}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{dabc}
+    \right)\,,\label{eq:phi3<-Ctildeandbar}
+\end{align}
+which have to be taken into account and added to the results presented in Section~\ref{sec:gEFTresults}.
+With $\sum_{\sigma(I)}$ we denote the sum over all permutations of the set of indices $I$, and $\sum_{\sigma(I\times J)} = \sum_{\sigma(I)}\sum_{\sigma(J)}$.
+
+\section{Results\label{sec:gEFTresults}}
