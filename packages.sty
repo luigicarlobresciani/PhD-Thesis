@@ -153,3 +153,17 @@
 \usetikzlibrary{shapes,snakes}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usetikzlibrary{patterns}
+
+\tikzset{
+  ffblob/.style  = {draw=red!80!black,  circle, minimum size=0.5cm, fill=red!15,
+                    %postaction={pattern=north east lines, pattern color=red!70!black}
+                    },
+  ampblob/.style = {draw=blue!80!black, circle, minimum size=0.5cm, fill=blue!15,
+                    %postaction={pattern=north east lines, pattern color=blue!70!black}
+                    }
+}
+\newcommand{\cutline}{%
+  \begin{tikzpicture}[baseline={(current bounding box.center)}]
+    \draw[dashed, red, very thick] (0,-1.3) -- (0,1.3);
+  \end{tikzpicture}}
