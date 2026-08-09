@@ -15,7 +15,7 @@ L.~C.~Bresciani, G.~Levati and P.~Paradisi,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\section{Formalism}
+\section{Formalism\label{sec:PWUB_formalism}}
 
 The partial-wave analysis allows one to project 
 a generic amplitude $\ket*{\mathcal A_{i\to f}}$ 
@@ -510,7 +510,7 @@ The normalized eigenvectors corresponding to $J_{12}=0$ are then
 and, by projecting the amplitudes in Eq.~\eqref{eq:amplitude} onto them, it follows that the corresponding partial waves read\footnote{
 In this case, the phase space integral can be achieved, e.g., by parameterizing the final-state spinors as~\cite{Mastrolia:2009dr,Bresciani:2024shu}
 %
-\begin{equation*}
+\begin{equation}
     \begin{pmatrix}
         \lambda_3 \\ \lambda_4
     \end{pmatrix}
@@ -523,17 +523,17 @@ In this case, the phase space integral can be achieved, e.g., by parameterizing 
     \begin{pmatrix}
         \lambda_1 \\ \lambda_2
     \end{pmatrix}
-\end{equation*}
+\end{equation}
 and writing the phase space measure as 
-\begin{equation*}
+\begin{equation}
     \int \text{d}\Phi_{34} =-\frac{1}{2} \frac{1}{8\pi}\oint \frac{\text{d}z}{2\pi i}\int \frac{\text{d}\bar z}{(1+z\bar z)^2}\,,
-\end{equation*}
+\end{equation}
 %
 where we included the $1/2$ symmetry factor due to indistinguishable particles.
 This yields the factors
-\begin{equation*}
+\begin{equation}
     -\Res_{z=0}\int \text{d}\bar z\frac{1+(z\bar z)^{2S}+(1+z\bar z)^{2S}}{(1+z\bar z)^{2S+2}} = \frac{2S+3}{2S+1}
-\end{equation*}
+\end{equation}
 that appear in Eq.~\eqref{eq:partialwavecoeffs}.}
 %
 \begin{equation}\label{eq:partialwavecoeffs}
@@ -562,13 +562,13 @@ As a result, we find that the strongest unitarity bound is provided by the parti
     \mathscr{U}:\qquad \frac{s^{2S}}{2\pi}\left(|c_+^{(S)}|+\frac{2S+3}{2S+1}|c_-^{(S)}|\right) \le 1\,.
 \end{equation}
 The regions of the parameter space satisfying the partial-wave unitarity condition of Eq.~\eqref{eq:PUbounds} are shown in red in Figure~\ref{fig:s1} for the cases of $S=1,2$, and in the left panels of Figures \ref{fig:s1_v2} and \ref{fig:s2_v2}.\footnote{In deriving these bounds for the gravitational EFT ($S=2$), we explicitly neglected the universal long-range contribution from single-graviton exchange
-\begin{equation*}
+\begin{equation}
     \ket*{\mathcal A_{1^{+2},2^{+2} \to 3^{+2},4^{+2}}} = \frac{1}{\Mpl^2}\frac{\agl{1}{2}^4 \sqr{3}{4}^4}{stu}\,,
-\end{equation*}
+\end{equation}
 responsible for the well-known forward and backward singularities that induce infrared divergences in the partial-wave projections of the scattering amplitude. Such divergences are a well-understood feature of long-range interactions and can be systematically handled by factoring out a universal infrared-divergent phase \cite{Weinberg:1965nx} common to all partial waves. This universal phase, which arises from the resummation of iterated single-graviton exchange (the gravitational Born series), does not affect physical observables and can be stripped from the $S$-matrix, as done for example in \cite{Blas:2020dyg,Bellazzini:2025bay}, yielding infrared-finite amplitudes suitable for unitarity and positivity analyses, and leaving the bounds presented here robust. The resolution scale $\mathcal E$ introduced by this procedure \cite{Bellazzini:2025bay} admits a physical interpretation as the energy resolution of a macroscopic detector for soft gravitons. 
 Alternative approaches to deal with the above singularity include the smearing method of Ref.~\cite{Caron-Huot:2021rmr} and the dimensional reduction technique of Ref.~\cite{Bellazzini:2019xts}.}
 
-\begin{figure}[h!t!h!b!]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=\textwidth]{images/s1_plots_v3.pdf}
 \includegraphics[width=\textwidth]{images/s2_plots_v3.pdf}
@@ -579,14 +579,14 @@ $(s^{2S}c_{1}^{(S)},s^{2S}c_{2}^{(S)})$ plane for different values of $s^{2S}c_3
 \label{fig:s1}}
 \end{figure}
 
-\begin{figure}[h!t!b!h!]
+\begin{figure}[tb]
     \centering
     \includegraphics[scale = 0.90]{images/s1_plots_v2.pdf}
     \caption{Contours of the regions allowed by the partial-wave unitarity bounds (left panel, Eq.~\eqref{eq:PUbounds}) combined with the positivity constraints (right panel, Eq.~\eqref{eq:positivitybounds}) for the Euler-Heisenberg EFT ($S=1$) in the $(s^{2}c_{1}^{(1)},s^{2}c_{3}^{(1)})$ plane and computed for different values of $s^{2}c_2^{(1)}$.}
     \label{fig:s1_v2}
 \end{figure}
 
-\begin{figure}[h!t!b!h!]
+\begin{figure}[tb]
     \centering
     \includegraphics[scale = 0.90]{images/s2_plots_v2.pdf}
     \caption{Contours of the regions allowed by the partial-wave unitarity bounds (left panel, Eq.~\eqref{eq:PUbounds}) combined with the positivity constraints (right panel, Eq.~\eqref{eq:positivitybounds}) for the EFT of gravity ($S=2$) in the $(s^{4}c_{1}^{(2)},s^{4}c_{3}^{(2)})$ plane and computed for different values of $s^{4}c_2^{(2)}$.}
@@ -691,7 +691,7 @@ Instead, the unitarity bound stemming from $2 \to 2$ amplitudes, arising from Eq
 %
 and is weaker than that of Eq.~\eqref{eq:SMEFTdim6UB} for $\sqrt{s} > 4 \pi v\sqrt{2}$.
 
-\begin{figure}[tbh!]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.8\textwidth]{images/SMEFT_plot_lin.pdf}
 \caption{Partial-wave unitarity bounds on the Wilson coefficients of dimension-six (Eq.~\eqref{eq:SMEFT_6}) and dimension-eight (Eq.~\eqref{eq:SMEFT_8}) SMEFT operators
