@@ -1,0 +1,171 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[dvipsnames]{xcolor}
+%\documentclass[a4paper]{JHEP3}
+%\pdfoutput=1 
+
+\usepackage[T1]{fontenc} % if needed
+%\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage{blkarray}
+\usepackage{bigstrut}
+\usepackage{nccmath}
+\usepackage{enumitem}
+\usepackage{braket}
+\usepackage{dsfont}
+\usepackage{lipsum}
+\usepackage{leftindex}
+\usepackage{array,multirow}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{comment}
+\usepackage{lscape}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,calligraphy,calc,snakes,cd,external,arrows.meta}
+%\tikzset{
+%    vector/.style={
+%        decoration={snake, aspect=0.75, mirror, segment length=2mm},
+%        decorate
+%    },
+	%photon/.style={decorate, decoration={snake, amplitude=1pt, segment length=6pt}
+	%}
+%}
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+\usepackage{jheppub} 
+
+
+\def\e{\mathrm{e}}
+\def\D{\mathrm{D}}
+\def\d{\mathrm{d}}
+\def\vac#1{\<0|#1|0\>}
+\def\mbs#1{\mathbf{#1}}
+\def\adag{a^\dagger}
+\def\bdag{b^\dagger}
+\def\>{\rangle}
+\def\<{\langle}
+\def\ot{\leftarrow}
+\newcommand{\dbar}{{\text{d}\hspace*{-0.15em}\bar{}\hspace*{0.1em}}}
+\DeclareFontFamily{U}{mathx}{}
+\DeclareFontShape{U}{mathx}{m}{n}{<-> mathx10}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathAccent{\widehat}{0}{mathx}{"70}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\usepackage{cleveref}
+\newcommand{\myparagraph}[1]{\paragraph*{\textbf{\textbf{#1}}}}
+\def\bibsection{\section*{\refname}} 
+\DeclareMathOperator*{\sumint}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\newcommand{\agl}[2]{\langle#1\, #2 \rangle}
+\newcommand{\sqr}[2]{\lbrack #1\, #2 \rbrack}
+\newcommand{\txt}[1]{\textup{#1}}
+\newcommand{\sls}[1]{\slashed{#1}}
+\newcommand{\ketsqr}[1]{|#1\rbrack}
+\newcommand{\brasqr}[1]{\lbrack#1|}
+\newcommand{\hol}[0]{\mathsf{H}}
+\newcommand{\ahol}[0]{\mathsf{A}}
+
+\newcommand{\zb}[0]{\bar{z}}
+
+\newcommand{\rint}[0]{\int \!\!\!\!\!\!{\rm R} 
+\ }
+
+\def\pierpaolo#1{({\color{red} Pierpaolo: #1})}
+\def\paride#1{({\color{blue} Paride: #1})}
+\def\luigi#1{({\color{teal} Luigi: #1})}
+\def\giacomo#1{({\color{brown} Giacomo: #1})}
+\def\gabriele#1{({\color{orange} Gabriele: #1})}
+
+
+
+
+
+\makeatletter\g@addto@macro\bfseries{\boldmath}
+
+\def\gb#1{{\color{green!70!black} #1}}
+
+\title{Renormalization of effective field theories via on-shell methods: the case of axion-like particles 
+}
+
+
+\author[a,b]{Luigi~C.~Bresciani,}
+\author[a,b,c]{Giacomo~Brunello,}
+\author[a,b,d]{Gabriele~Levati,}
+\author[a,b]{Pierpaolo~Mastrolia}
+\author[a,b]{and Paride~Paradisi}
+
+
+
+\affiliation[a]{Dipartimento di Fisica e Astronomia, Università di Padova, Via Marzolo 8, I-35131 Padova, Italy}
+\affiliation[b]{INFN, Sezione di Padova,
+Via Marzolo 8, I-35131 Padova, Italy}
+\affiliation[c]{Institut de Physique Théorique, CEA, CNRS, Université Paris-Saclay, F-91191 Gif-sur-Yvette cedex, France}
+\affiliation[d]{Albert Einstein Center for Fundamental Physics, Institute for
+Theoretical Physics, University of Bern, Sidlerstrasse 5, CH-3012 Bern,
+Switzerland}
+
+
+\emailAdd{luigicarlo.bresciani@phd.unipd.it}
+\emailAdd{giacomo.brunello@phd.unipd.it}
+\emailAdd{gabriele.levati@unibe.ch}
+\emailAdd{pierpaolo.mastrolia@unipd.it}
+\emailAdd{paride.paradisi@unipd.it}
+
+\abstract{
+We consider the most general axion-like particle effective field theory, including both CP-odd and CP-even types of interactions, and evaluate the corresponding renormalization group equations, improving and extending previous results in the literature. Our calculations exploit on-shell and unitarity-based methods. The relevant phase-space cut-integrals are carried out using different integration methods, among which the double-cut integration via Stokes' theorem proves to be technically simpler. A close comparison between the standard Feynman diagrammatic approach and the unitarity-based method enables us to explicitly verify the reduction of complexity in the latter case, along with a more direct and elegant way to establish a connection among anomalous dimensions of operators that are dual under the CP symmetry.}
+
+\begin{document}
+\flushbottom
+\pagestyle{myplain}
+
+\maketitle
+
+\allowdisplaybreaks
+
+\input{Sections/Introduction.tex}
+\input{Sections/Method.tex}
+\input{Sections/ALPEFT.tex}
+\input{Sections/Applications.tex}
+\input{Sections/Conclusions.tex}
+
+\acknowledgments
+We wish to thank Manoj Mandal for interesting discussions during the various stages of the project. 
+This work received funding by the INFN Iniziative Specifiche 
+AMPLITUDES and APINE
+and from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreements n. 860881 – HIDDeN, n. 101086085 – ASYMMETRY. This work was also partially supported by the Italian MUR Departments of Excellence grant 2023-2027 “Quantum Frontiers”.
+The work of P.P. is supported by the European Union – Next Generation EU
+and by the Italian Ministry of University and Research (MUR) via the 
+PRIN 2022 project n. 2022K4B58X – AxionOrigins. 
+G.B. research is supported by the European Research Council, under grant
+ERC–AdG–88541, and by Università Italo-Francese, under grant Vinci.
+%
+G.L. gratefully acknowledges financial support by the Swiss National Science Foundation (Project No.\
+TMCG-2\_213690).
+%
+
+\appendix
+\input{Sections/Notation_and_Conventions}
+\input{Sections/Amplitudes}
+\input{Sections/InfraredAnomalousDimensionsStokes.tex}
+
+\bibliographystyle{JHEP}
+\bibliography{references.bib}
+
+\end{document}

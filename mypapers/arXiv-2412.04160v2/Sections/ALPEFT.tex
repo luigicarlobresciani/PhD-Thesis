@@ -1,0 +1,93 @@
+\section{\label{sec:ALPEFT}
+Effective Field Theory for Axion-Like Particles
+}
+
+The CP-violating interactions of an Axion-Like Particle (ALP) with SM fields below the electroweak (EW) scale can be conveniently described by the following $SU(3)_c \times U(1)_{\text{em}}$ invariant Lagrangian \cite{Marciano:2016yhf,DiLuzio:2020oah}: 
+%
+\begin{equation}
+\label{eq:Lag1}
+\mathcal{L}_{\text{EFT}} = \mathcal{L}_{\text{SM}} + 
+\frac{\tilde{\mathcal C}_\gamma}{\Lambda} \mathcal{O}_{\tilde\gamma} + \frac{\tilde{\mathcal C}_g}{\Lambda} \mathcal{O}_{\tilde g} + \mathcal{Y}^{ij}_P \mathcal{O}_{P_{ij}} 
++\frac{\mathcal C_\gamma}{\Lambda} \mathcal{O}_\gamma + \frac{\mathcal C_g}{\Lambda} \mathcal{O}_g + \mathcal{Y}^{ij}_S \mathcal{O}_{S_{ij}} 
+\end{equation}
+%
+where $\mathcal{L}_{\text{SM}}$ is the SM Lagrangian and
+%
+\begin{align}
+\label{eq:LagA}
+     \mathcal{O}_{\tilde \gamma} &= \phi\, F\tilde F\,, & \mathcal{O}_{\tilde g} &= \phi\, G\tilde G\,, & \mathcal O_{P_{ij}} &= \phi\, \bar{f}_i i \gamma_5 f_j\,,
+     \\
+\label{eq:LagB}     
+ \mathcal O_\gamma &= \phi\, FF\,, & \mathcal O_g &= \phi\, GG\,, & \mathcal O_{S_{ij}} &= \phi\, \bar{f}_i f_j\,.
+\end{align}
+%
+In the above expressions, $\phi$ is the ALP field and $\Lambda$ represents the new physics scale at which our effective description breaks down. $F_{\mu\nu}$ and $G_{\mu\nu}$ are the photonic and gluonic field-strength tensors, respectively, and $\tilde{F}_{\mu\nu} = \frac{1}{2} \varepsilon_{\mu\nu\alpha\beta}F^{\alpha \beta}$ and $\tilde{G}_{\mu\nu} = \frac{1}{2} \varepsilon_{\mu\nu\alpha\beta}G^{\alpha \beta}$ are their duals ($\varepsilon^{0123}=1$). 
+$f \in \{ e, u, d \}$ represents a SM fermionic field and the indices $i$ and $j$ denote its generation.
+
+The interactions in Eq.~(\ref{eq:LagA}) are manifestly invariant under the $\phi$ shift symmetry (up to non-perturbative effects) since $F\tilde{F}$ and $G\tilde{G}$ are total derivatives. Moreover, pseudoscalar interactions could be written in a shift-symmetric way through the dimension-5 operator 
+$\frac{\partial_\mu \phi}{\Lambda}\bar f \gamma^\mu\gamma^5 f$ after applying the equations of motion and integrating by parts. This would justify the $v/\Lambda$ normalization factor~\cite{DiLuzio:2020wdo}. 
+Instead, the interactions in Eq.~(\ref{eq:LagB}) break the shift symmetry explicitly. 
+Since in the unbroken phase of the SM scalar interactions should be written through the dimension-5 operator $\phi H \bar f_L f_R + \mathrm{h.c.}$ being $H$ the SM Higgs doublet, it would be natural to introduce the normalization factor $v/\Lambda$ in the last term of Eq.~(\ref{eq:Lag1})~\cite{DiLuzio:2020wdo}. 
+Moreover, in Eq.~(\ref{eq:Lag1}) we do not factor out the gauge couplings $e^2$ and $g^2_s$ from the coefficients $\tilde{\mathcal C}_{\gamma,g}$ and $\mathcal C_{\gamma,g}$ which would make them scale invariant at one-loop order. 
+
+
+Covariant derivatives are defined according to 
+%
+\begin{equation}
+\label{eq:CovDev}
+D_\mu f_i  = \left( \partial_\mu - i e Q_f A_\mu - i g_s c_f  G_\mu^a  T^a \right) f_i\,.
+\end{equation}
+%
+
+The Lagrangian \eqref{eq:Lag1} necessarily violates the CP symmetry regardless of the scalar or pseudoscalar nature of the ALP field $\phi$, as the two pieces \eqref{eq:LagA} and \eqref{eq:LagB} possess opposite CP transformation properties.
+%
+The simultaneous presence of these groups of operators results in an extremely rich and interesting phenomenology, and contributions to the Electric Dipole Moments (EDMs) of particles, nucleons, atoms and molecules are generated either via tree- or loop-level exchanges of ALPs~\cite{Marciano:2016yhf,DiLuzio:2020oah}.
+Besides such CP-violating effects one has then of course CP-preserving contributions to other low-energy observables, among which are, for instance, the Magnetic Dipole Moments (MDMs) of either elementary or composite particles.
+
+The largest part of these effects are generated at loop-level and their leading contribution can be estimated by considering the running of the corresponding Wilson coefficient from the high-energy cutoff scale $\Lambda$ down to the energy scale at which experiments are performed. 
+
+Running effects are encoded in a set of possibly coupled differential equations, the Renormalization Group Equations (RGEs), which can be schematically written as 
+%
+\begin{equation}
+\label{eq:AnomalousDimension}
+    \mu  \dv[]{c_i}{\mu} = \gamma_{i \leftarrow j} c_{j}\,,
+\end{equation}
+%
+where the $c_i$ are the Wilson coefficients associated to local, 
+gauge-invariant operators $\mathcal{O}_i(x)$ and $\gamma_{i \leftarrow j}$ is the anomalous dimension matrix regulating the energy evolution 
+of $c_i$ at the desired perturbative order. 
+%
+
+
+Since the CP properties of the operators of Eq.~\eqref{eq:Lag1} are left unchanged along the renormalization group flow,
+$\gamma_{i \leftarrow j}$ takes a block-diagonal form in the two distinct CP sectors:
+%
+\begin{align}
+\mu\dv[]{}{\mu}
+    \begin{pmatrix}
+        \mathcal Y_S^{ij} \\ \mathcal C_g \\  \mathcal C_\gamma 
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+        \gamma_{S_{ij} \leftarrow g} & \gamma_{S_{ij} \leftarrow \gamma} & \gamma_{S_{ij} \leftarrow S_{kl}}\\
+        \gamma_{g \leftarrow g} & \gamma_{g \leftarrow \gamma} & \gamma_{g \leftarrow S_{kl}} \\
+        \gamma_{\gamma \leftarrow g} & \gamma_{\gamma \leftarrow \gamma} & \gamma_{\gamma \leftarrow S_{kl}} 
+    \end{pmatrix}
+    \begin{pmatrix}
+        \mathcal Y_S^{kl}\\ \mathcal C_g \\ \mathcal C_\gamma 
+    \end{pmatrix} \,,
+    \\
+    \mu\dv[]{}{\mu}
+    \begin{pmatrix}
+         \mathcal Y_P^{ij}\\\tilde{\mathcal C}_g \\ \tilde{\mathcal C}_\gamma 
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+        \gamma_{P_{ij} \leftarrow \tilde g} & \gamma_{P_{ij} \leftarrow \tilde \gamma} & \gamma_{P_{ij} \leftarrow P_{kl}}\\
+        \gamma_{\tilde g \leftarrow \tilde g} & \gamma_{\tilde g \leftarrow \tilde \gamma} & \gamma_{\tilde g \leftarrow P_{kl}} \\
+        \gamma_{\tilde \gamma \leftarrow \tilde g} & \gamma_{\tilde\gamma \leftarrow \tilde \gamma} & \gamma_{\tilde \gamma \leftarrow P_{kl}} 
+    \end{pmatrix}
+    \begin{pmatrix}\mathcal Y_P^{kl}\\
+\tilde{\mathcal C}_g \\ \tilde{\mathcal C}_\gamma 
+\end{pmatrix}\,.
+\end{align}

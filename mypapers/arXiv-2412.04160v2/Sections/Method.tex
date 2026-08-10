@@ -1,0 +1,285 @@
+\section{\label{sec:method}
+Renormalization of EFT via on-shell methods}
+
+In this section, we first review the on-shell method for computing anomalous dimensions introduced in Ref.~\cite{Caron-Huot:2016cwu}. Then, we discuss two independent ways to perform 
+phase-space integrals both via angular variables~\cite{Zwiebel:2011bx} and through the use of Stokes' 
+Theorem~\cite{Mastrolia:2009dr}. 
+%
+
+\subsection{The on-shell method}
+%
+We consider an effective Lagrangian of the type
+\begin{equation}
+\mathcal L_{\text{EFT}} = \sum_i 
+\frac{c_i}{\Lambda^{[\mathcal O_i]-4}} \,\mathcal O_i \, , 
+\end{equation}
+%
+where $\mathcal{O}_i$ are local gauge-invariant operators, $c_i$ are the corresponding Wilson coefficients, and $\Lambda$ refers to the UV cut-off scale of our EFT.
+
+{\it Form factors} of the operators $\mathcal{O}_i$ are generically defined as
+%
+\begin{equation}
+    F_i(\vec n;q)= \frac{1}{\Lambda^{[\mathcal O_i]-4}}\mel*{\vec n}{\mathcal O_i(q)}{0}\,,
+\end{equation}
+%
+namely as the matrix element between an outgoing on-shell state $\bra*{\vec n}=\bra*{1^{h_1},\dotsc,n^{h_n}}$ and an operator $\mathcal O_i$ that injects an additional off-shell momentum $q$.
+Within the dimensional regularization scheme, form factors depend on the renormalization scale $\mu$, and satisfy the Callan-Symanzik equation
+%
+\begin{equation}
+\label{eq:CSEq}
+    \left(\delta_{ij} \mu\frac{\partial}{\partial \mu}+ \frac{\partial \beta_i}{\partial c_j}-\delta_{ij}\gamma_{i,\txt{IR}} +\delta_{ij}\beta_g\frac{\partial}{\partial g}\right)F_i=   0\,,
+\end{equation}
+%
+where $g$ collectively denotes the couplings related to the renormalizable operators of our Lagrangian, while $\gamma_{i,\txt{IR}}$ is the infrared anomalous dimension. 
+The renormalization of the operator $\mathcal{O}_i$ 
+is described by
+%
+\begin{equation}
+\beta_i(\{c_k\}) \equiv \mu \dv[]{c_i}{\mu} \,, 
+\end{equation}
+%
+where $c_i$ are the Wilson coefficients of the effective Lagrangian $\mathcal{L}_{\text{EFT}}$.
+
+%
+Exploiting the analyticity of form factors, unitarity, and the CPT theorem, it can be shown that an elegant relation exists linking the action of the dilatation operator ($D$)
+%
+to the action of the $S$-matrix ($S$) on form factors~\cite{Caron-Huot:2016cwu}:
+%
+\begin{equation}
+\label{eq:FundamentalRelation}
+    e^{-i \pi D}F_i^* = SF_i^*
+\end{equation}
+%
+where $S=\mathbf{1} + i\mathcal{M}$ while $D = \sum_{i}p_i\cdot \partial/\partial p_i$
+(the sum runs over all particles $i$). 
+
+It is precisely the combination of Eqs.~\eqref{eq:FundamentalRelation} and \eqref{eq:CSEq} that allows one to directly link the renormalization group coefficients to the $S$-matrix.
+%
+In particular, at one-loop order, it has been found that
+%
+\begin{equation}
+\label{eq:masterformula}
+\left(
+\frac{\partial \beta_i^{(1)}}{\partial c_j}
+-\delta_{ij}\gamma_{i,\txt{IR}}^{(1)} 
++\delta_{ij}\beta_g^{(1)}\frac{\partial}{\partial g}
+\right)
+F_i^{(0)} = -\frac{1}{\pi}(\mathcal M F_j)^{(1)}\,, 
+\end{equation}
+%
+where the right-hand side of Eq.~\eqref{eq:masterformula} corresponds to a sum over all one-loop two-particle unitarity cuts,
+%
+\begin{align}
+\label{eq:MF1Loop}
+    (\mathcal M F_j)^{(1)}(1,\dots,n) = 
+   &\sum_{k=2}^n \sum_{\{x,y\}}\int d\text{LIPS}_2
+   \nonumber\\ 
+   &\times\sum_{h_1,h_2}\!\! F_j^{(0)}\!(x^{h_1},y^{h_2},k \!+\! 1,\dots,n) \mathcal M^{(0)}\!(1,\dots,k;x^{h_1},y^{h_2}\!)\, ,
+\end{align}
+where $\mathcal M(\vec n; \vec m)=\mel*{\vec n}{\mathcal M}{\vec m}$, and $d\text{LIPS}_2$ is the (two-particle) Lorentz invariant phase-space measure. 
+The corresponding cut-integral can be evaluated either by angular integration~\cite{Zwiebel:2011bx} or via Stokes' theorem~\cite{Mastrolia:2009dr},
+which differ for the parameterizations of the on-shell loop momentum across the cut and for the employed integration techniques, 
+as we will show in the following.
+
+Two observations are in order. 
+Let us first remark that, at one-loop level, the $\beta$ function does not contribute to minimal form factors, because 
+the latter are expectation values of purely local products of fields, and, by definition, they are independent of the renormalizable couplings of the theory, which we have collectively denoted by $g$.
+The contribution from the $\beta$ function of renormalizable couplings is however unavoidable at higher perturbative orders.
+%
+Secondly, we stress that, owing to the adopted dimensional regularization scheme, this method is sensitive only to the difference between UV and IR divergences. 
+Therefore, in order to disentangle the renormalization group equations for the UV divergent part, the IR contribution must be computed independently (see Appendix~\ref{app:IRanomalousdimensions} for more details). 
+
+The on-shell method, so far discussed, is well suited to compute anomalous dimensions in massless theories, where all 
+EFT operators have the same mass-dimension, as shown in the case of Standard Model EFT~\cite{EliasMiro:2020tdv}.  
+
+In particular, in the case of linear operator mixing, 
+Eq.~\eqref{eq:masterformula}
+becomes
+%
+\begin{equation}
+\label{eq:masterformula1L}
+\left(
+\gamma_{i \leftarrow j}^{(1)}
+-\delta_{ij}\gamma_{i,\txt{IR}}^{(1)} 
+\right)
+F_i|_{*}^{(0)} = -\frac{1}{\pi}(\mathcal M F_j)|_{*}^{(1)}
+\end{equation}
+%
+which has been evaluated at the Gaussian fixed point $(*)$, where all the Wilson coefficients $c_i$ are vanishing.
+Moreover, $\gamma_{i \leftarrow j}^{(1)}$ is obtained from
+the Taylor expansion of the renormalization group equations for the Wilson coefficients $c_i$
+%
+\begin{equation}
+    \mu\dv[]{c_i}{\mu} = 
+    \gamma_{i\leftarrow j}c_j +
+    \frac{1}{2}\gamma_{i\leftarrow j,k}c_jc_k + \dots\,,
+\end{equation}
+%
+where 
+%
+\begin{equation}
+    \gamma_{i\leftarrow j_1, \dotsc, j_n} = \left.\frac{\partial^n \beta_i}{\partial c_{j_1}\dotsm \partial c_{j_n}}\right |_{*}\,.
+\end{equation}
+%
+
+The result of Eq.~\eqref{eq:masterformula1L} can be easily applied to the case of non-linear mixing among operators with different dimensions, which is of interest to our study. At one-loop order, one can find the following expression~\cite{Bresciani:2023jsu} 
+%
+\begin{equation}
+\label{eq:mastergammaijk}
+\gamma_{i\leftarrow j,k}^{(1)}F_i|_{*}^{(0)} = -\frac{1}{\pi}\left.\frac{\partial}{\partial c_k}\right|_{c_k=0}(\mathcal M F_j)|_{*,c_k\neq 0}^{(1)} \,,
+\end{equation}
+%
+where $j,k\neq i$ and
+%
+\begin{align}
+    \gamma_{i\leftarrow j,k}&=\left. \frac{\partial^2 \beta_i}{\partial c_j \partial c_k}\right|_{*} = \left.\frac{\partial}{\partial c_k}\right|_{c_k=0} \left.\frac{\partial \beta_i}{\partial c_j}\right|_{*,c_k\neq 0} \,.
+    \label{eq:gamma_ijk}
+\end{align}
+% 
+Moreover, by making use of the Higgs low-energy theorem~\cite{Ellis:1975ap,Shifman:1979eb}, it is possible to include leading mass effects while still working in a massless formalism~\cite{Bresciani:2023jsu}. 
+%
+In practice, whenever an amplitude requires $N$ fermion mass insertions not to vanish, we consider an equivalent amplitude entailing $N$ extra massless Higgs fields, where 
+%
+\begin{equation}
+N = 4-[\mathcal{O}_{i}] +\sum^n_{k=1} ([\mathcal{O}_{j_k}]-4)\geq 0
+\label{eq:superficial_div}
+\end{equation}
+%
+corresponds to the superficial degree of divergence associated with the loop diagram under consideration~\cite{Bresciani:2023jsu}.
+%
+Then, the anomalous dimension
+$\gamma_{i\leftarrow j_1, \dotsc, j_n}$ 
+is obtained by renormalizing the operator $(h/v)^N\mathcal{O}_i/N!$
+instead of $\mathcal{O}_i$~\cite{Bresciani:2023jsu}.
+Instead, for $N < 0$, $\gamma_{i\leftarrow j_1, \dotsc, j_n}$ does vanish.
+
+%
+The Lorentz-invariant phase space measure appearing in Eq.~\eqref{eq:MF1Loop} can be parameterized in different ways, depending on the employed method of integration. 
+Here we will focus on two possible integration techniques: one based on an angular parameterization of the phase space and the other relying on the use of Stokes' theorem.
+Whereas the former has the virtue of being quite intuitive, the latter turns out to be more suited to our purposes. Based on an elegant mathematical result, it offers a simpler and more direct way of carrying out phase-space integrations, as shown in several explicit examples.
+
+\subsection{Phase-space integrals via angular variables}
+\label{sec:phasespace_Angular}
+
+The integration with angular variables relies on a parameterization of the virtual phase space
+that is realized through the application of the following spinor rotation matrix~\cite{Zwiebel:2011bx}:
+\begin{eqnarray}\label{eq:angular_param}
+    \begin{pmatrix}
+ \lambda_x \\
+ \lambda_y
+    \end{pmatrix}
+     = 
+    \begin{pmatrix}
+ \cos\theta & -\sin\theta e^{i\phi} \\ 
+ \sin\theta e^{-i\phi} & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+ \lambda_{a} \\
+ \lambda_{b}
+    \end{pmatrix}\,,
+\end{eqnarray}
+where $ \lambda_{a},\lambda_{b}$ correspond to the external momenta $p_a,p_b$,
+and the integration measure is 
+\begin{equation}
+    \int d\text{LIPS}_2= \frac{1}{8 \pi}\int_0^{2 \pi} \frac{d\phi}{2\pi}\int_0^{\pi/2} 2 \cos\theta \sin\theta \, d\theta  \, . 
+\end{equation}
+%
+An additional factor of $1/2$ has to be included in the measure if the two particles across the cut are indistinguishable.
+
+%
+Sometimes it is convenient to use the following parameterization
+%
+\begin{equation}
+    \begin{pmatrix}
+        \lambda_x \\ \lambda_y
+    \end{pmatrix}
+    =
+    \frac{1}{\sqrt{1+t^2}}
+    \begin{pmatrix}
+        1 & -tz \\
+        t/z & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        \lambda_a \\ \lambda_b
+    \end{pmatrix}\,,
+\end{equation}
+%
+which rationalizes the integrand function and is derived from Eq.~\eqref{eq:angular_param} by setting $t=\tan\theta$ and $z=e^{i\phi}$.
+The corresponding integration measure is given by
+\begin{equation}
+\label{eq:hybbrid}
+    \int d\text{LIPS}_2 = \frac{1}{8\pi}\int_0^\infty \frac{2t \, dt}{(1+t^2)^2}\oint_{|z|=1}\frac{dz}{2\pi i z}\,.
+\end{equation}
+
+
+\subsection{Phase-space integrals via Stokes' Theorem}
+\label{sec:phasespace_Stokes}
+%
+One-loop Feynman integrals, as well as scattering amplitudes in dimensional regularization, with $d= 4- \epsilon $ space-time dimensions,  can be decomposed in a finite basis of scalar integrals, known as master integrals.
+Remarkably, up to order $\mathcal{O}(\epsilon^0)$, for any one-loop $n$-point amplitude, such master integrals are 4-point, 3-point, 2-point, and 1-point functions.
+The latter do not contribute to processes with massless internal states; therefore, the UV singularities of massless 1-loop amplitudes,
+together with collinear IR divergences,
+are entirely contained in the 2-point function, and
+they are proportional to the associated decomposition coefficient.
+Singularities associated with 3- and 4-point functions are instead related only to IR divergences. 
+Various techniques have been developed to evaluate the decomposition coefficients, including integration-by-parts identities \cite{Tkachov:1981wb,Chetyrkin:1981qh,Laporta:2000dsw} and generalized unitarity \cite{Bern:1994zx,Bern:1995db,Britto:2004nc,Britto:2006sj,Anastasiou:2006gt,Ossola:2006us}.
+%
+An efficient method to compute directly the 2-point function coefficients, projecting it out of a double-cut, relies on Stokes' theorem \cite{Mastrolia:2009dr}, and it is based on a reparameterization of the virtual spinors in terms of the external ones that is implemented via the following spinor rotation matrix:
+\begin{eqnarray}
+    \begin{pmatrix}
+ \lambda_x \\
+ \lambda_y
+    \end{pmatrix}
+     =  
+   \frac{1}{\sqrt{1+ z \bar{z}}}\left(
+\begin{array}{cc}
+ 1 & \bar{z} \\
+ -z & 1 \\
+\end{array}
+\right)
+\begin{pmatrix}
+ \lambda_{a} \\
+ \lambda_{b}
+    \end{pmatrix}\,,
+    \label{eq:stokes_par}
+\end{eqnarray}
+where $z$ and $\bar{z}$ are complex conjugate variables.
+%
+The integration measure is defined as:
+\begin{eqnarray}
+    \int d \text{LIPS}_2 = 
+    \frac{-1}{8 \pi} 
+    \oint \frac{dz}{2\pi i } 
+    \int    
+    \frac{d{\bar z}}{(1 + z \bar{z})^2} \, . 
+\end{eqnarray}
+
+The integrand is a generic rational function $g(z,\zb)$, which can be integrated, using complex analysis, by a two-step procedure: finding a primitive function in $\zb$, say $G(z,{\bar z})$ (considering $z$ as an independent variable), and applying Cauchy's residue theorem in $z$.
+ The computation of the primitive generates two kinds of contributions: a rational part and a logarithmic one, i.e., 
+ $G = G_{\rm rat} + G_{\log}$. 
+ For the determination of the anomalous dimensions,
+ it is sufficient to determine the UV singularities carried out by the 2-point integrals, neglecting the higher-point functions that contain only IR singularities.
+ Since the cut of the 2-point scalar function is rational, the contribution of the 2-point integral within the double-cut of a generic one-loop integral appears exclusively in the rational contribution of the double-cut \cite{Mastrolia:2009dr}. 
+ Therefore, in order to isolate the coefficient of the 2-point function, it is sufficient to retain only the rational part (Rat) of the phase-space integration, coming just from $G_{\rm rat}$, yielding:
+    \begin{equation}
+        {\rm Rat}\int d{\rm LIPS}_2 \ g(z,\zb)
+        \equiv 
+         \frac{-1}{8 \pi} 
+         \oint \frac{dz }{ 2 \pi i} 
+         G_{\rm rat}(z,{\bar z}) 
+         =
+         \frac{-1}{8 \pi} 
+         \sum_{z_0\in {\cal P}_{G_{\rm rat}}} 
+         \!\!\!
+         \Res_{(z,\zb)=(z_0,z_0^*)} G_{\rm rat}(z,\zb)\, . 
+    \end{equation}
+  
+The above formula considers the contributions of the residues at all the finite poles $z_0$ of $G_{\rm rat}$, collected in the set ${\cal P}_{G_{\rm rat}}$  
+(when taking the residues, the variable ${\bar z}$  is evaluated at $z_0^* = (z_0)^{\rm c.c.}$). 
+Stokes' integration method offers the advantage of projecting directly the contribution of the 2-point functions out of double-cuts, 
+hence its application appears to be simpler than other techniques. 
+
+Within the coefficient of the 2-point integrals, both UV and IR collinear divergences are combined.
+Therefore, in order to isolate the genuine UV anomalous dimension,
+one has to compute and add,
+out of the complete IR anomalous dimension, only the collinear part.

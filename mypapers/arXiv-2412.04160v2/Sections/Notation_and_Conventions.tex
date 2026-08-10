@@ -1,0 +1,64 @@
+\section{Notation and Conventions}
+\label{app:notation}
+
+\paragraph{Spinor helicity.}
+In this article, amplitudes and form factors have been expressed in terms of contractions of the fundamental two-dimensional spinors $\lambda_{\alpha}$ and $\tilde\lambda^{\dot\alpha}$ that transform in the $(1/2,0)$ and $(0,1/2)$ representations of $SL(2,\mathbb{C})$, respectively.
+The spinor decomposition of a light-like four-momentum $p_{\mu}$ of an outgoing particle is given by
+\begin{equation}
+    p_{\alpha \dot\alpha} = p_\mu \sigma^{\mu}_{\alpha \dot\alpha} = \lambda_\alpha \tilde \lambda_{\dot \alpha}\,,
+\end{equation}
+where $\sigma^\mu = (\mathbf{1},\vec \sigma)$ and $\sigma^i$ are the Pauli matrices.
+The Lorentz-invariant antisymmetric contractions are
+\begin{align}
+    \agl{i}{j} = \lambda^\alpha_i \lambda_{j\,\alpha} = \epsilon_{\alpha\beta}\lambda_i^\alpha \lambda_j^\beta\,,
+    &&
+    \sqr{i}{j} = \tilde \lambda_{i\,\dot\alpha}\tilde\lambda_j^{\dot\alpha} = -\epsilon_{\dot\alpha \dot\beta}\tilde\lambda_{i}^{\dot\alpha} \tilde\lambda_j^{\dot\beta}\,,
+\end{align}
+where we used the following convention for the two-dimensional Levi-Civita tensor: $\epsilon^{12} = \epsilon^{\dot 1 \dot 2} = -\epsilon_{12} =-\epsilon_{\dot 1 \dot 2} = 1$.
+The Mandelstam invariants are then $s_{ij} = (p_i+p_j)^2 = \agl{i}{j}\sqr{j}{i}$.
+In this formalism, polarization vectors are written as
+\begin{align}
+    \varepsilon_\mu^-(p) = \frac{\langle p\,\sigma_\mu \, q]}{\sqrt{2}\sqr{p}{q}}\,, &&
+    \varepsilon_\mu^+(p) = \frac{\langle q\,\sigma_\mu \, p]}{\sqrt{2}\agl{q}{p}}\,,
+\end{align}
+where $q$ is a reference momentum such that $\sqr{p}{q}, \agl{q}{p}\neq 0$, while Dirac fermion spinors are
+\begin{align}
+    u_+(p) &= v_-(p) = 
+    \begin{pmatrix}
+        \lambda_\alpha \\ 0
+    \end{pmatrix}
+    \,,
+    &
+    u_-(p) &= v_+(p) = 
+    \begin{pmatrix}
+        0 \\ \tilde\lambda^{\dot\alpha}
+    \end{pmatrix}
+    \,, 
+    \\
+    \bar u_+(p) &= \bar v_-(p) = 
+    \begin{pmatrix}
+        0 & \tilde\lambda_{\dot\alpha}
+    \end{pmatrix}
+    \,,
+    &
+    \bar u_-(p) &= \bar v_+(p) = 
+    \begin{pmatrix}
+        \lambda^\alpha & 0
+    \end{pmatrix}
+    \,.
+\end{align}
+In order to flip the momentum of a particle, we used $\lambda_{-p}=i\lambda_p$ and $\tilde \lambda_{-p}=i\tilde \lambda_p$.
+Accordingly, when a fermion is exchanged from the outgoing to the incoming state, the amplitude is multiplied by $(-i)$, that is, $\mathcal M(X;\bar f) = -i \mathcal M(X+f)$.
+Spinor manipulations have been handled in \texttt{Mathematica} through the package \texttt{S@M}~\cite{Maitre:2007jq}.
+
+\paragraph{Gauge group conventions.}
+The conventions used for the invariants of the adjoint and fundamental representations of the gauge group $SU(N_c)$ are summarized as
+\begin{align}
+    f^{acd}f^{bcd} &= C_A\delta^{ab}\,, &
+    C_A &= N_c = 3\,, \\
+    T^a_{IK}T^a_{KJ} &= C_F \delta_{IJ}\,, & C_F &=\frac{N_c^2-1}{2N_c}=\frac{4}{3}\,, \\
+    \text{Tr}(T^a T^b) &= T_F \delta^{ab}\,, &
+    T_F &= \frac{1}{2}\,.
+\end{align}
+The covariant derivative is taken to be $D_\mu f = (\partial_\mu - i e Q_f A_\mu - i g_s c_f G_\mu^a T^a)f$, and, accordingly, the $SU(3)_c$ field strength tensor is $G^a_{\mu\nu} = \partial_\mu G_\nu^a - \partial_\nu G_\mu^a + g_s f^{abc} G_\mu^b G_\nu^c$.
+The coefficient $c_f$ takes the value $1$ ($0$) if $f$ is a quark (lepton).

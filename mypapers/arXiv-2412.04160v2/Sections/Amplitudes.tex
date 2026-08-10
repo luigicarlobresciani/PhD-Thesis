@@ -1,0 +1,118 @@
+\section{Amplitudes}
+\label{app:Amplitudes}
+
+In this Appendix, we report the amplitudes that we employed throughout the main text, expressed in terms of spinor-helicity variables.
+
+\subsection{3-point tree amplitudes}
+Here, the analytically continued 3-point tree amplitudes in the holomorphic ($\hol$) and antiholomorphic ($\ahol$) configurations belonging to the different sectors of the Lagrangian are displayed on the left and on the right, respectively.
+They are completely constrained, up to an overall factor (the coupling constant), by locality, Poincaré invariance, and dimensional analysis~\cite{Benincasa:2007xk}. Indeed, in full generality they read as follows
+\begin{align}
+    \mathcal M_3^\hol(1^{h_1},2^{h_2},3^{h_3}) = g_\hol \agl{1}{2}^{a_3}\agl{2}{3}^{a_1}\agl{3}{1}^{a_2}\,, &&
+    \mathcal M_3^\ahol(1^{h_1},2^{h_2},3^{h_3}) = g_\ahol \sqr{1}{2}^{\bar a_3}\sqr{2}{3}^{\bar a_1}\sqr{3}{1}^{\bar a_2}\,,
+\end{align}
+with $\bar a_i=-a_i$,
+\begin{align}
+    a_1= h_1-h_2-h_3\,,&&
+    a_2= h_2-h_3-h_1\,, &&
+    a_3= h_3-h_1-h_2\,,
+\end{align}
+and the mass dimensions of the coupling constants only depend on the helicities:
+\begin{align}
+    [g_\hol]=1+h_1+h_2+h_3\,, && 
+    [g_\ahol]=1-h_1-h_2-h_3\,.
+\end{align}
+Locality implies $[g_\hol],[g_\ahol]<1$, therefore we can infer that the holomorphic (antiholomorphic) configuration is the consistent one if $h_1+h_2+h_3<0$ ($h_1+h_2+h_3>0$).
+The case where $h_1+h_2+h_3=0$ is trivial, as it can only correspond to a cubic scalar interaction, where $h_1=h_2=h_3=0$.
+
+\paragraph{$\mathcal L_{\text{LO}}$.}
+The lowest order Lagrangian
+\begin{equation}
+    \mathcal L_{\text{LO}} = -\frac{1}{4}G_{\mu\nu}^a G^{a,\mu\nu}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+i\bar f_i \gamma^\mu D_\mu f_i - y_i h \bar f_i f_i
+\end{equation}
+generates
+\begin{align}
+    \mathcal M(1^-_{f_i},2^+_{\bar f_j},3^-_\gamma) &= \sqrt 2 e Q_f \delta^{ij} \frac{\agl{1}{3}^2}{\agl{1}{2}}\,, &
+     \mathcal M(1^-_{f_i},2^+_{\bar f_j},3^+_\gamma) &= \sqrt 2 e Q_f \delta^{ij}\frac{\sqr{3}{2}^2}{\sqr{1}{2}}\,, \\
+     \mathcal M(1^-_{f_i^I},2^+_{\bar f_j^J},3^-_{g^a}) &= \sqrt 2 g_s c_f T^a_{IJ}\delta^{ij} \frac{\agl{1}{3}^2}{\agl{1}{2}}\,, &
+     \mathcal M(1^-_{f_i^I},2^+_{\bar f_j^J},3^+_{g^a}) &= \sqrt 2 g_s c_f T^a_{IJ} \delta^{ij}\frac{\sqr{3}{2}^2}{\sqr{1}{2}}\,, \\
+     \mathcal M(1^-_{g^a},2^-_{g^b},3^+_{g^c}) &= i\sqrt 2 g_s f^{abc}\frac{\agl{1}{2}^3}{\agl{1}{3}\agl{3}{2}}\,,  &
+     \mathcal M(1^+_{g^a},2^+_{g^b},3^-_{g^c}) &=-i\sqrt 2 g_s f^{abc}\frac{\sqr{1}{2}^3}{\sqr{1}{3}\sqr{3}{2}}\,,  \\
+     \mathcal M(1^-_{f_i},2^-_{\bar f_j},3_h) &= - y_i\delta^{ij}\agl{1}{2}\,, &
+     \mathcal M(1^+_{f_i},2^+_{\bar f_j},3_h) &= - y_i \delta^{ij} \sqr{1}{2} \,.
+\end{align}
+
+\paragraph{$\mathcal L_{\phi}$.}
+The ALP effective Lagrangian
+\begin{equation}
+    \mathcal{L}_\phi = 
+    \frac{\tilde{\mathcal{C}}_\gamma}{\Lambda}\,\phi\, F\tilde F
+    + \frac{\tilde{\mathcal{C}}_g}{\Lambda}\,\phi\, G\tilde G
+    + \mathcal{Y}^{ij}_P\,\phi\, \bar{f}_i i\gamma_5 f_j 
+     + \frac{\mathcal{C}_\gamma}{\Lambda}\,\phi\, FF
+    + \frac{\mathcal{C}_g}{\Lambda}\,\phi\, GG
+    + \mathcal{Y}^{ij}_S\,\phi\, \bar{f}_i f_j
+\end{equation}
+generates
+\begin{align}
+    \mathcal M(1^-_\gamma,2^-_\gamma,3_\phi) &= -\frac{2}{\Lambda}(\mathcal C_\gamma + i \tilde{\mathcal{C}}_\gamma)\agl{1}{2}^2\,, &
+    \mathcal M(1^+_\gamma,2^+_\gamma,3_\phi) &= -\frac{2}{\Lambda}(\mathcal C_\gamma - i \tilde{\mathcal{C}}_\gamma)\sqr{1}{2}^2\,, \\
+    \mathcal M(1^-_{g^a},2^-_{g^b},3_\phi) &= -\frac{2}{\Lambda}(\mathcal C_g + i \tilde{\mathcal{C}}_g)\delta^{ab}\agl{1}{2}^2\,, &
+    \mathcal M(1^+_{g^a},2^+_{g^b},3_\phi) &= -\frac{2}{\Lambda}(\mathcal C_g - i \tilde{\mathcal{C}}_g)\delta^{ab}\sqr{1}{2}^2\,, \\
+    \mathcal M(1^-_{f_i},2^-_{\bar f_j},3_\phi)&=(\mathcal Y_S^{ij}-i\mathcal Y_P^{ij})\agl{1}{2}\,, &
+    \mathcal M(1^+_{f_i},2^+_{\bar f_j},3_\phi)&=(\mathcal Y_S^{ij}+i\mathcal Y_P^{ij})\sqr{1}{2} \,.
+\end{align}
+
+\paragraph{$\mathcal L^{(5)}$.}
+The relevant dimension-$5$ Lagrangian invariant under $SU(3)_c\times U(1)_{\text{em}}$ and built of SM particles consists of dipole operators
+\begin{equation}
+    \mathcal L^{(5)} = \frac{c_{\text{M}}^{ij}}{\Lambda}\bar f_i \sigma^{\mu\nu} f_j F_{\mu\nu} + \frac{c_{\text{E}}^{ij}}{\Lambda}\bar f_i \sigma^{\mu\nu}i\gamma_5 f_j F_{\mu\nu} + \frac{c_{\text{CM}}^{ij}}{\Lambda}\bar f_i \sigma^{\mu\nu}T^a f_j G^a_{\mu\nu} + \frac{c_{\text{CE}}^{ij}}{\Lambda}\bar f_i \sigma^{\mu\nu}i\gamma_5 T^a f_j G^a_{\mu\nu}
+\end{equation}
+and generates
+\begin{align}
+    \mathcal M(1^-_{f_i},2^-_{\bar f_j},3^-_\gamma) &= \frac{2\sqrt 2}{\Lambda}C_\gamma^{ij}\agl{1}{3}\agl{2}{3}\,, &
+    \mathcal M(1^+_{f_i},2^+_{\bar f_j},3^+_\gamma)&=- \frac{2\sqrt 2}{\Lambda}(C_\gamma^{ij})^*\sqr{1}{3}\sqr{2}{3}\,,  \\
+    \mathcal M(1^-_{f_i^I},2^-_{\bar f_j^J},3^-_{g^a}) &= \frac{2\sqrt 2}{\Lambda}C_g^{ij}T^a_{IJ}\agl{1}{3}\agl{2}{3}\,, &
+    \mathcal M(1^+_{f_i^I},2^+_{\bar f_j^J},3^+_{g^a})&= - \frac{2\sqrt 2}{\Lambda}(C_g^{ij})^*T^a_{IJ}\sqr{1}{3}\sqr{2}{3}\,,
+\end{align}
+with
+\begin{align}
+    C_\gamma^{ij}=c_{\text{M}}^{ij}-i\, c_{\text{E}}^{ij}\,, && C_g^{ij}=c_{\text{CM}}^{ij}-i\,c_{\text{CE}}^{ij}\,.
+\end{align}
+
+\paragraph{$\mathcal L^{(6)}$.}
+The relevant dimension-$6$ Lagrangian invariant under $SU(3)_c\times U(1)_{\text{em}}$ and built of SM particles only consists of
+\begin{equation}
+    \mathcal L^{(6)} = \frac{D_G}{3\Lambda^2} f^{abc} G_\mu^{a, \nu} G_{\nu}^{b, \rho} G_{\rho}^{c, \mu} + \frac{d_G}{3\Lambda^2} f^{abc} G_\mu^{a, \nu} G_{\nu}^{b, \rho} \tilde G_{\rho}^{c, \mu}
+\end{equation}
+and generates
+\begin{align}
+    \mathcal M(1^-_{g^a},2^-_{g^b},3^-_{g^c}) = i\frac{\sqrt 2}{\Lambda^2}C_Gf^{abc}\agl{1}{2}\agl{2}{3}\agl{1}{3}\,, &&
+     \mathcal M(1^+_{g^a},2^+_{g^b},3^+_{g^c}) = i\frac{\sqrt 2}{\Lambda^2}C_G^* f^{abc}\sqr{2}{1}\sqr{3}{2}\sqr{3}{1}\,,
+\end{align}
+with
+\begin{equation}
+    C_G= D_G + i\, d_G\,.
+\end{equation}
+
+\subsection{4-point tree amplitudes}
+Here, the 4-point tree amplitudes needed for the calculations are displayed.
+With the symbol $*$ we denote the region in the space of the couplings of the theory where only the gauge couplings $e$ and $g_s$ are different from zero.
+%
+\begin{align}
+     \mathcal M|_*(1^-_{f_i},2^+_{\bar f_j},3^-_\gamma,4^+_\gamma) &= -2e^2Q_f^2\delta^{ij}\frac{\agl{1}{3}\sqr{4}{2}}{\agl{1}{4}\sqr{3}{1}}\,, \\
+    \mathcal M|_*(1^+_{f_i},2^-_{\bar f_j},3^-_\gamma,4^+_\gamma) &= -2e^2Q_f^2\delta^{ij}\frac{\agl{2}{3}\sqr{4}{1}}{\agl{1}{4}\sqr{3}{1}}\,, \\
+    \mathcal M|_*(1^-_{f_i^I},2^+_{\bar f_j^J},3^-_{g^a},4^+_{g^b}) &= -2g_s^2c_f^2T^a_{IK}T^b_{KJ}\delta^{ij}\frac{\agl{1}{3}\sqr{4}{2}}{\agl{1}{4}\sqr{3}{1}}\,, \\
+    \mathcal M|_*(1^+_{f_i^I},2^-_{\bar f_j^J},3^-_{g^a},4^+_{g^b}) &= -2g_s^2c_f^2T^b_{IK}T^a_{KJ}\delta^{ij}\frac{\agl{2}{3}\sqr{4}{1}}{\agl{1}{4}\sqr{3}{1}}\,, \\
+    \mathcal M|_*(1^-_{g^a},2^-_{g^b},3^+_{g^c},4^+_{g^d}) &= -2g_s^2\agl{1}{2}^4\bigg(\frac{f^{abe}f^{cde}}{\agl{1}{2}\agl{2}{3}\agl{3}{4}\agl{4}{1}}+\frac{f^{ace}f^{bde}}{\agl{1}{3}\agl{3}{2}\agl{2}{4}\agl{4}{1}}\bigg)\,,\\
+    \mathcal M|_*(1^-_{f_i^I},2^-_{\bar f_j^J},3^+_{f_k^K},4^+_{\bar f_l^L}) &= -2 (e^2 Q_f^2 \delta_{IL}\delta_{KJ}+g_s^2c_f^2T^a_{IL}T^a_{KJ}) \delta^{il}\delta^{jk} \frac{\agl{1}{2}\sqr{4}{3}}{\agl{1}{4}\sqr{4}{1}}\,, \\
+    \mathcal M|_*(1^-_{f_i^I},2^+_{\bar f_j^J},3^-_{f_k^K},4^+_{\bar f_l^L}) &= +2(e^2Q_f^2\delta_{IJ}\delta_{KL}+g_s^2c_f^2T^a_{IJ}T^a_{KL})\delta^{ij}\delta^{kl} \frac{\agl{1}{3}\sqr{4}{2}}{\agl{1}{2}\sqr{2}{1}}\nonumber \\
+    &\quad - 2(e^2Q_f^2\delta_{IL}\delta_{KJ}+g_s^2c_f^2T^a_{IL}T^a_{KJ}) \delta^{il}\delta^{jk} \frac{\agl{1}{3}\sqr{4}{2}}{\agl{1}{4}\sqr{4}{1}}\,, \\
+    \mathcal M|_*(1^-_{f_i^I},2^+_{\bar f_j^J},3^+_{f_k^K},4^-_{\bar f_l^L}) &= +2(e^2Q_f^2\delta_{IJ}\delta_{KL}+g_s^2c_f^2T^a_{IJ}T^a_{KL})\delta^{ij}\delta^{kl} \frac{\agl{1}{4}\sqr{3}{2}}{\agl{1}{2}\sqr{2}{1}}\,,\\
+    \mathcal M(1^-_{f_i},2^+_\gamma,3^-_{\bar f_j},4_h) &= -\sqrt{2} y_i \delta^{ij} e Q_f \frac{\agl{1}{3}^2}{\agl{1}{2}\agl{2}{3}}\,, \\
+    \mathcal M(1^-_{f_i^I},2^+_{g^a},3^-_{\bar f_j^J},4_h) &= -\sqrt{2} y_i \delta^{ij} g_s c_f T^a_{IJ} \frac{\agl{1}{3}^2}{\agl{1}{2}\agl{2}{3}} \,,\\
+    \mathcal M(1^-_{f_i},2^-_\gamma,3^+_{\bar f_j},4_\phi) &= \frac{2\sqrt 2}{\Lambda} e Q_f \delta^{ij}(\mathcal C_\gamma + i\tilde{\mathcal C}_\gamma)\frac{\agl{1}{2}^2}{\agl{1}{3}}\,,\\
+    \mathcal M(1^-_{f_i^I},2^-_{g^a},3^+_{\bar f_j^J},4_\phi) &= \frac{2\sqrt 2}{\Lambda} g_s c_f T^a_{IJ} \delta^{ij}(\mathcal C_g + i\tilde{\mathcal C}_g)\frac{\agl{1}{2}^2}{\agl{1}{3}}\,,\\
+    \mathcal M(1^-_{f_i},2^-_{\bar f_j},3^+_\gamma,4_\phi) &= -\sqrt 2 e Q_f (\mathcal Y_S^{ij}-i\mathcal Y_P^{ij})\frac{\agl{1}{2}^2}{\agl{1}{3}\agl{2}{3}} \,,\\
+    \mathcal M(1^-_{f_i^I},2^-_{\bar f_j^J},3^+_{g^a},4_\phi) &= -\sqrt 2 g_s c_f T^a_{IJ} (\mathcal Y_S^{ij}-i\mathcal Y_P^{ij})\frac{\agl{1}{2}^2}{\agl{1}{3}\agl{2}{3}}\,,\\
+    \mathcal M(1^-_{g^a},2^-_{g^b},3^+_{g^c},4_\phi) &= -i\frac{2\sqrt 2}{\Lambda}g_sf^{abc}(\mathcal C_g+i\tilde{\mathcal C}_g)\frac{\agl{1}{2}^3}{\agl{1}{3}\agl{2}{3}}\,.
+\end{align}
