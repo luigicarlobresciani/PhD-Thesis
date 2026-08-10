@@ -45,9 +45,19 @@
 \usepackage{lmodern}
 \usepackage{booktabs}
 \usepackage[numbers, sort&compress]{natbib}
+\usepackage[export]{adjustbox}
 %\usepackage{mathpazo} % Palatino font
 
 \makeatletter\g@addto@macro\bfseries{\boldmath}\makeatother
+
+\makeatletter
+\renewcommand\subparagraph{%
+  \@startsection{subparagraph}{5}
+    {0pt}
+    {3.25ex \@plus 1ex \@minus .2ex}
+    {-1em}
+    {\normalfont\normalsize\itshape}}
+\makeatother
 
 \hypersetup{
     pdfencoding=unicode,
@@ -169,3 +179,4 @@
   \end{tikzpicture}}
 
   \def\lb#1{\textbf{[}{\textcolor{violet}{$\mathscr{L}$: #1}\textbf{]}}}
+
