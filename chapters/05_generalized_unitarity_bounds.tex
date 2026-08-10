@@ -186,10 +186,10 @@ vector space $V_{i\to f}$ as follows
 \draw[<-] (n1) to [bend right=100] (n2);
 \node[] (t1) at (1,1.35) {};
 \node[] (t2) at (1,0.35) {\scriptsize$f$};
-\draw[color=Maroon,very thick,densely dotted] (t1) to [] (t2);
+\draw[color=gray,very thick,densely dotted] (t1) to [] (t2);
 \node[] (t3) at (1,-1.35) {};
 \node[] (t4) at (1,-0.35) {\scriptsize$i$};
-\draw[color=Maroon,very thick,densely dotted] (t3) -- (t4);
+\draw[color=gray,very thick, densely dotted] (t3) -- (t4);
 \end{tikzpicture}}\,,
     \label{eq:partial_wave}
 \end{align}
@@ -224,7 +224,7 @@ Indeed, this choice implies
     \draw[->] (n1) to[bend right=25] (n5);
     \node[] (cut1) at (1,0.65) {};
     \node[] (cut2) at (1,-0.65) {};
-    \draw[color=Maroon,very thick,densely dotted] (cut1) -- (cut2);
+    \draw[color=gray,very thick,densely dotted] (cut1) -- (cut2);
     \node[] (txtX) at (1,0.70) {\scriptsize$X$};
     \node[] (n6) at (3,0) {};
     \node[] (n7) at (3,1) {};
@@ -316,7 +316,7 @@ which, when applied to the generalized optical theorem,
     \draw[->] (n1) to[bend right=25] (n5);
     \node[] (cut1) at (1,0.65) {};
     \node[] (cut2) at (1,-0.65) {};
-    \draw[color=Maroon,very thick,densely dotted] (cut1) -- (cut2);
+    \draw[color=gray,very thick,densely dotted] (cut1) -- (cut2);
     \node[] (txtX) at (1,0.70) {\scriptsize$X$};
     \node[] (n6) at (3,0) {};
     \node[] (n7) at (3,1) {};
@@ -762,3 +762,9 @@ In Figure~\ref{SMEFT_plot}, we show the unitarity bounds
 arising from $2\to 2$ and $2\to 3$ scattering processes as induced 
 by $\mathcal L^{(6)}$ and $\mathcal L^{(8)}$; see 
 Eqs.~\eqref{eq:SMEFT_6} and \eqref{eq:SMEFT_8}.
+
+\section{Conclusions}
+
+\begin{subappendices}
+\input{chapters/app_2-to-3_basis}
+\end{subappendices}

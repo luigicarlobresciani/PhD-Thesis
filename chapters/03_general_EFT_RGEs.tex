@@ -25,7 +25,7 @@ J.~Aebischer, L.~C.~Bresciani and N.~Selimovic,\\
 \label{sec:EFT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we set the stage for writing down the general EFT. 
+In this section, we set the stage for formulating the general EFT. 
 We introduce the renormalizable
 interactions and the higher-dimensional operators, together with the corresponding notation that is used in subsequent sections.
 The complete Lagrangian takes the form
@@ -482,7 +482,7 @@ which have to be taken into account and added to the results presented in Sectio
 With $\sum_{\sigma(I)}$ we denote the sum over all permutations of the set of indices $I$, and $\sum_{\sigma(I\times J)} = \sum_{\sigma(I)}\sum_{\sigma(J)}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Sample Computations}
+\section{Method and Sample Computations}
 \label{sec:gEFTexamples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -556,11 +556,12 @@ such that $p_x+p_y = p_a+p_b$, and, accordingly,
     \label{eq:dlips}
 \end{equation}
 
-In all the diagrams that follow, red hatched blobs denote tree-level form factors with an
-insertion of a higher-dimensional operator, blue hatched blobs denote tree-level amplitudes
-built solely from the marginal interactions of $\mathcal L^{(4)}$, and dashed red lines
+In all the diagrams that follow, red blobs denote tree-level form factors with an
+insertion of a higher-dimensional operator, blue blobs denote tree-level amplitudes
+built solely from the marginal interactions of $\mathcal L^{(4)}$, and dashed gray lines
 indicate the two-particle cut.
 
+%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%
 \subsection{\texorpdfstring{Bosonic Self-Mixing: $\phi^2 F^2 \leftarrow \phi^2 F^2$}{Bosonic Self-Mixing: phi2F2 from phi2F2}}
 \label{sec:ex_phi2F2}
@@ -575,10 +576,10 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
 \begin{tikzpicture}[baseline={(current bounding box.center)}]
             \begin{feynman}[small]
             \node [ffblob] (a);
-            \vertex [below right=1.3cm of a] (b) {\(4_{B_\beta}^-\)};
-            \vertex [above right=1.3cm  of a] (c) {\(3_{A_\alpha}^-\)} ;
-            \vertex [below left=1.3cm of a] (d) {\(2_b\)} ;
-            \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+            \vertex [below right=1.5cm of a] (b) {\(4_{B_\beta}^-\)};
+            \vertex [above right=1.5cm  of a] (c) {\(3_{A_\alpha}^-\)} ;
+            \vertex [below left=1.5cm of a] (d) {\(2_b\)} ;
+            \vertex [above left=1.5cm of a] (e) {\(1_a\)};
             \diagram*{
                 (a) -- [photon] (b),
                 (a) -- [photon] (c),
@@ -588,14 +589,14 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
             \end{feynman}
             \end{tikzpicture}
              =\nonumber \\
-		 &  \delta_{\alpha\beta}\sum_{h_x,h_y=\pm}
+&\qquad  \delta_{\alpha\beta}\sum_{h_x,h_y=\pm}
             \begin{tikzpicture}[baseline={(current bounding box.center)}]
             \begin{feynman}[small]
             \node [ffblob] (a);
-            \vertex [below right=1.3cm of a] (b) {\(y_{D_\alpha}^{h_y}\)};
-            \vertex [above right=1.3cm  of a] (c) {\(x_{C_\alpha}^{h_x}\)} ;
-            \vertex [below left=1.3cm of a] (d) {\(2_b\)} ;
-            \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+            \vertex [below right=1.5cm of a] (b) {\(y_{D_\alpha}^{h_y}\)};
+            \vertex [above right=1.5cm  of a] (c) {\(x_{C_\alpha}^{h_x}\)} ;
+            \vertex [below left=1.5cm of a] (d) {\(2_b\)} ;
+            \vertex [above left=1.5cm of a] (e) {\(1_a\)};
             \diagram*{
                 (a) -- [photon] (b),
                 (a) -- [photon] (c),
@@ -608,10 +609,10 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
             \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.3cm of a] (b) {\(4_{B_\alpha}^{-}\)};
-                \vertex [above right=1.3cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
-                \vertex [below left=1.3cm of a] (d) {\(-y_{D_\alpha}^{-h_y}\)} ;
-                \vertex [above left=1.3cm of a] (e) {\(-x_{C_\alpha}^{-h_x}\)};
+                \vertex [below right=1.5cm of a] (b) {\(4_{B_\alpha}^{-}\)};
+                \vertex [above right=1.5cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(-y_{D_\alpha}^{-h_y}\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-x_{C_\alpha}^{-h_x}\)};
                 \diagram*{
                     (a) -- [photon] (b),
                     (a) -- [photon] (c),
@@ -620,14 +621,15 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
                 };
                 \end{feynman}
                 \end{tikzpicture}
+                %\nonumber \\&\qquad 
                 +
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ffblob] (a);
-                \vertex [below right=1.3cm of a] (b) {\(y_d\)};
-                \vertex [above right=1.3cm  of a] (c) {\(x_c\)} ;
-                \vertex [below left=1.3cm of a] (d) {\(4_{B_\beta}^-\)} ;
-                \vertex [above left=1.3cm of a] (e) {\(3_{A_\alpha}^-\)};
+                \vertex [below right=1.5cm of a] (b) {\(y_d\)};
+                \vertex [above right=1.5cm  of a] (c) {\(x_c\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(4_{B_\beta}^-\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(3_{A_\alpha}^-\)};
                 \diagram*{
                     (a) -- [scalar] (b),
                     (a) -- [scalar] (c),
@@ -640,10 +642,10 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
                                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                     \begin{feynman}[small]
                     \node [ampblob] (a);
-                    \vertex [below right=1.3cm of a] (b) {\(2_b\)};
-                    \vertex [above right=1.3cm of a] (c) {\(1_a\)} ;
-                    \vertex [below left=1.3cm of a] (d) {\(-y_d\)} ;
-                    \vertex [above left=1.3cm of a] (e) {\(-x_c\)};
+                    \vertex [below right=1.5cm of a] (b) {\(2_b\)};
+                    \vertex [above right=1.5cm of a] (c) {\(1_a\)} ;
+                    \vertex [below left=1.5cm of a] (d) {\(-y_d\)} ;
+                    \vertex [above left=1.5cm of a] (e) {\(-x_c\)};
                     \diagram*{
                         (a) -- [scalar] (b),
                         (a) -- [scalar] (c),
@@ -652,16 +654,16 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
                     };
                     \end{feynman}
                     \end{tikzpicture}\nonumber \\
-		 &+
+&\qquad +
                     \sum_{\sigma(\{a,b\}\times \{A_\alpha,B_\beta\})}\sum_{\gamma=1}^{N_G}
                     \sum_{h_y=\pm}
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                     \begin{feynman}[small]
                     \node [ffblob] (a);
-                    \vertex [below right=1.3cm of a] (b) {\(y_{C_\gamma}^{h_y}\)};
-                    \vertex [above right=1.3cm of a] (c) {\(x_c\)} ;
-                    \vertex [below left=1.3cm of a] (d) {\(3_{A_\alpha}^-\)} ;
-                    \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+                    \vertex [below right=1.5cm of a] (b) {\(y_{C_\gamma}^{h_y}\)};
+                    \vertex [above right=1.5cm of a] (c) {\(x_c\)} ;
+                    \vertex [below left=1.5cm of a] (d) {\(3_{A_\alpha}^-\)} ;
+                    \vertex [above left=1.5cm of a] (e) {\(1_a\)};
                     \diagram*{
                         (a) -- [photon] (b),
                         (a) -- [scalar] (c),
@@ -674,10 +676,10 @@ Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagra
                     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                         \begin{feynman}[small]
                         \node [ampblob] (a);
-                        \vertex [below right=1.3cm of a] (b) {\(4_{B_\beta}^-\)};
-                        \vertex [above right=1.3cm of a] (c) {\(2_b\)} ;
-                        \vertex [below left=1.3cm of a] (d) {\(-y_{C_\gamma}^{-h_y}\)} ;
-                        \vertex [above left=1.3cm of a] (e) {\(-x_c\)};
+                        \vertex [below right=1.5cm of a] (b) {\(4_{B_\beta}^-\)};
+                        \vertex [above right=1.5cm of a] (c) {\(2_b\)} ;
+                        \vertex [below left=1.5cm of a] (d) {\(-y_{C_\gamma}^{-h_y}\)} ;
+                        \vertex [above left=1.5cm of a] (e) {\(-x_c\)};
                         \diagram*{
                             (a) -- [photon] (b),
                             (a) -- [scalar] (c),
@@ -696,14 +698,14 @@ permutes the external scalars and gauge bosons.
 
 The first cut of Eq.~\eqref{eq:diag-master-formula} is given by
 \begin{align}
-    \mathcal{C}_1 = \sum_{h_x,h_y=\pm}
+    \mathcal{C}_1 &= \sum_{h_x,h_y=\pm}
             \begin{tikzpicture}[baseline={(current bounding box.center)}]
             \begin{feynman}[small]
             \node [ffblob] (a);
-            \vertex [below right=1.3cm of a] (b) {\(y_{D_\alpha}^{h_y}\)};
-            \vertex [above right=1.3cm  of a] (c) {\(x_{C_\alpha}^{h_x}\)} ;
-            \vertex [below left=1.3cm of a] (d) {\(2_b\)} ;
-            \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+            \vertex [below right=1.5cm of a] (b) {\(y_{D_\alpha}^{h_y}\)};
+            \vertex [above right=1.5cm  of a] (c) {\(x_{C_\alpha}^{h_x}\)} ;
+            \vertex [below left=1.5cm of a] (d) {\(2_b\)} ;
+            \vertex [above left=1.5cm of a] (e) {\(1_a\)};
             \diagram*{
                 (a) -- [photon] (b),
                 (a) -- [photon] (c),
@@ -716,10 +718,10 @@ The first cut of Eq.~\eqref{eq:diag-master-formula} is given by
             \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.3cm of a] (b) {\(4_{B_\alpha}^{-}\)};
-                \vertex [above right=1.3cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
-                \vertex [below left=1.3cm of a] (d) {\(-y_{D_\alpha}^{-h_y}\)} ;
-                \vertex [above left=1.3cm of a] (e) {\(-x_{C_\alpha}^{-h_x}\)};
+                \vertex [below right=1.5cm of a] (b) {\(4_{B_\alpha}^{-}\)};
+                \vertex [above right=1.5cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(-y_{D_\alpha}^{-h_y}\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-x_{C_\alpha}^{-h_x}\)};
                 \diagram*{
                     (a) -- [photon] (b),
                     (a) -- [photon] (c),
@@ -728,14 +730,15 @@ The first cut of Eq.~\eqref{eq:diag-master-formula} is given by
                 };
                 \end{feynman}
                 \end{tikzpicture}
+                \nonumber \\&
                 =
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
             \begin{feynman}[small]
             \node [ffblob] (a);
-            \vertex [below right=1.3cm of a] (b) {\(y_{D_\alpha}^{-}\)};
-            \vertex [above right=1.3cm  of a] (c) {\(x_{C_\alpha}^{-}\)} ;
-            \vertex [below left=1.3cm of a] (d) {\(2_b\)} ;
-            \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+            \vertex [below right=1.5cm of a] (b) {\(y_{D_\alpha}^{-}\)};
+            \vertex [above right=1.5cm  of a] (c) {\(x_{C_\alpha}^{-}\)} ;
+            \vertex [below left=1.5cm of a] (d) {\(2_b\)} ;
+            \vertex [above left=1.5cm of a] (e) {\(1_a\)};
             \diagram*{
                 (a) -- [photon] (b),
                 (a) -- [photon] (c),
@@ -748,10 +751,10 @@ The first cut of Eq.~\eqref{eq:diag-master-formula} is given by
             \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.3cm of a] (b) {\(4_{B_\alpha}^{-}\)};
-                \vertex [above right=1.3cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
-                \vertex [below left=1.3cm of a] (d) {\(-y_{D_\alpha}^{+}\)} ;
-                \vertex [above left=1.3cm of a] (e) {\(-x_{C_\alpha}^{+}\)};
+                \vertex [below right=1.5cm of a] (b) {\(4_{B_\alpha}^{-}\)};
+                \vertex [above right=1.5cm of a] (c) {\(3_{A_\alpha}^{-}\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(-y_{D_\alpha}^{+}\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-x_{C_\alpha}^{+}\)};
                 \diagram*{
                     (a) -- [photon] (b),
                     (a) -- [photon] (c),
@@ -774,7 +777,7 @@ Together with the form factor of Table~\ref{tab:dim6FFs}, the final expression r
     \left(F^{A_\alpha C_\alpha B_\alpha D_\alpha}\agl{3}{4}\agl{x}{y}
     - F^{A_\alpha B_\alpha C_\alpha D_\alpha}\agl{3}{x}\agl{4}{y}\right)\,,
 \end{equation}
-with $F^{A_\alpha B_\alpha C_\alpha D_\alpha}$ defined in Eq.~\eqref{eq:TYF_defs}.
+with $F^{A_\alpha B_\alpha C_\alpha D_\alpha} = f^{A_\alpha B_\alpha E_\alpha} f^{C_\alpha D_\alpha E_\alpha}$.
 By parameterizing the internal spinors $(x,y)$ as linear combinations of the spinors $(3,4)$
 as in Eq.~\eqref{eq:stokesparam}, we find
 \begin{equation}
@@ -789,10 +792,10 @@ The second cut of Eq.~\eqref{eq:diag-master-formula} is
     \mathcal{C}_2 &= \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ffblob] (a);
-                \vertex [below right=1.3cm of a] (b) {\(y_d\)};
-                \vertex [above right=1.3cm  of a] (c) {\(x_c\)} ;
-                \vertex [below left=1.3cm of a] (d) {\(4_{B_\beta}^-\)} ;
-                \vertex [above left=1.3cm of a] (e) {\(3_{A_\alpha}^-\)};
+                \vertex [below right=1.5cm of a] (b) {\(y_d\)};
+                \vertex [above right=1.5cm  of a] (c) {\(x_c\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(4_{B_\beta}^-\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(3_{A_\alpha}^-\)};
                 \diagram*{
                     (a) -- [scalar] (b),
                     (a) -- [scalar] (c),
@@ -805,10 +808,10 @@ The second cut of Eq.~\eqref{eq:diag-master-formula} is
                                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                     \begin{feynman}[small]
                     \node [ampblob] (a);
-                    \vertex [below right=1.3cm of a] (b) {\(2_b\)};
-                    \vertex [above right=1.3cm of a] (c) {\(1_a\)} ;
-                    \vertex [below left=1.3cm of a] (d) {\(-y_d\)} ;
-                    \vertex [above left=1.3cm of a] (e) {\(-x_c\)};
+                    \vertex [below right=1.5cm of a] (b) {\(2_b\)};
+                    \vertex [above right=1.5cm of a] (c) {\(1_a\)} ;
+                    \vertex [below left=1.5cm of a] (d) {\(-y_d\)} ;
+                    \vertex [above left=1.5cm of a] (e) {\(-x_c\)};
                     \diagram*{
                         (a) -- [scalar] (b),
                         (a) -- [scalar] (c),
@@ -829,7 +832,7 @@ The second cut of Eq.~\eqref{eq:diag-master-formula} is
     -\lambda_{abcd}
     \right]\,,
 \end{align}
-with $T^\gamma_{abcd}$ defined in Eq.~\eqref{eq:T_def}.
+with $T^\gamma_{abcd} = \theta^{A_\gamma}_{ab}\theta^{A_\gamma}_{cd}$.
 After parameterizing $(x,y)$ in terms of $(1,2)$, one finds
 \begin{align}
     \mathcal{C}_2(z,\bar z) &= 2 \mathcal S_{\alpha\beta}
@@ -849,6 +852,7 @@ After parameterizing $(x,y)$ in terms of $(1,2)$, one finds
     \lambda_{abcd}
     \right]\,.
 \end{align}
+
 Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
 \begin{align}
     \mathcal{C}_3 &=
@@ -856,10 +860,10 @@ Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                     \begin{feynman}[small]
                     \node [ffblob] (a);
-                    \vertex [below right=1.3cm of a] (b) {\(y_{C_\gamma}^{h_y}\)};
-                    \vertex [above right=1.3cm of a] (c) {\(x_c\)} ;
-                    \vertex [below left=1.3cm of a] (d) {\(3_{A_\alpha}^-\)} ;
-                    \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+                    \vertex [below right=1.5cm of a] (b) {\(y_{C_\gamma}^{h_y}\)};
+                    \vertex [above right=1.5cm of a] (c) {\(x_c\)} ;
+                    \vertex [below left=1.5cm of a] (d) {\(3_{A_\alpha}^-\)} ;
+                    \vertex [above left=1.5cm of a] (e) {\(1_a\)};
                     \diagram*{
                         (a) -- [photon] (b),
                         (a) -- [scalar] (c),
@@ -872,10 +876,10 @@ Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
                     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                         \begin{feynman}[small]
                         \node [ampblob] (a);
-                        \vertex [below right=1.3cm of a] (b) {\(4_{B_\beta}^-\)};
-                        \vertex [above right=1.3cm of a] (c) {\(2_b\)} ;
-                        \vertex [below left=1.3cm of a] (d) {\(-y_{C_\gamma}^{-h_y}\)} ;
-                        \vertex [above left=1.3cm of a] (e) {\(-x_c\)};
+                        \vertex [below right=1.5cm of a] (b) {\(4_{B_\beta}^-\)};
+                        \vertex [above right=1.5cm of a] (c) {\(2_b\)} ;
+                        \vertex [below left=1.5cm of a] (d) {\(-y_{C_\gamma}^{-h_y}\)} ;
+                        \vertex [above left=1.5cm of a] (e) {\(-x_c\)};
                         \diagram*{
                             (a) -- [photon] (b),
                             (a) -- [scalar] (c),
@@ -884,14 +888,15 @@ Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
                         };
                         \end{feynman}
                         \end{tikzpicture}
-                        =
+                        \nonumber\\
+    &=
                         \begin{tikzpicture}[baseline={(current bounding box.center)}]
                     \begin{feynman}[small]
                     \node [ffblob] (a);
-                    \vertex [below right=1.3cm of a] (b) {\(y_{C_\gamma}^{-}\)};
-                    \vertex [above right=1.3cm of a] (c) {\(x_c\)} ;
-                    \vertex [below left=1.3cm of a] (d) {\(3_{A_\alpha}^-\)} ;
-                    \vertex [above left=1.3cm of a] (e) {\(1_a\)};
+                    \vertex [below right=1.5cm of a] (b) {\(y_{C_\gamma}^{-}\)};
+                    \vertex [above right=1.5cm of a] (c) {\(x_c\)} ;
+                    \vertex [below left=1.5cm of a] (d) {\(3_{A_\alpha}^-\)} ;
+                    \vertex [above left=1.5cm of a] (e) {\(1_a\)};
                     \diagram*{
                         (a) -- [photon] (b),
                         (a) -- [scalar] (c),
@@ -904,10 +909,10 @@ Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
                     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                         \begin{feynman}[small]
                         \node [ampblob] (a);
-                        \vertex [below right=1.3cm of a] (b) {\(4_{B_\beta}^-\)};
-                        \vertex [above right=1.3cm of a] (c) {\(2_b\)} ;
-                        \vertex [below left=1.3cm of a] (d) {\(-y_{C_\gamma}^{+}\)} ;
-                        \vertex [above left=1.3cm of a] (e) {\(-x_c\)};
+                        \vertex [below right=1.5cm of a] (b) {\(4_{B_\beta}^-\)};
+                        \vertex [above right=1.5cm of a] (c) {\(2_b\)} ;
+                        \vertex [below left=1.5cm of a] (d) {\(-y_{C_\gamma}^{+}\)} ;
+                        \vertex [above left=1.5cm of a] (e) {\(-x_c\)};
                         \diagram*{
                             (a) -- [photon] (b),
                             (a) -- [scalar] (c),
@@ -932,7 +937,7 @@ Finally, the third cut of Eq.~\eqref{eq:diag-master-formula} is given by
     \right)
     \bigg]\,,
 \end{align}
-with $Y^{A_\alpha B_\beta}_{ab}$ defined in Eq.~\eqref{eq:Y_def}.
+with $Y^{A_\alpha B_\beta}_{ab} = \theta^{A_\alpha}_{ac}\theta^{B_\beta}_{cb}$.
 Again, only $h_y=-$ gives a non-vanishing contribution.
 The parameterization of $(x,y)$ in terms of $(2,4)$ yields the rational function
 \begin{align}
@@ -954,6 +959,7 @@ The parameterization of $(x,y)$ in terms of $(2,4)$ yields the rational function
     \right)
     \bigg]\,.
 \end{align}
+
 The evaluation of the right-hand side of Eq.~\eqref{eq:diag-master-formula} is then achieved
 by applying the Stokes integration procedure to the function
 \begin{equation}
@@ -964,7 +970,7 @@ by applying the Stokes integration procedure to the function
 where the factors of $1/2$ account for the integration over indistinguishable particles.
 The integral over $\bar z$ generates the rational contribution
 \begin{align}
-    G(z,\bar z) &= \text{Rational}\left[ \int \frac{\text{d}\bar z}{(1+z\bar z)^2}\mathcal{C}(z,\bar z)\right] \nonumber \\
+    G_{\rm rat}(z,\bar z) &= \text{Rat} \int \frac{\text{d}\bar z}{(1+z\bar z)^2}\mathcal{C}(z,\bar z) \nonumber \\
     &= \mathcal S_{\alpha\beta} \left[C_{\phi^2F^2}\right]^{A_\alpha B_\beta}_{cd}\agl{3}{4}^2
     \frac{1}{z(1+z\bar z)^2}\bigg[
     \sum_{\gamma=1}^{N_G} g_\gamma^2 [-z\bar z T^\gamma_{abcd}+(1+z\bar z ) (T^\gamma_{acbd}+T^\gamma_{adbc})]
@@ -984,7 +990,7 @@ The integral over $\bar z$ generates the rational contribution
 \end{align}
 Lastly, the phase-space integration is given by the residue of $G(z,\bar z)$ at $z_0=0$:
 \begin{align}
-\int \text{dLIPS}_2 \, \mathcal{C} &= -\frac{1}{8\pi} \Res_{(z_0,\bar z_0)=(0,0)} G(z,\bar z) \nonumber \\
+\int \text{dLIPS}_2 \, \mathcal{C} &= -\frac{1}{8\pi} \Res_{(z_0,\bar z_0)=(0,0)} G_{\rm rat}(z,\bar z) \nonumber \\
 &=
 \frac{1}{8\pi} \mathcal S_{\alpha\beta} \left[C_{\phi^2F^2}\right]^{A_\alpha B_\beta}_{cd}\agl{3}{4}^2
 \bigg[
@@ -1026,10 +1032,10 @@ The anomalous dimension receives contributions from three unitarity cuts:
 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ffblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(x_{A_\alpha}^-\)};
-                \vertex [above right=1.7cm of a] (c) {\(y_{B_\beta}^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(2_b\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(1_{a}\)};
+                \vertex [below right=1.5cm of a] (b) {\(x_{A_\alpha}^-\)};
+                \vertex [above right=1.5cm of a] (c) {\(y_{B_\beta}^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(2_b\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(1_{a}\)};
                 \diagram*{
                     (a) -- [photon] (b),
                     (a) -- [photon] (c),
@@ -1044,11 +1050,11 @@ The anomalous dimension receives contributions from three unitarity cuts:
     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(3_c\)};
-                \vertex [above right=1.7cm of a] (c) {\(5_j^-\)} ;
+                \vertex [below right=1.5cm of a] (b) {\(3_c\)};
+                \vertex [above right=1.5cm of a] (c) {\(5_j^-\)} ;
                 \vertex [right=1.2cm of a] (f) {\(4_i^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(-x_{A_\alpha}^+\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(-y_{B_\beta}^+\)};
+                \vertex [below left=1.5cm of a] (d) {\(-x_{A_\alpha}^+\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-y_{B_\beta}^+\)};
                 \diagram*{
                     (a) -- [scalar] (b),
                     (a) -- [fermion] (c),
@@ -1063,11 +1069,11 @@ The anomalous dimension receives contributions from three unitarity cuts:
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ffblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(x_{d}\)};
-                \vertex [above right=1.7cm of a] (c) {\(y_{A_\alpha}^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(3_c\)} ;
+                \vertex [below right=1.5cm of a] (b) {\(x_{d}\)};
+                \vertex [above right=1.5cm of a] (c) {\(y_{A_\alpha}^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(3_c\)} ;
                 \vertex [left=1.2cm of a] (f) {\(2_b\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(1_{a}\)};
+                \vertex [above left=1.5cm of a] (e) {\(1_{a}\)};
                 \diagram*{
                     (a) -- [scalar] (b),
                     (a) -- [photon] (c),
@@ -1083,10 +1089,10 @@ The anomalous dimension receives contributions from three unitarity cuts:
     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(4_i^-\)};
-                \vertex [above right=1.7cm of a] (c) {\(5_j^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(-x_d\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(-y^+_{A_\alpha}\)};
+                \vertex [below right=1.5cm of a] (b) {\(4_i^-\)};
+                \vertex [above right=1.5cm of a] (c) {\(5_j^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(-x_d\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-y^+_{A_\alpha}\)};
                 \diagram*{
                     (a) -- [fermion] (b),
                     (a) -- [fermion] (c),
@@ -1100,11 +1106,11 @@ The anomalous dimension receives contributions from three unitarity cuts:
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ffblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(x_{k}^+\)};
-                \vertex [above right=1.7cm of a] (c) {\(y_{A_\alpha}^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(4_i^-\)} ;
+                \vertex [below right=1.5cm of a] (b) {\(x_{k}^+\)};
+                \vertex [above right=1.5cm of a] (c) {\(y_{A_\alpha}^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(4_i^-\)} ;
                 \vertex [left=1.2cm of a] (f) {\(2_b\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(1_{a}\)};
+                \vertex [above left=1.5cm of a] (e) {\(1_{a}\)};
                 \diagram*{
                     (b) -- [fermion] (a),
                     (a) -- [photon] (c),
@@ -1120,10 +1126,10 @@ The anomalous dimension receives contributions from three unitarity cuts:
     \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(3_c\)};
-                \vertex [above right=1.7cm of a] (c) {\(5_j^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(-x_k^-\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(-y^+_{A_\alpha}\)};
+                \vertex [below right=1.5cm of a] (b) {\(3_c\)};
+                \vertex [above right=1.5cm of a] (c) {\(5_j^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(-x_k^-\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(-y^+_{A_\alpha}\)};
                 \diagram*{
                     (a) -- [scalar] (b),
                     (a) -- [fermion] (c),
@@ -1177,10 +1183,10 @@ which follows from requiring the gauge invariance of the tree-level amplitude
                 \begin{tikzpicture}[baseline={(current bounding box.center)}]
                 \begin{feynman}[small]
                 \node [ampblob] (a);
-                \vertex [below right=1.7cm of a] (b) {\(3_i^-\)};
-                \vertex [above right=1.7cm of a] (c) {\(4_j^-\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(2_a\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(1_{A_\alpha}^+\)};
+                \vertex [below right=1.5cm of a] (b) {\(3_i^-\)};
+                \vertex [above right=1.5cm of a] (c) {\(4_j^-\)} ;
+                \vertex [below left=1.5cm of a] (d) {\(2_a\)} ;
+                \vertex [above left=1.5cm of a] (e) {\(1_{A_\alpha}^+\)};
                 \diagram*{
                     (a) -- [fermion] (b),
                     (a) -- [fermion] (c),
@@ -1281,6 +1287,8 @@ The same pattern underlies more generally the holomorphic structure in the SMEFT
 in Ref.~\cite{Alonso:2014rga} and that can be noted in the results of the general EFT reported in Section~\ref{sec:gEFTresults}, which, in the standard formalism, appears after non-trivial
 cancellations between Green-basis contributions, while it is manifest on shell.
 
+\input{images/graph}
+
 \section{Results\label{sec:gEFTresults}}
 
 This section contains the complete RGEs for the general EFT defined in Eq.~\eqref{eq:fullEFT}.
@@ -1288,8 +1296,6 @@ The contributions are ordered according to their mass dimension, starting from h
 
 A graphical representation of the mixing pattern involving dimension-five and -six bosonic operators is depicted in Figure~\ref{fig:graph}. 
 The figure can also be used to navigate the individual results of the bosonic anomalous-dimension matrix elements.
-
-\input{images/graph} 
 
 \subsection{Running of Dimension-Six Operators}
 
@@ -3140,7 +3146,7 @@ The explicit expressions for $\dot{\tildee C}_{D^2\phi^4}$ and $\dot{\overline C
 % Second, we cross-check numerous results collected in the literature for the SMEFT extended by an additional axion-like particle ($a+$SMEFT) and other theories. 
 % Our purpose is twofold: We cross-check our results against the ones from Alonso, Jenkins, Manohar, and Trott~\cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga}, and, secondly, we illustrate how to use our results to derive RGEs of other EFTs with arbitrary symmetry and particle content. 
 
-\section{Comparison with the Standard Model Effective Field Theory}
+\section{Cross-Check with the Standard Model Effective Field Theory}
 
 This section applies the results for the RGEs of the generic EFT to the specific cases of 
 the SMEFT and derives the RGEs for its bosonic and fermionic sectors.
@@ -3159,7 +3165,7 @@ under the gauge factor $G_\alpha$. Next, we identify the transformation of the \
     \phi = \begin{pmatrix}
         \Re \varphi \\
         \Im \varphi
-    \end{pmatrix}\,,\quad \phi \rightarrow \exp(i\sum_{\alpha=1}^{N_G}\varepsilon^{A_{\alpha}} \theta^{A_\alpha})\phi\,,
+    \end{pmatrix}\,,\qquad \phi \rightarrow \exp(i\sum_{\alpha=1}^{N_G}\varepsilon^{A_{\alpha}} \theta^{A_\alpha})\phi\,,
 \end{equation}
 implying the following form of the generators $\theta^{A_\alpha}$ 
 \begin{equation}
@@ -3169,7 +3175,7 @@ implying the following form of the generators $\theta^{A_\alpha}$
     \end{pmatrix}\,.
     \label{eq:real_generators}
 \end{equation}
-The generators $\theta^{A_\alpha}$ are therefore purely imaginary and antisymmetric.
+The scalar generators $\theta^{A_\alpha}$ are therefore purely imaginary and antisymmetric.
 
 \subsubsection{The Standard Model}
 
@@ -4033,7 +4039,7 @@ which results in
 \begin{equation}
     \dot{C}_{HWB} = -3g_1 g_2^2 C_W\,.
 \end{equation}
-Since the RGE formula for the CP-odd operators is the same, their running is also given by the above results with the substitution $F\to \tildee F$.
+Since the RGEs for the CP-odd operators are the same, their running is also given by the above results with the substitution $F\to \tildee F$.
 
 \subsubsection{\texorpdfstring{$F^3$}{F3}-Class Anomalous Dimension}
 
@@ -4043,7 +4049,7 @@ The relevant RGEs for this sector are given in Eqs.~\eqref{eq:F3_to_F3} and~\eqr
 \begin{equation}
     F^{B_\alpha C_\alpha D_\alpha F_\alpha} \left[ C_{F^3}\right]^{A_\alpha D_\alpha F_\alpha} = C_2(G_\alpha) \left[ C_{F^3}\right]^{A_\alpha B_\alpha C_\alpha}\,,
 \end{equation}
-where $C_2(G_\alpha)$ is the quadratic Casimir of the adjoint representation. In combination with the gauge boson collinear anomalous dimensions in Table~\ref{tab:collinear_SM}, one finds
+where $C_2(G_\alpha)$ is the quadratic Casimir of the adjoint representation of the gauge group $G_\alpha$. In combination with the gauge boson collinear anomalous dimensions in Table~\ref{tab:collinear_SM}, one finds
 \begin{align}
     \dot C_{G} &= 3(12 - b_{0,3})\,g_3^2\, C_{G} \,,\\
     \dot C_{W} &= 3(8 - b_{0,2})\,g_2^2\, C_{W} \,.
@@ -4241,7 +4247,7 @@ while in the third line
     \qquad
     \sum_{\sigma(\{a,b,c\})} \mathcal H_c^{j}\mathcal H_d^{j*} \delta_{(ab}\mathcal H_{d)}^{i} = 8\, \delta_{(ab}\mathcal H^i_{c)}\,.
 \end{align}
-In the fourth line the contraction $\mathcal H^i_d \mathcal H^j_d = 0$ correctly implies that there is no $Q_{eH} \leftarrow Q_{eH}^\dagger$ mixing.
+In the fourth line, the contraction $\mathcal H^i_d \mathcal H^j_d = 0$ correctly implies that there is no $Q_{eH} \leftarrow Q_{eH}^\dagger$ mixing.
 Thus, Eq.~\eqref{eq:yukawadep_partial} leads to
 \begin{align}
     [\dot C_{eH}]_{pr}
@@ -4477,7 +4483,7 @@ in agreement with~\cite{Jenkins:2013zja,Jenkins:2013wua}.
 
 The anomalous dimension of the operator $Q_{eH}$ receives additional contributions from the operators in the $D^2\phi^4$ and $D\overline \psi \psi \phi^2$ classes, which could also be checked with the results derived here in Section~\ref{sec:gEFTresults}.
 
-\section{Comparison with the Low-Energy Effective Field Theory}
+\section{Cross-Check with the Low-Energy Effective Field Theory}
 
 We now perform the projection of the general Lagrangian onto the LEFT, restricting our attention to the fermion masses and the dimension-five dipole operators, which correspond to operator classes that are absent in the SMEFT. 
 Then, we compute the running of the gauge couplings and the topological angles, which is induced precisely by the fermion masses and dipoles.
@@ -4611,7 +4617,7 @@ Similarly, the corresponding running of $g$ and of the topological angles $\vart
     \dot \vartheta_{\mathrm{QCD}} &=-\frac{128\pi^2}{g^2}\Im{[M_u]_{pr}[L_{u\gamma}]_{rs}[M_u]_{st}[L_{u\gamma}]_{tp} + [M_d]_{pr}[L_{d\gamma}]_{rs}[M_d]_{st}[L_{d\gamma}]_{tp}} \,.
 \end{align}
 
-\section{Comparison with the \texorpdfstring{$O(n)$}{O(n)} Effective Field Theory}
+\section{Cross-Check with the \texorpdfstring{$O(n)$}{O(n)} Effective Field Theory}
 
 Finally, we consider the $O(n)$ scalar EFT. 
 This theory includes $n$ real scalar gauge singlets $\phi$ and is invariant under global $O(n)$ transformations.
@@ -4665,7 +4671,7 @@ For the former, one can apply the substitution $\delta_{ad}\delta_{bc}+\delta_{a
 \begin{equation}
     \dot C_E = 4\,\lambda\, (2+n)\, C_E\,.
 \end{equation}
-The latter running is obtained by subtracting $\dot C_E \delta_{ab}\delta_{cd}$ from Eq.~\eqref{eq:O(n)_D2phi4}:
+The anomalous dimension of the former is obtained by subtracting $\dot C_E \delta_{ab}\delta_{cd}$ from the expression in Eq.~\eqref{eq:O(n)_D2phi4}:
 \begin{align}
     \left[\dot{\tildee C}_{D^2\phi^4}\right]_{abcd} &= 4\lambda C_E  [(1+n)\delta_{ab}\delta_{cd}-\delta_{ad}\delta_{bc}-\delta_{ac}\delta_{bd}] - \dot C_E \delta_{ab}\delta_{cd}\nonumber \\
     &= -4\lambda C_E (\delta_{ab}\delta_{cd}+\delta_{ad}\delta_{bc}+\delta_{ac}\delta_{bd})\,.
@@ -4694,7 +4700,7 @@ and therefore
 Also for this anomalous dimension, one can exploit both Eqs.~\eqref{eq:phi4<-D2phi4} and \eqref{eq:Ctildedot}:
 \begin{align}
     \dot \lambda_{abcd} &=- \sum_{\sigma(\{a,b,c,d\})} \bigg[ 
-    m^2_{ae}\frac{1}{3} \left[\dot{\tildee C}_{D^2\phi^4}\right]_{bcde} +  2 m^2_{ef}\lambda_{gfab}C_E\delta_{eg}\delta_{cd}\nonumber \\
+    \frac{1}{3}  m^2_{ae}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{bcde} +  2 m^2_{ef}\lambda_{gfab}C_E\delta_{eg}\delta_{cd}\nonumber \\
     &\quad +\left(\frac{1}{3}m^2_{ef}\lambda_{gcab}+m^2_{gc}\lambda_{efab}\right)C_E\left(\delta_{gf}\delta_{ed}+\delta_{ge}\delta_{fd}-\delta_{fe}\delta_{gd}\right)\nonumber \\
     &\quad - \frac{4}{3!} \lambda_{ebcd} m^2_{fg}C_E \left(\delta_{fe}\delta_{ag}-\delta_{fg}\delta_{ae}\right)\bigg]\nonumber \\
     &= -96 \lambda m^2 (3+n) C_E \delta_{(ab}\delta_{cd)} \,,
@@ -4717,3 +4723,5 @@ which gives
 \begin{equation}
     \dot {(m^2)} = -8\, n\, m^4\, C_E\,.
 \end{equation}
+
+\section{Conclusions}

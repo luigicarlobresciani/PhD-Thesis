@@ -165,5 +165,7 @@
 }
 \newcommand{\cutline}{%
   \begin{tikzpicture}[baseline={(current bounding box.center)}]
-    \draw[dashed, red, very thick] (0,-1.3) -- (0,1.3);
+    \draw[dashed, gray, very thick] (0,-1.3) -- (0,1.3);
   \end{tikzpicture}}
+
+  \def\lb#1{\textbf{[}{\textcolor{violet}{$\mathscr{L}$: #1}\textbf{]}}}
