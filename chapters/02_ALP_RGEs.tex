@@ -6,7 +6,7 @@
 
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 
-\textit{This chapter is based on}\\[0.5em]
+\textit{This chapter is based on Ref.~\cite{Bresciani:2024shu}:}\\[0.5em]
 L.~C.~Bresciani, G.~Brunello, G.~Levati, P.~Mastrolia and P.~Paradisi,\\
 ``Renormalization of effective field theories via on-shell methods: the case of axion-like particles,''\\
 \href{https://doi.org/10.1007/JHEP10(2025)190}{JHEP \textbf{10} (2025), 190}
@@ -191,10 +191,10 @@ The right-hand sides of Eqs.~\eqref{eq:ALPmasterformula} and \eqref{eq:ALPmaster
 correspond to a sum over all one-loop two-particle unitarity cuts,
 \begin{align}
 \label{eq:ALPMF1Loop}
-    (\mathcal M F_j)(1,\dotsc,n) =
+    (\mathcal M F_j)(1,\dotsc,n) &=
    \sum_{k=2}^n \sum_{\{x,y\}}\int \text{dLIPS}_2
    %\nonumber\\&\times
-   \sum_{h_1,h_2} F_j(x^{h_1},y^{h_2},k + 1,\dotsc,n)\, \mathcal M(1,\dotsc,k;x^{h_1},y^{h_2})\, ,
+   \sum_{h_1,h_2} F_j(x^{h_1},y^{h_2},k + 1,\dotsc,n)\, \mathcal M(1,\dotsc,k;x^{h_1},y^{h_2})\nonumber \\&\quad +\text{permutations}\, ,
 \end{align}
 where $\mathcal M(\vec n; \vec m)=\mel{\vec n}{\mathcal M}{\vec m}$ and $\text{dLIPS}_2$ is the
 two-particle Lorentz-invariant phase-space measure.
@@ -360,14 +360,14 @@ $G_{\rm rat}$, yielding
          =
          \frac{-1}{8 \pi}
          \sum_{z_0\in {\cal P}_{G_{\rm rat}}}
-         \!\!\!
+         %\!\!\!
          \Res_{(z,\bar z)=(z_0,z_0^*)} G_{\rm rat}(z,\bar z)\, .
          \label{eq:ALPratint}
     \end{equation}
 The above formula considers the contributions of the residues at all the finite poles $z_0$ of
 $G_{\rm rat}$, collected in the set ${\cal P}_{G_{\rm rat}}$; when taking the residues (the
 variable ${\bar z}$ is evaluated at $z_0^*$).
-Stokes' integration method offers the advantage of projecting directly the contribution of the
+Stokes integration method offers the advantage of projecting directly the contribution of the
 two-point functions out of double cuts, hence its application appears to be simpler than other
 techniques.
 
@@ -482,10 +482,10 @@ Eq.~\eqref{eq:ALPfactorization} to write it as
     &= -\frac{1}{\agl{2}{y}\sqr{y}{2}} F_\gamma|_*(x_\gamma^{-},3_\phi;\ell^+_\gamma)\mathcal M|_*(\ell^+_\gamma,y_{ f_k}^{+},2_{\bar f_j}^-)\,,
 \end{align}
 and by using
-\begin{align}
-    F_\gamma|_*(x_\gamma^{-},3_\phi;\ell^+_\gamma) = \frac{2}{\Lambda}\agl{x}{\ell}^2\,, &&
+\begin{equation}
+    F_\gamma|_*(x_\gamma^{-},3_\phi;\ell^+_\gamma) = \frac{2}{\Lambda}\agl{x}{\ell}^2\,, \qquad
     \mathcal M|_*(\ell^+_\gamma,y_{ f_k}^{+},2_{\bar f_j}^-) =- \sqrt 2 e Q_f \delta^{kj}\frac{\sqr{\ell}{y}^2}{\sqr{y}{2}}\,,
-\end{align}
+\end{equation}
 as well as $\agl{x}{\ell}\sqr{\ell}{y}=-\agl{x}{2}\sqr{2}{y}$, we can conclude that
 \begin{equation}
     F_\gamma|_*(x_\gamma^{-},y_{ f_k}^{+},2_{\bar f_j}^-,3_\phi) = \frac{2\sqrt 2}{\Lambda}eQ_f \delta^{kj} \frac{\agl{2}{x}^2}{\agl{2}{y}}\,.
@@ -881,8 +881,8 @@ The product reads
 \end{equation}
 and vanishes after performing the Stokes integration.
 Therefore, also in this case, the anomalous dimension is given by $\gamma_{g,\text{IR}}$,
-derived in Appendix~\ref{sec:ALPIRphigg} and reported in
-Eq.~\eqref{eq:ALPgammaIRgluon_stokes}:
+derived in Appendix \ref{sec:ALPIRphigg} and reported in
+Eq.\ \eqref{eq:ALPgammaIRgluon_stokes}:
 \begin{equation}
     \gamma_{g\leftarrow g} = \gamma_{g,\text{IR}}
     = -\frac{g_s^2}{8\pi^2}\bigg(\frac{11}{3}C_A -\frac{4}{3}T_F\sum_fc_f^2\bigg)\,.
@@ -1003,7 +1003,7 @@ one-loop level reads
 \begin{align}
 \label{eq:ALPCPELag}
  \mathcal{L}^{\text{even}}_{\text{CP}} &=
-\frac{c_{\rm M}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} f_j \, F_{\mu\nu} +  \frac{c_{\rm CM}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} T^a f_j \, G^a_{\mu\nu} + \frac{D_G}{3\Lambda^2} f^{abc} G_\mu^{a, \nu} G_{\nu}^{b, \rho} G_{\rho}^{c, \mu} \nonumber \\
+\frac{c_{\rm M}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} f_j \, F_{\mu\nu} +  \frac{c_{\rm CM}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} T^a f_j \, G^a_{\mu\nu} + \frac{D_G}{3\Lambda^2} f^{abc} G_\mu^{a \nu} G_{\nu}^{b \rho} G_{\rho}^{c \mu} \nonumber \\
 & \quad +
 \frac{c_{LL1}^{ijkl}}{\Lambda^2}(\bar f_{Li} \gamma^\mu f_{Lj})(\bar f'_{Lk}\gamma_\mu f'_{Ll}) + \frac{c_{LL8}^{ijkl}}{\Lambda^2}(\bar f_{Li} \gamma^\mu T^a f_{Lj})(\bar f'_{Lk}\gamma_\mu T^a f'_{Ll})\nonumber \\
 & \quad +
@@ -1018,8 +1018,9 @@ The corresponding CP-odd Lagrangian, $\mathcal{L}^{\text{odd}}_{\text{CP}}$, is 
 \begin{align}
 \label{eq:ALPCPOLag}
  \mathcal{L}^{\text{odd}}_{\text{CP}} =
- \frac{c_{\rm E}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} i\gamma_5 f_j \, F_{\mu\nu} +  \frac{c_{\rm CE}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} i\gamma_5 T^a f_j \, G^a_{\mu\nu} + \frac{d_G}{3\Lambda^2} f^{abc} G_\mu^{a, \nu} G_{\nu}^{b, \rho} \widetilde G_{\rho}^{c, \mu}\,.
+ \frac{c_{\rm E}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} i\gamma_5 f_j \, F_{\mu\nu} +  \frac{c_{\rm CE}^{ij}}{\Lambda} \, \bar{f}_i \sigma^{\mu\nu} i\gamma_5 T^a f_j \, G^a_{\mu\nu} + \frac{d_G}{3\Lambda^2} f^{abc} G_\mu^{a \nu} G_{\nu}^{b \rho} \widetilde G_{\rho}^{c \mu}\,.
 \end{align}
+Here, $\sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]$.
 Notice that in the above Lagrangians we have neglected operators which emerge by integrating
 out the ALP at tree level, such as $(\bar{f} f)( \bar{f}' f')$, $GGGG$, and so on.
 In fact, in this case, RGE effects are fully accounted for by evaluating the effective ALP
@@ -1034,7 +1035,7 @@ that are generated by running effects from $\Lambda$ down to the ALP mass scale.
 \paragraph{\texorpdfstring{$\gamma_{\tilde G^3\leftarrow g,\tilde g}$}{gamma G3tilde from g, gtilde}.}
 We define the Weinberg dimension-six operator as
 \begin{equation}
-    \mathcal O_{\tilde G^3} = \frac{1}{3}f^{abc}G_\mu^{a, \nu} G_{\nu}^{b, \rho} \widetilde G_{\rho}^{c, \mu}\,.
+    \mathcal O_{\tilde G^3} = \frac{1}{3}f^{abc}G_\mu^{a \nu} G_{\nu}^{b \rho} \widetilde G_{\rho}^{c \mu}\,.
 \end{equation}
 The renormalization of the corresponding Wilson coefficient induced by the operators $\phi GG$
 and $\phi G\widetilde G$ at one-loop order can be evaluated from
@@ -1108,7 +1109,7 @@ Finally, from the master formula of Eq.~\eqref{eq:ALPmastertildeG3}, we obtain
 \label{par:ALPGGG}
 The beta function associated with the Wilson coefficient of the CP-even operator
 \begin{equation}
-    \mathcal O_{G^3} = \frac{1}{3}f^{abc}G_\mu^{a, \nu} G_{\nu}^{b, \rho} G_{\rho}^{c, \mu}
+    \mathcal O_{G^3} = \frac{1}{3}f^{abc}G_\mu^{a \nu} G_{\nu}^{b \rho} G_{\rho}^{c \mu}
 \end{equation}
 receives contributions from double insertions of the operators $\phi GG$ and
 $\phi G\widetilde G$.
@@ -1321,10 +1322,10 @@ aforementioned considerations.
 
 The convolution on the right can be expanded as
 \begin{align}
-    (\mathcal M F_\gamma)|_{*,\mathcal C_\gamma \neq 0} (1^-_{f_i},2^+_{\bar f_j}, 3^-_{f'_k},4^+_{\bar f'_l}) &= \sum_h \int \text{dLIPS}_2 \,\bigg[ \mathcal M|_{*,\mathcal C_\gamma \neq 0}(3^-_{f'_k},4^+_{\bar f'_l}; x_{\gamma}^h , y_\phi) F_{\gamma}|_*(1^-_{f_i},2^+_{\bar f_j},x_{\gamma}^h , y_\phi) \nonumber \\
+    (\mathcal M F_\gamma)|_{*,\mathcal C_\gamma \neq 0} (1^-_{f_i},2^+_{\bar f_j}, 3^-_{f'_k},4^+_{\bar f'_l}) &= \sum_h \int \text{dLIPS}_2 \Big[ \mathcal M|_{*,\mathcal C_\gamma \neq 0}(3^-_{f'_k},4^+_{\bar f'_l}; x_{\gamma}^h , y_\phi) F_{\gamma}|_*(1^-_{f_i},2^+_{\bar f_j},x_{\gamma}^h , y_\phi) \nonumber \\
     &\quad +
     \mathcal M|_{*,\mathcal C_\gamma \neq 0}(1^-_{f_i},2^+_{\bar f_j}; x_{\gamma}^h , y_\phi) F_{\gamma}|_*(3^-_{f'_k},4^+_{\bar f'_l},x_{\gamma}^h , y_\phi)
-    \bigg]\,,
+    \Big]\,,
 \end{align}
 where, for the $h=-$ configuration, we have
 \begin{align}
@@ -2545,6 +2546,38 @@ possess entirely different Lorentz structures at the level of Feynman rules, and
 in the pattern of cancellations among gauge-dependent terms is present, despite the common
 diagrammatic structure.
 
+\section{Conclusions}
+
+On-shell amplitude techniques have proven to be very effective for computing the renormalization group equations of quantum field theories~\cite{Caron-Huot:2016cwu,EliasMiro:2020tdv,Baratella:2020lzz,Jiang:2020mhe,Bern:2020ikv,Baratella:2020dvw,AccettulliHuber:2021uoa,EliasMiro:2021jgu,Baratella:2022nog,Machado:2022ozb}. 
+In particular, the on-shell method~\cite{Caron-Huot:2016cwu} relates anomalous dimensions to unitarity cuts. 
+As recently discussed in~\cite{Bresciani:2023jsu}, this method can also be easily applied to describe mixings among operators with different dimensions 
+and to capture leading mass effects, which are of paramount importance in several phenomenological studies.
+
+In this chapter, we have extensively applied the above techniques~\cite{Caron-Huot:2016cwu,Bresciani:2023jsu} to the one-loop renormalization of CP-violating interactions, both above and below the electroweak scale,  of an ALP with SM fields, reproducing and extending previous results~\cite{Marciano:2016yhf,DiLuzio:2020oah,Bauer:2020jbp,Chala:2020wvs,DasBakshi:2023lca,Galda:2021hbr,Galda:2023qjx}.
+
+In particular, we  first derived the anomalous dimensions for ALP couplings with fermions, $\phi \bar f f$ and $\phi \bar f i \gamma_5 f$, which require a fermion mass insertion. This allowed us to apply the on-shell method~\cite{Caron-Huot:2016cwu} supplemented by the Higgs low-energy theorem to keep track of leading mass effects while still working in a massless formalism~\cite{Bresciani:2023jsu}. 
+
+Then, we considered the renormalization of ALP couplings to photons and gluons, $\phi FF$ and $\phi GG$, along with their CP counterparts, $\phi F \tildee F$ and $\phi G \tildee G$, recovering the well-known result that they renormalize precisely as $FF$ and $GG$ and, hence, just like their related gauge couplings squared. 
+The on-shell method shows this property in a simple and elegant way by just inspecting a few tree-level amplitudes.
+Moreover, we evaluated the RGEs of operators up to dimension-six emerging after integrating out the ALP at one-loop level,  
+such as the Weinberg operator $GG\tildee G$ and $GGG$, the (chromo-)magnetic and (chromo-)electric dipole moments, 
+i.e., $\bar f \sigma\!\cdot\! F f$, $\bar f \sigma\!\cdot\! G f$,
+$\bar f \sigma\!\cdot\! F i\gamma_5 f$, and $\bar f \sigma\!\cdot\! G i\gamma_5 f$.
+
+A detailed derivation of the anomalous dimension matrix was carried out both with on-shell and standard techniques, 
+aiming to closely compare their virtues and shortcomings.
+%
+We found that on-shell methods are computationally advantageous compared to standard ones, owing to the
+significantly lower and less challenging number of required contributions to be computed.
+Moreover, the presence of a large number of non-Abelian gauge bosons generally renders calculations with standard techniques lengthy and computationally expensive: checks for gauge invariance were performed, often involving non-trivial cancellation of different Lorentz and gauge structures.
+
+Remarkably, the on-shell method makes more manifest the connection between the anomalous dimension of operators related by symmetries. 
+For instance, the knowledge of the anomalous dimension for the operator $\phi GG$ allowed us to immediately 
+infer the one for the CP-dual operator $\phi G\tildee G$: this duality is hidden within the standard approach, where CP-dual operators have different Lorentz structures at the level of Feynman rules, and no similarity in the pattern of cancellations among gauge-dependent terms is present.
+
+Our results were obtained by systematically evaluating all phase-space cut integrals adopting two different integration techniques, namely by angular integration~\cite{Zwiebel:2011bx} and via Stokes' theorem~\cite{Mastrolia:2009dr}. The latter, motivated by unitarity, offers the advantage of projecting directly the rational coefficient of the two-point functions out of the double cut of one-loop integrals, therefore simplifying the evaluation of anomalous dimensions.  
+It would be interesting to extend Stokes integration method for the evaluation of multi-particle phase-space integrals and to apply it for the evaluation of anomalous dimensions at higher orders by unitarity cuts, which we plan for future developments.
+
 \begin{subappendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2844,7 +2877,7 @@ and thus
     \gamma_{S,\text{IR}} = -\frac{3}{8\pi^2}(e^2Q_f^2+C_Fg_s^2c_f^2)\,.
 \end{equation}
 
-\subsection{\texorpdfstring{$\phi FF$ and $\phi F\widetilde F$ Operators}{phi FF and phi F Ftilde Operators}}
+\subsection{\texorpdfstring{$\phi FF$ and $\phi F\widetilde F$ Operators}{phi F F and phi F Ftilde Operators}}
 \label{sec:ALPIRphigammagamma}
 
 The infrared anomalous dimension $\gamma_{\gamma,\text{IR}}$ associated with the operators
@@ -2921,7 +2954,7 @@ and plugging everything together we obtain
 \end{align}
 which implies Eq.~\eqref{eq:ALPgammaIRphoton}.
 
-\subsection{\texorpdfstring{$\phi GG$ and $\phi G\widetilde G$ Operators}{phi GG and phi G Gtilde Operators}}
+\subsection{\texorpdfstring{$\phi GG$ and $\phi G\widetilde G$ Operators}{phi G G and phi G Gtilde Operators}}
 \label{sec:ALPIRphigg}
 
 The infrared anomalous dimension $\gamma_{g,\text{IR}}$ associated with the operators $\phi GG$

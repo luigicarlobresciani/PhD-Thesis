@@ -1,1 +1,201 @@
-\chapter{Formalism\label{ch:RGEmethod}}
+\chapter{On-Shell Renormalization of Effective Field Theories\label{ch:RGEmethod}}
+
+\begin{flushright}
+\small
+
+{\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
+
+\textit{This chapter is based on Ref.~\cite{Bresciani:2023jsu}:}\\[0.5em]
+L.~C.~Bresciani, G.~Levati, P.~Mastrolia and P.~Paradisi,\\
+``Anomalous dimensions via on-shell methods: Operator mixing and leading mass effects,''\\
+\href{https://doi.org/10.1103/PhysRevD.110.056041}{Phys. Rev. D \textbf{110} (2024) no.5, 056041}
+[\href{https://doi.org/10.48550/arXiv.2312.05206}{arXiv:2312.05206} [hep-ph]].
+
+{\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
+\end{flushright}
+
+\section{\texorpdfstring{$S$-Matrix and Dilatation Operator}{S-Matrix and Dilatation Operator}}
+
+In this section, we will closely follow Ref.~\cite{EliasMiro:2020tdv} to derive a central relation satisfied by the scattering matrix $S$ and the dilatation operator $D$ due to Caron-Huot and Wilhelm \cite{Caron-Huot:2016cwu}.
+
+The fundamental objects we deal with are the form factors of local and gauge-invariant operators $\mathcal{O}_i$ of the effective Lagrangian
+\begin{equation}
+    \mathcal L_{\rm EFT} = \sum_i \frac{c_i}{\Lambda^{[\mathcal O_i]-4}}\,\mathcal O_i\,.
+\end{equation}
+They are defined as
+\begin{equation}
+    F_i(\vec n;q) = \frac{1}{\Lambda^{[\mathcal O_i]-4}} \mel{\vec n}{\mathcal O_i(q)}{0}\,,
+\end{equation}
+where $q$ is the off-shell momentum injected by the operator.
+
+\section{General Operator Mixing}
+
+
+\section{Leading Mass Effects}
+
+As a natural consequence of operator mixing, chirality-violating and chirality-preserving operators generally mix under the renormalization flow.
+In the case of EFTs defined below the electroweak scale, the required chirality flip proceeds through a fermion mass insertion. However, such a mass dependence cannot be directly implemented in the massless method of Ref.~\cite{Caron-Huot:2016cwu}. 
+
+In order to circumvent this issue, we rely on the Higgs low-energy theorem~\cite{Ellis:1975ap,Shifman:1979eb}, which was originally introduced to estimate the properties of a light Higgs boson in analogy to how soft-pion theorems are used to study low-energy pion interactions~\cite{Adler:1964um,Cheung:2021yog,Balkin:2021dko,Bertuzzo:2023slg}. 
+%
+The key observation is that the fermionic Higgs interactions in the SM can be written in the following form:
+%
+\begin{align}
+\mathcal{L}^{\textit{int}}_{H} = - \left( 1 + \frac{h}{v}\right) 
+\sum_f m_f \bar f f 
+\end{align}
+%
+where the sum is over all fermions in the theory. 
+In the limit where the Higgs field $h$ has a vanishing 
+four-momentum, $p_h\to 0$, $h$ becomes a constant field 
+and its effect is equivalent to redefining all mass 
+parameters as $m_f \to m_f \,(1 + h/v)$.
+This immediately implies the following low-energy theorem~\cite{Ellis:1975ap,Shifman:1979eb}
+%
+\begin{align}
+\lim_{\{p_{h}\} \to 0}\mathcal{M}(A \to B 
++ Nh) = 
+\sum_f \frac{m^N_f}{v^N} \frac{\partial^N}{\partial m_f^N} \mathcal{M}(A \to B)
+\end{align}
+%
+relating the amplitudes of two processes differing by $N$ insertions of zero-momentum Higgs bosons. 
+%
+%The key idea consists in promoting fermionic masses to dynamical massless spurionic fields, whose vacuum expectation value is eventually set to the mass of the fermions. This is reminiscent of what happens in the Higgs mechanism, where fermion masses and Yukawa interactions are one-to-one related via the term $m_f (1 + h/v) \bar{f}f$. 
+%
+In practice, whenever an amplitude requires $N$ fermion mass insertions not to vanish, we consider an equivalent amplitude entailing $N$ extra massless Higgs fields; see Figure~\ref{fig:HMs}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tb]
+\centering
+\includegraphics[width=.75\linewidth]{images/Higgs_insertions.pdf}
+\caption{Diagrammatic representation of our method for massifying amplitudes based on the Higgs low-energy theorem.}
+\label{fig:HMs}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The number $N$ can be determined as follows. By dimensional 
+analysis, we argue that whenever the anomalous dimension 
+$\gamma_{i\leftarrow j_1, \dotsc, j_n}$ vanishes in the 
+limit of massless fermions, possible mass effects must 
+be of order $(m_f/\Lambda)^N$, where
+%
+\begin{equation}
+\label{eq:Sup_Div_Deg}
+N = 4-[\mathcal{O}_{i}] +\sum^n_{k=1} ([\mathcal{O}_{j_k}]-4)%\geq 0\,
+\end{equation}
+% 
+is the superficial degree of divergence associated with the loop diagram under consideration (see Appendix~\ref{app:SDOD_EFT} for a derivation).
+Notice that the number of needed Higgs insertions coincides with the superficial degree of divergence in Eq.~\eqref{eq:Sup_Div_Deg} because scaleless integrals vanish in dimensional regularization.
+%
+For $N < 0$, $\gamma_{i\leftarrow j_1, \dotsc, j_n}$ is trivially zero.
+For $N \geq 0$, the anomalous dimension
+$\gamma_{i\leftarrow j_1, \dotsc, j_n}$ 
+is obtained by renormalizing the operator $\mathcal{O}^{Nh}_i= (h/v)^N\mathcal{O}_i/N!$
+instead of $\mathcal{O}_i$.
+%
+The procedure outlined above is summarized in the algorithm in Figure~\ref{fig:flowchart}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.68\linewidth]{images/flowchart.pdf}
+\caption{Algorithm for the computation of anomalous dimensions that require $N$ fermionic mass insertions not to vanish.}
+\label{fig:flowchart}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Remarkably, the approximation of setting the Higgs mass to 
+zero is justified in our study since we are interested in 
+the evaluation of anomalous dimensions that are related to 
+the ultraviolet properties of a theory.
+
+
+
+
+\section{Phenomenological Applications}
+
+
+\section{Conclusions}
+
+In this chapter, we have generalized the application of on-shell and unitarity-based methods for evaluating renormalization group coefficients to account for the mixing of operators with different dimensions and leading mass effects, which play a fundamental role in the renormalization program of several effective field theories. 
+
+In particular, we have derived a master formula accounting for operator 
+mixings up to two-loop order and shown how to include leading mass effects,
+relying on the Higgs low-energy theorem. These findings have been validated by reproducing well-established results in the literature, corresponding to popular effective field theories.
+
+These results can be applied to a number of new-physics scenarios, 
+defined above the TeV scale, in order to analyze their impact on 
+low-energy observables (such as flavor-violating processes, 
+electric and magnetic dipole moments, etc.) occurring at or 
+below the GeV scale.
+Such a large separation of scales demands the inclusion of 
+running effects at two-loop order to obtain sensible predictions. 
+While this is a very challenging task when approached with standard techniques, 
+on-shell and unitarity-based methods offer a simpler, more efficient, 
+and elegant way to reach this goal. 
+The work presented in this chapter may constitute an additional milestone for progressing along this direction.
+
+\begin{subappendices}
+\section{Effective Field Theories and Superficial Degree of Divergence\label{app:SDOD_EFT}}
+
+An $n$-particle amplitude related to the operator $\Ocal_i$ 
+and entailing $m$ interaction vertices with the operators $\Ocal_{j_1},\dotsc,\Ocal_{j_m}$ can be schematically written as
+\begin{equation}
+    \mathcal M_{n} = C_{j_1}\dotsm C_{j_m} 
+     \int \dd^4 k_1 \dotsm \dd^4 k_L \,\frac{N
+     (\{k\},\{p\})}{D(\{k\},\{p\})} \,
+    \alpha_1 \dotsm \alpha_{n} \,,
+\end{equation}
+where $\{p\}$ are external momenta and:
+\begin{itemize}
+    \item $C_{j_1},\dotsc, C_{j_m}$ are the dimensionful Wilson coefficients corresponding to the operators $\Ocal_{j_1},\dotsc,\Ocal_{j_m}$ 
+    such that
+    \begin{equation}
+        [C_{j_k}]= 4 - [\Ocal_{j_k}]\,.
+    \end{equation}        
+
+    \item The $L$-loop integral has mass dimension 
+    \begin{equation}
+    \left[\int \dd^4 k_1\dotsi \dd^4 k_L\, \frac{N(\{k\},\{p\})}{D(\{k\},\{p\})}\right]=
+    D + n_\partial\,,
+    \end{equation}        
+    where $D$ is the degree of divergence of 
+    $\mathcal M_{n}$ and $n_\partial$ is the number 
+    of derivatives contained in $\Ocal_i$.
+
+    \item Depending on the bosonic/fermionic nature of the particles involved, $\alpha_1,\dotsc, \alpha_{n} \in \{1,\epsilon_\mu,\epsilon_\mu^*,u,v,\overline u, \overline v,\dotsc\}$. In the fermionic case, writing the 
+    Dirac field as
+    \begin{equation}
+     \Psi(x) = \int \frac{\dd^3k}{(2\pi)^3}  \frac{1}{\sqrt{2E_k}} 
+     \left(a_k u \,e^{-ik\cdot x} + 
+     b^\dagger_k v \,e^{ik\cdot x}\right)
+    \end{equation}
+    and taking the quantization condition $\{a_k,a^\dagger_{k'}\}=\{b_k,b^\dagger_{k'}\}=(2\pi)^3\delta^{(3)}(k-k')$, 
+    one finds that $[a]=[b]=-3/2$ and 
+    $[u]=[v]\equiv [\alpha_{\text{fer}}]=1/2$. Similarly, one can also find that $[\alpha_{\text{bos}}] = 0$.
+\end{itemize}
+%
+By taking into account the above points, we find that
+\begin{equation}\label{eq:massM1}
+    [\mathcal M_n] = \sum_{k=1}^m(4-[\Ocal_{j_k}]) + n_\partial + D +\frac{1}{2}n_{\text{fer}}\,.
+\end{equation}    
+The mass dimension of $\mathcal M_n$ can be inferred also from the $S$-matrix element
+    \begin{equation}
+    \mel{0}{S}{n} = (2\pi)^4 \, \delta^{(4)}(p_1+\dotsb+p_n) \, i \mathcal M_n\,,
+\end{equation}
+where $[S]=0$ and $[\ket{n}] = [(\sqrt{2E} a^\dagger)^n \ket{0}] = -n$ with $n = n_{\text{fer}} + n_{\text{bos}}$, resulting in\footnote{In a dimension-$d$ space-time, a generic $n$-point scattering amplitude has mass dimension $[\mathcal M_n] = d+n-dn/2$.}
+\begin{equation}\label{eq:massM2}
+    [\mathcal M_{n}] = 4 - n\,.
+\end{equation}
+From Eqs.~\eqref{eq:massM1} and \eqref{eq:massM2} 
+and by taking into account that
+    \begin{equation}
+    [\mathcal O_i] = n_{\text{bos}} + \frac{3}{2}n_{\text{fer}} + n_\partial\,,
+\end{equation}
+it finally follows that
+    \begin{equation}
+    D= 4 - [\mathcal O_i] + \sum_{k=1}^m([\Ocal_{j_k}]-4)\,. 
+\end{equation}
+
+\end{subappendices}
