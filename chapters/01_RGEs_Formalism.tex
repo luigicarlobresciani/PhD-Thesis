@@ -14,22 +14,297 @@ L.~C.~Bresciani, G.~Levati, P.~Mastrolia and P.~Paradisi,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
+\lb{Insert incipit and outline of the chapter.}
+
 \section{\texorpdfstring{$S$-Matrix and Dilatation Operator}{S-Matrix and Dilatation Operator}}
 
-In this section, we will closely follow Ref.~\cite{EliasMiro:2020tdv} to derive a central relation satisfied by the scattering matrix $S$ and the dilatation operator $D$ due to Caron-Huot and Wilhelm \cite{Caron-Huot:2016cwu}.
+In this section, we will closely follow Ref.~\cite{EliasMiro:2020tdv} to derive a central relation satisfied by the scattering matrix, $S$, and the dilatation operator, $D$, due to Caron-Huot and Wilhelm \cite{Caron-Huot:2016cwu}, which will allow us to extract the anomalous dimensions of operators via unitarity cuts.
 
-The fundamental objects we deal with are the form factors of local and gauge-invariant operators $\mathcal{O}_i$ of the effective Lagrangian
-\begin{equation}
-    \mathcal L_{\rm EFT} = \sum_i \frac{c_i}{\Lambda^{[\mathcal O_i]-4}}\,\mathcal O_i\,.
+The fundamental objects we deal with are the form factors of local and gauge-invariant operators $\mathcal{O}_i$ entering the effective Lagrangian
+\begin{equation}\label{eq:RGELagrangian}
+    \mathcal L_{\rm EFT} = \sum_i \frac{c_i}{\Lambda^{[\mathcal O_i]-4}}\,\mathcal O_i\,,
 \end{equation}
-They are defined as
-\begin{equation}
-    F_i(\vec n;q) = \frac{1}{\Lambda^{[\mathcal O_i]-4}} \mel{\vec n}{\mathcal O_i(q)}{0}\,,
+which are defined as the matrix elements
+\begin{equation}\label{eq:RGEformfactor}
+    F_i(\vec n;q) = \frac{1}{\Lambda^{[\mathcal O_i]-4}}\; {}_{\text{out}}\!\mel{\vec n}{\mathcal O_i(q)}{0}\,,
 \end{equation}
+taken between the vacuum and an outgoing asymptotic multi-particle state ${}_{\text{out}}\!\bra{\vec n}$,
 where $q$ is the off-shell momentum injected by the operator.
+Therefore, a form factor is an object that sits between a Green's function and a scattering amplitude: its external legs are on shell, $p_1^2 = \dotsb = p_n^2 = 0$ in the massless limit, as in amplitudes, but one local insertion is kept off shell, $q^2 \neq 0$. The information about the renormalization of $\mathcal O_i$ is retained in this insertion.
+
+By Lorentz invariance, form factors depend on the four-momenta of the outgoing particles through the Mandelstam invariants $s_{ab} = 2 p_a\cdot p_b$, i.e., $F_i = F_i(\{s_{ab}+i\epsilon\})$, where we have introduced $\epsilon>0$ due to the Feynman $i\epsilon$ prescription.
+There are two ways to relate $F_i(\{s_{ab}+i\epsilon\})$ to some function evaluated on the complex-conjugated domain $\{s_{ab}-i\epsilon\}$.
+\begin{itemize}
+    \item The first one exploits the analyticity property of form factors: the complex conjugation of form factors amounts to transforming time-ordered propagators, with denominators of the form $s_{ab}+i\epsilon$, into anti-time-ordered propagators, with denominators of the form $s_{ab}-i\epsilon$.
+    Thus, under complex conjugation, $\{s_{ab}+i\epsilon\}$ are effectively replaced by $\{s_{ab}-i\epsilon\}$, and the analyticity relation reads
+    \begin{equation}\label{eq:partial1}
+        F_i(\{s_{ab}+i\epsilon\}) = F^*_i(\{s_{ab}-i\epsilon\})\,.
+    \end{equation}
+
+    \item The second one consists of analytically continuing all the momenta $p_a$ to the complex plane and rotating them along a counter-clockwise circle with a common phase $\alpha$:
+    \begin{equation}
+        p_a \longrightarrow e^{i\alpha}p_a\,.
+    \end{equation}
+    Correspondingly, the Mandelstam invariants are rotated by $2 \alpha$ and the
+    form factors are transformed as
+    \begin{equation}
+        F_i \longrightarrow e^{i\alpha D} F_i \,,
+    \end{equation}
+    where $D$ is the dilatation operator, which is the generator of the transformation and is defined as
+    \begin{equation}
+        D = \sum_{a\in\vec n} p_a \cdot \frac{\partial}{\partial p_a}\,.
+    \end{equation}
+    For $\alpha=\pi$, as illustrated in Figure~\ref{fig:alphapi}, the Mandelstam invariants are back to their original values, but with the opposite imaginary part. Therefore,
+    \begin{equation}\label{eq:partial2}
+        F_i(\{s_{ab}-i\epsilon\}) = e^{i\pi D}  F_i(\{s_{ab}+i\epsilon\})\,.
+    \end{equation}
+\end{itemize}
+%
+\begin{figure}[tb]
+    \centering
+    \begin{tikzpicture}[>=Latex]
+ 
+  %% ------------------------------------------------------- parameters
+  \def\R{3}                            % radius of the circular contour
+  \def\eps{10}                         % angular offset of the end points (deg)
+  \pgfmathsetmacro{\xe}{\R*cos(\eps)}  % x of the end points
+  \pgfmathsetmacro{\ye}{\R*sin(\eps)}  % y of the end points  (= +/- epsilon)
+ 
+  \coordinate (Pp) at ( \eps:\R);      % upper end point
+  \coordinate (Pm) at (-\eps:\R);      % lower end point
+ 
+  %% ------------------------------------------------------- axes
+  \draw[gray,thin,->] (-4.6,0) -- (5.8,0);
+  \draw[gray,thin,->] (0,-4.0) -- (0,4.0);
+ 
+  %% ------------------------------------------------------- branch point + cut
+  \draw[red,line width=1.2pt,->] (0,0) -- (5.6,0);
+  \draw[red,line width=1pt,fill=white] (0,0) circle (2.5pt);
+ 
+  %% ------------------------------------------------------- +/- epsilon guides
+  \draw[gray,dotted,line width=1pt] (0, \ye) -- (\xe, \ye);
+  \draw[gray,dotted,line width=1pt] (0,-\ye) -- (\xe,-\ye);
+  \node[left] at (0, \ye) {\small$+\epsilon$};
+  \node[left] at (0,-\ye) {\small$-\epsilon$};
+ 
+  %% ------------------------------------------------------- contour
+  %  positions of the arrow heads: f = (theta - eps)/(360 - 2 eps)
+  %  theta = 90 (top), 180 (left), 270 (bottom)
+  \draw[
+  %line width=1.6pt,dash pattern=on 7pt off 5pt,
+        line width=1.2pt, dashed,
+        decoration={markings,
+        mark=at position 0.235 with 
+          {\arrow{Triangle[length=2mm,width=2mm]}},
+          mark=at position 0.500 with 
+          {\arrow{Triangle[length=2mm,width=2mm]}},
+          mark=at position 0.765 with 
+          {\arrow{Triangle[length=2mm,width=2mm]}}},
+        postaction={decorate}]
+      (Pp) arc[start angle=\eps, end angle=360-\eps, radius=\R];
+ 
+  %% ------------------------------------------------------- end points
+  \Cross{Pp}
+  \Cross{Pm}
+ 
+  %% ------------------------------------------------------- plane label
+  \draw[gray,line width=1.2pt] (4.6,3.8) -- (4.6,3.2) -- (5.2,3.2);
+  \node[anchor=south west,inner sep=3pt] at (4.6,3.2) {$s_{ab}$};
+ 
+\end{tikzpicture}
+    \caption{Transformation of the analytically continued Mandelstam invariants $s_{ab}$ under the action of the dilatation operator $D$. For $\alpha=\pi$ their infinitesimal imaginary part $\epsilon$ changes sign.}
+    \label{fig:alphapi}
+\end{figure}
+%
+Combining Eqs.~\eqref{eq:partial1} and \eqref{eq:partial2} we obtain
+\begin{equation}\label{eq:partial4}
+    F_i(\{s_{ab}+i\epsilon\})=e^{-i\pi D} F_i^*(\{s_{ab}+i\epsilon\}) \,.
+\end{equation}
+
+Next, we can exploit unitarity in the form of the completeness relation satisfied by the multi-particle asymptotic states $\ket{\vec n}$, which form a complete basis of the Hilbert space:
+\begin{equation}
+    \mathbb 1 = \sum_{\vec n} \int \text{dLIPS}_{\vec n}\, \ket{\vec n}\bra{\vec n}\,,
+\end{equation}
+where
+\begin{equation}
+    \text{dLIPS}_{\vec n} = \frac{1}{S_{\vec n}} \prod_{k\in \vec n}\frac{\dd^3 p_k}{(2\pi)^3}\frac{1}{2E_k}
+\end{equation}
+is the Lorentz-invariant phase-space measure associated with the state $\ket{\vec n}$ and $S_{\vec n}$ is its symmetry factor (for instance, $S_{\vec n} = n!$ if $\ket{\vec n}$ is composed of $n$ identical particles).
+We can exploit the completeness relation to rewrite a generic form factor $F_i$ as
+\begin{equation}\label{eq:partial3}
+    F_i(\vec n;q) = \frac{1}{\Lambda^{[\mathcal O_i]-4}} \sum_{\vec m} \int \text{dLIPS}_{\vec m} \;{}_{\text{out}}\!\braket*{\vec n}{\vec m}\!{}_{\text{in}}\; {}_{\text{in}}\!\mel*{\vec m}{\mathcal O_i(q)}{0}\,.
+\end{equation}
+The overlap ${}_{\text{out}}\!\braket*{\vec n}{\vec m}\!{}_{\text{in}}$ is, by definition, an element
+of the scattering matrix, ${}_{\text{out}}\!\braket*{\vec n}{\vec m}\!{}_{\text{in}} = S(\vec n ; \vec m)$.
+
+The final ingredient is provided by the CPT theorem. 
+Being represented in the Hilbert space by an anti-linear and anti-unitary operator $\Theta$, CPT
+interchanges incoming and outgoing states inside an inner product, while acting on local operators in position space as
+$\Theta\,\mathcal{O}_i(x)\,\Theta^{-1} = \mathcal{O}_i^\dagger(-x)$, or in momentum space as
+\begin{equation}
+    \Theta\,\mathcal O_i(q)\,\Theta^{-1} = \mathcal O_i^\dagger(q)\,.
+\end{equation}
+Inserting $\Theta^{-1}\Theta$ twice into ${}_{\text{out}}\!\mel*{\vec n}{\mathcal O_i(q)}{0}$
+therefore yields
+\begin{equation}\label{eq:RGECPT}
+    {}_{\text{out}}\!\mel*{\vec n}{\mathcal O_i(q)}{0} = \mel*{0}{\mathcal O_i^\dagger(q)}{\vec n}\!{}_{\text{in}}\,,
+\end{equation}
+which implies that, for a Hermitian operator $\mathcal O_i^\dagger = \mathcal O_i$,
+\begin{equation}
+    {}_{\text{in}}\!\mel*{\vec m}{\mathcal O_i(q)}{0} = \mel*{0}{\mathcal O_i(q)}{\vec m}\!{}_{\text{out}} = \left({}_{\text{out}}\!\mel*{\vec m}{\mathcal O_i(q)}{0}\right)^* = \frac{1}{\Lambda^{4-[\mathcal O_i]}} \, F_i^*(\vec m;q)\,.
+\end{equation}
+
+Thus, we can rewrite Eq.~\eqref{eq:partial3} as
+\begin{equation}
+    F_i(\vec n;q) = \sum_{\vec m}\int \text{dLIPS}_{\vec m} \, S(\vec n;\vec m) F_i^*(\vec m;q)\,,
+\end{equation}
+or, more concisely, as $F_i = SF_i^*$. Finally, combining it with Eq.~\eqref{eq:partial4} we obtain the non-perturbative relation \cite{Caron-Huot:2016cwu}
+\begin{equation}\label{eq:CHWmaster}
+    e^{-i\pi D} F_i^* = S F_i^*\,.
+\end{equation}
+Its interpretation consists in identifying the dilatation operator $D$ as minus the phase of the $S$-matrix, divided by $\pi$.
 
 \section{General Operator Mixing}
 
+In perturbation theory, once loop integrals are performed, both ultraviolet and infrared divergences appear, and one needs to introduce a regulator.
+Dimensional regularization \cite{Bollini:1972ui,tHooft:1972tcz,Ashmore:1972uj} introduces the arbitrary scale $\mu$, upon which no physical quantity may ultimately depend.
+For the form factors defined in Eq.~\eqref{eq:RGEformfactor}, the statement about the independence on the 't~Hooft scale $\mu$ takes the form of the Callan--Symanzik equation
+    \begin{equation}
+    \label{eq:CSEq}
+    \left( \mu\frac{\partial}{\partial \mu} +\beta_g \frac{\partial}{\partial g} + \sum_i \beta_i \frac{\partial}{\partial c_i}- \gamma_{\text{IR}}\right)F_j + \sum_i \frac{\partial \beta_i}{\partial c_j} F_i =   0\,,
+\end{equation}
+which is valid in the massless limit. In this equation, $g$ collectively denotes the couplings of the renormalizable theory, and we have introduced the beta functions of the renormalizable couplings and of the Wilson coefficients,
+\begin{equation}\label{eq:betadefs}
+    \beta_g = \mu\dv[]{g}{\mu}\,, \qquad\qquad \beta_i = \mu\dv[]{c_i}{\mu}\,,
+\end{equation}
+while $\gamma_{\text{IR}} = \gamma_{\text{IR}}(\vec n)$ is the infrared anomalous dimension of the external state $\vec n$, which originates from soft radiation exchanged between any pair of legs and from collinear radiation emitted along a single leg.
+Such radiation is universal: having a wavelength much larger than the inverse of the hard scales $\sqrt{\abs*{s_{ab}}}$ set by the external kinematics, it cannot resolve the local operator that created the state, and the associated divergences factorize from the hard process into a factor determined solely by the momenta and the quantum numbers of the particles in $\vec n$ \cite{Sterman:2002qn,Becher:2009cu}.
+Thus, $\gamma_{\text{IR}}$ generates no
+operator mixing and is proportional to the identity in operator space.
+
+In the neighborhood of the Gaussian fixed point $(*)$ --- where $c_i = 0$ for all $i$ --- the beta functions of the Wilson coefficients can be Taylor expanded as
+\begin{equation}\label{eq:Taylorbeta}
+    \beta_i = \sum_{k>0}\frac{1}{k!}\sum_{j_1,\dotsc,j_k}\gamma_{i\leftarrow j_1,\dotsc,j_k}\,c_{j_1}\dotsm c_{j_k}
+    = \sum_j  \gamma_{i\leftarrow j}\,c_j + \frac{1}{2}\sum_{j_1,j_2}\gamma_{i\leftarrow j_1,j_2}\,c_{j_1}c_{j_2} + \dots \,,
+\end{equation}
+which defines the anomalous-dimension tensors for an arbitrary number of operator insertions,
+\begin{equation}\label{eq:gammagen}
+    \gamma_{i\leftarrow j_1,\dotsc,j_k} = \left.\frac{\partial^k \beta_i}{\partial c_{j_1}\dotsm \partial c_{j_k}}\right|_{*}\,,
+\end{equation}
+each of which admits a perturbative expansion in the couplings of the leading-order Lagrangian, $\gamma_{i\leftarrow j_1,\dotsc,j_k} = \sum_{L\ge 1}\gamma^{(L)}_{i\leftarrow j_1,\dotsc,j_k}$.
+For $k=1$ this reduces to the anomalous-dimension matrix, $\gamma_{i\leftarrow j} = \partial\beta_i/\partial c_j|_*$, governing the mixing of operators of the same dimension, while $k\ge 2$ describes the mixing of $k$ lower-dimensional operators into a higher-dimensional one.
+
+In the following, we show how the Callan--Symanzik equation \eqref{eq:CSEq} can be combined with Eq.~\eqref{eq:CHWmaster} in order to extract one-loop and two-loop anomalous dimensions via unitarity cuts of form factors, that is, by isolating their discontinuities.
+
+\subsection{One-Loop Mixing}
+
+The Callan--Symanzik equation \eqref{eq:CSEq}
+can be expanded at one loop as
+\begin{equation}
+    \label{eq:CSoneloop}
+    \mu\frac{\partial}{\partial \mu} F_j^{(1)} = -\left(\beta_g^{(1)} \frac{\partial}{\partial g} + \sum_i \beta_i^{(1)} \frac{\partial}{\partial c_i}- \gamma_{\text{IR}}^{(1)}\right)F_j^{(0)} - \sum_i \frac{\partial \beta_i^{(1)}}{\partial c_j} F_i^{(0)}
+\end{equation}
+since the perturbative expansions of $\beta_g$, $\beta_i$, and $\gamma_{\text{IR}}$ all start at one loop; therefore, they can act only on the tree-level form factors.
+On the other hand, 
+\begin{equation}\label{eq:DFoneloop}
+    (D F_j)^{(1)} = -\mu\frac{\partial}{\partial \mu} F_i^{(1)} = -\frac{1}{\pi}(\mathcal M F_i)^{(1)}\,,
+\end{equation}
+where the first equality follows from the fact that, in dimensional regularization and in the massless limit, a form factor can depend on the kinematics solely through the dimensionless ratios $p_a\cdot p_b/\mu^2$, up to its overall engineering dimension, while the second equality follows from Eq.~\eqref{eq:CHWmaster} expanded to first order, with $S=\mathbb{1}+i\mathcal M$.
+Equating Eqs.~\eqref{eq:CSoneloop} and \eqref{eq:DFoneloop}, we obtain
+\begin{equation}\label{eq:oneloopgeneral}
+    \left(\beta_g^{(1)} \frac{\partial}{\partial g} + \sum_i \beta_i^{(1)} \frac{\partial}{\partial c_i}- \gamma_{\text{IR}}^{(1)}\right)F_j^{(0)} + \sum_i \frac{\partial \beta_i^{(1)}}{\partial c_j} F_i^{(0)} = -\frac{1}{\pi}(\mathcal M F_j)^{(1)}\,.
+\end{equation}
+The convolution on the right-hand side is a sum over all one-loop two-particle unitarity cuts
+\begin{align}\label{eq:oneloopcut}
+    (\mathcal M F_j)^{(1)}(\vec n) =
+    &\sum_{m=2}^{n}\sum_{\{\ell_1,\ell_2\}}\int \text{dLIPS}_2
+    \sum_{h_1,h_2} \mathcal M^{(0)}(1,\dotsc,m;\ell_1^{h_1},\ell_2^{h_2}) F_j^{(0)}(\ell_1^{h_1},\ell_2^{h_2},m+1,\dotsc,n)\nonumber \\&+\text{permutations}\,,
+\end{align}
+where $\mathcal M(\vec n;\vec m) = \mel{\vec n}{\mathcal M}{\vec m}$ and $\text{dLIPS}_n$ is the $n$-particle Lorentz-invariant phase-space measure.
+Eq.~\eqref{eq:oneloopgeneral} holds for every external-state configuration.
+
+We can considerably simplify Eq.~\eqref{eq:oneloopgeneral} 
+by choosing the minimal configuration $\vec n_i$ created by the operator $\mathcal O_i$ as an external state. In this way, we can project the above equation onto
+\begin{equation}
+    \left(\frac{\partial \beta_i^{(1)}}{\partial c_j}  - \delta_{ij}\gamma_{i,\text{IR}}^{(1)}\right) F_i^{(0)} = -\frac{1}{\pi}(\mathcal M F_j)^{(1)}\,,
+\end{equation}
+%where the label $i$ has been used in the infrared anomalous dimension as a shorthand for the external state on which the form factor is evaluated.
+where we used the shorthand notation $\gamma_{i,\text{IR}} = \gamma_{\text{IR}}(\vec n_i)$,
+from which the one-loop master formula follows \cite{Caron-Huot:2016cwu,EliasMiro:2020tdv}:
+\begin{equation}
+    \left(\gamma_{i\leftarrow j}^{(1)} - \delta_{ij}\gamma_{i,\text{IR}}^{(1)}\right) F_i|_*^{(0)} = -\frac{1}{\pi}(\mathcal M F_j)|_*^{(1)}
+\end{equation}
+for the case of linear operator mixing, and
+\begin{equation}
+    \gamma_{i\leftarrow j_1,\dotsc,j_k}^{(1)} \, F_i|_*^{(0)} = -\frac{1}{\pi}\left.\frac{\partial^{k-1}}{\partial c_{j_2} \dotsm \partial c_{j_k}}\right|_* (\mathcal M F_{j_1})^{(1)}
+\end{equation}
+for the case of $k$ higher-dimensional operator insertions, with $k\ge 2$.
+
+\subsection{Two-Loop Mixing}
+
+The two-loop master formula can be derived as follows. 
+Expanding the exponential $e^{-i\pi D} - \mathbb{1} = -i\pi D - \frac{\pi^2}{2}D^2 + O(D^3)$ and dividing by $-i\pi$, Eq.~\eqref{eq:CHWmaster} becomes
+\begin{equation}\label{eq:CHWexpanded}
+    D F_j - \frac{i\pi}{2}D^2 F_j = -\frac{1}{\pi}\mathcal M F_j\,.
+\end{equation}
+Defining the operator $\Gamma$ as
+\begin{equation}\label{eq:Gammadef}
+    \Gamma F_j = \sum_i \frac{\partial \beta_i}{\partial c_j}F_i 
+    + \beta_g\frac{\partial F_j}{\partial g} + \sum_i \beta_i\frac{\partial F_j}{\partial c_i}- \gamma_{\text{IR}}F_j\,,
+\end{equation}
+which can be expanded as $\Gamma = \Gamma^{(1)} + \Gamma^{(2)}+\dots$,
+the Callan--Symanzik equation \eqref{eq:CSEq} can be compactly written as
+\begin{equation}\label{eq:DGamma}
+    D F_j = -\mu\frac{\partial}{\partial\mu}F_j = \Gamma F_j\,.
+\end{equation}
+
+Inserting Eq.~\eqref{eq:DGamma} into Eq.~\eqref{eq:CHWexpanded} and collecting the terms of a given
+order, the first order reproduces the one-loop master formula, while the second gives
+\begin{equation}\label{eq:twoloopmaster}
+    \Gamma^{(1)}F^{(1)}_j + \Gamma^{(2)}F^{(0)}_j
+    - \frac{i\pi}{2}\Gamma^{(1)}\Gamma^{(1)}F^{(0)}_j = -\frac{1}{\pi}(\mathcal M F_j)^{(2)}\,,
+\end{equation}
+where $(\mathcal M F_j)^{(2)}$ collects the two-loop unitarity cuts, i.e., the two-particle cuts of one-loop renormalized amplitudes against tree-level form factors, the
+two-particle cuts of tree-level amplitudes against one-loop renormalized form factors, and the three-particle
+cuts of two tree-level objects.
+
+Following Ref.~\cite{Bern:2020ikv}, this equation can be considerably simplified by separating the real and imaginary parts.
+Both $\Gamma^{(1)}$ and $F_j^{(0)}$ are real, so that the third term of Eq.~\eqref{eq:twoloopmaster} is purely imaginary and drops out of the real part. Thus, we are left with
+\begin{equation}\label{eq:aaaa}
+    \Gamma^{(1)}\Re F^{(1)}_j + \Gamma^{(2)}F^{(0)}_j
+     = -\frac{1}{\pi}\Re (\mathcal M F_j)^{(2)}\,.
+\end{equation}
+By contrast, the imaginary part of Eq.~\eqref{eq:twoloopmaster} does not contain the two-loop anomalous dimension, and its right-hand side, $\Im(\mathcal M F_j)^{(2)}$, is nothing but the iterated two-particle unitarity cut $(\mathcal M \mathcal M F_j)^{(2)}$ due to the optical theorem.
+This allows us to write $\Re (\mathcal M F_j)^{(2)}$ as
+\begin{align}\label{eq:ReMReF}
+    \Re (\mathcal M F_j)^{(2)}&=(\mathcal M F_j - \mathcal M\mathcal M F_j)^{(2)}
+    = \bigg(\bigg(\mathcal M - \frac{1}{2}\mathcal M\mathcal M\bigg)\bigg(F_j - \frac{1}{2} \mathcal M F_j\bigg)\bigg)^{(2)}\nonumber \\&
+    = (\Re \mathcal M  \Re F_j)^{(2)}\,,
+\end{align}
+so that Eq.~\eqref{eq:aaaa} becomes
+\begin{equation}\label{eq:twoloopmaster2}
+    \Gamma^{(1)}\Re F^{(1)}_j + \Gamma^{(2)}F^{(0)}_j
+     = -\frac{1}{\pi} (\Re\mathcal M \Re F_j)^{(2)}\,.
+\end{equation}
+
+As at one loop, the equation simplifies further if the external state is chosen to be the minimal
+configuration created by $\mathcal O_i$.
+The tree-level form factor $F^{(0)}$ is then local and
+therefore independent of both the marginal couplings and the Wilson coefficients, while the one-loop form factor $F^{(1)}$ is not local in general, and
+the corresponding terms in $\Gamma^{(1)}\Re F^{(1)}$ have to be retained.
+Projecting
+Eq.~\eqref{eq:twoloopmaster2} as before, we obtain the two-loop master formula for linear
+operator mixing \cite{Bern:2020ikv}
+\begin{equation}\label{eq:twoloopmasterlinear}
+    \left(\gamma_{i\leftarrow j}^{(2)} - \delta_{ij}\gamma_{i,\text{IR}}^{(2)}\right)F_i|_*^{(0)}
+    = -\left.\left(\frac{1}{\pi}(\Re \mathcal M\Re F_j)^{(2)}+\Gamma^{(1)}\Re F^{(1)}_j \right)\right|_{*}
+\end{equation}
+and
+\begin{equation}
+    \gamma_{i\leftarrow j_1,\dotsc,j_k}^{(2)}\, F_i|_*^{(0)}
+    = -\left.\frac{\partial^{k-1}}{\partial c_{j_2} \dotsm \partial c_{j_k}}\right|_* \left(\frac{1}{\pi}(\Re \mathcal M\Re F_{j_1})^{(2)}+\Gamma^{(1)}\Re F^{(1)}_{j_1} \right)
+\end{equation}
+for the case of $k$ higher-dimensional operator insertions, with $k\ge 2$.
 
 \section{Leading Mass Effects}
 
@@ -42,7 +317,7 @@ The key observation is that the fermionic Higgs interactions in the SM can be wr
 %
 \begin{align}
 \mathcal{L}^{\textit{int}}_{H} = - \left( 1 + \frac{h}{v}\right) 
-\sum_f m_f \bar f f 
+\sum_f m_f \bar f f \,,
 \end{align}
 %
 where the sum is over all fermions in the theory. 
@@ -55,7 +330,7 @@ This immediately implies the following low-energy theorem~\cite{Ellis:1975ap,Shi
 \begin{align}
 \lim_{\{p_{h}\} \to 0}\mathcal{M}(A \to B 
 + Nh) = 
-\sum_f \frac{m^N_f}{v^N} \frac{\partial^N}{\partial m_f^N} \mathcal{M}(A \to B)
+\left(\sum_f \frac{m_f}{v}\frac{\partial}{\partial m_f}\right)^{\!N} \mathcal{M}(A\to B)\,,
 \end{align}
 %
 relating the amplitudes of two processes differing by $N$ insertions of zero-momentum Higgs bosons. 
@@ -82,7 +357,7 @@ be of order $(m_f/\Lambda)^N$, where
 %
 \begin{equation}
 \label{eq:Sup_Div_Deg}
-N = 4-[\mathcal{O}_{i}] +\sum^n_{k=1} ([\mathcal{O}_{j_k}]-4)%\geq 0\,
+N = 4-[\mathcal{O}_{i}] +\sum^n_{k=1} ([\mathcal{O}_{j_k}]-4)
 \end{equation}
 % 
 is the superficial degree of divergence associated with the loop diagram under consideration (see Appendix~\ref{app:SDOD_EFT} for a derivation).
@@ -108,19 +383,19 @@ The procedure outlined above is summarized in the algorithm in Figure~\ref{fig:f
 Remarkably, the approximation of setting the Higgs mass to 
 zero is justified in our study since we are interested in 
 the evaluation of anomalous dimensions that are related to 
-the ultraviolet properties of a theory.
+the ultraviolet properties of the theory.
 
 
 
 
-\section{Phenomenological Applications}
+%\section{Phenomenological Applications}
 
 
 \section{Conclusions}
 
 In this chapter, we have generalized the application of on-shell and unitarity-based methods for evaluating renormalization group coefficients to account for the mixing of operators with different dimensions and leading mass effects, which play a fundamental role in the renormalization program of several effective field theories. 
 
-In particular, we have derived a master formula accounting for operator 
+In particular, we have derived a master formula accounting for the most general operator 
 mixings up to two-loop order and shown how to include leading mass effects,
 relying on the Higgs low-energy theorem. These findings have been validated by reproducing well-established results in the literature, corresponding to popular effective field theories.
 
@@ -136,6 +411,8 @@ on-shell and unitarity-based methods offer a simpler, more efficient,
 and elegant way to reach this goal. 
 The work presented in this chapter may constitute an additional milestone for progressing along this direction.
 
+\lb{Modify the conclusions: I haven't presented any application in this chapter as they will be given in the next chapters. Consider also adding an appendix to derive the Callan--Symanzik equation.}
+
 \begin{subappendices}
 \section{Effective Field Theories and Superficial Degree of Divergence\label{app:SDOD_EFT}}
 
@@ -143,8 +420,8 @@ An $n$-particle amplitude related to the operator $\Ocal_i$
 and entailing $m$ interaction vertices with the operators $\Ocal_{j_1},\dotsc,\Ocal_{j_m}$ can be schematically written as
 \begin{equation}
     \mathcal M_{n} = C_{j_1}\dotsm C_{j_m} 
-     \int \dd^4 k_1 \dotsm \dd^4 k_L \,\frac{N
-     (\{k\},\{p\})}{D(\{k\},\{p\})} \,
+     \int \dd^4 k_1 \dotsm \dd^4 k_L \,\frac{\mathcal N
+     (\{k\},\{p\})}{\mathcal D(\{k\},\{p\})} \,
     \alpha_1 \dotsm \alpha_{n} \,,
 \end{equation}
 where $\{p\}$ are external momenta and:
@@ -157,7 +434,7 @@ where $\{p\}$ are external momenta and:
 
     \item The $L$-loop integral has mass dimension 
     \begin{equation}
-    \left[\int \dd^4 k_1\dotsi \dd^4 k_L\, \frac{N(\{k\},\{p\})}{D(\{k\},\{p\})}\right]=
+    \left[\int \dd^4 k_1\dotsi \dd^4 k_L\, \frac{\mathcal N(\{k\},\{p\})}{\mathcal D(\{k\},\{p\})}\right]=
     D + n_\partial\,,
     \end{equation}        
     where $D$ is the degree of divergence of 

@@ -167,12 +167,18 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \usetikzlibrary{patterns}
+\usetikzlibrary{arrows.meta,decorations.markings}
+
+\definecolor{blobcolor}{RGB}{100,149,237}
+\definecolor{ffcolor}{RGB}{237,100,100}
 
 \tikzset{
-  ffblob/.style  = {draw=red!80!black,  circle, minimum size=0.5cm, fill=red!15,
+  %ffblob/.style  = {draw=red!80!black,  circle, minimum size=0.5cm, fill=red!15,
+  ffblob/.style  = {draw=ffcolor,  circle, minimum size=0.5cm, fill=ffcolor,
                     %postaction={pattern=north east lines, pattern color=red!70!black}
                     },
-  ampblob/.style = {draw=blue!80!black, circle, minimum size=0.5cm, fill=blue!15,
+  %ampblob/.style = {draw=blue!80!black, circle, minimum size=0.5cm, fill=blue!15,
+  ampblob/.style = {draw=blobcolor, circle, minimum size=0.5cm, fill=blobcolor,
                     %postaction={pattern=north east lines, pattern color=blue!70!black}
                     }
 }
@@ -182,3 +188,8 @@
   \end{tikzpicture}}
 
   \def\lb#1{\textbf{[}{\textcolor{violet}{$\mathscr{L}$: #1}\textbf{]}}}
+
+\newcommand{\Cross}[1]{%
+  \draw[very thick,line cap=round]
+    ([shift={(-1.2mm,-1.2mm)}]#1) -- ([shift={(1.2mm, 1.2mm)}]#1)
+    ([shift={(-1.2mm, 1.2mm)}]#1) -- ([shift={(1.2mm,-1.2mm)}]#1);}

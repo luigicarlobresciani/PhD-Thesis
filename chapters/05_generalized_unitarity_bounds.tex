@@ -15,6 +15,8 @@ L.~C.~Bresciani, G.~Levati and P.~Paradisi,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
+\lb{Insert incipit and outline of the chapter.}
+
 \section{Formalism\label{sec:PWUB_formalism}}
 
 The partial-wave analysis allows one to project 
@@ -71,17 +73,24 @@ a^J_{i\to f}\;
 %
 where $a^J_{i\to f}$ are the partial-wave coefficients.
 %
-The fundamental building blocks of such a decomposition are the Poincaré Clebsch-Gordan coefficients $\mathcal C_{\mathcal I \to *}^{J,h}$ defined as~\cite{Jiang:2020rwz}
+The fundamental building blocks of such a decomposition are the Clebsch--Gordan coefficients $\mathcal C_{\mathcal I \to *}^{J,\sigma}$ of the Poincaré group, defined as~\cite{Jiang:2020rwz}
 %
 \begin{equation}
-    \langle{P,J,h|\mathcal I}\rangle = \mathcal C_{\mathcal I \to *}^{J,h}\,
-    \delta^{(4)}\!\left(P-\sum_{i\in\mathcal I}p_i\right)\!\,,
+    \langle{P,J,\sigma|\mathcal I}\rangle = \mathcal C_{\mathcal I \to *}^{J,\sigma}\,(2\pi)^4
+    \delta^{(4)}\!\left(P-\sum_{k\in\mathcal I}p_k\right)\!\,,
 \end{equation}
 %
-namely the overlap between the multiparticle state $\ket*{\mathcal I}$ and the Poincaré irreducible multiparticle state $\ket*{P,J,h}$, where $h$ denotes the projection of the angular momentum onto the axis of the linear momentum.
-The coefficients $\mathcal C_{\mathcal I \to *}^{J,h}$ can be seen as elements of the complex vector space $V_{\mathcal I \to *}$, i.e., $\ket*{\mathcal C_{\mathcal I \to *}^{J,h}}\in V_{\mathcal I \to *}$, and, correspondingly, the angular momentum basis elements are given by
+namely the overlap between the multiparticle state $\ket{\mathcal I}$ and the Poincaré irreducible state $\ket{P,J,\sigma}$ of total momentum $P$ (with $P^2>0$)
+and angular momentum $J$, normalized as
+\begin{equation}
+    \braket{P,J,\sigma}{P',J',\sigma'}
+    = (2\pi)^4\delta^{(4)}(P-P')\delta^{JJ'}\delta^{\sigma\sigma'}\,,
+\end{equation}
+where $\sigma=-J,\dotsc,J$ labels the states of the spin-$J$ representation of the massive little group $SU(2)$, i.e., the eigenvalue of $J_z$ in the rest frame
+of $P$.
+The coefficients $\mathcal C_{\mathcal I \to *}^{J,\sigma}$ can be seen as elements of the complex vector space $V_{\mathcal I \to *}$, i.e., $\ket*{\mathcal C_{\mathcal I \to *}^{J,\sigma}}\in V_{\mathcal I \to *}$, and, correspondingly, the angular-momentum basis elements are given by
 \begin{gather}
-    \ket*{\mathcal B^{J}_{i\to f}} = \sum_h \ket*{\mathcal C_{i \to *}^{J,h}} \otimes \ket*{\mathcal C_{* \to f}^{J,h}} \in V_{i\to f}\,,
+    \ket*{\mathcal B^{J}_{i\to f}} = \sum_\sigma \ket*{\mathcal C_{i \to *}^{J,\sigma}} \otimes \ket*{\mathcal C_{* \to f}^{J,\sigma}} \in V_{i\to f}\,,
     \\
     \begin{tikzpicture}[baseline=(current bounding box.center)]
 [place/.style={circle,draw=black,fill=white,thick}]
@@ -102,11 +111,11 @@ The coefficients $\mathcal C_{\mathcal I \to *}^{J,h}$ can be seen as elements o
 \node[] (txtf) at (1,0) {\scriptsize$f$};
 \end{tikzpicture}
 \; = 
-\sum_h 
+\sum_\sigma 
 \;
 \begin{tikzpicture}[baseline=(current bounding box.center)]
 [place/.style={circle,draw=black,fill=white,thick}]
-\node[place,isosceles triangle] (n1) at (0,0) {$\mathcal C^{J,h}$};
+\node[place,isosceles triangle] (n1) at (0,0) {$\mathcal C^{J,\sigma}$};
 \node[] (n2) at (-1,0) {};
 \node[] (n3) at (-1,1) {};
 \node[] (n4) at (-1,-1) {};
@@ -115,8 +124,8 @@ The coefficients $\mathcal C_{\mathcal I \to *}^{J,h}$ can be seen as elements o
 \draw[->] (n4) -- (n1);
 \node[] (txti) at (-1,0) {\scriptsize$i$};
 \node[] (txtf) at (3.5,0) {\scriptsize$f$};
-\node[place,isosceles triangle,shape border rotate=180] (n5) at (2.5,0) {$\mathcal C^{J,h}$};
-\draw[->,double] (n1) to node[above] {\scriptsize$P,J,h$} (n5);
+\node[place,isosceles triangle,shape border rotate=180] (n5) at (2.5,0) {$\mathcal C^{J,\sigma}$};
+\draw[->,double] (n1) to node[above] {\scriptsize$P,J,\sigma$} (n5);
 \node[] (n7) at (3.5,0) {};
 \node[] (n8) at (3.5,1) {};
 \node[] (n9) at (3.5,-1) {};
@@ -126,13 +135,13 @@ The coefficients $\mathcal C_{\mathcal I \to *}^{J,h}$ can be seen as elements o
 \end{tikzpicture}\; \in V_{i\to f}\,,
 \end{gather}
 where
-$\ket*{\mathcal C^{J,h}_{* \to \mathcal I}}=\ket*{(\mathcal C^{J,h}_{\mathcal I \to *})^*} \in V_{* \to \mathcal I}$ and $V_{i\to f} = V_{i \to *}\otimes V_{* \to f}$:
+$\ket*{\mathcal C^{J,\sigma}_{* \to \mathcal I}}=\ket*{(\mathcal C^{J,\sigma}_{\mathcal I \to *})^*} \in V_{* \to \mathcal I}$ and $V_{i\to f} = V_{i \to *}\otimes V_{* \to f}$:
 \begin{align}
-    \langle{P,J,h|i}\rangle &= \mathcal C_{i \to *}^{J,h}\,
+    \langle{P,J,\sigma|i}\rangle &= \mathcal C_{i \to *}^{J,\sigma}\,(2\pi)^4
     \delta^{(4)}\!\left(P-\sum_{k\in i}p_k\right)=\;
     \begin{tikzpicture}[baseline=(current bounding box.center)]
 [place/.style={circle,draw=black,fill=white,thick}]
-\node[place,isosceles triangle] (n1) at (0,0) {$\mathcal C^{J,h}$};
+\node[place,isosceles triangle] (n1) at (0,0) {$\mathcal C^{J,\sigma}$};
 \node[] (n2) at (-1,0) {};
 \node[] (n3) at (-1,1) {};
 \node[] (n4) at (-1,-1) {};
@@ -143,17 +152,17 @@ $\ket*{\mathcal C^{J,h}_{* \to \mathcal I}}=\ket*{(\mathcal C^{J,h}_{\mathcal I 
 %\node[] (txtf) at (3.5,0) {$f$};
 %\node[place,isosceles triangle,shape border rotate=180] (n5) at (2.5,0) {$\mathcal C^{J,\sigma}$};
 \node[] (n5) at (1.5,0) {};
-\draw[->,double] (n1) to node[above] {\scriptsize$P,J,h$} (n5);
+\draw[->,double] (n1) to node[above] {\scriptsize$P,J,\sigma$} (n5);
 \end{tikzpicture}\;
 \in V_{i \to *}\,,
 \\
-\langle{f|P,J,h}\rangle &= \mathcal C_{* \to f}^{J,h}\,
-    \delta^{(4)}\!\left(P-\sum_{k\in f}p_k\right)
+\langle{f|P,J,\sigma}\rangle &= \mathcal C_{* \to f}^{J,\sigma}\,
+    (2\pi)^4\delta^{(4)}\!\left(P-\sum_{k\in f}p_k\right)
     = \;
     \begin{tikzpicture}[baseline=(current bounding box.center)]
     \node[] (n1) at (1,0) {};
-        \node[place,isosceles triangle,shape border rotate=180] (n5) at (2.5,0) {$\mathcal C^{J,h}$};
-\draw[double,->] (n1) to node[above] {\scriptsize$P,J,h$} (n5);
+        \node[place,isosceles triangle,shape border rotate=180] (n5) at (2.5,0) {$\mathcal C^{J,\sigma}$};
+\draw[double,->] (n1) to node[above] {\scriptsize$P,J,\sigma$} (n5);
 \node[] (n7) at (3.5,0) {};
 \node[] (n8) at (3.5,1) {};
 \node[] (n9) at (3.5,-1) {};
@@ -163,6 +172,7 @@ $\ket*{\mathcal C^{J,h}_{* \to \mathcal I}}=\ket*{(\mathcal C^{J,h}_{\mathcal I 
 \node[] (txtf) at (3.5,0) {\scriptsize$f$};
     \end{tikzpicture}\;\in V_{* \to f}\,.
 \end{align}
+
 The partial-wave coefficients $a_{i\to f}^J$ can then be conveniently obtained by extending the inner product 
 in $V_{\mathcal I \to *}$~\cite{Shu:2021qlr} to the
 vector space $V_{i\to f}$ as follows
@@ -196,15 +206,19 @@ vector space $V_{i\to f}$ as follows
 %
 where
 \begin{equation}
-    \dd \Phi_{\mathcal I} = \frac{1}{S_{\mathcal I}} \prod_{k \in \mathcal{I}} \frac{\dd^3 p_k}{(2\pi)^3\, 2E_k}
+    \dd \Phi_{\mathcal I} =(2\pi)^4 \delta^{(4)}\!\left(P-\sum_{k\in\mathcal I}p_k\right)\! \frac{1}{S_{\mathcal I}} \prod_{k \in \mathcal{I}} \frac{\dd^3 p_k}{(2\pi)^3\, 2E_k}
 \end{equation}
-refers to the Lorentz-invariant phase-space measure associated with $\ket*{\mathcal I}$ and $S_{\mathcal I}$ is the symmetry factor accounting for identical particles in $\ket{\mathcal{I}}$.\footnote{Explicit parameterizations for the $n$-body phase space in terms of spinor-helicity variables are available in \cite{Zwiebel:2011bx,Mastrolia:2009dr,Cox:2018wce,Larkoski:2020thc,EliasMiro:2020tdv}.}
+refers to the Lorentz-invariant phase-space measure associated with $\ket*{\mathcal I}$ and $S_{\mathcal I}$ is the symmetry factor accounting for identical particles in $\ket{\mathcal{I}}$.\footnote{Explicit parameterizations for the $n$-body phase space in terms of spinor-helicity variables are available in Refs.~\cite{Zwiebel:2011bx,Mastrolia:2009dr,Cox:2018wce,Larkoski:2020thc,EliasMiro:2020tdv}.}
+The partial-wave coefficients depend on the kinematics only through
+$s$, since all the other kinematic variables have been integrated out in
+Eq.~\eqref{eq:partial_wave}.
 Notice that we crucially chose the basis normalization
 \begin{equation}
     \langle \mathcal B^J_{i\to f}|\mathcal B^{J'}_{i\to f}\rangle = (2J+1)\,\delta^{JJ'}
 \end{equation}
 in order to obtain the partial-wave unitarity bounds in the standard form.
-Indeed, this choice implies
+Indeed, this choice implies, for each
+intermediate channel $X$,
 \begin{gather}
     \int \text d \Phi_X\,\ket*{\mathcal B^{J}_{i\to X}}\otimes \ket*{\mathcal B_{X\to f}^{J'}} = \ket*{\mathcal B_{i\to f}^J} \delta^{JJ'}\,,
     \\
@@ -343,12 +357,13 @@ and, in turn, to the partial-wave unitarity bounds
 %
 where $i\neq f$.
 %
-In practice, the determination of the angular momentum basis elements $\ket*{\mathcal B^{J}_{i\to f}}$, required by the partial-wave decomposition,
-can be achieved without passing through the Poincaré Clebsch-Gordan coefficients $\ket*{\mathcal C_{\mathcal I \to *}^{J,h}}$, as one can proceed as follows:
+
+In practice, the determination of the angular-momentum basis elements $\ket*{\mathcal B^{J}_{i\to f}}$, required by the partial-wave decomposition,
+can be achieved without passing through the Poincaré Clebsch--Gordan coefficients $\ket*{\mathcal C_{\mathcal I \to *}^{J,\sigma}}$, as one can proceed as follows:
 %
 \begin{enumerate}
-    \item Find a set of kinematic monomials in spinor-helicity variables that are consistent with the particle helicities, span the vector space $V_{i\to f}$, and are independent after accounting for momentum conservation and Schouten identities.\footnote{Public Mathematica packages that allow one to perform this task are available in~\cite{DeAngelis:2022qco,Li:2022tec}.}
-    \item Apply the Pauli-Lubanski operator squared~\cite{Witten:2003nn}
+    \item Find a set of kinematic monomials in spinor-helicity variables that are consistent with the particle helicities, span the vector space $V_{i\to f}$, and are independent after accounting for momentum conservation and Schouten identities.\footnote{Public Mathematica packages that allow one to perform this task are available in Refs.~\cite{DeAngelis:2022qco,Li:2022tec}.}
+    \item Apply the Pauli--Lubanski operator squared~\cite{Witten:2003nn}
     %
     \begin{align}
     \mathbb W^2_{\mathcal I} &= \frac{1}{8}\mathbb P_{\mathcal I}^2 \left(\epsilon^{\alpha\gamma}\epsilon^{\beta\delta}\mathbb M_{\mathcal I,\alpha\beta}\mathbb M_{\mathcal I,\gamma\delta}+\epsilon^{\dot\alpha\dot\gamma}\epsilon^{\dot\beta\dot\delta}\widetilde{\mathbb M}_{\mathcal I,\dot\alpha\dot\beta}\widetilde{\mathbb M}_{\mathcal I,\dot\gamma\dot\delta}\right)
@@ -358,21 +373,23 @@ can be achieved without passing through the Poincaré Clebsch-Gordan coefficient
 \end{align}
 where
 \begin{align}
-    \mathbb P_{\mathcal I}^{\alpha\dot\alpha} &= \sum_{i\in \mathcal I}\lambda_i^\alpha \widetilde \lambda_i^{\dot\alpha}\,,\\
-    \mathbb M_{\mathcal I}^{\alpha\beta} &= \sum_{i\in \mathcal I}\left(\lambda_{i}^\alpha\frac{\partial}{\partial \lambda_{i,\beta}}+\lambda_{i}^\beta \frac{\partial}{\partial \lambda_{i,\alpha}}\right)\,,\\
-    \widetilde{\mathbb M}_{\mathcal I}^{\dot\alpha\dot\beta} &= \sum_{i\in \mathcal I}\left(\widetilde\lambda_{i}^{\dot\alpha}\frac{\partial}{\partial \widetilde\lambda_{i,\dot\beta}}+\widetilde\lambda_{i}^{\dot\beta}\frac{\partial}{\partial \widetilde\lambda_{i,\dot\alpha}}\right)\,,
+    \mathbb P_{\mathcal I}^{\alpha\dot\alpha} &= \sum_{k\in \mathcal I}\lambda_k^\alpha \widetilde \lambda_k^{\dot\alpha}\,,\\
+    \mathbb M_{\mathcal I}^{\alpha\beta} &= \sum_{k\in \mathcal I}\left(\lambda_{k}^\alpha\frac{\partial}{\partial \lambda_{k,\beta}}+\lambda_{k}^\beta \frac{\partial}{\partial \lambda_{k,\alpha}}\right)\,,\\
+    \widetilde{\mathbb M}_{\mathcal I}^{\dot\alpha\dot\beta} &= \sum_{k\in \mathcal I}\left(\widetilde\lambda_{k}^{\dot\alpha}\frac{\partial}{\partial \widetilde\lambda_{k,\dot\beta}}+\widetilde\lambda_{k}^{\dot\beta}\frac{\partial}{\partial \widetilde\lambda_{k,\dot\alpha}}\right)\,,
 \end{align}
-and $\mathcal I=i,f$,\footnote{We use the convention $\epsilon^{12}=\epsilon^{\dot 1 \dot 2} =  1$, where spinor indices are raised and lowered as $\lambda ^\alpha = \epsilon^{\alpha\beta}\lambda_\beta$ and $\widetilde\lambda_{\dot \alpha} = \epsilon_{\dot\alpha \dot\beta}\widetilde\lambda^{\dot\beta}$. Angle and square brackets are then defined as $\agl{i}{j} = \lambda_i^\alpha \lambda_{j,\alpha}$ and $\sqr{i}{j} = \widetilde\lambda_{i,\dot\alpha}\widetilde\lambda_j^{\dot\alpha}$, respectively.} to these monomials and construct the associated matrix.
+and $\mathcal I=i,f$,
+%\footnote{We use the convention $\epsilon^{12}=\epsilon^{\dot 1 \dot 2} =  1$, where spinor indices are raised and lowered as $\lambda ^\alpha = \epsilon^{\alpha\beta}\lambda_\beta$ and $\widetilde\lambda_{\dot \alpha} = \epsilon_{\dot\alpha \dot\beta}\widetilde\lambda^{\dot\beta}$. Angle and square brackets are then defined as $\agl{i}{j} = \lambda_i^\alpha \lambda_{j,\alpha}$ and $\sqr{i}{j} = \widetilde\lambda_{i,\dot\alpha}\widetilde\lambda_j^{\dot\alpha}$, respectively.} 
+to these monomials and construct the associated matrix.
 %
 \item Find the eigenvectors of the above matrix and the associated values of angular momentum from the Casimir eigenvalues $-P^2_{\mathcal I}J_{\mathcal I}(J_{\mathcal I}+1)$.
 \item Normalize the elements of the resulting orthogonal basis so that their norm is equal to $\sqrt{2J_{\mathcal I}+1}$.
 \end{enumerate}
 
 As expected, for $2\to 2$ scattering processes, the basis elements $\ket*{\mathcal B^{J}_{i\to f}}$ are proportional to the Wigner $d$-matrices~\cite{Jiang:2020rwz}. 
-Moreover, we have explicitly verified that the
+Moreover, we have explicitly verified that the $J=0$
 partial-wave coefficients for $N\to M$ scattering processes (with $N,M \geq 2$) exactly reproduce the elements of the reduced scattering matrix~\cite{Chang:2019vez,Falkowski:2019tft,Cohen:2021ucp,Mahmud:2025wye}, which captures only the $s$-wave contribution.
 
-As an interesting result of our analysis, in Appendix~\ref{app:2-to-3_basis} we report the angular momentum basis for $2 \to 3$ amplitudes that holds for generic values of $J$.
+As an interesting result of our analysis, in Appendix~\ref{app:2-to-3_basis} we report the angular-momentum basis for $2 \to 3$ amplitudes that holds for generic values of $J$.
 
 \section{Effective Field Theory of Gravity and Light-by-Light Scattering}
 
@@ -435,7 +452,7 @@ and similarly for the Riemann tensor \cite{Arkani-Hamed:2020blm}
     R_{\alpha\dot\alpha\beta\dot\beta\gamma\dot\gamma\delta\dot\delta}\sim \epsilon_{\alpha\beta}\epsilon_{\gamma\delta}\widetilde\lambda_{\dot\alpha}\widetilde\lambda_{\dot\beta}\widetilde\lambda_{\dot\gamma}\widetilde\lambda_{\dot\delta} + \epsilon_{\dot\alpha\dot\beta}\epsilon_{\dot\gamma\dot\delta}\lambda_{\alpha}\lambda_{\beta}\lambda_{\gamma}\lambda_{\delta}\,.
 \end{equation}
 
-The kinematic vector space for the maximally helicity-violating amplitude in Eq.~\eqref{eq:amplitude}, i.e., $\mathcal A_{1^{-S},2^{-S}\to 3^{+S},4^{+S}}$, has dimension $2S+1$ and is spanned by $\{\ket*{m_k}\}_{k=1}^{2S+1}$, with
+The kinematic vector space for the maximally helicity-violating amplitude in Eq.~\eqref{eq:amplitude}, i.e., $\mathcal A_{1^{-S},2^{-S}\to 3^{+S},4^{+S}}$, has dimension $2S+1$ and is spanned by $\{\ket{m_k}\}_{k=1}^{2S+1}$, with
 %
 \begin{equation}
     \ket*{m_k} = \sqr{1}{2}^{2S-k+1}\sqr{1}{4}^{k-1}\sqr{2}{3}^{k-1}\sqr{3}{4}^{2S-k+1} \,,
@@ -444,7 +461,7 @@ The kinematic vector space for the maximally helicity-violating amplitude in Eq.
 which constitutes a basis.
 Of course, the same is true for $\mathcal A_{1^{+S},2^{+S}\to 3^{-S},4^{-S}}$, provided that all the square inner products are substituted with angle ones.
 %
-In this basis, the Pauli-Lubanski operator squared of Eq.~\eqref{eq:PLoperator} is represented by an upper bidiagonal matrix:
+In this basis, the Pauli--Lubanski operator squared of Eq.~\eqref{eq:PLoperator} is represented by an upper bidiagonal matrix:
 %
 \begin{equation}
     \mathbb W^2_{12}=-s 
@@ -563,7 +580,7 @@ As a result, we find that the strongest unitarity bound is provided by the parti
 \end{equation}
 The regions of the parameter space satisfying the partial-wave unitarity condition of Eq.~\eqref{eq:PUbounds} are shown in red in Figure~\ref{fig:s1} for the cases of $S=1,2$, and in the left panels of Figures \ref{fig:s1_v2} and \ref{fig:s2_v2}.\footnote{In deriving these bounds for the gravitational EFT ($S=2$), we explicitly neglected the universal long-range contribution from single-graviton exchange
 \begin{equation}
-    \ket*{\mathcal A_{1^{+2},2^{+2} \to 3^{+2},4^{+2}}} = \frac{1}{\Mpl^2}\frac{\agl{1}{2}^4 \sqr{3}{4}^4}{stu}\,,
+    \ket{\mathcal A_{1^{+2},2^{+2} \to 3^{+2},4^{+2}}} = \frac{1}{\Mpl^2}\frac{\agl{1}{2}^4 \sqr{3}{4}^4}{stu}\,,
 \end{equation}
 responsible for the well-known forward and backward singularities that induce infrared divergences in the partial-wave projections of the scattering amplitude. Such divergences are a well-understood feature of long-range interactions and can be systematically handled by factoring out a universal infrared-divergent phase \cite{Weinberg:1965nx} common to all partial waves. This universal phase, which arises from the resummation of iterated single-graviton exchange (the gravitational Born series), does not affect physical observables and can be stripped from the $S$-matrix, as done for example in \cite{Blas:2020dyg,Bellazzini:2025bay}, yielding infrared-finite amplitudes suitable for unitarity and positivity analyses, and leaving the bounds presented here robust. The resolution scale $\mathcal E$ introduced by this procedure \cite{Bellazzini:2025bay} admits a physical interpretation as the energy resolution of a macroscopic detector for soft gravitons. 
 Alternative approaches to deal with the above singularity include the smearing method of Ref.~\cite{Caron-Huot:2021rmr} and the dimensional reduction technique of Ref.~\cite{Bellazzini:2019xts}.}
@@ -764,6 +781,8 @@ by $\mathcal L^{(6)}$ and $\mathcal L^{(8)}$; see
 Eqs.~\eqref{eq:SMEFT_6} and \eqref{eq:SMEFT_8}.
 
 \section{Conclusions}
+
+\lb{Insert conclusions.}
 
 \begin{subappendices}
 \input{chapters/app_2-to-3_basis}
