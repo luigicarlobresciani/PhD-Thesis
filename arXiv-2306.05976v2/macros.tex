@@ -1,0 +1,430 @@
+%
+% macros.tex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appearance of exercises
+
+%\newcommand{exer}[2]{
+%\begin{question}{Exercise #1}
+%#2
+%\end{question}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%allows breaks in equation arrays
+\allowdisplaybreaks[3]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%equation numbers 
+%uncomment below if (section.number) format instead of (number) wanted
+%\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%small figure captions
+\usepackage[font=small,labelfont=bf,width=0.85\textwidth]{caption}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%bold maths in section titles
+\makeatletter
+\let\old@startsection=\@startsection
+\renewcommand{\@startsection}[6]{\old@startsection{#1}{#2}{#3}{#4}{#5}{#6\mathversion{bold}}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%graphics wrapper
+\makeatletter
+\newlength{\apb@width}
+\newcommand{\autoparbox}[2][c]{\settowidth{\apb@width}{#2}\parbox[#1]{\apb@width}{#2}}
+\newcommand{\includegraphicsbox}[2][]{\autoparbox{\includegraphics[#1]{#2}}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% slanted greek caps
+
+\let\oldPhi=\Phi
+\let\oldPsi=\Psi
+\let\oldGamma=\Gamma
+\let\oldDelta=\Delta
+\let\oldSigma=\Sigma
+\let\oldLambda=\Lambda
+\let\oldTheta=\Theta
+\let\oldPi=\Pi
+\let\oldXi=\Xi
+\let\oldUpsilon=\Upsilon
+\let\oldOmega=\Omega
+\renewcommand{\Phi}{\mathnormal{\oldPhi}}
+\renewcommand{\Psi}{\mathnormal{\oldPsi}}
+\renewcommand{\Gamma}{\mathnormal{\oldGamma}}
+\renewcommand{\Sigma}{\mathnormal{\oldSigma}}
+\renewcommand{\Delta}{\mathnormal{\oldDelta}}
+\renewcommand{\Theta}{\mathnormal{\oldTheta}}
+\renewcommand{\Lambda}{\mathnormal{\oldLambda}}
+\renewcommand{\Pi}{\mathnormal{\oldPi}}
+\renewcommand{\Xi}{\mathnormal{\oldXi}}
+\renewcommand{\Upsilon}{\mathnormal{\oldUpsilon}}
+\renewcommand{\Omega}{\mathnormal{\oldOmega}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fractions and stuff
+
+\ifx\genfrac\sdflkaj\newcommand{\atopfrac}[2]{{{#1}\above0pt{#2}}}\else\newcommand{\atopfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}\fi
+\newcommand{\sfrac}[2]{{\textstyle\frac{#1}{#2}}}
+\newcommand{\half}{\sfrac{1}{2}}
+\newcommand{\ihalf}{\sfrac{i}{2}}
+\newcommand{\quarter}{\sfrac{1}{4}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% symbols
+
+\newcommand{\alg}[1]{\mathfrak{#1}}
+\newcommand{\grp}[1]{\mathrm{#1}}
+\newcommand{\cas}{C\indup{A}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% styles
+
+\newcommand{\indup}[1]{_{\mathrm{#1}}}
+\newcommand{\indups}[1]{_{\mathrm{\scriptscriptstyle #1}}}
+\newcommand{\supup}[1]{^{\mathrm{#1}}}
+\newcommand{\matr}[2]{\left(\begin{array}{#1}#2\end{array}\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%brackets
+\newcommand{\brk}[1]{(#1)}
+\newcommand{\lrbrk}[1]{\left(#1\right)}
+\newcommand{\bigbrk}[1]{\bigl(#1\bigr)}
+\newcommand{\biggbrk}[1]{\biggl(#1\biggr)}
+\newcommand{\Bigbrk}[1]{\Bigl(#1\Bigr)}
+\newcommand{\brc}[1]{\{#1\}}
+\newcommand{\lrbrc}[1]{\left\{#1\right\}}
+\newcommand{\bigbrc}[1]{\bigl\{#1\bigr\}}
+\newcommand{\vev}[1]{\langle#1\rangle}
+\newcommand{\bev}[1]{ [#1]}
+\newcommand{\pslash}{\slash\!\!\! p}
+\newcommand{\normord}[1]{\mathopen{:}#1\mathclose{:}}
+\newcommand{\lrvev}[1]{\left\langle#1\right\rangle}
+\newcommand{\bigvev}[1]{\bigl\langle#1\bigr\rangle}
+\newcommand{\comm}[2]{[#1,#2]}
+\newcommand{\lrcomm}[2]{\left[#1,#2\right]}
+\newcommand{\bigcomm}[2]{\bigl[#1,#2\bigr]}
+\newcommand{\Bigcomm}[2]{\Bigl[#1,#2\Bigr]}
+\newcommand{\acomm}[2]{\{#1,#2\}}
+\newcommand{\bigacomm}[2]{\bigl\{#1,#2\bigr\}}
+\newcommand{\Bigacomm}[2]{\Bigl\{#1,#2\Bigr\}}
+\newcommand{\gcomm}[2]{[#1,#2\}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\lrabs}[1]{\left|#1\right|}
+\newcommand{\bigabs}[1]{\bigl|#1\bigr|}
+\newcommand{\bigeval}[1]{#1\big|}
+\newcommand{\eval}[1]{#1|}
+\newcommand{\lreval}[1]{\left.#1\right|}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\state}[1]{\mathopen{|}#1\mathclose{\rangle}}
+\newcommand{\costate}[1]{\mathopen{\langle}#1\mathclose{|}}
+\newcommand{\bra}[1]{\langle #1 \rvert}
+\newcommand{\ket}[1]{\lvert #1 \rangle}
+\newcommand{\sbra}[1]{\langle #1|}
+\newcommand{\sket}[1]{|#1\rangle}
+\newcommand{\cbra}[1]{[#1|}
+\newcommand{\cket}[1]{|#1]}
+\newcommand{\sprod}[2]{\langle#1,#2\rangle}
+\newcommand{\sprods}[2]{\langle#1#2\rangle}
+\newcommand{\cprod}[2]{[#1,#2]}
+\newcommand{\cprods}[2]{[#1#2]}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\superN}{\mathcal{N}}
+\newcommand{\Tr}{\mathop{\mathrm{Tr}}}
+\newcommand{\sign}{\mathop{\mathrm{sign}}}
+\newcommand{\disc}{\mathop{\mathrm{disc}}}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\newcommand{\Li}{\mathop{\mathrm{Li}}\nolimits}
+\newcommand{\order}[1]{\mathcal{O}(#1)}
+\newcommand{\gen}[1]{\mathrm{#1}}
+\newcommand{\genY}[1]{\widehat{\gen{#1}}}
+\newcommand{\genD}[1]{\widetilde{\gen{#1}}}
+\newcommand{\rng}[2]{^{#1}_{#2}}
+\newcommand{\sinv}[2]{t\rng{#1}{#2}}
+
+\newcommand{\gengend}{G}
+\newcommand{\gengen}{\gen{\gengend}}
+\newcommand{\gengenY}{\genY{\gengend}}
+\newcommand{\prefac}{ \left(\frac{i}{4\pi^2\cas}\right)}
+\newcommand{\dlint}[1]{\int \frac{d^{#1}l}{(2\pi)^{#1}}}
+
+\newcommand{\euler}{\ensuremath{\gamma_{\text{E}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% equations
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\nln}{\nonumber\\}
+\newcommand{\nl}[1][0pt]{\nonumber\\[#1]&\hspace{-4\arraycolsep}&\mathord{}}
+\newcommand{\nlnum}{\\&\hspace{-4\arraycolsep}&\mathord{}}
+\newcommand{\earel}[1]{\mathrel{}&\hspace{-2\arraycolsep}#1\hspace{-2\arraycolsep}&\mathrel{}}
+\newcommand{\eq}{\earel{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% references
+\makeatletter
+\def\mr@ignsp#1 {\ifx\:#1\@empty\else #1\expandafter\mr@ignsp\fi}%
+\newcommand{\multiref}[1]{\begingroup%\let\protect\string%
+\xdef\mr@no@sparg{\expandafter\mr@ignsp#1 \: }%
+\def\mr@comma{}%
+\@for\mr@refs:=\mr@no@sparg\do{\mr@comma\def\mr@comma{,}\ref{\mr@refs}}%
+\endgroup}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arxiv links
+
+\ifx\href\asklfhas\newcommand{\href}[2]{#2}\fi
+\newcommand{\arxivlink}[1]{\href{http://arxiv.org/abs/#1}{arxiv:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hypref}[2]{\ifx\href\asklfhas #2\else\href{#1}{#2}\fi}
+\newcommand{\Secref}[1]{Section~\multiref{#1}}
+\newcommand{\secref}[1]{Sec.~\multiref{#1}}
+\newcommand{\Appref}[1]{Appendix~\multiref{#1}}
+\newcommand{\appref}[1]{App.~\multiref{#1}}
+\newcommand{\Tabref}[1]{Table~\multiref{#1}}
+\newcommand{\tabref}[1]{Tab.~\multiref{#1}}
+\newcommand{\Figref}[1]{Figure~\multiref{#1}}
+\newcommand{\figref}[1]{Fig.~\multiref{#1}}
+\renewcommand{\eqref}[1]{(\multiref{#1})}
+\newcommand{\eqn}[1]{eq.~\eqref{#1}}
+
+
+
+% Math-Befehle
+\newcommand{\N}{\ensuremath{\mathbb{N }}}
+\newcommand{\R}{\ensuremath{\mathbb{R }}}
+\newcommand{\C}{\ensuremath{\mathbb{C }}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z }}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q }}}
+\newcommand{\A}{\ensuremath{\mathbb{A }}}
+\newcommand{\1}{\ensuremath{\mathds{1}}}
+%\newcommand{\I}{\ensuremath{\mathds{I}}}
+\renewcommand{\i}{\ensuremath{\mathrm{i}}}
+\renewcommand{\d}{\ensuremath{\mathrm{d}}}
+\renewcommand{\Re}{\ensuremath{\text{Re}\,}}
+\renewcommand{\Im}{\ensuremath{\text{Im}\,}}
+%\newcommand{\abs}[1]{\ensuremath{\left\vert #1 \right\vert}}
+\newcommand{\an}[1]{\big |_{#1}}
+\newcommand{\gegen}{\longrightarrow}
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\newcommand{\p}{\varphi}
+\renewcommand{\t}{\vartheta}
+\newcommand{\laplace}{\ensuremath{\mathbf{\Delta}}}
+\newcommand{\folgt}{\Rightarrow}
+\newcommand{\gd}{\Leftrightarrow}
+\newcommand{\soll}{\stackrel{!}{=}}
+\newcommand{\komm}[2]{\ekla{#1 , #2}}
+\newcommand{\kommb}[2]{\big[#1 , #2\big]}
+\newcommand{\antikomm}[2]{\gkla{#1 , #2}}
+\newcommand{\antikommb}[2]{\big\{#1 , #2\big\}}
+\newcommand{\const}{\ensuremath{\mathrm{const.}}}
+\newcommand{\vektor}[3]{\kla{\begin{array}{c} #1 \\ #2 \\ #3 \end{array}}}
+\newcommand{\tr}[1]{\mathrm{Tr}\left(#1\right)}
+\newcommand{\smalltr}[1]{\mathrm{Tr}(#1)}
+\newcommand{\bigtr}[1]{\mathrm{Tr}\big(#1\big)}
+\newcommand{\ordnung}[1]{O(#1)}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\bleq}{\ensuremath{\mathrel{\phantom{=}}}}
+\newcommand{\pe}{\phantom{1}}
+\newcommand{\pee}{\phantom{12}}
+\newcommand{\peee}{\phantom{123}}
+\newcommand{\pmi}{\phantom{-}}
+\def\ib{{\bar\imath}}
+\def\tree{{\rm tree}}
+
+
+
+% Differentiale
+\newcommand{\dd}[1]{\ \mathrm{d}^3 #1}
+\newcommand{\dx}[1]{\ \mathrm{d} #1}
+\newcommand{\DX}[1]{\mathrm{d} #1}
+\newcommand{\PX}[1]{\partial #1}
+\newcommand{\ddx}[1]{\frac{\text{d}}{\DX{#1}}}
+\newcommand{\dydx}[2]{\frac{\DX{#1}}{\DX{#2}}}
+\newcommand{\ddxq}[1]{\frac{\text{d}^2}{\DX{#1^2}}}
+\newcommand{\ddxn}[2]{\frac{\text{d}^{#2}}{\DX{#1^{#2}}}}
+\newcommand{\dydxq}[2]{\frac{\text{d}^2 #1}{\DX{#2^2}}}
+\newcommand{\dydxn}[3]{\frac{\text{d}^{#3} #1}{\DX{#2^{#3}}}}
+\newcommand{\ppx}[1]{\frac{\partial}{\PX{#1}}}
+\newcommand{\pypx}[2]{\frac{\PX{#1}}{\PX{#2}}}
+\newcommand{\ppxq}[1]{\frac{\partial^2}{\PX{#1^2}}}
+\newcommand{\pypxq}[2]{\frac{\partial^2 #1}{\PX{#2^2}}}
+\newcommand{\ppxn}[2]{\frac{\partial^{#2}}{\PX{#1^{#2}}}}
+\newcommand{\pypxn}[3]{\frac{\partial^{#3} #1}{\PX{#2^{#3}}}}
+\newcommand{\dv}[1]{\ensuremath{\text{d}^4#1} \,}
+
+
+
+% Abkuerzungen
+\newcommand{\lnk}[1]{\ln \frac{\e^2}{x_{#1}^2}}
+\newcommand{\lnl}[3]{\ln \frac{\e^2 x_{#1}^2}{x_{#2}^2 x_{#3}^2}}
+\newcommand{\lne}{\kla{\lnk{12}-1}}
+\newcommand{\Op}{\mathcal{O}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\K}{\mathcal{K}}
+%\newcommand{\D}{\mathcal{D}}
+\newcommand{\Obar}{\overline{\mathcal{O}}}
+\newcommand{\Otil}{\widetilde{\mathcal{O}}}
+\newcommand{\gYM}{g_{\text{YM}}}
+\newcommand{\Dn}{\Delta^{(0)}}
+\newcommand{\comment}[1]{\medskip\leftline{\bf #1}\medskip}
+\newcommand{\Df}{\Delta}
+
+%Sonstige
+\newcommand{\abstand}{\hspace{1.5cm}}
+\newcommand{\nnl}{\nonumber\\}
+\newcommand{\tief}[1]{\textsubscript{#1}}
+\newcommand{\hoch}[1]{\textsuperscript{#1}}
+\newcommand{\ps}{$\hspace{-6pt}\phantom{\Big]}$}
+\newcommand{\oc}[1]{\raisebox{-1pt}{#1}}
+\newcommand{\psx}{\\[4pt]}
+\newcommand{\ocx}[1]{\raisebox{-3pt}{#1}}
+\newcommand{\qa}{\widetilde{\gamma}_\alpha}
+\newcommand{\qab}{\widetilde{\gamma}_{\alpha=\beta}}
+\newcommand{\qabc}{\widetilde{\gamma}_{\alpha=\beta=\gamma}}
+\newcommand{\qac}{\widetilde{\gamma}_{\alpha=\gamma}}
+\newcommand{\qb}{\widetilde{\gamma}_\beta}
+\newcommand{\qbc}{\widetilde{\gamma}_{\beta=\gamma}}
+\newcommand{\qc}{\widetilde{\gamma}_\gamma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%pdf setup
+\ifx\hypersetup\sadfkjashdfkxja\newcommand\hypersetup[1]{}\newcommand{\texorpdfstring}[2]{#1}\fi
+
+\hypersetup{plainpages=false}
+\hypersetup{pdfpagemode=UseNone}
+%\hypersetup{pdfpagemode=UseOutlines}
+%\hypersetup{pdfpagelabels=true}
+\hypersetup{bookmarksnumbered=true}
+\hypersetup{pdfstartview=FitH}
+\hypersetup{colorlinks=false}
+\hypersetup{citebordercolor={.5 1 .5}}
+\hypersetup{urlbordercolor={.5 1 1}}
+\hypersetup{linkbordercolor={1 .7 .7}}
+%\hypersetup{pdfborder={0 0 1 [3]}}
+
+\renewcommand{\=}{\mathrel{\phantom{=}}}
+\newcommand{\s}[1]{\slashed{#1}}
+\newcommand{\del}{\partial}
+\newcommand{\ang}[2]{\langle #1\;#2\rangle}
+\newcommand{\bracket}[2]{\langle #1 \vert #2 \rangle}
+\newcommand{\intt}[2][\,]{\int\!\!\diff[#1]{#2}}
+\newcommand{\+}{\negthinspace+\negthinspace}
+\newcommand{\mi}{\negthinspace-\negthinspace}
+\renewcommand{\c}{\!\cdot\!}
+\newcommand{\diff}[2][]{\mathrm{d}^{#1}#2}
+\newcommand{\pint}[2][4]{\int\!\!\frac{\diff[#1]{#2}}{(2\pi)^#1}}
+
+\newcommand{\arXiv}[1]{\href{http://arxiv.org/abs/#1}{\texttt{ #1}}}
+\newcommand{\narXiv}[2]{\href{http://arxiv.org/abs/#1}{\texttt{arXiv:#1 [#2]}}}
+
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\O}{\mathcal{O}}
+
+% math mode
+\allowdisplaybreaks
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% spinors
+
+
+\renewcommand{\a}{\alpha}
+\newcommand{\da}{{\dot{\alpha}}}
+\newcommand{\db}{{\dot{\beta}}}
+\renewcommand{\b}{\beta}
+\newcommand{\la}{\lambda}
+\newcommand{\tla}{\tilde\lambda}
+\newcommand{\diffla}[2]{\frac{\partial}{\partial\la_{#1}^{#2}}}
+\newcommand{\difftla}[2]{\frac{\partial}{\partial\tla_{#1}^{#2}}}
+
+
+\newcommand\lr[1]{{\left({#1}\right)}}
+\renewcommand \widebar [1] {\overline{#1}}
+\newcommand\bin[2]{\left({#1}\atop{#2}\right)}
+\newcommand \VEV [1] {\left\langle{#1}\right\rangle}
+
+\newcommand{\ft}[2]{{\textstyle\frac{#1}{#2}}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cA}{\mathcal{A}}
+
+\newcommand{\delmn}[2]{\delta^{\mu_{#1}}_{\nu_{#2}}}
+\newcommand{\nicehalf}{\nicefrac{1}{2}}
+\newcommand{\dl}[1]{\frac{d^{#1}l}{(2\pi)^{#1}}}
+\newcommand\entspricht{\mathrel{\hat{=}}} 
+
+\def\l<{\langle}
+\def\r>{\rangle}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+\newcommand{\spA}[2]{\langle #1 #2 \rangle}
+\newcommand{\spB}[2]{[ #1 #2 ]}
+\newcommand{\spAB}[3]{\langle #1 | #2 | #3 ]}
+\newcommand{\spBA}[3]{[ #1 | #2 | #3 \rangle}
+\newcommand{\spAA}[3]{\langle #1 | #2 | #3 \rangle}
+\newcommand{\spBB}[3]{[ #1 | #2 | #3 ]}
+\newcommand{\trm}[4]{ {\rm tr}_-( \slashed{#1} \slashed{#2} \slashed{#3} \slashed{#4} )}
+\newcommand{\trmgamtwo}[4]{ {\rm tr}_-( \slashed{#1} #2 \slashed{#3} \slashed{#4} )}
+\newcommand{\trmgamthree}[4]{ {\rm tr}_-( \slashed{#1} \slashed{#2} #3 \slashed{#4} )}
+\newcommand{\MHVb}{$\overline{\rm MHV}$}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\epsdot}[2]{(\epsilon_{#1}\cdot\epsilon_{#2})}
+
+\newcommand{\Cs}{\textbf{c}} 
+\newcommand{\Si}{\textbf{s}} 
+\newcommand{\bal}[1]{\setlength{\jot}{1em}\begin{align}\begin{aligned}#1\end{aligned}\end{align}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commenting tools
+
+\def\jan#1{\{\color{red} JP: #1 \color{black} \}}
+\def\johannes#1{\{\color{blue} JH: #1 \color{black} \}}
+\newcommand{\jmh}[1]{\johannes{#1}}
+\def\simon#1{\{\color{purple} SB: #1 \color{black} \}}
+\def\simone#1{\{\color{green} SZ: #1 \color{black} \}}
+\def\comment#1{\color{red}  #1 \color{black}}
+
+%\def\jan#1{}
+%\def\johannes#1{}
+%\def\simon#1{}
+%\def\simone#1{}
+
+
+
+\tikzset{
+  c/.style={every coordinate/.try}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% boxed equations
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercise Counter and Tag
+
+\newcounter{exernumber}[chapter]
+\renewcommand{\theexernumber}{\thechapter.\arabic{exernumber}}
+
+\newenvironment{exer}[1]
+    {\refstepcounter{exernumber}
+     \begin{question}{Exercise \theexernumber : #1}
+    }
+    { 
+    \end{question}
+    }
+

@@ -1,0 +1,143 @@
+\appendix
+
+\chapter{Conventions and useful formulae}
+\label{sec:Conventions}
+
+\begin{itemize}
+\item Index and metric conventions:
+\begin{align*}
+%
+\eta_{\mu\nu} &= \text{diag}(+,-,-,-)\, ,  \qquad  p_{\mu}p^{\mu}=p_{0}^{2}-{\vec p}^{2} \, ,
+\nn\\
+%
+\epsilon_{12}&=\epsilon_{\dot 1\dot 2}=\epsilon^{21}=\epsilon^{\dot 2\dot 1}=+1\, , \quad
+\epsilon_{21}=\epsilon_{\dot 2\dot 1}=\epsilon^{12}=\epsilon^{\dot 1\dot 2}=-1\, ,\nn \\
+(\bar\sigma^{\mu})^{\da\a}&=(\1,-\vec\sigma) \, , \quad
+(\sigma^{\mu})_{\a\da}=\epsilon_{\a\b}
+\, \epsilon_{\da\db}\, (\bar\sigma^{\mu})^{\db\b}= (\1,\vec\sigma) \, ,\nn \\
+(\bar\sigma_{\mu})^{\da\a}&=(\1,\vec\sigma) \, , \quad 
+(\sigma_{\mu})_{\a\da}=(\1,-\vec\sigma)\, , \nn\\
+\sigma_{1}&=   
+\begin{pmatrix} % or pmatrix or bmatrix or Bmatrix or ...
+      0 & 1 \\
+      1 & 0 \\
+\end{pmatrix}\, ,
+\quad 
+\sigma_{2}=   
+\begin{pmatrix} % or pmatrix or bmatrix or Bmatrix or ...
+      0 & -\i \\
+      \i & 0 \\
+\end{pmatrix}\, ,
+\quad 
+\sigma_{3}=   
+\begin{pmatrix} % or pmatrix or bmatrix or Bmatrix or ...
+      1 &  0 \\
+      0 & -1 \\
+\end{pmatrix}\, , \nn\\
+\chi^{\a}&= \epsilon^{\a\b}\,\chi_{\b}\, ,\qquad
+\tilde\chi^{\da}= \epsilon^{\da\db}\,\tilde\chi_{\b}\, , \nn \\
+(\chi_{\a})^{\ast} & =\tilde\chi_{\da}\, , \qquad
+(\chi^{\a}\, \psi^{\b})^{\dagger}= (\psi^{\b})^{\dagger} \, (\chi^{\a})^{\dagger}\, .
+\end{align*}
+\item (Anti)-symmetrisation:
+\begin{align*}
+A_{(\mu}\, B_{\nu)} \coloneqq \frac{1}{2} \, ( A_{\mu} B_{\nu} + A_{\nu} B_{\mu})\, , \qquad
+A_{[\mu}\, B_{\nu]} \coloneqq \frac{1}{2} \, ( A_{\mu} B_{\nu} - A_{\nu} B_{\mu})\, .
+\end{align*}
+%
+\item Spinor helicity relations: 
+\begin{align*}
+p^{\a\da}&=\lambda^{\a}\, \tilde\lambda^{\da} \, ,  \qquad
+p_{\da\a}=\epsilon_{\da\db}\, \epsilon_{\a\b}\, \lambda^{\b}\, \tilde\lambda^{\db}\, ,
+\quad \la_{\a}=\epsilon_{\a\b}\,\la^{\b}\, ,
+\quad \tla_{\da}=\epsilon_{\da\db}\,\tla^{\db}\, ,\nn\\
+u_{+}(p)&= v_{-}(p)=    
+\begin{pmatrix} % or pmatrix or bmatrix or Bmatrix or ...
+      \la_{\alpha} \\
+      0 \\
+   \end{pmatrix}
+   \eqqcolon |p\rangle\, ,\quad
+u_{-}(p)= v_{+}(p)=    
+\begin{pmatrix} % or pmatrix or bmatrix or Bmatrix or ...
+      0 \\
+      \tla^{\da} \\
+   \end{pmatrix}
+   \eqqcolon |p]\, , \nn\\
+\bar u_{+}(p)&= \bar v_{-}(p) = (0\,\,\, \tla_{\da}) \eqqcolon [p| \, , \quad
+   \bar u_{-}(p)= \bar v_{+}(p)  = (\la^{\a}\,\,\, 0) \eqqcolon \langle p| \, ,\nn \\
+   \vev{\la_{i}\, \la_{j}} & \coloneqq \la_{i}^{\a}\, \la_{j\, \a}\, , \qquad
+   \bev{\tla_{i}\, \tla_{j}} \coloneqq \tla_{i\,\da}\, \tla_{j}^{\da}\, .
+   \end{align*}
+Using the chiral representation of the Dirac matrices, we have
+\begin{align*}
+\slashed{p}  & = p_{\mu}\, \gamma^{\mu} =    \begin{pmatrix} 
+      0 & p_{\a\da} \\
+      p^{\da\a} & 0 \\
+   \end{pmatrix}\,, \quad
+   \quad
+   p_{\a\da} \coloneqq p_{\mu}\, (\sigma^{\mu})_{\a\da}\, , \nn \\
+   p^{\da\a}&= \epsilon^{\a\b}\, \epsilon^{\da\db}\,  p_{\b\db}= p_{\mu}\, (\bar\sigma^{\mu})^{\da\a}\,.
+\end{align*}
+We furthermore note 
+\begin{align*}
+[i|\gamma^{\mu}| j\rangle &= \langle j | \gamma^{\mu}|i]\, ,\quad 
+\langle p | \gamma^{\mu} | p] = \la^{\a}\, \sigma^{\mu}_{\a\da}\, \tla^{\da}= 2\, p^{\mu}\, , 
+\nn\\ 
+[i|\gamma^{\mu}| j\rangle \, \langle l|\gamma_{\mu}|k] &= 2\, [ik]\, \langle lj \rangle\, .
+\end{align*}
+\item The generators of the Lorentz group in the spinor representation are given by
+%
+\begin{align*}
+(\sigma^{\mu\nu})_\a{}^\b &= \frac{1}{4} \, \Bigl( (\sigma^{\mu})_{\a\da}\,  
+({\bar\sigma}^{\nu})^{\da\b} - (\sigma^{\nu})_{\a\da}\,  
+({\bar\sigma}^{\mu})^{\da\b} \Bigr) \, , \nn \\
+({\bar\sigma}^{\mu\nu})^\a{}_\db &= \frac{1}{4} \, \Bigl( ({\bar\sigma}^{\mu})^{\da\a}\,  
+({\sigma}^{\nu})_{\a\db} - ({\bar\sigma}^{\nu})^{\da\a}\,  
+({\sigma}^{\mu})^{\a\db} \Bigr) \, .
+\end{align*}
+%
+\item Complex conjugation properties:
+%
+\begin{align*}
+(\la^{\a})^{\ast}= \tla^{\da}\, , \qquad \vev{ij}^{\ast}=
+(\la_{i}^{\a}\, \la_{j\, \a})^{\ast}=
+(\tla_{i}^{\da}\, \tla_{j\, \da})^{\ast}=
+-\bev{ij}\, .
+\end{align*}
+%
+\item Useful trace identities:
+%
+\begin{align*}
+\Tr[\slashed{a}\,\slashed{b}\,\slashed{c}\,\slashed{d}]&=4\,[\, ( a\cdot b)(c\cdot d)-
+( a\cdot c)(b\cdot d)+( a\cdot d)(b\cdot c)\, ]\, , \nn \\ 
+\Tr[\slashed{a}\,\slashed{b}\, ] &= 4\,  ( a\cdot b)\, . 
+\label{traceids}
+\end{align*}
+%
+\item Expressions for the $\text{SU}(N_c)$ generators in the
+fundamental representation:
+\begin{itemize}
+\item $\text{SU}(2)$: \quad $T^{a}=\ft{1}{\sqrt{2}}\, \sigma^{a}$, \quad $\sigma^{a}$: Pauli matrices $a=1,2,3$.\\
+\item $\text{SU}(3)$: \quad $T^{a}=\ft{1}{\sqrt{2}}\, \lambda^{a}$, \quad $\lambda^{a}$: Gell-Mann matrices $a=1,\ldots,8$,\\
+\begin{align*}
+\begin{aligned}
+& \lambda^{a}= \begin{pmatrix} \sigma^{a} & \\ & 0\\ \end{pmatrix}\,, \quad a=1,2,3\,, \\
+& \lambda^{4}= \begin{pmatrix}  0 &  & 1 \\ & 0 & \\ 1 & & 0 \\ \end{pmatrix}\,, \qquad
+\lambda^{5}= \begin{pmatrix}  0 &  & -\i\\ & 0 & \\ \i& & 0 \\ \end{pmatrix}\,, \qquad
+\lambda^{6}= \begin{pmatrix}  0 &  &  \\ & 0 &1 \\  & 1 & 0 \\ \end{pmatrix}\,,  \\
+& \lambda^{7}= \begin{pmatrix}  0 &  &  \\ & 0 &-\i\\  & \i& 0 \\ \end{pmatrix}\,, \qquad
+\lambda^{8}= \frac{1}{\sqrt{3}}\begin{pmatrix}  1 &  &  \\ & 1 & \\  &  & -2 \\ \end{pmatrix}\,.
+\end{aligned}
+\end{align*}
+The omitted entries in the above are $0$.
+\smallskip
+\item $\text{SU}(N_c)$: Explicit constructions for $T^{a}$ exist in terms of the 't~Hooft twist matrices, see~\cite{ch6-'tHooft:1981sz}.
+\end{itemize}
+
+\end{itemize}
+
+\begin{thebibliography}{99.}
+\input{conventions/conventions-references.tex}
+\end{thebibliography}
+
+

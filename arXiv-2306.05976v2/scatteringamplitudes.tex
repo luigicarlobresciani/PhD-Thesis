@@ -1,0 +1,143 @@
+
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample root file for the chapters of your "monograph"
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox,envcountchap,sectrefs]{svmono-arxiv}
+% svmono-arxiv for arXiv
+% svmono for Springer
+
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+%\usepackage{mathptmx}
+%\usepackage{helvet}
+%\usepackage{courier}
+%
+\usepackage{type1cm}         
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+\usepackage{newtxtext}       % 
+\usepackage[varvw]{newtxmath}       % selects Times Roman as basic font
+
+\usepackage{amsmath}
+\usepackage[bookmarks=true,hyperfigures=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{color}
+\usepackage{stackrel}
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{nicefrac}  % for 1/2 
+\usepackage{enumerate}
+\usepackage{dsfont}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{bbm}
+%\usepackage{showlabels}
+
+\usepackage{empheq}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\shuffle{\sqcup\mathchoice{\mkern-7mu}{\mkern-7mu}{\mkern-3.2mu}{\mkern-3.8mu}\sqcup}
+
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning, shapes, snakes, arrows}
+	
+
+
+
+\tikzset{
+	graviton/.style={decorate, double, double distance=.8pt,
+        decoration={snake,amplitude=2pt, segment length=8pt}},
+%graviton/.style={line width=.8pt,decorate, decoration={snake, segment length=4pt,amplitude=1.8pt, pre length=.05cm, post length=.05cm}},
+		worldline/.style={gray, line width=1pt},
+	worldlineBold/.style={black, line width=.6pt},
+	zUndirected/.style={line width=1pt},
+	zParticle/.style={line width=1pt,postaction={decorate},decoration={markings,mark=at position .6 with {\arrow[#1]{latex}}}},
+	zParticleF/.style={line width=1pt,postaction={decorate}},
+	cscalar/.style={line width=1pt,postaction={decorate},decoration={markings,mark=at position .6 with {\arrow[#1]{latex}}}},
+	cscalar2/.style={line width=1pt,postaction={decorate},decoration={markings,mark=at position .8 with {\arrow[#1]{latex}}}},
+	photon/.style={line width =.8pt, decorate, decoration={snake, segment length=4pt, amplitude=1.8pt,  pre length=.1cm, post length=.1cm}},
+	blob/.style={circle, minimum size =1.5cm, draw=black, thick, fill=lightgray, text=black}
+}
+
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+                       
+                       
+\include{macros}                       
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{Simon Badger, Johannes Henn, Jan Plefka and Simone Zoia}
+\title{Scattering Amplitudes in Quantum Field Theory}
+\subtitle{-- Monograph --}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{dedication}
+%\include{foreword}
+\include{preface}
+\include{acknowledgement}
+
+\tableofcontents
+
+\include{acronym}
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{part}
+
+\include{ch1_intro/ch1_intro}
+\include{ch2_trees/ch2_trees}
+\include{ch3_loopamps/ch3_loopamps}
+\include{ch4_loopints/ch4_loopints}
+\include{chextra_solutions/chextra_solutions}
+
+%\include{appendix}
+
+\include{conventions/conventions}
+
+
+%\backmatter
+%\include{glossary}
+
+
+
+
+%\Extrachap{Bibliography}
+%\bibliographystyle{spmpsci}
+%\bibliography{scatteringamplitudes}
+%\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+
