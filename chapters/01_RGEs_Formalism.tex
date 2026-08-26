@@ -393,25 +393,28 @@ the ultraviolet properties of the theory.
 
 \section{Conclusions}
 
-In this chapter, we have generalized the application of on-shell and unitarity-based methods for evaluating renormalization group coefficients to account for the mixing of operators with different dimensions and leading mass effects, which play a fundamental role in the renormalization program of several effective field theories. 
-
-In particular, we have derived a master formula accounting for the most general operator 
+In this chapter, we have generalized the application of on-shell and unitarity-based methods for evaluating renormalization group coefficients to account for the mixing of operators with different dimensions and leading mass effects, both of which play a fundamental role in the renormalization program of several effective field theories. 
+%
+In particular, we have derived master formulae accounting for the most general operator 
 mixings up to two-loop order and shown how to include leading mass effects,
-relying on the Higgs low-energy theorem. These findings have been validated by reproducing well-established results in the literature, corresponding to popular effective field theories.
+relying on the Higgs low-energy theorem. %These findings have been validated by reproducing well-established results in the literature, corresponding to popular effective field theories.
 
-These results can be applied to a number of new-physics scenarios, 
+Applications of these findings are deferred to the two chapters that follow, where they are exploited to compute the one-loop ultraviolet anomalous dimensions of the axion-like particle effective field
+theory, in Chapter~\ref{ch:ALP_RGEs}, and of a general effective gauge theory, in
+Chapter~\ref{ch:generalEFT}.
+
+The reach of the results derived here extends well beyond those examples.
+They can be applied to a number of new-physics scenarios, 
 defined above the TeV scale, in order to analyze their impact on 
 low-energy observables (such as flavor-violating processes, 
-electric and magnetic dipole moments, etc.) occurring at or 
+electric and magnetic dipole moments, etc.)\ occurring at or 
 below the GeV scale.
 Such a large separation of scales demands the inclusion of 
 running effects at two-loop order to obtain sensible predictions. 
 While this is a very challenging task when approached with standard techniques, 
 on-shell and unitarity-based methods offer a simpler, more efficient, 
 and elegant way to reach this goal. 
-The work presented in this chapter may constitute an additional milestone for progressing along this direction.
-
-\lb{Modify the conclusions: I haven't presented any application in this chapter as they will be given in the next chapters. Consider also adding an appendix to derive the Callan--Symanzik equation.}
+The work presented in this chapter may constitute an additional milestone for progressing in this direction.
 
 \begin{subappendices}
 \section{Effective Field Theories and Superficial Degree of Divergence\label{app:SDOD_EFT}}
@@ -435,9 +438,9 @@ where $\{p\}$ are external momenta and:
     \item The $L$-loop integral has mass dimension 
     \begin{equation}
     \left[\int \dd^4 k_1\dotsi \dd^4 k_L\, \frac{\mathcal N(\{k\},\{p\})}{\mathcal D(\{k\},\{p\})}\right]=
-    D + n_\partial\,,
+    \mathsf D + n_\partial\,,
     \end{equation}        
-    where $D$ is the degree of divergence of 
+    where $\mathsf D$ is the degree of divergence of 
     $\mathcal M_{n}$ and $n_\partial$ is the number 
     of derivatives contained in $\Ocal_i$.
 
@@ -455,7 +458,7 @@ where $\{p\}$ are external momenta and:
 %
 By taking into account the above points, we find that
 \begin{equation}\label{eq:massM1}
-    [\mathcal M_n] = \sum_{k=1}^m(4-[\Ocal_{j_k}]) + n_\partial + D +\frac{1}{2}n_{\text{fer}}\,.
+    [\mathcal M_n] = \sum_{k=1}^m(4-[\Ocal_{j_k}]) + n_\partial + \mathsf D +\frac{1}{2}n_{\text{fer}}\,.
 \end{equation}    
 The mass dimension of $\mathcal M_n$ can be inferred also from the $S$-matrix element
     \begin{equation}
@@ -472,7 +475,7 @@ and by taking into account that
 \end{equation}
 it finally follows that
     \begin{equation}
-    D= 4 - [\mathcal O_i] + \sum_{k=1}^m([\Ocal_{j_k}]-4)\,. 
+    \mathsf D = 4 - [\mathcal O_i] + \sum_{k=1}^m([\Ocal_{j_k}]-4)\,. 
 \end{equation}
 
 \end{subappendices}
