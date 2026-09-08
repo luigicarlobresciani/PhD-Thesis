@@ -46,6 +46,8 @@
 \usepackage{booktabs}
 \usepackage[numbers, sort&compress]{natbib}
 \usepackage[export]{adjustbox}
+\usepackage{makecell}
+\usepackage{enumitem}
 %\usepackage{mathpazo} % Palatino font
 
 \makeatletter\g@addto@macro\bfseries{\boldmath}\makeatother
@@ -147,11 +149,12 @@
 \DeclareMathOperator*{\dime}{\text{dim}}
 \def\coef#1#2#3{ {\vphantom{A^2}}^{#1}\!{{C}}^{#3}_{#2} }
 \def\op#1#2#3{ {\vphantom{A^2}}^{#1}\!{{Q}}^{#3}_{#2} }
+\newcommand{\sls}[1]{\slashed{#1}}
 
 %\definecolor{hdrcolor}{gray}{0.9}
 \definecolor{hdrcolor}{gray}{0.9}
 \newcommand{\ccol}{\cellcolor{gray!30}}
-\newcommand{\wb}{\bar{w}}
+\newcommand{\wb}{\overline{w}}
 \newcommand{\Ocal}[0]{\mathcal{O}}
 
 %==================== macros ====================
