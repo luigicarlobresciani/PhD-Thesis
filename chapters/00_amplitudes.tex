@@ -1,0 +1,1182 @@
+\chapter{On-Shell Scattering Amplitudes}
+
+% Scattering amplitudes occupy an unusual position in quantum field theory. They are among the most
+% concrete objects the theory produces, feeding directly into every cross section measured at a
+% collider, and yet the standard route to computing them passes through quantities that are neither
+% measurable nor unique. One chooses a Lagrangian, fixes a gauge, and expands the result into Feynman
+% diagrams whose individual terms depend on that gauge and on the off-shell continuation of the
+% fields. Only their sum is physical. For processes with many external legs the mismatch becomes
+% extreme, and thousands of diagrams routinely collapse into an answer that fits on a single line. The
+% tree-level amplitude for $n$ gluons of which two carry negative helicity, discussed in
+% Section~\ref{sec:BCFW}, is the classic illustration of this phenomenon.
+
+% The on-shell program treats such simplifications as a hint rather than an accident. Rather than
+% assembling amplitudes out of off-shell building blocks, one works throughout with physical,
+% gauge-invariant data. The kinematics is encoded in helicity spinors, which solve the massless
+% on-shell conditions identically and keep Lorentz invariance manifest at every step. The dynamics is
+% constrained by general principles instead of by a specific Lagrangian, since unitarity, locality,
+% and analyticity restrict the analytic structure of an amplitude so severely that the lowest-point
+% amplitudes are determined by symmetry alone, while higher-point ones follow recursively from them.
+% Comprehensive treatments of this material can be found in the reviews, lecture notes, and textbooks
+% of Refs.~\cite{Mangano:1990by,Dixon:1996wi,Peskin:2011in,Ellis:2011cr,Dixon:2011xs,Dixon:2013uaa,%
+% Elvang:2013cua,Schwartz:2014sze,Henn:2014yza,Elvang:2015rqa,Cheung:2017pzi,Travaglini:2022uwo,%
+% Badger:2023eqz}.
+
+% The interest of this perspective is not merely computational. Unitarity expresses the discontinuity
+% of an amplitude through products of on-shell amplitudes with fewer loops, so that ultraviolet and
+% infrared information becomes accessible without ever writing down an off-shell Green's function. The
+% renormalization group equations derived in the first part of this thesis rest on that observation,
+% and so do the positivity bounds obtained in the second part, where analyticity and unitarity combine
+% into inequalities on the coefficients of an effective Lagrangian.
+
+% This chapter collects the material required for those applications and fixes the conventions used
+% throughout. Section~\ref{sec:spinorhelicity} develops the spinor-helicity formalism, starting from
+% the decomposition of a massless momentum into helicity spinors and proceeding through the angle and
+% square brackets, the identities they obey, and the wavefunctions of external states of spin up to
+% two. Section~\ref{sec:Smatrix} turns to the $S$-matrix itself. There we review the properties that
+% any consistent amplitude must possess, and we then examine how far those properties alone can carry
+% us, fixing the three-particle amplitudes completely from helicity weights and dimensional analysis
+% and reconstructing higher-point amplitudes from them by recursion.
+
+Scattering amplitudes are the physical content of the $S$-matrix and the objects from which cross
+sections are computed. Their standard evaluation, however, proceeds through quantities that are
+neither measurable nor unique. One fixes a Lagrangian and a gauge, and expands the result into
+Feynman diagrams whose individual terms depend on that gauge and on the off-shell continuation of
+the fields, only their sum being physical. This redundancy carries a computational cost, since the
+number of contributing diagrams grows rapidly with the number of external legs while the final
+expression is frequently compact. The maximally-helicity-violating $n$-gluon amplitude of
+Section~\ref{sec:BCFW} is the standard example.
+
+On-shell methods bypass the intermediate redundancy by working throughout with gauge-invariant,
+on-shell data. The kinematics is parametrized by helicity spinors, which solve the massless
+on-shell conditions identically and keep Lorentz invariance manifest. The dynamics is constrained by
+general principles instead of by a specific Lagrangian, since unitarity, locality, and analyticity
+determine the singularity structure of an amplitude to the extent that the three-particle amplitudes
+are fixed by helicity weights and dimensional analysis alone, and the higher-point ones are
+reconstructed recursively from them. The literature on the subject is vast, and the reviews, lecture
+notes, and textbooks collected in
+Refs.~\cite{Mangano:1990by,Dixon:1996wi,Peskin:2011in,Ellis:2011cr,Dixon:2011xs,Dixon:2013uaa,%
+Elvang:2013cua,Schwartz:2014sze,Henn:2014yza,Elvang:2015rqa,Cheung:2017pzi,Travaglini:2022uwo,%
+Badger:2023eqz} constitute a very partial selection of it.
+
+The relevance of this framework for the present work goes beyond computational efficiency. Unitarity
+relates the discontinuity of an amplitude to products of on-shell amplitudes of lower loop order, so
+that ultraviolet and infrared information can be extracted without introducing off-shell Green's
+functions. The renormalization group equations derived in the second part of this thesis are obtained
+in this way, and the theoretical bounds of the third part follow from combining analyticity with
+unitarity into inequalities on the coefficients of an effective Lagrangian.
+
+This chapter fixes the conventions used throughout and collects the results needed in what follows.
+Section~\ref{sec:spinorhelicity} introduces the spinor-helicity formalism, covering the
+decomposition of a massless momentum into helicity spinors, the angle and square brackets together
+with the identities they satisfy, and the wavefunctions of external states of spin up to two.
+Section~\ref{sec:Smatrix} deals with the $S$-matrix, reviewing first the properties that any
+consistent amplitude must satisfy, then the bootstrap of the three-particle amplitudes from those
+properties, and finally the recursive construction of higher-point amplitudes.
+
+\section{Spinor-Helicity Formalism\label{sec:spinorhelicity}}
+
+In quantum field theory, especially in gauge and gravitational theories,
+the spinor-helicity formalism is a powerful tool for representing scattering amplitudes.
+It is based on the idea of representing the four-momenta of the particles involved in a
+scattering process in terms of spinors, which carry the fundamental representations of the
+Lorentz algebra and therefore constitute the most elementary building blocks for describing the
+kinematic degrees of freedom of on-shell particle states.
+This section provides a brief introduction to this formalism --- mainly following Refs.~\cite{Badger:2023eqz,Henn:2014yza,Brandhuber:2022qbk} --- and establishes the conventions and definitions employed throughout the thesis.
+
+\subsection{Helicity Spinors}
+
+The spinor-helicity formalism exploits the fact that the proper orthochronous Lorentz group $SO^+(1,3)$ is
+doubly covered by $SL(2,\mathbb C)$, i.e.,
+\begin{equation}
+    SO^+(1,3) \cong SL(2,\mathbb C)/\mathbb Z_2\,.
+\end{equation}
+Moreover, the complexified algebra splits into two commuting factors
+\begin{equation}
+    \mathfrak{so}(1,3)_{\mathbb C}\cong\mathfrak{sl}(2,\mathbb C)\oplus\mathfrak{sl}(2,\mathbb C)\,,
+\end{equation}
+so that finite-dimensional representations are labeled by a pair of half-integers $(j_-,j_+)$.
+
+As a concrete instance of this correspondence, consider a four-vector $p^\mu = (p^0,\vec p)$, which transforms under the $(\frac{1}{2},\frac{1}{2})$ representation, and the map
+\begin{equation}\label{eq:pmatrix}
+    p^\mu = (p^0,\vec p) \longrightarrow p^{\dot\alpha \alpha} = p^\mu  \overline \sigma_{\mu}^{\dot\alpha \alpha} = \begin{pmatrix}
+        p^0+p^3 & p^1-ip^2 \\
+        p^1+ip^2 & p^0-p^3
+    \end{pmatrix}\,,
+\end{equation}
+where $\overline \sigma_\mu^{\dot\alpha \alpha} = (\mathbb 1_{2\times 2},\vec \sigma)^{\dot\alpha \alpha}$ and $\vec \sigma = (\sigma^1,\sigma^2,\sigma^3)$ is the three-vector built from the Pauli matrices
+\begin{equation}
+    \sigma^1 = \begin{pmatrix}
+        0& 1 \\ 1 & 0
+    \end{pmatrix}\,,\qquad
+    \sigma^2 = \begin{pmatrix}
+        0& -i \\ i & 0
+    \end{pmatrix}\,,\qquad
+    \sigma^3 = \begin{pmatrix}
+        1& 0 \\ 0 & -1
+    \end{pmatrix}\,.
+\end{equation}
+Let $p^\mu$ denote the four-momentum of an on-shell particle with mass $m$. In that case, the mass-shell constraint may be interpreted as a condition on the determinant of the matrix $p^{\dot\alpha\alpha}$:\footnote{In this thesis, Lorentz indices are contracted using the mostly-minus convention for the Minkowski metric $g_{\mu\nu} = \text{diag}(+1,-1,-1,-1)$.}
+\begin{equation}
+    m^2 = p^\mu p_\mu = \det p^{\dot\alpha\alpha}\,.
+\end{equation}
+Since any $2\times 2$ matrix has at most rank two, 
+$p^{\dot\alpha\alpha}$ can be generically decomposed as
+\begin{equation}\label{eq:generaldecomposition}
+    p^{\dot\alpha\alpha}=\tildee\lambda^{\dot\alpha}\lambda^{\alpha}+\tildee \mu^{\dot\alpha}\mu^{\alpha}\,,
+\end{equation}
+where $\lambda,\mu$ and $\tildee\lambda,\tildee\mu$ are commuting Weyl spinors in the $(\frac{1}{2},0)$ and $(0,\frac{1}{2})$ representations of the Lorentz group, respectively.
+
+If we focus now on massless particles, it is clear that the general decomposition in Eq.~\eqref{eq:generaldecomposition} contains redundant variables.
+In fact, for $m=0$ we have that $\det p^{\dot\alpha\alpha} = 0$, which implies that $p^{\dot\alpha\alpha}$ has a vanishing eigenvalue (the other one is $2p^0$). Thus, its rank is one and its decomposition over the spectrum reads\footnote{This fact was first used for the calculation of scattering amplitudes in Refs.~\cite{Berends:1981rb,DeCausmaecker:1981jtq,Xu:1986xb,Gunion:1985vca}.}
+\begin{equation}\label{eq:spin-hel}
+    p^{\dot\alpha\alpha}=2p^0\,\tildee\psi^{\dot\alpha}\psi^{\alpha} = \tildee\lambda^{\dot\alpha}\lambda^{\alpha}\,,
+\end{equation}
+where
+$\lambda^\alpha=\sqrt{2p^0}\psi^\alpha$ and $\tildee\lambda^{\dot\alpha}=\sqrt{2p^0}\tildee\psi^{\dot\alpha}$
+are the \textit{helicity spinors}.
+A concrete representation of the helicity spinors is given by
+\begin{align}
+    \lambda^\alpha = \frac{1}{\sqrt{p^0+p^3}}\begin{pmatrix}
+        p^0+p^3 \\ p^1-ip^2
+    \end{pmatrix}\,, \qquad
+    \tildee\lambda^{\dot\alpha} = \frac{1}{\sqrt{p^0+p^3}}\begin{pmatrix}
+        p^0+p^3 \\ p^1+ip^2
+    \end{pmatrix}\,.
+\end{align}
+If we require the four-momentum to be real, the matrix $p^{\dot\alpha\alpha}$ is Hermitian and its eigenvectors satisfy
+\begin{equation}\label{eq:reality}
+    (\lambda ^\alpha)^* = \pm\tildee\lambda ^{\dot\alpha}\,,
+\end{equation}
+where the sign is the same as that of the energy $p^0$, i.e., $p^0 >0$ for outgoing particles and $p^0<0$ for incoming ones.
+Instead, if we extend the definition of the four-momentum to the complex plane, then the spinors $\lambda$ and $\tildee\lambda$ are independent.
+
+Note that the decomposition in Eq.~\eqref{eq:spin-hel} is unique up to transformations
+\begin{equation}
+    \label{eq:LGscaling}
+    \lambda^\alpha \longrightarrow t\,\lambda^\alpha\,,\qquad
+    \tildee\lambda^{\dot\alpha}\longrightarrow  t^{-1}\,\tildee\lambda^{\dot\alpha}\,,
+\end{equation}
+with $t\in\mathbb C^*$ for complex momenta and $t=e^{i\phi}$ a pure phase for real ones.
+This freedom is the action of the \textit{little group}, i.e., the subgroup of Lorentz transformations that leaves the four-momentum of a particle
+invariant.
+For a massless momentum in four dimensions, the little
+group is $ISO(2)$, namely the isometry group of the Euclidean plane. Its two translation-like generators
+would give rise to a continuous internal label and are represented trivially, leaving
+$SO(2)\cong U(1)$, which acts by a phase (see Eq.~\eqref{eq:LGscaling}), and a
+single quantum number, the helicity $h$~\cite{Wigner:1939cj,Bargmann:1948ck}.
+
+An analogous construction holds for massive particles, where $p^{\dot\alpha\alpha}$ has rank two
+and factorizes as $\tildee\lambda^{\dot\alpha I}\lambda^{\alpha}_I$~\cite{Arkani-Hamed:2017jhn}. In this case the little group is $SU(2)$ and $I=1,2$ is an index of its fundamental representation. However, throughout this thesis we focus on massless external states, as we will be interested in studying the high-energy behavior of the associated scattering amplitudes.
+
+Spinor indices are raised and lowered with the invariant anti-symmetric spinor metric tensors, defined as
+\begin{align}
+    \epsilon^{\alpha\beta} = \epsilon^{\dot\alpha\dot\beta} = -\epsilon_{\alpha\beta}=-\epsilon_{\dot\alpha\dot\beta}=\begin{pmatrix}
+        0 & 1 \\ -1&0
+    \end{pmatrix}\,.
+\end{align}
+The epsilon symbols with undotted and dotted indices satisfy
+\begin{align}
+    \epsilon_{\alpha\beta}\epsilon^{\gamma\delta}=-\delta^\gamma_\alpha\delta^\delta_\beta+\delta_\alpha^\delta \delta_\beta^\gamma \,, \qquad
+    \epsilon_{\dot\alpha\dot\beta}\epsilon^{\dot\gamma\dot\delta}=-\delta^{\dot\gamma}_{\dot\alpha}\delta^{\dot\delta}_{\dot\beta}+\delta_{\dot\alpha}^{\dot\delta} \delta_{\dot\beta}^{\dot\gamma}\,,
+\end{align}
+respectively,
+from which it follows that 
+\begin{align}
+    \epsilon_{\alpha\beta}\epsilon^{\beta\gamma}=\epsilon^{\gamma\beta}\epsilon_{\beta\alpha} = \delta^\gamma_\alpha\,,
+\qquad
+    \epsilon_{\dot\alpha\dot\beta}\epsilon^{\dot\beta\dot\gamma}=\epsilon^{\dot\gamma\dot\beta}\epsilon_{\dot\beta\dot\alpha} = \delta^{\dot\gamma}_{\dot\alpha}\,.
+\end{align}
+In order to raise or lower an index of a spinor quantity, adjacent spinor indices are summed over when multiplied on the left by the appropriate epsilon symbol:
+\begin{align}
+    \lambda_\alpha = \epsilon_{\alpha\beta}\lambda^\beta \,,\qquad \lambda^\alpha = \epsilon^{\alpha\beta}\lambda_\beta \,,\qquad
+    \tildee\lambda_{\dot\alpha} = \epsilon_{\dot\alpha\dot\beta}\tildee\lambda^{\dot\beta}\,, \qquad
+    \tildee\lambda^{\dot\alpha} = \epsilon^{\dot\alpha\dot\beta}\tildee\lambda_{\dot\beta}\,.
+\end{align}
+Moreover, if we define $\sigma^\mu_{\alpha\dot\alpha} = \epsilon_{\alpha\beta}\epsilon_{\dot\alpha\dot\beta}\overline\sigma^{\mu\dot\beta \beta} =(\mathbb 1_{2\times 2}, \vec\sigma)_{\alpha\dot\alpha}$,
+we can write the completeness relations as
+\begin{align}\label{eq:compl}
+    \sigma_{\mu\alpha\dot\alpha}\sigma^{\mu}_{\beta\dot\beta} = 2\epsilon_{\alpha\beta}\epsilon_{\dot\alpha\dot\beta}\,, \qquad
+    \overline\sigma_{\mu}^{\dot\alpha\alpha}\overline\sigma^{\mu\dot\beta\beta} = 2\epsilon^{\alpha\beta}\epsilon^{\dot\alpha\dot\beta}\,.
+\end{align}
+Additionally, the identity
+\begin{equation}
+    \sigma^\mu_{\alpha\dot\alpha}\overline\sigma_\mu^{\dot\beta \beta}=2\delta_\alpha^\beta \delta_{\dot\alpha}^{\dot\beta}
+\end{equation}
+holds, and the normalization condition is given by
+\begin{equation}
+    \Tr(\overline\sigma_\mu \sigma_\nu)=\epsilon_{\alpha\beta} \epsilon_{\dot\alpha\dot\beta}\overline\sigma_{\mu}^{\dot\alpha\alpha} \overline\sigma_\nu^{\dot\beta\beta}=\epsilon^{\alpha\beta}\epsilon^{\dot\alpha\dot\beta}\sigma_{\mu\alpha\dot\alpha}\sigma_{\nu\beta\dot\beta}=2g_{\mu\nu}\,.
+\end{equation}
+Using these relations, one can demonstrate that, given the map between Lorentz four-vectors $V^\mu$ and matrices $V^{\dot\alpha\alpha}$
+\begin{equation}
+    V^\mu \longrightarrow V^{\dot\alpha\alpha} =  \overline\sigma^{\dot\alpha\alpha}_\mu V^\mu
+\end{equation}
+as the one introduced in Eq.~\eqref{eq:pmatrix}, its inverse is provided by
+\begin{equation}
+    V^{\dot\alpha \alpha} \longrightarrow V^\mu = \frac{1}{2}\sigma^\mu_{\alpha\dot\alpha} V^{\dot\alpha \alpha}\,.
+\end{equation}
+Similarly, the inverse of
+\begin{equation}
+    V^\mu \longrightarrow V_{\alpha\dot\alpha} =  \sigma_{\mu\alpha\dot\alpha} V^\mu
+\end{equation}
+is given by
+\begin{equation}
+    V_{\alpha\dot\alpha} \longrightarrow
+    V^\mu = \frac{1}{2}\overline\sigma^{\mu\dot\alpha\alpha}V_{\alpha\dot\alpha}\,.
+\end{equation}
+
+\subsection{Angle and Square Inner Products}
+
+In the spinor-helicity formalism, a general scattering amplitude involving massless particles is a function of the set of helicity spinors $\{\lambda_i,\tildee\lambda_i\}_{i=1}^n$, with the index $i$ running over all incoming and outgoing particles.
+%Henceforth, in order to standardize the description, we will consider all particles as outgoing, i.e., $p_i^0>0$ for all $i=1,\dotsc,n$.
+% Henceforth, in order to standardize the description, we will treat all particles as outgoing.
+% Momentum conservation then forbids all the energies from being simultaneously positive: the legs
+% that are physically incoming are those with $p_i^0<0$, and are reached by the analytic continuation
+% described below.
+% Amplitudes involving incoming particles are
+% then obtained by crossing symmetry, which analytically continues an outgoing leg of momentum
+% $p_k$ into an incoming one of momentum $-p_k$.
+Henceforth, in order to standardize the description, we will treat all particles as outgoing. 
+%This is a labeling convention rather than a physical restriction: 
+This is not a physical restriction but just a labeling convention:
+momentum conservation forbids all the energies from being simultaneously positive, and the legs that are physically incoming are simply those with $p_i^0<0$.
+They are reached by crossing symmetry, which analytically continues an
+outgoing leg of momentum $p_k$ into an incoming one of momentum $-p_k$.
+At the level of the helicity spinors, the
+flip $p_k \to p_{-k} = -p_k$ is implemented by the symmetric convention
+$\lambda_k \to \lambda_{-k} = i\lambda_k$ and
+$\tildee\lambda_k \to \tildee\lambda_{-k} = i\tildee\lambda_k$, which treats the two spinors on the same footing.
+
+Starting from the helicity spinors instead of momenta, we can construct Lorentz-invariant quantities through the \textit{angle} $\agl{\cdot\,}{\cdot}$ and \textit{square} $\sqr{\cdot\,}{\cdot}$ \textit{inner products}, defined as
+\begin{align}
+    \langle ij\rangle= \lambda_i^\alpha \lambda_{j\alpha} = \epsilon_{\alpha\beta}\lambda_i^{\alpha}\lambda_j^{\beta} \,,\qquad
+    [ij] = \tildee\lambda_{i\dot\alpha}\tildee\lambda_{j}^{\dot\alpha}=-\epsilon_{\dot\alpha\dot\beta}\tildee\lambda_i^{\dot\alpha}\tildee\lambda_j^{\dot\beta}\,,
+\end{align}
+with $i,j=1,\dotsc,n$, where we have introduced the north-west-to-south-east $\searrow$
+(south-west-to-north-east $\nearrow$) contraction rule for the undotted (dotted) Weyl indices.
+Since the helicity spinors are bosonic and the epsilon symbols are anti-symmetric, the angular and square brackets are anti-symmetric as well under the exchange of their entries:
+\begin{align}
+    \langle ij \rangle =-\langle ji \rangle \,, \qquad
+    [ij] =-[ji] \,.
+\end{align}
+Consequently, we have that $\langle ii \rangle = 0 = [ii]$.
+The Mandelstam invariants can be written in terms of these brackets simply as
+\begin{equation}
+    s_{ij} = (p_i+p_j)^2 = 2p_i\cdot p_j = \lambda_i^\alpha \lambda_{j\alpha} \tildee\lambda_{j\dot\alpha}\tildee\lambda_{i}^{\dot\alpha} = \langle ij \rangle [ji]\,,
+\end{equation}
+which, for real momenta whose energies have the same sign, implies
+\begin{equation}
+    \agl{i}{j} = \sqrt{\abs{s_{ij}}} \,e^{i\phi_{ij}} = \sqr{j}{i}^*\,,
+\end{equation}
+with $\phi_{ij}\in\mathbb R$.
+
+\subsubsection{Useful Identities}
+
+We list here some useful identities satisfied by the Lorentz-invariant inner products that we have just introduced.
+
+\paragraph{Schouten identities.}
+
+Any three two-component spinors must be linearly dependent, so they must satisfy
+\begin{equation}\label{eq:lindep}
+    c_1\lambda_1^\alpha + c_2\lambda_2^\alpha + c_3\lambda_3^\alpha=0\,,
+\end{equation}
+where at least one coefficient $c_i$ is different from zero.
+Projecting both sides onto $\lambda_{3\alpha}$, we obtain
+\begin{equation}
+    c_1\agl{1}{3}+c_2 \agl{2}{3}=0\,,
+\end{equation}
+which leads to 
+\begin{equation}\label{eq:c2}
+    c_2  = \frac{\agl{3}{1}}{\agl{2}{3}}c_1\,.
+\end{equation}
+Similarly, the projection of Eq.~\eqref{eq:lindep} onto $\lambda_{2\alpha}$ gives
+\begin{equation}
+    c_1\agl{1}{2}+c_3 \agl{3}{2}=0\,,
+\end{equation}
+meaning that
+\begin{equation}\label{eq:c3}
+    c_3 = \frac{\agl{1}{2}}{\agl{2}{3}}c_1\,.
+\end{equation}
+Substituting Eqs.~\eqref{eq:c2} and \eqref{eq:c3} into Eq.~\eqref{eq:lindep} and dividing by $c_1\neq 0$, we obtain
+\begin{equation}\label{eq:schouten}
+    \lambda_1^\alpha \agl{2}{3} + \lambda_2^\alpha \agl{3}{1} + \lambda_3^\alpha \agl{1}{2} =0
+\end{equation}
+for any $\lambda_1,\lambda_2,\lambda_3$.
+Clearly, the same steps can be repeated for the conjugate spinors to derive
+\begin{equation}
+    \tildee\lambda_1^{\dot\alpha} \sqr{2}{3} + \tildee\lambda_2^{\dot\alpha} \sqr{3}{1}+\tildee\lambda_3^{\dot\alpha} \sqr{1}{2} =0
+\end{equation}
+for any $\tildee\lambda_1,\tildee\lambda_2,\tildee\lambda_3$.
+
+\paragraph{Momentum conservation.}
+
+By Poincaré invariance, scattering amplitudes are non-zero only if the total four-momentum is conserved, i.e.,
+\begin{equation}
+    \sum_{i=1}^n p_i^\mu = 0\,,
+\end{equation}
+which implies
+\begin{equation}\label{eq:momconservation}
+    \sum_{i=1}^n \agl{a}{i}\sqr{i}{b} = 0
+\end{equation}
+for any $a,b$.
+
+\paragraph{Levi-Civita contractions.}
+
+We finally quote two identities \cite{Dixon:1996wi} that are useful for expressing the contraction of the Levi-Civita tensor with any four light-like four-vectors in terms of angle and square inner products:
+\begin{align}
+        \agl{a}{b}\sqr{b}{c}\agl{c}{d}\sqr{d}{a} &= \Tr( \frac{\mathbb 1 + \gamma_5}{2}\sls p_a \sls p_b \sls p_c \sls p_d)\nonumber \\ 
+        &= \frac{1}{2}\left(s_{ab}s_{cd}-s_{ac}s_{bd}+s_{ad}s_{bc}-4i\epsilon_{\mu\nu\rho\sigma}p_a^\mu p_b^\nu p_c^\rho p_d^\sigma \right)\,,\label{eq:lc_identity}
+\end{align}
+and, similarly,
+\begin{align}
+        \sqr{a}{b}\agl{b}{c}\sqr{c}{d}\agl{d}{a} &= \Tr( \frac{\mathbb 1 - \gamma_5}{2}\sls p_a \sls p_b \sls p_c \sls p_d)\nonumber \\ 
+        &= \frac{1}{2}\left(s_{ab}s_{cd}-s_{ac}s_{bd}+s_{ad}s_{bc}+4i\epsilon_{\mu\nu\rho\sigma}p_a^\mu p_b^\nu p_c^\rho p_d^\sigma \right)\,,
+\end{align}
+with $\epsilon^{0123} = -\epsilon_{0123} = 1$ and $\sls p = p_\mu \gamma^\mu$, where we have defined the Dirac matrices in the Weyl (chiral) representation as
+\begin{equation}
+    \gamma^\mu = \begin{pmatrix}
+        \mathbb 0_{2\times 2} & \sigma^\mu\\
+        \overline \sigma^{\mu} & \mathbb 0_{2\times 2}
+    \end{pmatrix}\,,\qquad
+    \gamma_5 = \frac{-i}{4!}\epsilon_{\mu\nu\rho\sigma}\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma = \begin{pmatrix}
+        -\mathbb{1}_{2\times 2} & \mathbb 0_{2\times 2}\\
+        \mathbb 0_{2\times 2} & \mathbb{1}_{2\times 2}
+    \end{pmatrix}\,.
+    \label{eq:weylgamma}
+\end{equation}
+The identities follow from the trace theorems
+\begin{equation}
+    \Tr(\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma)
+    = 4\left(g^{\mu\nu}g^{\rho\sigma}-g^{\mu\rho}g^{\nu\sigma}+g^{\mu\sigma}g^{\nu\rho}\right)\,,
+    \qquad
+    \Tr(\gamma_5 \gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma) = - 4i\epsilon^{\mu\nu\rho\sigma} \,.
+\end{equation}
+
+\subsection{Polarizations of Massless Particles\label{sec:polarizations}}
+
+Having established that a massless momentum is encoded in a pair of helicity spinors, we now turn
+to the wavefunctions carried by the external states themselves. A massless one-particle state is
+specified by its momentum and by a single little-group label, the helicity $h$, and the
+corresponding wavefunction is the object contracted with the amputated correlator to build a
+scattering amplitude. 
+
+For $h=0$ there is nothing to specify, while, for $h=\pm\frac{1}{2},\pm 1,
+\pm 2$, the familiar covariant wavefunctions --- Dirac spinors, polarization vectors, and
+polarization tensors --- carry redundant components, constrained by equations of motion and, for
+the bosonic cases, defined only up to gauge transformations. Expressing them in terms of $\lambda$
+and $\tildee\lambda$ removes this redundancy: each wavefunction becomes a product of helicity
+spinors of definite little-group weight, the on-shell and transversality conditions reduce to the
+vanishing of $\agl{p}{p}$ and $\sqr{p}{p}$, and the gauge freedom is relegated to an explicit
+reference spinor that cancels from any physical quantity.
+
+\subsubsection{Spin $\frac{1}{2}$}
+
+The Dirac equations in momentum space for the positive- and negative-energy spinors read
+\begin{align}
+    (\sls p - m)\,u(p)=0\,, \qquad (\sls p + m)\,v(p)=0\,,
+\end{align}
+and, in the massless case, they coincide, $\sls p\, u(p) = \sls p\, v(p) = 0$. For $m=0$ chirality
+and helicity agree, so that the chiral projectors $(\mathbb 1 \pm\gamma_5)/2$ produce states of
+definite helicity,
+\begin{align}
+    u_\pm (p) = \frac{1}{2}(\mathbb 1 \pm\gamma_5)\,u(p)\,, \qquad
+    v_\mp (p) = \frac{1}{2}(\mathbb 1 \pm\gamma_5)\,v(p) \,,
+\end{align}
+with the identification $u_\pm (p)=v_\mp (p)$, and on-shell states are labeled by
+$|p,\pm \frac{1}{2}\rangle$. These polarizations are nothing but the helicity spinors themselves, as is made
+manifest by the chiral, or Weyl, representation of the gamma matrices in Eq.~\eqref{eq:weylgamma},
+in which $\sls p$ becomes
+\begin{equation}
+    \sls p = p_\mu \gamma^\mu = \begin{pmatrix}
+        \mathbb 0_{2\times 2} & p_{\alpha \dot\alpha} \\ p^{\dot\alpha \alpha} & \mathbb 0_{2\times 2}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \mathbb 0_{2\times 2} & \lambda_\alpha \tildee\lambda_{\dot\alpha}  \\ \tildee\lambda^{\dot\alpha}\lambda^\alpha & \mathbb 0_{2\times 2}
+    \end{pmatrix}\,.
+\end{equation}
+Since $(\mathbb 1+\gamma_5)/2$ retains the lower two components and $(\mathbb 1-\gamma_5)/2$ the
+upper ones, the two helicity solutions are
+\begin{equation}
+    u_+(p) = v_-(p) = \begin{pmatrix}
+        \mathbb 0_{2\times 1} \\ \tildee\lambda^{\dot \alpha}
+    \end{pmatrix}
+    =|p]  \,,\qquad
+    u_-(p) = v_+(p) = \begin{pmatrix}
+        \lambda_\alpha \\ \mathbb 0_{2\times 1}
+    \end{pmatrix}
+    = \ket{p}\,,
+\end{equation}
+where we have introduced the convenient bra-ket notation with angle $\ket{\,\cdot\,}$ and square
+$|\, \cdot\,]$ brackets. The massless Dirac equations,
+\begin{align}
+    \sls p \ket{p} = 0 \,, \qquad \sls p\, |p] = 0\,,
+\end{align}
+are then trivialized, as they are equivalent to $\agl{p}{p}=0=\sqr{p}{p}$.
+%
+For the Dirac adjoint $\overline \psi = \psi^\dagger \gamma^0$ we have
+\begin{gather}
+    \overline u_+(p) = \overline v_- (p)  
+    = \begin{pmatrix}
+        \lambda^\alpha & \mathbb 0_{1\times 2}
+    \end{pmatrix}
+    = \bra{p}\,,
+\qquad
+    \overline u_-(p) = \overline v_+ (p) 
+    = \begin{pmatrix}
+        \mathbb 0_{1\times 2} & \tildee\lambda_{\dot\alpha}
+    \end{pmatrix}
+    = [p| \,.
+\end{gather}
+
+In this notation, the block structure of $\gamma^\mu$ makes the vanishing of the chirality-violating
+bilinears immediate
+\begin{equation}
+    \langle k| \gamma^\mu | p \rangle = 0 = [k|\gamma^\mu|p]\,,
+\end{equation}
+while the surviving ones reproduce the momentum
+\begin{equation}
+    \langle p |\gamma^\mu|p] = \lambda^\alpha \sigma^\mu_{\alpha\dot\alpha}\tildee\lambda^{\dot\alpha} = 2p^\mu\,,
+    \qquad
+    [p|\gamma^\mu|p\rangle = \tildee\lambda_{\dot\alpha} \overline\sigma^{\mu\dot\alpha\alpha}\lambda_\alpha = 2p^\mu\,.
+\end{equation}
+For an arbitrary four-vector $q^\mu$, the same structure gives
+\begin{align}
+    [i|\sls q|j\rangle = \tildee\lambda_{i\,\dot\alpha}\,q^{\dot\alpha \alpha}\lambda_{j\,\alpha}\,, \qquad
+    \langle j |\sls q|i] = \lambda_j^\alpha\, q_{\alpha\dot\alpha}\tildee\lambda_i^{\dot\alpha}\,,
+\end{align}
+which implies the identity
+\begin{equation}\label{eq:idgamma}
+    [i|\gamma^\mu|j\rangle = \langle j |\gamma^\mu |i]\,,
+\end{equation}
+and, upon inserting the completeness relations of the sigma matrices in Eq.~\eqref{eq:compl}, the
+Fierz identity
+\begin{gather}
+    [i|\gamma^\mu |j\rangle\langle l |\gamma_\mu |k] = 2\,\sqr{i}{k}\agl{l}{j}\,.
+\end{gather}
+
+The polarization degrees of freedom of external massless fermions are thus carried entirely by the
+helicity spinors $\lambda$ and $\tildee\lambda$, with $|p\rangle,\langle p|$ ($|p],[ p|$) corresponding to states with helicity $h=-\frac{1}{2}$ ($h=+\frac{1}{2}$), and every fermion bilinear reduces to angle and
+square brackets.
+
+\subsubsection{Spin $1$}
+
+Polarization vectors $\varepsilon_{\pm}^\mu$ for spin-$1$ massless gauge bosons can also be expressed in terms of helicity spinors.
+In particular, positive- and negative-helicity polarization vectors can be written as
+\begin{equation}\label{eq:polvecs}
+    \varepsilon^\mu_+(p,\xi) = \frac{\langle \xi |\gamma^\mu|p]}{\sqrt{2}\,\agl{\xi}{p}}\,,
+    \qquad 
+    \varepsilon^\mu_-(p,\xi) = \frac{[\xi|\gamma^\mu|p\rangle}{\sqrt{2}\,\sqr{p}{\xi}}
+    \,,
+\end{equation}
+respectively, or, defining $\varepsilon_{\pm}^{\dot\alpha\alpha} = \overline \sigma_\mu^{\dot\alpha\alpha}\varepsilon_{\pm}^\mu$,
+\begin{equation}\label{eq:polvecsmat}
+    \varepsilon_{+}^{\dot\alpha\alpha}(p,\xi) = \frac{\sqrt{2}}{\agl{\xi}{p}} \,\tildee\lambda^{\dot\alpha}\xi^\alpha\,,
+    \qquad
+    \varepsilon_{-}^{\dot\alpha\alpha}(p,\xi) = \frac{\sqrt{2}}{\sqr{p}{\xi}} \,\tildee\xi^{\dot\alpha}\lambda^\alpha\,,
+\end{equation}
+where $\xi,\tildee\xi$ are arbitrary reference spinors with the only requirement that they are not parallel to the helicity spinors $\lambda,\tildee \lambda$ associated with the momentum $p$, in such a way that $\agl{\xi}{p},\sqr{p}{\xi}\neq 0$.
+Their role reflects the freedom associated with performing gauge transformations, and, as a consequence, they will not appear in any final expression for a scattering amplitude.
+Indeed, if we consider an infinitesimal shift of the reference spinor $\xi \to \xi + \delta\xi$, the corresponding variation of $\varepsilon^\mu_+$ is given by
+\begin{equation}
+    \delta\varepsilon^\mu_+(p,\xi) = \sqrt{2}\frac{\agl{\xi\,}{\delta\xi}}{\agl{\xi}{p}^2}\,p^\mu\,,
+\end{equation}
+which is correctly proportional to the momentum itself.
+Additionally, one can verify that the expressions in Eq.~\eqref{eq:polvecs} satisfy the properties required for the polarization vectors, namely
+\begin{equation}
+    (\varepsilon^\mu_{\pm}(p,\xi))^* = \varepsilon^\mu_{\mp}(p,\xi)\,,
+    \qquad
+    \varepsilon_\pm(p,\xi) \cdot \varepsilon_{\pm} (p,\xi) = 0\,,
+    \qquad
+    \varepsilon_+(p,\xi) \cdot \varepsilon_{-} (p,\xi) = -1\,,
+\end{equation}
+and trivialize the transversality conditions
+\begin{equation}
+    p\cdot \varepsilon_+(p,\xi) = \frac{1}{\sqrt{2}}\sqr{p}{p}=0\,,
+    \qquad
+    p\cdot \varepsilon_-(p,\xi) = \frac{1}{\sqrt{2}}\agl{p}{p}=0\,.
+\end{equation}
+The completeness relation
+\begin{equation}
+    \sum_{h=\pm} (\varepsilon^\mu_h(p,\xi))^* \varepsilon^\nu_h(p,\xi) = -g^{\mu\nu}+\frac{p^\mu \xi^\nu + p^\nu \xi^\mu}{p\cdot \xi}\,,
+\end{equation}
+where $\xi_\mu = \frac{1}{2}\overline\sigma_\mu^{\dot\alpha\alpha}\xi_\alpha\tildee\xi_{\dot\alpha}$,
+is also satisfied.
+
+\subsubsection{Spin $2$}
+The same construction extends to massless spin-$2$ states, whose polarizations
+$\varepsilon^{\mu\nu}_{\pm\pm}$ are symmetric rank-two tensors carrying helicity $h=\pm 2$.
+No new ingredients are needed since they are obtained by squaring the polarization vectors of
+Eq.~\eqref{eq:polvecs},
+\begin{equation}\label{eq:polgrav}
+    \varepsilon^{\mu\nu}_{++}(p,\xi) = \varepsilon^{\mu}_{+}(p,\xi)\,\varepsilon^{\nu}_{+}(p,\xi)\,,
+    \qquad
+    \varepsilon^{\mu\nu}_{--}(p,\xi) = \varepsilon^{\mu}_{-}(p,\xi)\,\varepsilon^{\nu}_{-}(p,\xi)\,,
+\end{equation}
+or, defining $\varepsilon_{\pm\pm}^{\dot\alpha\alpha\dot\beta\beta} = \overline \sigma_\mu^{\dot\alpha\alpha}\overline\sigma_\nu^{\dot\beta\beta}\varepsilon_{\pm\pm}^{\mu\nu}$,
+\begin{equation}
+    \varepsilon_{++}^{\dot\alpha\alpha\dot\beta\beta}(p,\xi)
+    = \frac{2}{\agl{\xi}{p}^2}\,\tildee\lambda^{\dot\alpha}\xi^\alpha\,\tildee\lambda^{\dot\beta}\xi^\beta\,,
+    \qquad
+    \varepsilon_{--}^{\dot\alpha\alpha\dot\beta\beta}(p,\xi)
+    = \frac{2}{\sqr{p}{\xi}^2}\,\tildee\xi^{\dot\alpha}\lambda^\alpha\,\tildee\xi^{\dot\beta}\lambda^\beta\,,
+\end{equation}
+with the same reference spinors $\xi,\tildee\xi$ and the same requirement
+$\agl{\xi}{p},\sqr{p}{\xi}\neq 0$.
+The symmetry in the Lorentz indices $\mu\leftrightarrow\nu$ is manifest, while the remaining defining properties are
+inherited from the spin-$1$ case,
+\begin{equation}
+    (\varepsilon^{\mu\nu}_{\pm\pm}(p,\xi))^* = \varepsilon^{\mu\nu}_{\mp\mp}(p,\xi)\,,
+    \qquad
+    \varepsilon_{++}(p,\xi) \cdot \varepsilon_{--}(p,\xi) = 1\,,
+\end{equation}
+and both transversality and tracelessness are trivialized,
+\begin{equation}
+    p_\mu\varepsilon^{\mu\nu}_{\pm\pm}(p,\xi) = (p\cdot\varepsilon_\pm(p,\xi))\varepsilon^\nu_\pm(p,\xi) = 0\,,
+    \qquad
+    g_{\mu\nu}\varepsilon^{\mu\nu}_{\pm\pm}(p,\xi) = \varepsilon_\pm(p,\xi)\cdot\varepsilon_\pm(p,\xi) = 0\,,
+\end{equation}
+so that no traceless projection has to be imposed by hand.
+The reference spinors drop out of physical quantities exactly as before: under
+$\xi \to \xi + \delta\xi$ one has $\delta\varepsilon^\mu_+ \propto p^\mu$, and therefore
+\begin{equation}
+   \delta\varepsilon^{\mu\nu}_{++}(p,\xi) = \sqrt{2}\frac{\agl{\xi\,}{\delta\xi}}{\agl{\xi}{p}^2}\left(p^\mu \varepsilon_+^\nu + p^\nu \varepsilon_+^\mu \right)\,,
+\end{equation}
+which is a linearized diffeomorphism, the spin-$2$ counterpart of the gauge transformation
+encountered for spin $1$, and it leaves scattering amplitudes invariant.
+
+\section{\texorpdfstring{$S$-Matrix}{S-Matrix}\label{sec:Smatrix}}
+
+% The \textit{scattering operator} $S$, or \textit{$S$-matrix}, evolves an asymptotic state defined at $t=-\infty$, $\ket{\psi}_{\text{in}}$, to a different asymptotic state defined at $t=+\infty$, $\ket{\chi}_{\text{out}}$:
+% \begin{equation}
+%     \ket{\chi}_{\text{out}} = S \ket{\psi}_{\text{in}}\,.
+% \end{equation}
+% The associated matrix elements are what we refer to as \textit{scattering amplitudes}:
+% \begin{equation}
+%     S(\psi \to \chi) = \mel{\chi}{S}{\psi}\,.
+% \end{equation}
+
+The \textit{scattering operator} $S$, or \textit{$S$-matrix}, connects the asymptotic states
+prepared at $t=-\infty$ with those observed at $t=+\infty$. These form two complete bases of the
+same Hilbert space, and $S$ is the unitary operator relating them, so that the probability amplitude
+for an initial configuration $\ket{\psi}$ to be observed as a final configuration $\ket{\chi}$ is
+\begin{equation}
+    S(\psi \to \chi) = \mel{\chi}{S}{\psi}\,.
+\end{equation}
+These matrix elements are what we refer to as \textit{scattering amplitudes}.
+
+\subsection{Properties and Symmetries of Scattering Amplitudes}
+
+Before computing any amplitude, it is worth asking what an amplitude is allowed to be. The
+$S$-matrix is not an arbitrary function of the external kinematics: a small number of physical
+principles --- conservation of probability, the pointlike nature of interactions, causality, and
+the symmetries of the vacuum --- constrain it so severely that in favorable cases they determine it
+outright, as we will see for three-particle amplitudes in the next subsection. 
+It is convenient to
+separate the trivial forward propagation from the genuine interaction by writing
+\begin{equation}\label{eq:Tdef}
+    S = \mathbb 1 + iT\,,
+\end{equation}
+and to strip from $T$ the overall momentum-conserving delta function,
+\begin{equation}\label{eq:Mdef}
+    \mel{\chi}{T}{\psi} = (2\pi)^4\,\delta^{(4)}\!\left(\sum_{i\in\psi} p_i - \sum_{i\in\chi} p_i \right)\mathcal M(\psi\to\chi)\,,
+\end{equation}
+so that $\mathcal M$ is the object of interest. We review below the properties that $\mathcal M$
+must satisfy.
+
+\subsubsection{Unitarity}
+
+A defining property of the scattering operator is \textit{unitarity}, the operator statement of
+probability conservation:
+\begin{equation}\label{eq:unitarity}
+    S^\dagger S = SS^\dagger = \mathbb 1\,.
+\end{equation}
+Inserting Eq.~\eqref{eq:Tdef} into Eq.~\eqref{eq:unitarity}, the linear terms cancel against each
+other only up to a quadratic remainder,
+\begin{equation}
+    -i\left(T - T^\dagger\right) = T^\dagger T\,,
+\end{equation}
+which, once a complete set of intermediate states $\ket{X}$ is inserted and the delta function of
+Eq.~\eqref{eq:Mdef} is stripped, reads
+\begin{equation}\label{eq:cutting}
+    -i\left(\mathcal M(\psi\to\chi) - \mathcal M(\chi\to\psi)^*\right)
+    = \sum_X \int \text{dLIPS}_X\,\mathcal M(\chi\to X)^*\,\mathcal M(\psi\to X)\,,
+\end{equation}
+where the sum runs over all intermediate states allowed by the quantum numbers and by the available
+energy, and $\text{dLIPS}_X$ denotes the Lorentz-invariant phase-space measure. Setting
+$\chi=\psi$ gives the optical theorem
+\begin{equation}\label{eq:optical}
+    2\Im \mathcal M(\psi\to\psi) = \sum_X \int \text{dLIPS}_X\,\abs{\mathcal M(\psi\to X)}^2\,,
+\end{equation}
+whose right-hand side is manifestly non-negative.
+
+The underlying physical interpretation is straightforward: whatever probability is removed from the forward direction must
+reappear in some final state, so the absorptive part of a forward amplitude measures the total
+probability of scattering into anything at all. 
+%The consequence that will matter most in this thesis is, however, structural rather than numerical. 
+Eq.~\eqref{eq:cutting} expresses the
+\textit{imaginary} part of an amplitude entirely in terms of \textit{on-shell} amplitudes with fewer
+legs or fewer loops. Indeed, the intermediate states $\ket{X}$ are physical states integrated over their
+phase space, and no off-shell information whatsoever enters. Thus, unitarity turns the computation of
+a complicated object into the gluing of simpler ones, 
+and the on-shell methods employed in the following chapters exploit exactly this mechanism.
+
+\subsubsection{Locality}
+
+% Interactions among fields take place at a point in spacetime. The imprint of this fact on the
+% $S$-matrix is a statement about \textit{where amplitudes are allowed to be singular}: the only
+% singularities of a tree-level amplitude are simple poles occurring when an internal particle goes on
+% shell. Denoting by $P=\sum_{i\in I}p_i$ the total momentum flowing through an internal line, with
+% $I$ a subset of the external legs, one has
+% \begin{equation}\label{eq:factorization}
+%     \mathcal M_n \;\xrightarrow[P^2\to 0]{}\;
+%     \sum_{h}\,\mathcal M_{L}\!\left(\{i\in I\},\,P^{h}\right)\,
+%     \frac{1}{P^2}\,
+%     \mathcal M_{R}\!\left(-P^{-h},\,\{i\notin I\}\right)\,,
+% \end{equation}
+% where the sum runs over the helicity states of the exchanged particle. The residue at the pole is the product of two lower-point on-shell amplitudes, glued
+% along the internal line.
+
+% Intuitively, a pole at $P^2=0$ is the signature of an intermediate particle travelling a
+% macroscopically long distance before interacting again, so that the process factorizes into two
+% causally separated sub-processes. Anything else --- a double pole, a pole at a value of $P^2$ that
+% does not correspond to a physical state, or an essential singularity --- would describe a
+% non-local interaction, in the same sense in which an operator with inverse powers of derivatives
+% does. Equations~\eqref{eq:cutting} and \eqref{eq:factorization} act as the two faces of the same
+% constraint, one on the discontinuities and one on the poles, and together they are strong enough to
+% reconstruct amplitudes recursively, as discussed in Section~\ref{sec:BCFW}.
+
+Locality expresses the fact that interactions take place at well-defined points of spacetime. Its
+imprint on the $S$-matrix is a constraint on the position of the singularities, since an amplitude
+can become singular only when an intermediate state goes on shell and propagates over macroscopic
+distances. The exchange of a single particle of mass $m$ produces a simple pole at $P^2=m^2$, while
+a multi-particle intermediate state produces a branch point at the corresponding threshold. The
+analytic structure of the $S$-matrix therefore mirrors the spectrum of the theory.
+
+Splitting the $n$ external legs into a subset $I$ and its complement, and denoting by
+$P_I=\sum_{i\in I}p_i$ the momentum exchanged between the two halves, the residue at a
+single-particle pole factorizes into on-shell amplitudes of lower multiplicity
+\begin{equation}\label{eq:factorization}
+    \lim_{P_I^2\to m^2} (P_I^2-m^2)\,\mathcal M_n
+    = \sum_{h}\mathcal M_{\abs{I}+1}\Big(\{i\}_{i\in I},(-P_I)^{-h}\Big)\,
+      \mathcal M_{n-\abs{I}+1}\Big(P_I^{h},\{j\}_{j\notin I}\Big)\,,
+\end{equation}
+where the sum runs over the helicity states of the exchanged particle.
+
+Locality and unitarity are complementary in this respect. The former dictates where an amplitude is
+singular, the latter dictates how it behaves there. Eq.~\eqref{eq:factorization} fixes the
+residue at a single-particle pole through a plain product of lower-point amplitudes, while the
+discontinuity across a multi-particle cut requires in addition an integration over the
+phase space of the intermediate state, in the form already encountered in
+Eq.~\eqref{eq:cutting}. Both statements support the recursive construction of higher-point
+amplitudes out of simpler ones developed in Section~\ref{sec:BCFW}, and both are the
+momentum-space counterpart of the cluster decomposition principle, according to which distant sub-processes remain correlated only
+through the exchange of on-shell particles.
+
+\subsubsection{Analyticity}
+
+Locality and unitarity acquire their full strength once the kinematic invariants are allowed to
+become complex. Causality, the requirement that no signal propagate outside the light
+cone, implies that amplitudes are boundary values of functions analytic in the complexified
+Mandelstam invariants, with singularities confined to the positions dictated by the physical
+spectrum. Poles sit at the masses of stable one-particle states and branch cuts open at
+multi-particle thresholds, in accordance with the discussion of locality above. The physical
+amplitude is obtained by approaching the real axis from above, an instruction encoded in the
+Feynman $i\varepsilon$ prescription of the propagators.
+
+Two consequences deserve to be singled out. The first one is crossing symmetry. A single analytic
+function describes several physically distinct processes at once, and one passes from one to another
+by continuing an external leg between the initial and the final state, in the sense already employed
+in Section~\ref{sec:spinorhelicity} when adopting the all-outgoing convention.
+
+The second consequence is quantitative. Analyticity allows Cauchy's theorem to be applied to a small
+contour encircling the low-energy region of the complexified center-of-mass energy, which can then
+be deformed onto the cuts running along the real axis, provided the amplitude is bounded well enough
+at large energies for the arcs at infinity to be discarded. The outcome is a family of sum rules, in
+which the coefficients of the low-energy expansion of the amplitude, computable within an effective
+field theory in terms of its Wilson coefficients, are expressed as integrals of the discontinuity
+over the entire high-energy region. Unitarity then enters through Eq.~\eqref{eq:optical}, which
+forces that discontinuity to be non-negative, so the sum rules turn into inequalities. The low-energy
+couplings of any effective theory admitting a causal and unitary ultraviolet completion are thereby
+constrained to lie inside a convex cone~\cite{Arkani-Hamed:2020blm,Adams:2006sv}, and analyticity
+converts information about physics that one cannot resolve into statements testable at energies one
+can reach.
+
+\paragraph{Dispersion relations and positivity bounds.}
+For the derivation we follow Refs.~\cite{Adams:2006sv,Bellazzini:2015cra}. Consider the elastic $2\to2$ amplitude
+$\mathcal M(s,t)$ of massless states, with
+\begin{equation}
+    s=(p_1+p_2)^2\,,\qquad t=(p_1+p_3)^2\,,\qquad u=(p_1+p_4)^2\,,\qquad s+t+u=0\,.
+\end{equation}
+Crossing in the $t$-channel exchanges $s\leftrightarrow u$ at fixed $t$, so that
+\begin{equation}\label{eq:crossingrelation}
+    \mathcal M(s,t) = \mathcal M(-s-t,t)\,,
+\end{equation}
+which in the forward limit reduces to $\mathcal M(s,0)=\mathcal M(-s,0)$. The two operations are
+compatible only for suitable external states, with particle $3$ the crossed image of particle $1$
+and particle $4$ that of particle $2$, and with the polarizations held fixed relative to the momenta.
+
+Below the first threshold of the ultraviolet completion the forward amplitude is regular and admits
+the low-energy expansion
+\begin{equation}\label{eq:lowenergyexp}
+    \mathcal M(s,t\to0) = \sum_{n\ge 0} c_n\,s^n\,,
+\end{equation}
+whose coefficients are computable within the effective theory in terms of its Wilson coefficients.
+They are extracted by a contour integral around the origin
+\begin{equation}\label{eq:smallcontour}
+    c_n = \frac{1}{2\pi i}\oint_{\mathcal C}\frac{\text{d}s}{s^{n+1}}\,\mathcal M(s,t\to0)\,,
+\end{equation}
+with $\mathcal C$ a small circle enclosing no singularity other than the pole at $s=0$.
+
+\begin{figure}[tb]
+\centering
+\begin{tikzpicture}[scale=1.0, >=Stealth,
+  cutline/.style={red!70!black, very thick, decorate,
+                  decoration={zigzag, segment length=4.5pt, amplitude=1.6pt}},
+  cont/.style={thick, blue!55!black},
+  arr/.style={postaction={decorate},
+              decoration={markings, mark=at position #1 with {\arrow{>}}}}]
+
+  % axes
+  \draw[->, gray!70] (-5.6,0) -- (5.6,0) node[right, black] {$\operatorname{Re}s$};
+  \draw[->, gray!70] (0,-4.6) -- (0,4.6) node[above, black] {$\operatorname{Im}s$};
+
+  % branch cuts
+  \draw[cutline] (1.3,0) -- (5.3,0);
+  \draw[cutline] (-1.3,0) -- (-5.3,0);
+  \fill (1.3,0) circle (1.8pt);  \node[above=2.5pt] at (1.3,0) {$s_0$};
+  \fill (-1.3,0) circle (1.8pt); \node[below=1.5pt]  at (-1.3,0) {$-s_0$};
+
+  % small contour around the origin
+  \draw[cont, arr=0.25, arr=0.75] (0.62,0) arc (0:360:0.62);
+  \node[cont] at (0.62,0.62) {$\mathcal C$};
+
+    % deformed contour: pieces hugging the two cuts
+  \draw[cont, arr=0.30, arr=0.85]
+        (3.9,-0.18) -- (1.3,-0.18) arc (270:90:0.18) -- (3.9,0.18);
+  \draw[cont, arr=0.30, arr=0.85]
+        (-3.9,0.18) -- (-1.3,0.18) arc (90:-90:0.18) -- (-3.9,-0.18);
+
+  % deformed contour: arcs at large |s|
+  \draw[cont, dashed, arr=0.5] (3.9,0.18)  arc (2.65:177.35:3.904);
+  \draw[cont, dashed, arr=0.5] (-3.9,-0.18) arc (182.65:357.35:3.904);
+  \node[cont] at (3.05,3.05) {$\mathcal C'$};
+\end{tikzpicture}
+\caption{Analytic structure of the forward amplitude $\mathcal M(s,0)$ in the complex $s$ plane. The
+branch cuts start at the first threshold $s_0$ of the ultraviolet completion and at its crossed image
+$-s_0$. The small contour $\mathcal C$ of Eq.~\eqref{eq:smallcontour} is deformed into $\mathcal C'$,
+which wraps the two cuts and closes on arcs at large $\abs{s}$. The arcs are discarded under the
+boundedness assumption discussed in the text, leaving the dispersion relation
+of Eq.~\eqref{eq:dispersion}.}
+\label{fig:contour}
+\end{figure}
+
+Unitarity generates a branch cut along the real axis from the first threshold $s_0$ to $+\infty$
+and, by crossing, a mirror cut from $-s_0$ to $-\infty$. By Cauchy's theorem, $\mathcal C$ can be deformed outwards without crossing any singularity into the
+contour $\mathcal C'$ of Figure~\ref{fig:contour}, which runs along both sides of the two cuts and
+closes on a circle of large radius. The
+arcs can be discarded provided $\abs{\mathcal M(s,0)}$ grows more slowly than $\abs{s}^{n}$, which
+the Froissart bound guarantees for $n\ge2$.
+
+What survives is the integral of the discontinuity across the cuts. The Schwarz reflection
+principle, $\mathcal M(s^{*},0)=\mathcal M(s,0)^{*}$, gives
+\begin{equation}
+    \operatorname{Disc}\mathcal M(s,0) = \mathcal M(s+i\varepsilon,0)-\mathcal M(s-i\varepsilon,0)
+    =2i\,\Im\mathcal M(s,0)\,,
+\end{equation}
+while Eq.~\eqref{eq:crossingrelation} in the forward limit maps the left cut onto the right one.
+Collecting the two contributions, we obtain
+\begin{equation}\label{eq:dispersion}
+    c_n = \frac{1+(-1)^n}{\pi}\int_{s_0}^{\infty}\frac{\text{d}s}{s^{n+1}}\,\Im\mathcal M(s,0)\,.
+\end{equation}
+The odd coefficients vanish, as required by crossing symmetry, and the even ones are fixed by
+the absorptive part of the amplitude integrated over the entire ultraviolet region.
+
+Finally, unitarity closes the argument: the optical theorem in Eq.~\eqref{eq:optical} relates the forward
+absorptive part to the total cross section through $\Im\mathcal M(s,0)=s\,\sigma(s)$, and $\sigma(s)$
+is always non-negative. Therefore
+\begin{equation}\label{eq:positivity}
+    c_n = \frac{2}{\pi}\int_{s_0}^{\infty}\text{d}s\;\frac{\sigma(s)}{s^{n}} \ge 0
+\end{equation}
+for $n\ge 2$ and even.
+A low-energy coefficient associated with an effective operator of dimension $8,12,16,\dotsc$ is thus bounded by an integral over a physical region one cannot resolve, and its
+sign is fixed without any knowledge of the ultraviolet completion beyond causality and unitarity.
+
+The construction extends to superpositions of states. Given two one-particle superpositions
+\begin{equation}
+    \ket{u}=\sum_i u_i\ket{i}\,,\qquad \ket{v}=\sum_j v_j\ket{j}\,,
+\end{equation}
+over the species and polarizations available at low energy, the corresponding elastic amplitude reads
+\begin{equation}\label{eq:superposition}
+    \mathcal M(s,t) = \mathcal M(uv\to uv)
+    = \sum_{i,j,k,l} u_i^{*}v_j^{*}u_kv_l\,\mathcal M(kl\to ij)\,.
+\end{equation}
+The
+argument above applies to it unchanged, and Eq.~\eqref{eq:positivity} becomes
+\begin{equation}\label{eq:cone}
+    \left.\dv[n]{}{s}\,\mathcal M(s,0)\right|_{s=0} \ge 0
+\end{equation}
+for $n\ge 2$ and even, and
+for every admissible choice of the coefficients $u_i,v_j$. The
+left-hand side is quartic in the superposition coefficients and linear in the Wilson coefficients of
+the effective theory, so each choice supplies one linear inequality among them, and the whole family
+carves out the convex cone anticipated above. This is the mechanism behind the positivity bounds
+derived in the third part of this thesis.
+
+\subsubsection{Poincaré Transformations}
+
+Invariance of the vacuum under spacetime translations forces the total four-momentum to be
+conserved. This conservation is already accounted for by the delta function factored out in
+Eq.~\eqref{eq:Mdef}, and at the level of the helicity spinors it takes the form of
+Eq.~\eqref{eq:momconservation}. Invariance under
+Lorentz transformations forces $\mathcal M$ to depend on the external data only through Lorentz
+invariant quantities, which, for massless particles, are represented by the angle and square brackets defined above.
+
+In fact, an infinitesimal Lorentz transformation acts as
+\begin{align}\label{eq:lorentztransf}
+    \delta \lambda^\alpha = \omega^{\alpha\beta}\lambda_\beta \,, \qquad
+    \delta\tildee\lambda_{\dot\alpha} = \tildee\omega_{\dot\alpha\dot\beta}\tildee\lambda^{\dot\beta}\,,
+\end{align}
+with $\omega^{\alpha\beta}$ and $\tildee\omega_{\dot\alpha\dot\beta}$ symmetric. Their symmetry property is equivalent to the tracelessness of the corresponding
+$\mathfrak{sl}(2,\mathbb C)$ generators, since the anti-symmetric part of a rank-two spinor is
+proportional to the epsilon symbol. The two transformations are generated by
+$\tfrac{1}{2}\omega^{\alpha\beta}\mathbb M_{\alpha\beta}$ and
+$\tfrac{1}{2}\tildee\omega_{\dot\alpha\dot\beta}\tildee{ \mathbb M}^{\dot\alpha\dot\beta}$, where the
+\textit{angular-momentum operators} are defined as
+\begin{gather}
+    \mathbb M_{\alpha\beta} = \sum_{i=1}^n \left(\lambda_{i\alpha}\frac{\partial}{\partial \lambda_i^\beta}
+    + \lambda_{i\beta}\frac{\partial}{\partial \lambda_i^\alpha}\right)\,,\qquad
+    \tildee{\mathbb M}^{\dot\alpha\dot\beta} = \sum_{i=1}^n \left(\tildee\lambda_i^{\dot\alpha}\frac{\partial}{\partial \tildee\lambda_{i\dot\beta}}
+    + \tildee\lambda_i^{\dot\beta}\frac{\partial}{\partial \tildee\lambda_{i\dot\alpha}}\right)\,.
+\end{gather}
+The brackets are annihilated by both:
+\begin{equation}
+    \delta\agl{i}{j} = \omega^{\alpha\beta}\Big(\lambda_{i\beta}\lambda_{j\alpha}
+    - \lambda_{i\alpha}\lambda_{j\beta}\Big) = 0\,,
+    \qquad
+    \delta\sqr{i}{j} = \tildee\omega_{\dot\alpha\dot\beta}\Big(\tildee\lambda_i^{\dot\beta}\tildee\lambda_j^{\dot\alpha}
+    - \tildee\lambda_i^{\dot\alpha}\tildee\lambda_j^{\dot\beta}\Big) = 0\,,
+\end{equation}
+where in each case the second term reproduces the first once the summed indices are relabeled, and
+the two cancel by the symmetry of $\omega$ and $\tildee\omega$. 
+Lorentz invariance of the
+$S$-matrix therefore amounts to the statement that the amplitude depends on the external kinematics
+only through the brackets,
+\begin{equation}
+    \mathcal M = \mathcal M\big(\{\agl{i}{j},\sqr{i}{j}\}\big)\,.
+\end{equation}
+
+\subsubsection{Little-Group Transformations}
+
+Lorentz invariance leaves an amplitude a function of the angle and square brackets alone, and yet
+the brackets themselves are not invariant under the rescaling of Eq.~\eqref{eq:LGscaling}.
+Amplitudes are then
+accordingly required to be covariant, carrying a definite weight on every external leg.
+
+The dependence of $\mathcal M$ on $\lambda_i$ and $\tildee\lambda_i$ enters through the
+wavefunctions of the external states, so the amplitude is homogeneous of definite degree in the
+spinors of each leg. At tree level, it is a rational function of the brackets. Beyond tree level, the
+loop integrations produce transcendental functions of the Mandelstam invariants, which are inert
+under the little group, so the degree is still carried entirely by the rational spinor
+prefactors. These degrees are counted by the \textit{helicity operator}
+\begin{equation}\label{eq:helicityop}
+    \mathbb H_i = -\frac{1}{2}\lambda_i^\alpha \frac{\partial}{\partial \lambda_i^\alpha}
+    + \frac{1}{2}\tildee\lambda_{i\dot\alpha}\frac{\partial}{\partial \tildee\lambda_{i\dot\alpha}}\,,
+\end{equation}
+%
+As an illustration, the polarization matrices of Eq.~\eqref{eq:polvecsmat} are eigenvectors with the expected eigenvalues,
+\begin{equation}
+    \mathbb H\,\varepsilon_{+}^{\dot\alpha\alpha}(p,\xi) = +\varepsilon_{+}^{\dot\alpha\alpha}(p,\xi)\,,
+    \qquad
+    \mathbb H\,\varepsilon_{-}^{\dot\alpha\alpha}(p,\xi) = -\,\varepsilon_{-}^{\dot\alpha\alpha}(p,\xi)\,.
+\end{equation}
+
+Requiring the particle $i$ to have helicity $h_i$ therefore amounts to the homogeneity condition
+\begin{equation}
+    \mathbb H_i\,\mathcal M\big(1^{h_1},\dotsc,n^{h_n}\big) = h_i\,\mathcal M\big(1^{h_1},\dotsc,n^{h_n}\big)
+\end{equation}
+for every $i=1,\dotsc,n$, or, equivalently,
+\begin{equation}\label{eq:LGweight}
+    \mathcal M\big(\dotsc,t_i\lambda_i,t_i^{-1}\tildee\lambda_i,\dotsc\big)
+    = t_i^{-2h_i}\,\mathcal M\big(\dotsc,\lambda_i,\tildee\lambda_i,\dotsc\big)\,.
+\end{equation}
+
+
+\subsubsection{Scale Transformations}
+
+With the relativistic normalization of the asymptotic states
+\begin{equation}
+    \braket{p}{p'} = 2E_{\vec p}\,(2\pi)^3\,\delta^{(3)}(\vec p - \vec p\,')
+\end{equation}
+each one-particle state carries mass dimension $-1$, and Eq.~\eqref{eq:Mdef} then fixes\footnote{In a dimension-$d$ spacetime, a generic $n$-point scattering amplitude has mass dimension $[\mathcal M_n] = d+n-dn/2$.}
+\begin{equation}\label{eq:massdim}
+    [\mathcal M_n] = 4-n\,.
+\end{equation}
+
+Eq.~\eqref{eq:massdim} is exact, being fixed by the normalization of the states alone. What
+holds only at tree level is that the amplitude is a homogeneous function of the external momenta.
+In dimensional regularization, the loop integrations introduce the renormalization scale $\mu$, and
+the amplitude acquires a dependence on the dimensionless ratios of the kinematic invariants to
+$\mu^2$. Being a physical quantity, the amplitude cannot depend on $\mu$, so this explicit
+dependence has to cancel against the implicit one carried by the renormalized couplings. The
+cancellation is what forces the couplings to run, according to their anomalous dimension, and its systematic exploitation is the subject of
+the second part of the thesis.
+
+
+\subsection{Bootstrap of Three-Point Amplitudes}
+
+Following Ref.~\cite{Benincasa:2007xk}, we show here how the constraints that arise from locality, Poincaré invariance, and dimensional analysis are enough to fix the form of three-particle scattering amplitudes up to an overall coupling constant.
+
+We can start by noting that momentum conservation
+\begin{equation}
+    p_1+p_2+p_3=0
+\end{equation}
+implies, for massless on-shell particles,
+\begin{equation}
+    p_1^2=\agl{2}{3}\sqr{3}{2}=0\,,\qquad
+    p_2^2=\agl{1}{3}\sqr{3}{1}=0\,,\qquad
+    p_3^2=\agl{1}{2}\sqr{2}{1}=0\,.
+\end{equation}
+Thus, we deduce that if $\agl{1}{2}\neq 0$, then $\sqr{1}{2}=0$. Moreover, applying Eq.~\eqref{eq:momconservation}, we find that $\agl{1}{2}\sqr{2}{3} = -\agl{1}{1}\sqr{1}{3}-\agl{1}{3}\sqr{3}{3} = 0$, therefore $\sqr{2}{3}=0$.
+By repeating this procedure cyclically, we conclude that $\sqr{1}{2}=\sqr{2}{3}=\sqr{3}{1}=0$. 
+By contrast, if we assume $\sqr{1}{2}\neq 0$, we would find that $\agl{1}{2}=\agl{2}{3}=\agl{3}{1}=0$.
+
+To summarize, three-particle amplitudes have support on two different kinematic configurations:
+\begin{itemize}
+    \item[($\mathsf H$)] The \textit{holomorphic} configuration, corresponding to the case in which all square brackets are zero,
+    \begin{equation}
+        \sqr{1}{2}=\sqr{2}{3}=\sqr{3}{1}=0\,,
+    \end{equation}
+    implying $\tildee\lambda_1\propto \tildee\lambda_2 \propto \tildee\lambda_3$;
+    \item[($\mathsf A$)] The \textit{anti-holomorphic} configuration, corresponding to the case in which all angle brackets are zero,
+    \begin{equation}
+        \agl{1}{2}=\agl{2}{3}=\agl{3}{1}=0\,,
+    \end{equation}
+    implying $\lambda_1\propto \lambda_2 \propto \lambda_3$.
+\end{itemize}
+In both configurations, the four-momenta need to be complexified, so that $\lambda_i$ and $\tildee \lambda_i$ can be treated as independent variables. For real momenta the two configurations collapse onto each other, and any amplitude with
+non-trivial bracket dependence vanishes.
+
+We can consider the following ansatz for the three-point amplitude of particles with helicities $h_i$:
+\begin{equation}
+    \mathcal M (1^{h_1},2^{h_2},3^{h_3}) = \mathcal M_{\mathsf H}(\agl{1}{2},\agl{2}{3},\agl{3}{1}) + \mathcal M_{\mathsf A}(\sqr{1}{2},\sqr{2}{3},\sqr{3}{1})\,,
+\end{equation}
+where we have defined the holomorphic and anti-holomorphic parts as
+\begin{equation}
+    \mathcal M_{\mathsf H}(\agl{1}{2},\agl{2}{3},\agl{3}{1}) = g_{\mathsf H} \agl{1}{2}^a \agl{2}{3}^b \agl{3}{1}^c \,,\quad
+    \mathcal M_{\mathsf A}(\sqr{1}{2},\sqr{2}{3},\sqr{3}{1}) = g_{\mathsf A} \sqr{1}{2}^{-a} \sqr{2}{3}^{-b} \sqr{3}{1}^{-c}\,,
+\end{equation}
+respectively, and $g_{\mathsf H},g_{\mathsf A}$ are the corresponding coupling constants.
+The three exponents $a,b,c$ can be fixed by imposing the homogeneity condition for each particle helicity, i.e.,
+\begin{equation}
+    -2h_1 = a+c\,,\qquad -2h_2=a+b\,,\qquad -2h_3=b+c\,,
+\end{equation}
+whose solution is
+\begin{equation}
+    a = h_3-h_1-h_2\,,
+    \qquad
+     b = h_1-h_2-h_3\,,
+     \qquad
+      c = h_2-h_3-h_1\,,
+\end{equation}
+and, in particular, $a,b,c\in\mathbb Z$ since fermions always appear in pairs.
+Moreover, by requiring the amplitude to have the correct mass dimension, $[\mathcal M]=1$, we obtain
+\begin{equation}
+    [g_{\mathsf H}] = 1+h\,,\qquad [g_{\mathsf A}] = 1-h\,,
+\end{equation}
+where $h=h_1+h_2+h_3$.
+
+The final step consists in requiring the amplitude to be well behaved in the limit of real momenta.
+As the kinematic configurations $\mathsf H$ and $\mathsf A$ degenerate when the momenta are taken to
+be real, all brackets vanish simultaneously, and $\mathcal M$ must remain finite there. Since the
+total bracket power of the two terms is $-h$ and $h$
+for the holomorphic and anti-holomorphic parts, respectively, the requirement selects one of the two
+branches according to the sign of the total helicity:
+\begin{itemize}
+    \item If $h<0$, the anti-holomorphic term diverges and we must set $g_{\mathsf A}=0$, so that
+    \begin{equation}\label{eq:3parthol}
+        \mathcal M (1^{h_1},2^{h_2},3^{h_3}) = g_{\mathsf H}\, \agl{1}{2}^{h_3-h_1-h_2}\, \agl{2}{3}^{h_1 - h_2 - h_3}\, \agl{3}{1}^{h_2 - h_3 - h_1}\,,
+    \end{equation}
+    with $[g_{\mathsf H}] = 1+h<1$;
+    \item If $h>0$, the holomorphic term diverges and we must set $g_{\mathsf H}=0$, so that
+    \begin{equation}\label{eq:3partahol}
+        \mathcal M (1^{h_1},2^{h_2},3^{h_3}) = g_{\mathsf A}\, \sqr{1}{2}^{h_1+h_2-h_3}\, \sqr{2}{3}^{h_2+h_3-h_1}\, \sqr{3}{1}^{h_3+h_1-h_2} \,,
+    \end{equation}
+    with $[g_{\mathsf A}] = 1-h<1$;
+    \item If $h=0$, both terms are of degree zero in the brackets and the argument above does not
+    discriminate between them. Both couplings are then allowed and have $[g_{\mathsf H}]=[g_{\mathsf A}]=1$, so that the
+    corresponding operator has dimension $[\mathcal O]=3$ and contains three fields. The only such
+    local operator in four dimensions is $\phi^3$, since two fermions already saturate dimension
+    three by themselves and any field strength or derivative exceeds it. Locality therefore forces
+    $h_1=h_2=h_3=0$ and $a=b=c=0$, leaving the constant amplitude of the cubic scalar coupling as
+    the unique marginal possibility.
+\end{itemize}
+
+In all three cases, the surviving coupling has mass dimension not larger than one. This feature is
+not an accident but rather reflects the underlying principle of locality.
+Had we kept the divergent branch instead, its coupling
+would have carried $[g]>1$, and would therefore have descended from an operator $\mathcal O$ of mass
+dimension $[\mathcal O]=4-[g]<3$ containing three fields. Since each
+field contributes at
+least one unit of mass dimension, such an operator can only be built by inserting negative powers of
+derivatives, and is therefore non-local. Demanding that the three-particle amplitude be finite on
+real kinematics is thus equivalent to demanding that the underlying theory be local.
+
+The three-particle amplitudes obtained here are the seeds of the whole tree-level $S$-matrix. Their
+mutual consistency is itself constraining: demanding that the four-particle amplitude built from
+them through the recursion relations of Section~\ref{sec:BCFW} be independent of the deformation
+employed --- the so-called four-particle test~\cite{Benincasa:2007xk} --- forces the spin-$1$
+couplings to satisfy the Jacobi identity, hence to be those of a Lie group, requires all spin-$2$
+couplings to be equal, thereby deriving the equivalence principle rather than postulating it, and
+excludes interacting massless particles of spin greater than $2$.
+
+\subsubsection{Examples}
+
+It is instructive to see the machinery at work in a few explicit cases. In each of them the
+helicities alone fix the amplitude, and the mass dimension of the coupling follows without any
+reference to a Lagrangian.
+
+\paragraph{Cubic scalar coupling.}
+With $(h_1,h_2,h_3)=(0,0,0)$ we have $h=0$ and $a=b=c=0$, so the
+    amplitude is a constant,
+    \begin{equation}
+        \mathcal M (1^{0},2^{0},3^{0}) = \mu\,,\qquad [\mu]=1\,,
+    \end{equation}
+    the marginal case discussed above.
+
+\paragraph{Yukawa coupling.}
+With $(h_1,h_2,h_3)=(-\tfrac12,-\tfrac12,0)$ we have $h=-1$, the
+configuration is holomorphic, and $(a,b,c)=(1,0,0)$. Thus,
+    \begin{equation}
+        \mathcal M (1^{-1/2},2^{-1/2},3^{0}) = y\,\agl{1}{2}\,,\qquad [y]=0\,,
+    \end{equation}
+correctly reproducing a dimensionless Yukawa coupling. The conjugate configuration
+$(h_1,h_2,h_3)=(+\tfrac12,+\tfrac12,0)$ has $h=+1$ and gives $\overline y\,\sqr{1}{2}$.
+
+\paragraph{Gauge boson coupling to matter.}
+For a fermion,
+an anti-fermion, and a gauge boson with $(h_1,h_2,h_3)=(-\tfrac12,+\tfrac12,-1)$, we have $h=-1$ and $(a,b,c)=(-1,0,2)$, so that
+    \begin{equation}
+        \mathcal M (1^{-1/2},2^{+1/2},3^{-1}) = g\,\frac{\agl{3}{1}^2}{\agl{1}{2}}\,,\qquad [g]=0\,,
+    \end{equation}
+which is the familiar three-point vertex of QED and QCD.
+
+\paragraph{Yang--Mills.}
+With $(h_1,h_2,h_3)=(-1,-1,+1)$ we have $h=-1$ and $(a,b,c)=(3,-1,-1)$. Thus,
+    \begin{equation}
+        \mathcal M (1^{-1},2^{-1},3^{+1}) = g\,\frac{\agl{1}{2}^3}{\agl{2}{3}\agl{3}{1}}\,,
+        \qquad [g]=0\,,
+    \end{equation}
+which is the well-known three-gluon amplitude, whose color structure is left undetermined at this stage.
+
+\paragraph{Gravity.}
+With $(h_1,h_2,h_3)=(-2,-2,+2)$ we have $h=-2$ and $(a,b,c)=(6,-2,-2)$. Thus,
+    \begin{equation}
+        \mathcal M (1^{-2},2^{-2},3^{+2}) = \kappa\,\frac{\agl{1}{2}^6}{\agl{2}{3}^2\agl{3}{1}^2}\,,
+        \qquad [\kappa]=-1\,,
+    \end{equation}
+the coupling being dimensionful and of order $1/M_{\text{P}}$. Note that this
+amplitude is the square of the Yang--Mills one divided by the scalar one, an early
+manifestation of the double-copy structure of gravitational amplitudes~\cite{Kawai:1985xq,Bern:2008qj,Bern:2010ue,Carrasco:2015iwa,Bern:2022wqg,Bern:2019prr}.
+
+A pattern emerges from the gauge-like configurations $(-s,-s,+s)$, for which $h=-s$ and the coupling
+carries dimension $[g]=1-s$: the cubic scalar coupling at $s=0$, the dimensionless gauge coupling at
+$s=1$, and the gravitational coupling at $s=2$. Extrapolating further would require couplings of
+increasingly negative dimension, and no consistent interaction of massless particles with
+$s>2$ survives the consistency conditions mentioned above.
+
+\paragraph{ALP/dilaton coupling to gauge bosons.}
+With $(h_1,h_2,h_3)=(-1,-1,0)$ we have $h=-2$ and
+$(a,b,c)=(2,0,0)$. Thus,
+    \begin{equation}
+        \mathcal M (1^{-1},2^{-1},3^{0}) = C\,\agl{1}{2}^2\,,\qquad [C]=-1\,,
+    \end{equation}
+which is the structure generated by the dimension-five operators 
+$\phi F_{\mu\nu}F^{\mu\nu}$ and $\phi F_{\mu\nu}\tildee F^{\mu\nu}$.
+
+\subsection{Recursion Relations for Higher-Point Amplitudes\label{sec:BCFW}}
+
+The properties collected above are strong enough to determine tree-level amplitudes without any
+reference to Feynman diagrams. Locality confines the singularities of an amplitude to the
+factorization poles of Eq.~\eqref{eq:factorization}, and analyticity allows those poles to be
+reached by deforming the external kinematics into the complex plane. Two meromorphic functions with the same poles and residues differ by a function that is regular
+everywhere in the complex plane, and such a difference is absent when the deformed amplitude
+vanishes at large complex deformation. An amplitude can therefore be reconstructed from on-shell
+data of lower multiplicity whenever the deformation can be arranged to fall off in that limit. This is the content of the Britto--Cachazo--Feng--Witten (BCFW) recursion
+relation~\cite{Britto:2004ap,Britto:2005fq} and of its generalizations~\cite{Risager:2005vk,Cohen:2010mi,Kampf:2012fn,Cheung:2014dqa,Cheung:2015ota,Cheung:2015cba}.
+
+The construction starts from a complex deformation of two external legs. Choosing the pair $(i,j)$
+and a complex parameter $z$, the shift
+\begin{equation}\label{eq:BCFWshift}
+    \lambda_i \longrightarrow \widehat\lambda_i(z) = \lambda_i - z\,\lambda_j\,, \qquad
+    \tildee\lambda_j \longrightarrow \widehat{\tildee\lambda}_j(z) = \tildee\lambda_j + z\,\tildee\lambda_i\,,
+\end{equation}
+leaves $\tildee\lambda_i$ and $\lambda_j$ untouched and deforms the two momenta into
+\begin{equation}
+    \widehat p_i^{\dot\alpha\alpha}(z) = \tildee\lambda_i^{\dot\alpha}\big(\lambda_i - z\,\lambda_j\big)^{\alpha}\,,
+    \qquad
+    \widehat p_j^{\dot\alpha\alpha}(z) = \big(\tildee\lambda_j + z\,\tildee\lambda_i\big)^{\dot\alpha}\lambda_j^{\alpha}\,.
+\end{equation}
+Both stay light-like for every $z$, since each of them remains a product of two spinors, and their sum is independent of $z$. The deformed configuration therefore satisfies momentum conservation and the
+on-shell conditions. The shifted momenta are complex, and this is what makes the three-particle
+amplitudes of the previous subsection non-vanishing on the deformed kinematics, so that they can
+serve as the seeds of the construction.
+
+Let $\mathcal M_n(z)$ denote the amplitude evaluated on the deformed kinematics. It is a meromorphic
+function of $z$ with simple poles wherever a channel momentum goes on shell. For a channel built out
+of a subset $I$ of external legs, the shifted momentum $\widehat P_I(z)$ depends on $z$ only when $I$
+contains exactly one of the two shifted legs, in which case $\widehat P_I^2(z)-m^2$ is linear in $z$ and
+vanishes at a single point $z_I$. Applying Cauchy's theorem to $\mathcal M_n(z)/z$ on a small
+contour around the origin and deforming it to infinity, the poles at $z_I$ are picked up with
+opposite orientation and their residues are evaluated with Eq.~\eqref{eq:factorization}, giving
+\begin{equation}\label{eq:recursion}
+    \mathcal M_n = \sum_{I}\sum_{h}\,
+    \mathcal M_{L}\big(z_I\big)\,\frac{1}{P_I^{2}-m^2}\,\mathcal M_{R}\big(z_I\big) + B\,,
+\end{equation}
+where the two subamplitudes are evaluated on the kinematics shifted to $z=z_I$, the sum over $h$
+runs over the states of the exchanged particle, and $B$ is the contribution of the contour at
+infinity. For the massless theories considered here the propagator reduces to $1/P_I^2$.
+
+The recursion relation is Eq.~\eqref{eq:recursion} with $B$ dropped, and it is constructive, since
+every amplitude on the right-hand side has fewer legs than $\mathcal M_n$. Discarding $B$ requires
+$\mathcal M_n(z)\to0$ as $z\to\infty$, which is a property of the theory and of the helicities of the two
+shifted legs. Admissible choices exist for gluon and graviton amplitudes, while for effective field
+theories with derivative interactions the falloff is not guaranteed and has to be examined case by
+case. Two further features are worth recording. Different admissible shifts reconstruct the same
+amplitude through different sets of channels, so the resulting expressions look different and their
+equivalence is not always manifest. Moreover, the individual terms of Eq.~\eqref{eq:recursion}
+contain spurious poles, absent from the total, so locality is obscured in the final expression even
+though it was the input of the derivation.
+
+\subsubsection{Example: Parke--Taylor Formula}
+
+For gluons the color and kinematic degrees of freedom can be disentangled. At tree level the
+$n$-gluon amplitude admits the color decomposition~\cite{Mangano:1990by,Berends:1987cv}
+\begin{equation}\label{eq:colordec}
+    \mathcal M_n\big(\{p_i,h_i,a_i\}\big) = g^{n-2}\sum_{\sigma\in S_{n-1}}
+    \Tr(T^{a_1}T^{a_{\sigma(2)}}\cdots T^{a_{\sigma(n)}})\,
+    A_n\big(1^{h_1},\sigma(2)^{h_{\sigma(2)}},\dotsc,\sigma(n)^{h_{\sigma(n)}}\big)\,,
+\end{equation}
+where $T^a$ are the generators of the gauge group in the fundamental representation, normalized as
+$\Tr T^aT^b =\delta^{ab}$, and the sum runs over the permutations of the labels $2,\dotsc,n$. The coefficients $A_n$ are the \textit{color-ordered} or \textit{partial amplitudes}. They are gauge
+invariant, invariant under cyclic relabeling of their arguments, and singular only in channels built
+out of cyclically adjacent momenta. This last property is what makes the shift of two adjacent legs
+natural, since the recursion then receives contributions from $n-3$ channels only.
+
+Tree-level partial amplitudes with all helicities equal, or with a single helicity differing from
+the others, vanish for $n\ge4$. The first non-vanishing configurations carry two negative helicities
+and are called \textit{maximally-helicity-violating} (MHV). For them the recursion collapses to the
+remarkably compact Parke--Taylor formula~\cite{Parke:1986gb}
+\begin{equation}\label{eq:parketaylor}
+    A_n\big(1^+,\dotsc,i^-,\dotsc,j^-,\dotsc,n^+\big)
+    = \frac{\agl{i}{j}^4}{\agl{1}{2}\agl{2}{3}\cdots\agl{n-1\,}{n}\agl{n}{1}}\,,
+\end{equation}
+with the conjugate anti-MHV configuration obtained by exchanging angle and square brackets.
+Eq.~\eqref{eq:parketaylor} passes the consistency checks established above. Its little-group
+weight on the leg $i$ is $t_i^{4-2}=t_i^{2}$, corresponding to $h_i=-1$, while a positive-helicity
+leg $k$ appears only in two denominator factors and carries $t_k^{-2}$. Its mass dimension is
+$4-n$, in agreement with Eq.~\eqref{eq:massdim} for a dimensionless coupling. At $n=3$ it reduces to
+$\agl{1}{2}^3/(\agl{2}{3}\agl{3}{1})$, reproducing the three-gluon amplitude obtained from the
+bootstrap of the previous subsection. A single expression, built recursively out of three-point
+amplitudes that were themselves fixed by helicity weights and dimensional analysis, replaces a
+number of Feynman diagrams that grows factorially with $n$.

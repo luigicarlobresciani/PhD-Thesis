@@ -13,6 +13,144 @@ L.~C.~Bresciani, P.~Paradisi and A.~Sainaghi,\\[0pt]
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-% \input{tables/SMEFT_bounds}
-% \input{tables/SMEFT_operators}
-% \input{tables/SMEFT_sum_rules}
+\input{tables/SMEFT_bounds}
+
+\begin{subappendices}
+
+\section{Conventions}
+In Table \ref{tab:WarsawBasis} we report the baryon-number-conserving dimension-six operators of the SMEFT in the Warsaw basis \cite{Grzadkowski:2010es}.
+%
+\input{tables/SMEFT_operators}
+
+The relevant conventions are as follows: $\widetilde \varphi^j = \epsilon_{jk} (\varphi^k)^*$ (with $\epsilon^{12}=1$), $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu \varphi = \varphi^\dagger D_\mu \varphi - (D_\mu \varphi)^\dagger \varphi$ and $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu^I \varphi = \varphi^\dagger \sigma^I D_\mu \varphi - (D_\mu \varphi)^\dagger \sigma^I \varphi$, dual field-strength tensors are defined as $\widetilde X_{\mu\nu} = \frac{1}{2}\epsilon_{\mu\nu\rho\sigma}X^{\rho\sigma}$ (with $X=B,W^I,G^A$ and $\epsilon^{0123} = 1$), $\lambda^A_{\alpha\beta}$ are the Gell-Mann matrices and $\sigma^I_{jk}$ are the Pauli matrices, $T_{\alpha\beta}^A = \frac{1}{2}\lambda^A_{\alpha\beta}$ are the $SU(3)$ generators, and $\sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]$.
+The Minkowski metric, whose signature is relevant for the spinning sum rules, is $g_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$.
+
+\section{Further Details on Spinning Sum Rules\label{app: sum rules}}
+
+In this appendix, we provide further technical details regarding the spinning sum rules discussed in Section~\ref{sec:SMEFTbounds}. 
+Following Ref.~\cite{Remmen:2020uze}, we consider the amplitude $\mathcal{A}_{\alpha\beta}(s,t)$, where $s$ and $t$ are the usual Mandelstam variables associated with an elastic scattering process of
+two fermions, whose quantum numbers (e.g., flavor and helicity) are collectively denoted by $\alpha$ and $\beta$.
+Expanding the UV amplitude in partial waves of fixed total angular momentum, $a_{\alpha\beta}^{J}(s)$, and 
+assuming vanishing boundary terms at infinity, one finds \cite{Remmen:2020uze}
+%
+\begin{equation}\label{eq: sum rules master equation}
+    \lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0) = -\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{ \alpha\beta}(s,0) =8\int_{s_0}^\infty \dfrac{\dd s}{s^2}\left(\Im a_{\overline{\alpha}\beta}^{0}(s)-3\Im a_{\alpha\beta}^{1}(s)\right)\,,
+\end{equation}
+where $s_0$ is the characteristic mass-squared scale of the UV completion.\footnote{Note that our partial-wave coefficients are normalized differently from those of Ref.~\cite{Remmen:2020uze}.}
+Dominance of spin-0 (spin-1) states in the UV theory implies that the left-hand side of Eq.~\eqref{eq: sum rules master equation} is positive (negative) definite for any choice of $\alpha$ and $\beta$.
+This property can be exploited to derive new constraints for the flavor-dependent entries of the Wilson coefficients of four-fermion SMEFT operators, or between different $\psi^4$ operators with the same fermionic content. For completeness, we report in the following the sum-rule bounds associated with SMEFT operators in the Warsaw basis, since in Ref.~\cite{Remmen:2020uze} different conventions are used.
+In particular, the combinations of Wilson coefficients reported in Table~\ref{tab:sum_rules}, when contracted with $\alpha_p \alpha_r^* \beta^*_s \beta_t$, are positive (negative) if the completion is dominated by scalars (vectors).
+%
+\input{tables/SMEFT_sum_rules}
+%
+As a final remark, we stress that these bounds are subject to some limitations that may lead to their violation, as already discussed in the main text.
+
+\section{Matching of Ultraviolet Completions}
+
+To illustrate both the diagnostic power and the limitations of the spinning sum
+rules discussed in the main text and Appendix~\ref{app: sum rules}, we match a
+representative set of single-field, tree-level UV completions \cite{deBlas:2017xtg}
+onto the third-generation semileptonic operators $[O_{\ell q}^{(1)}]_{3333}$ and
+$[O_{\ell q}^{(3)}]_{3333}$, whose unitarity and sum-rule constraints are shown in
+Figure~\ref{fig:3plots} (right). The results are collected in Table~\ref{tab:models}.
+%
+\input{tables/UVcompletions}
+
+The two scalar leptoquarks ($\omega_1$, $\zeta$) and the two vector leptoquarks
+($\mathcal{U}_2$, $\mathcal{X}$) generate these operators through $s$-channel
+exchange in the elastic $\ell q \to \ell q$ amplitude, and therefore enter the
+dispersion relation of Eq.~\eqref{eq: sum rules master equation} with their physical
+spin. 
+Explicitly, the relevant combinations of Table~\ref{tab:sum_rules},
+$[C_{\ell q}^{(1)}]_{3333} \pm [C_{\ell q}^{(3)}]_{3333}$, are both non-negative for
+$\omega_1$ and $\zeta$, and both non-positive for $\mathcal{U}_2$ and $\mathcal{X}$,
+so that the scalar (vector) leptoquarks are correctly placed in the scalar-
+(vector-) dominated region of Figure~\ref{fig:3plots} (right).
+
+By contrast, the color-singlet vectors $\mathcal{B} \sim (1,1)_0$ and
+$\mathcal{W} \sim (1,3)_0$ couple separately to the lepton and quark currents and are exchanged in the $t$-channel. The boundary terms then no longer vanish, modifying Eq.~\eqref{eq: sum rules master equation}, and the sum-rule
+classification fails: $\mathcal{W}$ yields combinations of opposite sign and thus
+lies outside both the scalar- and vector-dominated regions, while $\mathcal{B}$ can
+fall in the region associated with the opposite (scalar) spin, depending on the sign
+of $[g_{\mathcal B}^\ell]_{33}[g_{\mathcal B}^q]_{33}$. These cases provide explicit
+examples of the statement made in the main text that vector $t$-channel completions
+can violate the spinning sum-rule constraints, whereas all tree-level scalar
+completions satisfy them.
+
+\section{Mathematical Tools}
+
+\subsection{Logical Expression}\label{sec:appendix, logical expression}
+
+The function $f(x) = a + bx - \sqrt{c^2 + dx + ex^2}$ --- assumed real on $[0,1]$ and with $a,b,c,d,e\in\mathbb{R}$ --- is such that $f(x) \ge 0$ for every $x \in [0,1]$ if and only if the system of inequalities
+\begin{align}
+    \Delta(a,b,c,d,e) &= 
+    a \ge 0 
+    \ \land \
+    a+b \ge 0
+    \ \land \ 
+    a^2 - c^2 \ge 0
+    \ \land \ 
+    (a+b)^2 - c^2 -d-e \ge 0 \nonumber
+    \\& \quad
+    \land \
+    [e - b^2 \ge 0 \ \lor\  (2ab-d)(2ab-d+2b^2-2e) \ge 0 \nonumber 
+    \\& \quad
+    \lor \ 4(b^2-e)(a^2-c^2)-(2ab-d)^2 \ge 0]
+\end{align}
+is true.
+
+To prove this, note that,
+since $g(x)=c^2 + dx + ex^2 \ge 0$ on $[0,1]$ by assumption, $f(x) \ge 0$ on $[0,1]$ is equivalent to $\ell(x) = a + bx \ge 0$ and $h(x) = \ell(x)^2 -g(x) \ge 0$ on $[0,1]$. The latter reads $h(x) = \alpha x^2 + \beta x + \gamma$, with $\alpha = b^2-e$, $\beta = 2ab-d$, and $\gamma=a^2-c^2$.
+Thus, it is sufficient to prove that $p(x) = \alpha x^2+\beta x + \gamma \ge 0$ on $[0,1]$ if and only if
+    \begin{equation}\label{eq:lemma}
+        \gamma\ge0 \ \land \ \alpha+\beta+\gamma\ge0 \ \land \
+    [\alpha\le0 \ \lor \ \beta(\beta+2\alpha)\ge0 \ \lor \ 4\alpha\gamma-\beta^2\ge0 ] \,.
+    \end{equation}
+Indeed, $\Delta$ is exactly Eq.~\eqref{eq:lemma} applied to $\ell$ and $h$.
+The first two conditions in Eq.~\eqref{eq:lemma} are $p(0)\ge 0$ and $p(1)\ge 0$, thus they are necessary; assume them in what follows. If $\alpha \le 0$, then $p$ is concave and has its minimum on $[0,1]$ at an endpoint, so $p\ge 0$; instead, if $\alpha >0$, the vertex is at $x_\ast = -\beta/(2\alpha)$, and
+\begin{equation}
+    x_\ast\le0 \iff \beta\ge0 \,, \qquad x_\ast\ge1 \iff \beta+2\alpha\le0 \,,
+\end{equation}
+so $x_\ast \notin (0,1)$ if and only if $\beta(\beta+2\alpha)\ge 0$, in which case the minimum is again at an endpoint and $p\ge 0$. Otherwise, $x_\ast \in (0,1)$ and $\min_{[0,1]} p = p(x_\ast) = (4\alpha\gamma-\beta^2)/(4\alpha)$, which has the same sign as $4\alpha\gamma-\beta^2$. The last condition is then both necessary and sufficient. 
+
+\subsection{Eigenvalues of Jordan--Wielandt Matrices}
+
+Given the Hermitian Jordan--Wielandt matrix
+\begin{equation}
+    M=\begin{pmatrix}
+        \mathbb{O}_{m\times m} & A \\ A^\dag & \mathbb{O}_{n\times n}
+    \end{pmatrix}
+\end{equation}
+of size $m+n$,
+with $A\in \mathbb{C}^{m \times n}$,
+we have that its characteristic polynomial --- with the convention $p_X(x) = \det(x\mathbb{1}-X)$ --- is
+\begin{equation}
+    p_M(x)=x^{n-m}\,p_{AA^\dag}(x^2) = x^{m-n}\,p_{A^\dag A}(x^2) \,,
+\end{equation}
+which means that the eigenvalues of $M$ can be computed as the positive and negative square roots of the eigenvalues of $AA^\dag$ if $m\le n$ (of $A^\dag A$ if $m > n$), together with additional $\abs{n-m}$ vanishing eigenvalues. 
+%
+
+To prove this, consider a generic block matrix that takes the form
+\begin{equation}
+    \begin{pmatrix}
+        P & Q \\ R & S
+    \end{pmatrix}\,.
+\end{equation}
+If $S$ is invertible, then
+\begin{equation}
+    \begin{pmatrix}
+        P & Q \\ R & S
+    \end{pmatrix}
+    \begin{pmatrix} \mathbb{1} & \mathbb{O} \\ -S^{-1}R & \mathbb{1} 
+    \end{pmatrix}
+    =
+    \begin{pmatrix} P-QS^{-1}R & Q \\ \mathbb{O} & S 
+    \end{pmatrix}\,,
+\end{equation}
+which implies that 
+\begin{equation}
+    \det\begin{pmatrix} P & Q \\ R & S \end{pmatrix}=\det(P-QS^{-1}R) \det S \,.
+\end{equation}
+By applying this to the matrix $x\mathbb{1}_{(m+n)\times(m+n)}-M$, we find the result above.
+
+\end{subappendices}

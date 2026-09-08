@@ -114,7 +114,7 @@ They are given by
 \begin{align}
     \gamma_{c,v}^{A_\alpha B_\alpha} &= -g_\alpha^2 \left[b_{0,\alpha}\right]^{A_\alpha B_\alpha} \,, \label{eq:coll_vector}  \\
     \gamma_{c,s}^{ab} &= -4\sum_{\alpha=1}^{N_G} g_\alpha^2 \left[C_2(S_\alpha)\right]_{a_{\alpha}b_{\alpha}} + \frac{1}{2}\left( y_{ija}y_{jib}^*+y_{ijb}y_{jia}^* \right) \,, \label{eq:coll_scalar} \\
-    \gamma_{c,f}^{ij} &= -3\sum_{\alpha=1}^{N_G} g_\alpha^2 [C_2(F_\alpha)]_{i_\alpha j_\alpha}+\frac{1}{2}y_{ika}y^*_{kja} \,, \label{eq:coll_fermion}
+    \gamma_{c,f}^{ij} &= -3\sum_{\alpha=1}^{N_G} g_\alpha^2 \left[C_2(F_\alpha)\right]_{i_\alpha j_\alpha}+\frac{1}{2}y_{ika}y^*_{kja} \,, \label{eq:coll_fermion}
 \end{align}
 for gauge boson, scalar, and fermion fields, respectively,
 with the one-loop $\beta$-function coefficient
@@ -345,7 +345,7 @@ The dimension-five Lagrangian can again be split into a bosonic and a fermionic 
 where $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \overline \sigma^\nu - \sigma^\nu \overline \sigma^\mu)$. In particular, the fermionic operators exhibit non-trivial symmetry properties due to various Dirac relations, which are equivalently reflected in the corresponding kinematic structures. For instance, for anti-commuting spinor fields, one finds:
 %
 \begin{gather}
-    \psi_i \psi_j = \psi_j\psi_i\,, \quad
+    \psi_i \psi_j = \psi_j\psi_i\,, \qquad
     \psi_i \sigma^{\mu\nu} \psi_j = -\psi_j \sigma^{\mu\nu}\psi_i\,,
 \end{gather}
 and analogously for the right-handed spinors. The symmetries of the dimension-five operators together with their minimal form factors are given in Table~\ref{tab:dim5}.\footnote{To account for symmetry factors, the following shorthand notation is introduced:
@@ -353,25 +353,24 @@ and analogously for the right-handed spinors. The symmetries of the dimension-fi
 \mathcal S_{i_1\dots i_n}=\prod_{\ell=1}^{N_{i_1\dots i_n}} k_\ell !\,,
 \label{eq:symm_fact}
 \end{equation}
-where $I=\{i_1,\dotsc, i_n\}$ denotes the multiset of indices.
-The quantity $N_{i_1\dots i_n}$ is the number of distinct elements in $I$, and $k_\ell$ is the multiplicity of the $\ell$-th distinct index.
-By construction
+where the quantity $N_{i_1\dots i_n}$ is the number of distinct elements in the multiset of indices $I=\{i_1,\dotsc, i_n\}$ and $k_\ell$ is the multiplicity of the $\ell$-th distinct index.
+By construction,
 \begin{equation}
 \sum_{\ell=1}^{N_{i_1\dots i_n}}k_\ell=n\,.
 \end{equation}
 As an example, one finds for $n=2$ and $n=3$
-\begin{align}
+\begin{equation}
 \mathcal S_{ij} = \begin{cases}
 1 & \text{if }i\neq j, \\
 2 & \text{if }i=j,
-\end{cases} && 
+\end{cases} \qquad 
 \mathcal S_{ijk} =
 \begin{cases}
 1 & \text{for } i,j,k \text{ all distinct}, \\
 2 & \text{for exactly two equal indices}, \\
 6 & \text{for } i=j=k.
 \end{cases}
-\end{align}}
+\end{equation}}
 
 \input{tables/generalEFT_dim5}
 
@@ -403,9 +402,9 @@ For instance, the four-fermion operator $\mathcal{O}_{\overline \psi^2 \psi^2}$ 
 which leads to several symmetry relations. Furthermore, using the identity
 %
 \begin{equation}
-    (\psi_i^\dagger \overline \sigma_\mu \psi_j) = - (\psi_j \sigma_\mu \psi_i^\dagger)\,,
+    \psi_i^\dagger \overline \sigma_\mu \psi_j = - \psi_j \sigma_\mu \psi_i^\dagger \,,
 \end{equation}
-the operator $\mathcal{O}_{\overline \psi^2 \psi^2}$ describes four-fermion vector operators with both equal and mixed chiralities. 
+the operator $\mathcal{O}_{\overline \psi^2 \psi^2}$ describes four-fermion vector operators with both equal and mixed chiralities, i.e., $(\overline LL)(\overline LL)$, $(\overline RR)(\overline RR)$, and $(\overline LL)(\overline RR)$. 
 Moreover, as a consequence of the Schouten identities in Eqs.~\eqref{eq:schhoutenid1} and \eqref{eq:schhoutenid2},
 the Wilson coefficient associated with the operator $\mathcal O_{\psi^4}$ satisfies
 \begin{equation}
@@ -418,7 +417,7 @@ For this, we define the following combination of Wilson coefficients:
 \begin{equation}\label{eq:hatCD2phi4}
 \left[\widehat C_{D^2\phi^4}\right]_{abcd}=\left[C_{D^2\phi^4}\right]_{abcd}+\left[C_{D^2\phi^4}\right]_{cdab}-\left[C_{D^2\phi^4}\right]_{adbc}-\left[C_{D^2\phi^4}\right]_{bcad}\,.
 \end{equation}
-Adopting a geometric approach, this combination can be shown to be proportional to the Riemann tensor of the scalar metric,\footnote{For a scalar metric $g_{ab}(\phi) = \delta_{ab} + 2[C_{D^2\phi^4}]_{abcd}\phi^c \phi^d$, the corresponding Riemann tensor $R_{abcd}$ is proportional to $[\widehat C_{D^2\phi^4}]_{acbd} = [C_{D^2\phi^4}]_{acbd}+[C_{D^2\phi^4}]_{bdac}-[C_{D^2\phi^4}]_{adbc}-[C_{D^2\phi^4}]_{bcad}$.} which implies the following symmetries
+Adopting a geometric approach~\cite{Helset:2022pde,Assi:2023zid,Jenkins:2023rtg,Jenkins:2023bls}, this combination can be shown to be proportional to the Riemann tensor of the scalar metric,\footnote{For a scalar metric $g_{ab}(\phi) = \delta_{ab} + 2[C_{D^2\phi^4}]_{abcd}\phi^c \phi^d$, the corresponding Riemann tensor $R_{abcd}$ is proportional to $[\widehat C_{D^2\phi^4}]_{acbd} = [C_{D^2\phi^4}]_{acbd}+[C_{D^2\phi^4}]_{bdac}-[C_{D^2\phi^4}]_{adbc}-[C_{D^2\phi^4}]_{bcad}$.} which implies the following symmetries
 \begin{gather}
     \left[\widehat C_{D^2\phi^4}\right]_{abcd} = \left[\widehat C_{D^2\phi^4}\right]_{badc} = -\left[\widehat C_{D^2\phi^4}\right]_{adcb} = -\left[\widehat C_{D^2\phi^4}\right]_{cbad}\,,\\
     \left[\widehat C_{D^2\phi^4}\right]_{abcd} + \left[\widehat C_{D^2\phi^4}\right]_{acdb} + \left[\widehat C_{D^2\phi^4}\right]_{adbc} = 0\,.
@@ -3614,7 +3613,7 @@ In terms of $C_{H\Box}$ and $C_{HD}$, this is equivalent to
     \end{pmatrix}\,.\label{eq:dotCHBoxandCHDlambda}
 \end{align}
 
-\subparagraph{Gauge coupling dependence.}
+\subparagraph{Gauge-coupling dependence.}
 The scalar generators $\theta^Y$ and $\theta^I$ form the combinations $T^{(1)}_{abcd}=\theta^Y_{ab}\theta^Y_{cd}$ and $T^{(2)}_{abcd}=\theta^I_{ab}\theta^I_{cd}$.
 Exploiting the identities associated with the multiplication among these matrices collected in Eqs.~\eqref{eq:matrixid1} and \eqref{eq:matrixid2} and using the expression of the collinear anomalous dimension of the Higgs field $\gamma_{c,H} = -g_1^2-3g_2^2$, the terms of Eq.~\eqref{eq:D2phi4<-D2phi4} proportional to $g^2$ are
 \begin{align}
@@ -3767,7 +3766,7 @@ Therefore,
 \end{equation}
 
 
-\subparagraph{Gauge coupling dependence.}
+\subparagraph{Gauge-coupling dependence.}
 For the generators $\theta^Y$ and $\theta^I$ associated with the gauge groups $U(1)_Y$ and $SU(2)_L$, respectively, one finds $T^{(1)}_{abcd} = \theta^Y_{ab}\theta^Y_{cd}$ and $T^{(2)}_{abcd}=\theta^I_{ab}\theta^I_{cd}$.
 The terms in Eq.~\eqref{eq:phi6<-phi6} proportional to the gauge couplings are
 \begin{align}
@@ -4279,7 +4278,7 @@ Thus, Eq.~\eqref{eq:yukawadep_partial} leads to
 \end{align}
 which is consistent with \cite{Jenkins:2013wua}.
 
-\subparagraph{Gauge coupling dependence.}
+\subparagraph{Gauge-coupling dependence.}
 The terms of Eq.~\eqref{psi2phi3_psi2phi3} that depend on the gauge couplings are
 \begin{align}
     \frac{1}{4\sqrt{2}}[\dot C_{eH}]^*_{pr} \delta_{(ab}\mathcal H_{c)}^{i*} &=     
