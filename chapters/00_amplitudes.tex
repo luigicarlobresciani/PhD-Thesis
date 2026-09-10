@@ -1,4 +1,5 @@
 \chapter{On-Shell Scattering Amplitudes}
+\label{ch:amplitudes}
 
 % Scattering amplitudes occupy an unusual position in quantum field theory. They are among the most
 % concrete objects the theory produces, feeding directly into every cross section measured at a
@@ -252,8 +253,8 @@ Starting from the helicity spinors instead of momenta, we can construct Lorentz-
     \langle ij\rangle= \lambda_i^\alpha \lambda_{j\alpha} = \epsilon_{\alpha\beta}\lambda_i^{\alpha}\lambda_j^{\beta} \,,\qquad
     [ij] = \tildee\lambda_{i\dot\alpha}\tildee\lambda_{j}^{\dot\alpha}=-\epsilon_{\dot\alpha\dot\beta}\tildee\lambda_i^{\dot\alpha}\tildee\lambda_j^{\dot\beta}\,,
 \end{align}
-with $i,j=1,\dotsc,n$, where we have introduced the north-west-to-south-east $\searrow$
-(south-west-to-north-east $\nearrow$) contraction rule for the undotted (dotted) Weyl indices.
+with $i,j=1,\dotsc,n$, where we have introduced the north-west-to-south-east
+(south-west-to-north-east) contraction rule for the undotted (dotted) Weyl indices.
 Since the helicity spinors are bosonic and the epsilon symbols are anti-symmetric, the angular and square brackets are anti-symmetric as well under the exchange of their entries:
 \begin{align}
     \langle ij \rangle =-\langle ji \rangle \,, \qquad
@@ -269,6 +270,8 @@ which, for real momenta whose energies have the same sign, implies
     \agl{i}{j} = \sqrt{\abs{s_{ij}}} \,e^{i\phi_{ij}} = \sqr{j}{i}^*\,,
 \end{equation}
 with $\phi_{ij}\in\mathbb R$.
+
+Throughout the entire thesis, to perform calculations and efficiently manipulate spinor-product expressions, we exploited the Mathematica package \texttt{S@M}~\cite{Maitre:2007jq}. 
 
 \subsubsection{Useful Identities}
 
@@ -1158,7 +1161,7 @@ $n$-gluon amplitude admits the color decomposition~\cite{Mangano:1990by,Berends:
     A_n\big(1^{h_1},\sigma(2)^{h_{\sigma(2)}},\dotsc,\sigma(n)^{h_{\sigma(n)}}\big)\,,
 \end{equation}
 where $T^a$ are the generators of the gauge group in the fundamental representation, normalized as
-$\Tr T^aT^b =\delta^{ab}$, and the sum runs over the permutations of the labels $2,\dotsc,n$. The coefficients $A_n$ are the \textit{color-ordered} or \textit{partial amplitudes}. They are gauge
+$\Tr T^aT^b =\delta^{ab}$, and the sum runs over the permutations of the labels $2,\dotsc,n$. The functions $A_n$ are the \textit{color-ordered} or \textit{partial amplitudes}. They are gauge
 invariant, invariant under cyclic relabeling of their arguments, and singular only in channels built
 out of cyclically adjacent momenta. This last property is what makes the shift of two adjacent legs
 natural, since the recursion then receives contributions from $n-3$ channels only.

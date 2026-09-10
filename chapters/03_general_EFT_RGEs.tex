@@ -20,11 +20,86 @@ J.~Aebischer, L.~C.~Bresciani and N.~Selimovic,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\lb{Insert incipit and outline of the chapter.}
+\noindent The parameters of an effective field theory, like those of any quantum field theory, depend on the
+renormalization scale $\mu$. This dependence is governed by the RGEs of the theory, which are related
+to the additional divergences introduced by the effective operators. Consequently, the RGEs depend on
+the field content and on the imposed gauge symmetry, and therefore need to be derived anew for each
+individual EFT.
 
+It is however possible to adopt a general framework encompassing an arbitrary number of scalar,
+fermion, and vector fields transforming under an arbitrary gauge group, in which the RGEs are
+computed once and for all, yielding general template RGEs. Those of a specific EFT then follow by
+algebraic and group-theory manipulations, without the need to perform any loop computation:
 \begin{equation*}
-\boxed{\text{\textbf{Gauge group}}}\ +  \ \boxed{\text{\textbf{Particle content}}}\ \underset{\text{Group algebra}}{\longrightarrow}\  \boxed{\text{\textbf{RGEs}}}\,.
+\boxed{\text{\textbf{\;Gauge group\;}}}\; +  \; \boxed{\text{\textbf{\;Particle content\;}}}\; \underset{\text{Group algebra}}{\longrightarrow}\;  \boxed{\text{\textbf{\;RGEs\;}}}\,.
 \end{equation*}
+
+One core premise of EFTs is that they are valid only up to a given cut-off scale $\Lambda$. As a
+consequence of the decoupling theorem, the effective couplings are suppressed by inverse powers of
+$\Lambda$, which introduces a natural power-counting parameter $f/\Lambda$, where $f$ stands for the
+small momenta or mass scales of the EFT. Throughout this chapter, we work up to order $(f/\Lambda)^2$
+and retain only terms that are at most $\mathcal{O}(1/\Lambda^2)$, so that double insertions of
+dimension-six operators, as well as products of dimension-five and dimension-six Wilson coefficients,
+are neglected in the running.
+
+For the dimension-four interactions, several template RGEs already exist in the literature. Some early
+work at the two-loop level can be found in
+Refs.~\cite{Jack:1984vj,Machacek:1983tz,Machacek:1983fi,Machacek:1984zw}, with corrections later
+given in Refs.~\cite{Luo:2002ti,Schienbein:2018fsw}. The two-loop renormalization of vacuum
+expectation values in gauge theories was computed in Refs.~\cite{Sperling:2013eva,Sperling:2013xqa}.
+The three-loop beta functions for gauge and Yukawa interactions were derived in
+Refs.~\cite{Pickering:2001aq,Poole:2019kcm,Mihaila:2012pz} and
+Refs.~\cite{Davies:2021mnc,Poole:2019txl}, respectively, while the generic four-loop gauge beta
+function is given in Ref.~\cite{Bednyakov:2021qxa}. For models containing scalars and fermions the
+three-loop gaugeless RGEs were derived in Refs.~\cite{Jack:2023zjt,Steudtner:2021fzs}, the quartic
+scalar coupling was renormalized at three loops in Ref.~\cite{Steudtner:2024teg}, and for scalar
+theories the running of the renormalizable couplings is known up to six
+loops~\cite{Bednyakov:2021ojn,Bednyakov:2025sri}.
+
+Beyond the renormalizable level, the RGEs of higher-dimensional operators have been obtained with a
+variety of techniques. The traditional diagrammatic approach, in which the coefficient of the
+$1/\epsilon$ poles of the relevant Feynman diagrams is extracted in $d=4-2\epsilon$ spacetime
+dimensions, was adopted for the one-loop dimension-six RGEs of the
+SMEFT~\cite{Buchmuller:1985jz,Grzadkowski:2010es,Brivio:2017vri,Isidori:2023pyp} in
+Refs.~\cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga,Alonso:2014zka}, and similarly for the
+LEFT~\cite{Jenkins:2017dyc}.\footnote{Many contributions to the RGEs of operators of dimensionality
+different from six have been computed in the
+literature~\cite{Chankowski:1993tx,Babu:1993qv,Antusch:2001ck,Davidson:2018zuo,Liao:2016hru,Liao:2019tep,Zhang:2023kvw,Zhang:2023ndw,Chala:2021pll,DasBakshi:2022mwk,DasBakshi:2023htx,Chala:2023xjy,Jiang:2020mhe,Helset:2022pde,Assi:2023zid,Boughezal:2024zqa}, and also some
+two-loop~\cite{Aebischer:2022anv,Ibarra:2024tpt,Aebischer:2025hsx,Naterop:2024cfx,Jenkins:2023bls,Jenkins:2023rtg,Born:2024mgz,DiNoi:2023ygk,DiNoi:2024ajj} and even three-loop
+results~\cite{deVries:2019nsu} are known.}
+RGEs can also be computed using functional
+methods~\cite{Fuentes-Martin:2024agf}, as was done for the one-loop bosonic
+SMEFT~\cite{Buchalla:2019wsc} and, more recently, for the complete set of two-loop bosonic SMEFT
+operators~\cite{Born:2024mgz}, or by geometric arguments, in which the scalar and gauge fields are
+interpreted as coordinates of a manifold and the RGEs are related to the curvature in this field
+space~\cite{Helset:2022pde,Assi:2023zid,Jenkins:2023rtg,Jenkins:2023bls}.
+
+The method employed here is instead the on-shell one reviewed in Chapter~\ref{ch:RGEmethod}, which is
+particularly well suited to a general EFT. Calculations are performed
+exclusively with physical external states, so that no mixing with unphysical operators can occur and
+gauge invariance is preserved manifestly throughout, while the selection rules discussed in
+Chapter~\ref{ch:RGEmethod} sharply restrict the allowed operator mixings and substantially reduce the
+computational complexity. The results are then directly usable, without invoking field redefinitions
+or the additional simplifications associated with gauge
+redundancies~\cite{Baratella:2020lzz}.\footnote{See also Refs.~\cite{Chavda:2025aqm,Chavda:2025awr} for a recently
+proposed connection between unitarity and renormalization flow.}
+
+The physical basis of operators used in the following is constructed by identifying the independent
+kinematic structures associated with the contact amplitudes of the
+EFT~\cite{Shadmi:2018xan,Cheung:2016drk,Falkowski:2019zdo,Durieux:2019siw,Li:2022tec,DeAngelis:2022qco,Durieux:2019eor}. Within it, we compute the complete set of one-loop RGEs for all
+Lagrangian parameters, including the mixing of operators of different dimensionalities. Together with
+the parallel results of Refs.~\cite{Fonseca:2025zjb,Misiak:2025xzq,Fonseca:2025cls}, this concludes the program of
+general one-loop RGEs for effective field theories up to mass dimension six.
+
+The chapter is organized as follows. In Section~\ref{sec:EFT} we describe the general EFT up to mass
+dimension six, introducing the renormalizable interactions and the classification of the
+higher-dimensional operators. In Section~\ref{sec:gEFTexamples} we recall the ingredients of the
+on-shell method that are needed in the following and work out two representative anomalous dimensions
+in detail. The complete results are collected in Section~\ref{sec:gEFTresults} and are then applied to
+specific theories, namely the SMEFT in Section~\ref{sec:gEFTSMEFT}, the LEFT in
+Section~\ref{sec:gEFTLEFT}, and the $O(n)$ scalar theory in Section~\ref{sec:gEFTOn}. Besides
+providing a valuable consistency check, these applications serve as a guide to the use of the general
+results in specific theories. Section~\ref{sec:gEFTconclusions} is dedicated to our conclusions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General Effective Gauge Theory}
@@ -348,7 +423,7 @@ where $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \overline \sigma^\nu - \sigma^\n
     \psi_i \psi_j = \psi_j\psi_i\,, \qquad
     \psi_i \sigma^{\mu\nu} \psi_j = -\psi_j \sigma^{\mu\nu}\psi_i\,,
 \end{gather}
-and analogously for the right-handed spinors. The symmetries of the dimension-five operators together with their minimal form factors are given in Table~\ref{tab:dim5}.\footnote{To account for symmetry factors, the following shorthand notation is introduced:
+and analogously for the right-handed spinors. The symmetries of the dimension-five operators together with their minimal form factors are given in Table~\ref{tab:dim5gen}.\footnote{To account for symmetry factors, the following shorthand notation is introduced:
 \begin{equation}
 \mathcal S_{i_1\dots i_n}=\prod_{\ell=1}^{N_{i_1\dots i_n}} k_\ell !\,,
 \label{eq:symm_fact}
@@ -389,7 +464,7 @@ The dimension-six interactions are given by the following Lagrangian:
     + i\left[C_{D\overline \psi \psi \phi^2}\right]_{ijab}(\psi^\dagger_i \overline \sigma^\mu \psi_j)\left[(D_\mu \phi)_a \phi_b - \phi_a (D_\mu \phi)_b\right]\,.
 \end{align}
 %\endgroup\ignorespacesafterend
-The symmetries of the corresponding Wilson coefficients are collected for bosonic and fermionic operators in Table~\ref{tab:dim6}, and the minimal form factors are given in Table~\ref{tab:dim6FFs}. 
+The symmetries of the corresponding Wilson coefficients are collected for bosonic and fermionic operators in Table~\ref{tab:dim6gen}, and the minimal form factors are given in Table~\ref{tab:dim6FFs}. 
 
 \input{tables/generalEFT_dim6}
 \input{tables/generalEFT_dim6FFs}
@@ -410,7 +485,7 @@ the Wilson coefficient associated with the operator $\mathcal O_{\psi^4}$ satisf
 \begin{equation}
     \left[C_{\psi^4}\right]_{ijkl} + \left[C_{\psi^4}\right]_{iklj} + \left[C_{\psi^4}\right]_{iljk} = 0\,,
 \end{equation}
-in addition to the identities reported in Table~\ref{tab:dim6}.
+in addition to the identities reported in Table~\ref{tab:dim6gen}.
 
 Let us further note a subtlety that involves the $D^2\phi^4$-class operator $[\mathcal O_{D^2\phi^4}]_{abcd} = (D_\mu \phi)_a (D^\mu \phi)_b \phi_c \phi_d$. 
 For this, we define the following combination of Wilson coefficients:
@@ -574,7 +649,7 @@ indicate the two-particle cut.
 
 As a first illustration we compute the self-mixing of the dimension-six operator
 $\mathcal O_{\phi^2F^2}$, whose symmetry properties and minimal form factor are given in
-Tables~\ref{tab:dim6} and \ref{tab:dim6FFs}.
+Tables~\ref{tab:dim6gen} and \ref{tab:dim6FFs}.
 Following Eq.~\eqref{eq:masterformula}, the master formula can be written diagrammatically as
 \begin{align}
 &-\pi \left(  \gamma_{\phi^2F^2\leftarrow \phi^2F^2}-\gamma_{\phi^2F^2,\text{IR}}  \right)
@@ -3153,6 +3228,7 @@ The explicit expressions for $\dot{\tildee C}_{D^2\phi^4}$ and $\dot{\overline C
 % Our purpose is twofold: We cross-check our results against the ones from Alonso, Jenkins, Manohar, and Trott~\cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga}, and, secondly, we illustrate how to use our results to derive RGEs of other EFTs with arbitrary symmetry and particle content. 
 
 \section{Cross-Check with the Standard Model Effective Field Theory}
+\label{sec:gEFTSMEFT}
 
 This section applies the results for the RGEs of the generic EFT to the specific cases of 
 the SMEFT and derives the RGEs for its bosonic and fermionic sectors.
@@ -3181,7 +3257,7 @@ implying the following form of the generators $\theta^{A_\alpha}$
     \end{pmatrix}\,.
     \label{eq:real_generators}
 \end{equation}
-The scalar generators $\theta^{A_\alpha}$ are therefore purely imaginary and antisymmetric.
+The scalar generators $\theta^{A_\alpha}$ are therefore purely imaginary and anti-symmetric.
 
 \subsubsection{The Standard Model}
 
@@ -3233,13 +3309,13 @@ Comparing with the general Lagrangian $\mathcal{L}^{(4)}_{\text{bos}} \supset -\
 The SM fermion fields are decomposed into left-handed two-component Weyl spinors $\psi$, following the conventions of Ref.~\cite{Dreiner:2008tw}. For each generation $p$, the SM contains the following left-handed Weyl spinors and their representations under $G_{\text{SM}}$:
 %
 \begin{equation}\label{eq:SM_fermions}
-    \begin{aligned}
-        \mathsf{q}_{p}^{\alpha i}: &\quad (\mathbf{3},\mathbf{2})_{1/6}\,,\\
-        \mathsf{u}_{p}^{\alpha}: &\quad (\overline{\mathbf{3}},\mathbf{1})_{-2/3}\,,\\
-        \mathsf{d}_{p}^{\alpha}: &\quad (\overline{\mathbf{3}},\mathbf{1})_{1/3}\,,\\
-        \mathsf{l}_{p}^{i}: &\quad (\mathbf{1},\mathbf{2})_{-1/2}\,,\\
-        \mathsf{e}_{p}: &\quad (\mathbf{1},\mathbf{1})_{1}\,.
-    \end{aligned}
+    %\begin{aligned}
+        \mathsf{q}_{p}^{\alpha i}: \ (\mathbf{3},\mathbf{2})_{1/6}\,,\quad
+        \mathsf{u}_{p}^{\alpha}: \ (\overline{\mathbf{3}},\mathbf{1})_{-2/3}\,,\quad
+        \mathsf{d}_{p}^{\alpha}: \ (\overline{\mathbf{3}},\mathbf{1})_{1/3}\,,\quad
+        \mathsf{l}_{p}^{i}: \ (\mathbf{1},\mathbf{2})_{-1/2}\,,\quad
+        \mathsf{e}_{p}: \ (\mathbf{1},\mathbf{1})_{1}\,.
+    %\end{aligned}
 \end{equation}
 %
 Here $\mathsf{u}_p$, $\mathsf{d}_p$, and $\mathsf{e}_p$ denote the charge conjugates of the right-handed SM fields $u_{p}$, $d_{p}$, and $e_{p}$, i.e., they are left-handed Weyl spinors transforming in the conjugate representations:
@@ -4500,6 +4576,7 @@ in agreement with~\cite{Jenkins:2013zja,Jenkins:2013wua}.
 The anomalous dimension of the operator $Q_{eH}$ receives additional contributions from the operators in the $D^2\phi^4$ and $D\overline \psi \psi \phi^2$ classes, which could also be checked with the results derived here in Section~\ref{sec:gEFTresults}.
 
 \section{Cross-Check with the Low-Energy Effective Field Theory}
+\label{sec:gEFTLEFT}
 
 We now perform the projection of the general Lagrangian onto the LEFT, restricting our attention to the fermion masses and the dimension-five dipole operators, which correspond to operator classes that are absent in the SMEFT. 
 Then, we compute the running of the gauge couplings and the topological angles, which is induced precisely by the fermion masses and dipoles.
@@ -4523,13 +4600,13 @@ Below the electroweak scale, the SM fermion content is reduced to $n_u=2$ up-typ
 where $\alpha$ is the color index and $p$ the generation index, while spinor indices are kept implicit. Together with the Majorana neutrinos, this yields the following set of left-handed Weyl spinors and their representations under $G_{\text{LEFT}}$:
 \begin{equation}\label{eq:LEFT_fermions}
     \begin{aligned}
-        \mathsf{u}_{Lp}^\alpha:&\quad (\mathbf{3})_{2/3}\,,\qquad
-        & \mathsf{u}_{p}^\alpha:&\quad (\overline{\mathbf{3}})_{-2/3}\,,\\
-        \mathsf{d}_{Lp}^\alpha:&\quad (\mathbf{3})_{-1/3}\,,\qquad
-        & \mathsf{d}_{p}^\alpha:&\quad (\overline{\mathbf{3}})_{1/3}\,,\\
-        \mathsf{e}_{Lp}:&\quad (\mathbf{1})_{-1}\,,\qquad
-        & \mathsf{e}_{p}:&\quad (\mathbf{1})_{1}\,,\\
-        \mathsf{\nu}_{Lp}:&\quad (\mathbf{1})_{0}\,. & &
+        \mathsf{u}_{Lp}^\alpha:& \ (\mathbf{3})_{2/3}\,,\qquad
+        & \mathsf{u}_{p}^\alpha:& \ (\overline{\mathbf{3}})_{-2/3}\,,\\
+        \mathsf{d}_{Lp}^\alpha:& \ (\mathbf{3})_{-1/3}\,,\qquad
+        & \mathsf{d}_{p}^\alpha:& \ (\overline{\mathbf{3}})_{1/3}\,,\\
+        \mathsf{e}_{Lp}:& \ (\mathbf{1})_{-1}\,,\qquad
+        & \mathsf{e}_{p}:& \ (\mathbf{1})_{1}\,,\\
+        \mathsf{\nu}_{Lp}:& \ (\mathbf{1})_{0}\,. & &
     \end{aligned}
 \end{equation}
 Here $\mathsf{u}_p$, $\mathsf{d}_p$, and $\mathsf{e}_p$ denote the charge conjugates of the right-handed components of the corresponding Dirac fields, hence transform in the conjugate representation. The total number of independent left-handed Weyl spinor components is
@@ -4634,6 +4711,7 @@ Similarly, the corresponding running of $g$ and of the topological angles $\vart
 \end{align}
 
 \section{Cross-Check with the \texorpdfstring{$O(n)$}{O(n)} Effective Field Theory}
+\label{sec:gEFTOn}
 
 Finally, we consider the $O(n)$ scalar EFT. 
 This theory includes $n$ real scalar gauge singlets $\phi$ and is invariant under global $O(n)$ transformations.
@@ -4741,5 +4819,67 @@ which gives
 \end{equation}
 
 \section{Conclusions}
+\label{sec:gEFTconclusions}
 
-\lb{Insert conclusions.}
+In this chapter we have constructed the physical basis of a general effective gauge theory up to
+mass dimension six using on-shell methods, adopting a general setup that includes an arbitrary
+number of scalar, fermion, and vector fields transforming under arbitrary gauge groups. For this
+general theory we have derived the complete set of one-loop RGEs for all renormalizable and
+non-renormalizable couplings up to mass dimension six, where mixing effects between operators of
+different mass dimensions were taken into account and RGE effects of order $1/\Lambda^2$ in
+the EFT power counting were consistently included.
+
+Taken together, the bosonic and fermionic results obtained here conclude the derivation of the
+complete set of one-loop RGEs at the dimension-six level for relativistic EFTs containing scalars,
+fermions, and vectors transforming linearly under an arbitrary gauge group; see also
+Refs.~\cite{Fonseca:2025zjb,Misiak:2025xzq,Fonseca:2025cls}. Consequently, this chapter provides a general framework
+for deriving the one-loop RGEs of EFTs in this broad class.
+
+To demonstrate the utility of these results, we have reproduced the complete one-loop RGEs of the
+bosonic sector of the SMEFT, together with representative results in its fermionic sector, and we
+have further applied our findings to the LEFT and to the $O(n)$ scalar theory, finding agreement
+with the results in the literature.
+
+Working with a generic EFT has highlighted the advantage of performing such general computations, as
+opposed to working in specific models. One clear benefit is that the RGE for a given class of
+operators needs to be computed only once. For example, in the case of
+$\phi^2 F^2 \leftarrow \phi^2 F^2$ the running of four SMEFT Wilson coefficients can be inferred at
+once, after the general coefficient $[C_{\phi^2 F^2}]^{A_\alpha B_\beta}_{ab}$ is matched onto
+$C_{HG}$, $C_{HW}$, $C_{HB}$, and $C_{HWB}$ by specifying the gauge group and the representations of
+the SM fields.
+
+The derived results open up the possibility for systematic phenomenological investigations of
+light-particle extensions of the SM, in which new light degrees of freedom can imprint distinctive
+signatures through renormalization group mixing into the well-constrained SMEFT
+operators~\cite{Galda:2021hbr}. When such new degrees of freedom are incorporated into the EFT
+framework, our results allow one to compute the corresponding RGE effects. The framework can also be
+extended to include new gauge groups, such as additional $U(1)$ symmetries, which could mix with
+$U(1)_Y$ and lead to non-trivial phenomenological consequences. Automating the matching of the
+results derived here to specific EFTs would therefore be of immediate use, offering a systematic way
+to probe light new states largely independently of their mass or lifetime. As a next step, we
+envisage a software implementation performing the required group-theory calculations automatically,
+in the spirit of \texttt{GroupMath}~\cite{Fonseca:2020vke}, interfaced with dedicated RGE solvers
+such as \texttt{wilson}~\cite{Aebischer:2018bkb}, \texttt{RGESolver}~\cite{DiNoi:2022ejg}, or
+\texttt{DsixTools}~\cite{Celis:2017hod,Fuentes-Martin:2020zaz}, enabling straightforward
+phenomenological analyses and a complete streamlining of one-loop RGE calculations for gauge
+theories.
+
+Moreover, the majority of the 184 operator mixings identified, 131 in the fermionic sector and 53 in
+the bosonic one, exhibit a non-trivial structure that becomes transparent within the general EFT
+framework employed in this chapter, as illustrated for instance by the holomorphic combination of
+$C_{\phi^2F^2}$ and $C_{\phi^2\tildee F^2}$ found in Section~\ref{sec:ex_psi2phi3}.
+Finally,
+the results obtained here, as well as their extensions to higher orders, may have interesting
+implications for conformal field theories, where RGEs can be used to extract the scaling dimensions
+of composite operators~\cite{Henriksson:2025hwi}.
+
+Our findings have been obtained using on-shell, unitarity-based methods. As emphasized
+throughout this thesis, this approach offers the advantage of reusing the same amplitudes to
+determine multiple anomalous dimensions. Furthermore, the amplitudes derived here will serve as
+building blocks for the calculation of two-loop anomalous dimensions, whose structural consequences
+are already explored in Chapter~\ref{ch:2looptheorems}. The two-loop RGEs of a general EFT can be
+derived along the same lines, as was done with diagrammatic methods for the bosonic sector in
+Ref.~\cite{Guedes:2025sax}. In the case of fermionic operators, however, issues regarding evanescent
+operators~\cite{Dugan:1990df,Herrlich:1994kh,Aebischer:2022aze,Aebischer:2022rxf} and
+renormalization schemes~\cite{Aebischer:2023djt,Aebischer:2024xnf} need to be taken into account. We
+leave this work for the future.

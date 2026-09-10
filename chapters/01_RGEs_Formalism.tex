@@ -14,9 +14,86 @@ L.~C.~Bresciani, G.~Levati, P.~Mastrolia and P.~Paradisi,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\lb{Insert incipit and outline of the chapter. Give the physical meaning of doing a unitarity cut --- intermediate particles go on shell.}
+\noindent The Standard Model (SM) of particle physics has passed unclashed several experimental tests in all
+its sectors. The lack of heavy new physics (NP) at the LHC has firmly established the SM as a very
+successful theory describing the fundamental interactions of Nature up to the TeV scale. However, it
+is a common belief that the SM has to be regarded as the low-energy description of a more
+fundamental theory emerging at a large, yet unknown, energy scale $\Lambda$. New interactions can
+then be described by an Effective Field Theory (EFT) containing non-renormalizable operators that are
+invariant under the SM gauge group. EFTs provide a very powerful and model-independent approach to NP
+which does not rely on the details of the underlying, unknown, high-energy theory but just on its
+symmetries.
+
+Predictions for physical processes are obtained by evaluating matrix elements of the EFT Lagrangian
+at energy scales accessible by collider experiments. Therefore, the high-scale Lagrangian needs to be
+evolved from the scale $\Lambda$ down to the experimental scale $E \ll \Lambda$. Such a program can
+be carried out by computing the anomalous-dimension matrix of the higher-dimension operators, which
+controls both the multiplicative renormalization of operators as well as their mixing effects. In
+particular, the latter provide important information on how experimental bounds from one operator
+impact the Wilson coefficients of other operators. This makes the evaluation of EFT anomalous-dimension matrices a crucial ingredient for interpreting experimental results.
+
+A systematic and comprehensive computation of the one-loop anomalous-dimension matrix has been
+carried out for a number of relevant EFTs, such as the Standard Model EFT
+(SMEFT)~\cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga,Jenkins:2017dyc} or the axion-like
+particle EFT~\cite{Bauer:2020jbp,Chala:2020wvs}, exploiting diagrammatic and functional methods.
+Recently, the calculation of anomalous dimensions has been addressed also employing on-shell and
+unitarity-based techniques for scattering
+amplitudes~\cite{Caron-Huot:2016cwu,EliasMiro:2020tdv,Baratella:2020lzz,Jiang:2020mhe,Bern:2020ikv,Baratella:2020dvw,AccettulliHuber:2021uoa,EliasMiro:2021jgu,Baratella:2022nog,Machado:2022ozb,Wu:2025qto,Baratella:2021guc,Shu:2021qlr,Ma:2019gtx,Panico:2018hal},
+built upon the formalism developed in Chapter~\ref{ch:amplitudes}. This approach is rooted in recent
+developments in the context of generalized
+unitarity~\cite{Arkani-Hamed:2008owk,Huang:2012aq,Cheung:2015aba} and of the study of the dilatation
+operator in $\mathcal N=4$ super Yang--Mills
+theories~\cite{Zwiebel:2011bx,Wilhelm:2014qua,Nandan:2014oga,Koster:2014fva,Brandhuber:2014pta,Brandhuber:2015boa,Loebbert:2015ova,Brandhuber:2016fni}. One of its most intriguing features is to
+make manifest hidden structures with the appearance of nontrivial zeros in the anomalous dimension
+matrix. The origin of these vanishing elements has been traced back to selection
+rules~\cite{Elias-Miro:2014eia} based on helicity~\cite{Cheung:2015aba}, operator
+lengths~\cite{Bern:2019wie}, and angular momentum~\cite{Jiang:2020rwz}.\footnote{See
+also~\cite{Chala:2023jyx,Chala:2023xjy} for other zeros stemming from arguments based on the
+positivity of the $S$-matrix.}
+
+Anomalous dimensions can be extracted from the ultraviolet divergent part of amplitudes exploiting
+the generalized unitarity
+method~\cite{Bern:1994zx,Bern:1994cg,Britto:2004nc,Britto:2005ha,Britto:2006sj,Mastrolia:2009dr} for
+assembling scattering amplitudes from their unitarity cuts (see also~\cite{Ellis:2011cr}, for
+review). The physical content of a cut is simple. Cutting an internal line amounts to replacing its
+propagator by an on-shell delta function, so that the intermediate particles are placed on their mass
+shell and propagate as real, physical states. What remains is a phase-space integral over products of
+on-shell quantities of lower order, into which no off-shell information enters at any stage.
+Therefore, unitarity cuts give a direct access to the renormalization-scale dependence. In
+Ref.~\cite{Caron-Huot:2016cwu} it was remarkably observed that anomalous dimensions can be directly
+related to unitarity cuts. In particular, the discontinuities of form factors of EFT operators can be
+calculated via phase-space integrals and are related to the corresponding anomalous dimensions. This
+method has been shown to be particularly promising for computing anomalous dimensions at two-loop
+order~\cite{Bern:2020ikv}.
+
+So far, the method proposed in Ref.~\cite{Caron-Huot:2016cwu} has been applied to derive the
+anomalous dimensions of non-renormalizable massless theories including only mixing effects among
+operators of the same dimension. However, the non-trivial inclusion of mixings among operators with
+different dimensions and leading mass effects, which are of paramount importance in many popular EFT
+extensions of the SM, has not been discussed so far in this framework. The main motivation of this
+chapter is to fill this gap. In particular, we generalize the method of
+Ref.~\cite{Caron-Huot:2016cwu} providing a master formula which includes the most general operator
+mixing contributions up to two-loop order. Moreover, we show how to include leading mass effects,
+still working in the massless limit, by exploiting the Higgs low-energy
+theorem~\cite{Ellis:1975ap,Shifman:1979eb,Shadmi:2018xan,Durieux:2019eor,Durieux:2020gip,%
+Balkin:2021dko,Bertuzzo:2023slg}.
+
+The chapter is organized as follows. In Section~\ref{sec:RGEsmatrix} we derive the relation between
+the $S$-matrix and the dilatation operator due to Caron-Huot and Wilhelm~\cite{Caron-Huot:2016cwu},
+which identifies the dilatation operator with the phase of the $S$-matrix. In
+Section~\ref{sec:RGEmixing} we combine it with the Callan--Symanzik equation to obtain the master
+formulae for the most general operator mixing, at both one-loop and two-loop order. In
+Section~\ref{sec:RGEmass} we show how to include leading mass effects by means of the Higgs
+low-energy theorem, and Section~\ref{sec:RGEconclusions} is dedicated to our conclusions. In
+Appendix~\ref{app:SDOD_EFT} we derive the superficial degree of divergence of an EFT amplitude, which
+fixes the number of Higgs insertions required. Applications of the results obtained here are deferred
+to the chapters that follow, where they are exploited to renormalize the axion-like particle
+EFT~\cite{Georgi:1986df,Marciano:2016yhf,DiLuzio:2020oah} in Chapter~\ref{ch:ALP_RGEs} and a general
+effective gauge theory in Chapter~\ref{ch:generalEFT}, and where the two-loop master formula
+underlies the non-renormalization theorems of Chapter~\ref{ch:2looptheorems}.
 
 \section{\texorpdfstring{$S$-Matrix and Dilatation Operator}{S-Matrix and Dilatation Operator}}
+\label{sec:RGEsmatrix}
 
 In this section, we will closely follow Ref.~\cite{EliasMiro:2020tdv} to derive a central relation satisfied by the scattering matrix, $S$, and the dilatation operator, $D$, due to Caron-Huot and Wilhelm \cite{Caron-Huot:2016cwu}, which will allow us to extract the anomalous dimensions of operators via unitarity cuts.
 
@@ -204,6 +281,7 @@ or, more concisely, as $F_i = SF_i^*$. Finally, combining it with Eq.~\eqref{eq:
 Its interpretation consists in identifying the dilatation operator $D$ as minus the phase of the $S$-matrix, divided by $\pi$.
 
 \section{General Operator Mixing}
+\label{sec:RGEmixing}
 
 In perturbation theory, once loop integrals are performed, both ultraviolet and infrared divergences appear, and one needs to introduce a regulator.
 Dimensional regularization \cite{Bollini:1972ui,tHooft:1972tcz,Ashmore:1972uj} introduces the arbitrary scale $\mu$, upon which no physical quantity may ultimately depend.
@@ -352,6 +430,7 @@ and
 for the case of $k$ higher-dimensional operator insertions, with $k\ge 2$.
 
 \section{Leading Mass Effects}
+\label{sec:RGEmass}
 
 As a natural consequence of operator mixing, chirality-violating and chirality-preserving operators generally mix under the renormalization flow.
 In the case of EFTs defined below the electroweak scale, the required chirality flip proceeds through a fermion mass insertion. However, such a mass dependence cannot be directly implemented in the massless method of Ref.~\cite{Caron-Huot:2016cwu}. 
@@ -437,6 +516,7 @@ the ultraviolet properties of the theory.
 
 
 \section{Conclusions}
+\label{sec:RGEconclusions}
 
 In this chapter, we have generalized the application of on-shell and unitarity-based methods for evaluating renormalization group coefficients to account for the mixing of operators with different dimensions and leading mass effects, both of which play a fundamental role in the renormalization program of several effective field theories. 
 %
