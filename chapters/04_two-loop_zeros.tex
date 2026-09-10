@@ -13,7 +13,115 @@ L.~C.~Bresciani and N.~Selimovic,\\[0pt]
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\lb{Insert incipit and outline.}
+\noindent Although 
+naive dimensional analysis
+permits many operator mixings, anomalous-dimension matrices are often remarkably sparse. 
+At one loop, these unexpected zeros were traced back to several complementary structures. 
+From an on-shell perspective, unitarity cuts uncovered the selection rules based on helicity \cite{Cheung:2015aba} and angular momentum \cite{Jiang:2020rwz}. 
+Additionally, zeros based on color \cite{Bern:2020ikv} and on the operator length \cite{Bern:2019wie} apply beyond one loop, and the latter have been generalized to multiple operator insertions \cite{Cao:2023adc}.
+Moreover, the helicity selection rules accounted for the holomorphic structure first observed in the anomalous dimensions of the Standard Model EFT \cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga,Alonso:2014rga}, which could also be understood through supersymmetric embeddings \cite{Elias-Miro:2014eia}. Complementarily, positivity provides an independent source of constraints on operator mixing \cite{Chala:2023jyx,Chala:2023xjy,Liao:2025npz}. 
+
+Whether comparable holomorphic structures persist at two loops is less clear and increasingly important in light of
+the improved precision relevant to new-physics searches 
+\cite{Allwicher:2023aql,Stefanek:2024kds,Haisch:2024wnw,Olgoso:2025jot,Mantani:2026fao,Born:2026tgm}
+as well as
+recent calculations in the Standard Model EFT, Low-Energy EFT, and general EFTs
+\cite{Born:2026xkr,Ibarra:2024tpt,Zhang:2025ywe,DiNoi:2025tka,Aebischer:2022anv,Born:2024mgz,DiNoi:2024ajj,Duhr:2025zqw,DiNoi:2025arz,Haisch:2025lvd,Haisch:2025vqj,Duhr:2025yor,Banik:2025wpi,Naterop:2024cfx,Naterop:2025lzc,Naterop:2025cwg,Aebischer:2025hsx,Jenkins:2023bls,EliasMiro:2021jgu,Guedes:2025sax,Aebischer:2026zxv,Fonseca:2025zjb,Fonseca:2025cls,Misiak:2025xzq,Aebischer:2025zxg,Aebischer:2025ddl,Henriksson:2025hwi,Henriksson:2025vyi}.
+%
+At this order, loop-level contributions weaken the tree-level selection rules, while renormalization-scheme choices can obscure which zeros are physically meaningful, as anomalous dimensions acquire a dependence on the renormalization scheme starting at two loops. 
+%
+By employing on-shell methods,
+we show that a substantial structure nevertheless survives: when the source operator is one unit longer than the target, helicity selection rules yield two-loop zeros that are scheme independent, being fixed by tree-level data alone, while for all remaining mixings a suitable scheme reveals a broader holomorphic pattern.
+This distinction identifies which entries contain genuinely new two-loop information and which are fixed by lower-order data.
+
+\lb{Insert outline.}
+
+\section{Weights and Cuts}
+
+To formulate these results precisely, we work in a four-dimensional non-Abelian gauge theory in which massless particles of spin $0$ (scalars $\phi$), $\frac{1}{2}$ (chiral fermions $\psi_\alpha,\bar\psi_{\dot\alpha}$), and $1$ (vectors with field strengths decomposed into self-dual and anti-self-dual components $F_{\alpha\beta},\bar F_{\dot\alpha\dot\beta}$) interact through marginal and irrelevant operators.
+The higher-dimensional operators in
+\begin{equation}
+    \mathcal L^{(d)} = \sum_i c_i \, \mathcal O_i
+\end{equation}
+have a common mass dimension $d > 4$ and constitute an irreducible physical basis.
+%
+Renormalization mixes the operators and the associated coefficients $c_i$:
+\begin{equation}
+    \mu \frac{\dd c_i}{\dd \mu} = \sum_j \gamma_{ij}\,c_j\,,
+\end{equation}
+where $\gamma_{ij} = \sum_{L\ge 1}\gamma_{ij}^{(L)}$ is the ultraviolet (UV) anomalous-dimension matrix, 
+expanded at the relevant loop order $L$.
+
+Two quantities, $w$ and $\wb$,
+organize everything that follows.
+For an on-shell configuration $X$ of $n$ particles with helicities $h_a$, the \textit{holomorphic} and \textit{anti-holomorphic
+weights} \cite{Cheung:2015aba} are defined as
+\begin{equation}
+w(X)=n-\sum_a h_a \,,
+\qquad
+\wb(X)=n+\sum_a h_a \,,
+\label{eq:weights}
+\end{equation}
+so that $F,\psi,\phi,\bar\psi,\bar F$ carry $(w,\wb)=(0,2)$, $(\tfrac12,\tfrac32)$, $(1,1)$, $(\tfrac32,\tfrac12)$, $(2,0)$, respectively. 
+We define the weights $(w_i,\wb_i)$ associated with an operator $\mathcal O_i$ as those of the leading
+minimal configuration $X_i$ produced by a single insertion of $\Op_i$. 
+Any tree form factor containing that insertion has $w\ge w_i$ and $\wb\ge\wb_i$ \cite{Cheung:2015aba}: attaching renormalizable vertices can only raise the weight, since every renormalizable tree amplitude
+carries $w,\wb \ge 2$, while each internal line costs two units.
+The \textit{length} $\ell_i$ of an operator is defined as the minimal number of particles created by $\mathcal O_i$: $\ell_i = \frac{1}{2}(w_i + \wb_i)$.
+
+To extract the anomalous dimensions we use the dispersive, on-shell approach discussed in Chapter~\ref{ch:RGEmethod}. 
+Its main result \cite{Caron-Huot:2016cwu},
+\begin{equation}
+    e^{-i\pi D} F_i^* = S F_i^*\,,
+    \label{eq:chw}
+\end{equation}
+with $F_i(X;q) = \mel{X}{\mathcal O_i(q)}{0}$ the form factor of the operator $\mathcal O_i(q)$ injecting off-shell momentum $q$, relates the dilatation operator $D=\sum_a p_a^\mu \, \partial/\partial p_a^\mu$, which acts as $-\mu \, \partial_\mu$ on massless form factors in dimensional regularization, to the phase of the scattering matrix $S$. 
+Form factors obey the Callan--Symanzik equation \cite{Callan:1970yg,Symanzik:1970rt},
+and their dependence on the renormalization scale then encodes the UV mixing of operator insertions, together with $\beta$-function and infrared (IR) contributions.
+
+In this approach, the weights are tracked across the unitarity cuts that build the form factors: sewing the corners $c$ across $k$ cut legs gives
+\begin{equation}
+\label{eq:sewing}
+    w = \sum_c w_c - 2k\,,
+    \qquad
+    \wb = \sum_c \wb_c - 2k\,,
+\end{equation}
+since each cut leg is counted twice in $\sum_c n_c$ while being internal to the sewn object, and the helicities of its two ends, being opposite, cancel in $\sum_a h_a$.
+
+At one loop, from \Eq{eq:chw} one finds \cite{Caron-Huot:2016cwu}
+\begin{equation}
+    \Delta\gamma^{(1)}_{i j}F^{(0)}_i(X_i) = -\frac{1}{\pi}\big[\mathcal M F_j\big]^{(1)}(X_i)\,,
+\end{equation}
+where $\Delta\gamma_{i j}^{(L)} = \gamma_{i j}^{(L)} - \gamma_{ij}^{(L),\mathrm{IR}}$ and $\mathcal M$ is the renormalizable amplitude entering the two-particle unitarity cut $[\mathcal M F_j]^{(1)} = \mathcal M^{(0)} \otimes_2  F_j^{(0)}$, 
+with $\otimes_n$ denoting the integration over the $n$-body phase space of the intermediate states in the product.
+$\gamma_{ij}^{(L),\mathrm{IR}}$ collects the IR anomalous dimensions, generated by the soft and collinear singularities of the external states \cite{Sterman:2002qn,Becher:2009cu,Chiu:2009mg}. They dress lower-loop form factors of the same operator on the same external state without changing the particle content or helicities.
+The entry $\gamma^{(L),\text{IR}}_{ij}$ can therefore be non-zero only if a lower-loop form factor of $\mathcal O_j$ is non-zero on $X_i$ \cite{Catani:1998bh}. In particular, $\Delta\gamma_{ij}^{(L)} = \gamma_{ij}^{(L)}$ if $F^{(L')}_j(X_i)=0$ for all $L'<L$, which holds for $\ell_i < \ell_j$.
+Moreover, renormalizable tree amplitudes with at least four legs carry $w,\wb \ge 4$ in the absence of non-holomorphic Yukawa couplings, otherwise $w,\wb \ge 2$ \cite{Cheung:2015aba}.\footnote{A Yukawa coupling $y\phi\psi^2$ is holomorphic, involving only $\phi$ and not $\bar\phi$, while a companion coupling $y'\bar\phi\psi^2$ makes the sector non-holomorphic as it allows the exceptional four-fermion amplitude $\mathcal M^{(0)}(\psi^+\psi^+\psi^+\psi^+)$ at $w=2$ to be non-zero \cite{Cheung:2015aba}.}
+Adding the further information that any tree form factor of $\mathcal O_j$ has $w \ge w_j$ and $\wb \ge \wb_j$, we find from Eq.~\eqref{eq:sewing} that the above two-particle cut $\mathcal M^{(0)} \otimes_2  F_j^{(0)}$ must carry $w\ge w_j$ and $\wb\ge \wb_j$ ($w\ge w_j-2$ and $\wb\ge \wb_j-2$ if non-holomorphic Yukawa couplings are present).
+This is precisely the content of the helicity selection rule of Ref.~\cite{Cheung:2015aba}:
+\begin{equation}
+    \gamma_{ij}^{(1)} = 0 \ \ \ \text{if} \ \ \ w_i < w_j \ \lor  \ \wb_i < \wb_j\,,
+    \label{eq:1lhsr}
+\end{equation}
+absent non-holomorphic Yukawa couplings, which relax the bound by two units.
+Moreover, $\gamma_{ij}^{(1)} = 0$ if $\ell_i < \ell_j$, since then no one-loop diagram exists or does not contain a scaleless integral \cite{Bern:2019wie}.
+
+The two-loop anomalous-dimension matrix can be extracted from the master formula~\cite{Bern:2020ikv}
+\begin{equation}
+\label{eq:master}
+\Delta\gamma^{(2)}_{i j}F^{(0)}_i(X_i)
+=-\frac{1}{\pi}\big[\Re \mathcal M \Re F_j\big]^{(2)}(X_i)-\sum_k \left(\Delta\gamma_{kj}^{(1)}+\delta_{kj}\sum_g\beta^{(1)}_g\partial_g\right)\Re F^{(1)}_k(X_i) \,,
+\end{equation}
+where $\beta^{(L)}_g$ is the $L$-loop $\beta$-function of the marginal couplings, collectively denoted as $g$.
+Three unitarity cuts contribute to \Eq{eq:master},
+\begin{equation}
+\big[\M F_j\big]^{(2)}=
+\underbrace{\mathcal M^{(1)} \otimes_2 F^{(0)}_j}_{\rm (a)}
++\underbrace{\mathcal M^{(0)} \otimes_2 F^{(1)}_j}_{\rm (b)}
++\underbrace{\M^{(0)} \otimes_3  F^{(0)}_j}_{\rm (c)} \,,
+\label{eq:threecuts}
+\end{equation}
+and are shown in Figure~\ref{fig:cuts}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -24,14 +132,23 @@ L.~C.~Bresciani and N.~Selimovic,\\[0pt]
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The one-loop logic survives or fails cut by cut.
+The genuinely new feature at two loops is that cuts (a) and (b) contain one-loop objects --- the renormalized amplitude $\mathcal M^{(1)}$ and the renormalized form factor $F^{(1)}_j$ --- whose finite rational parts are not determined by four-dimensional unitarity cuts.
+It is precisely through such rational terms that one-loop amplitudes evade the tree-level helicity selection rules: for instance, in non-supersymmetric theories, the all-plus vector amplitude is non-zero, is UV and IR finite, and carries the minimal weight $w=0$.
+Sewing it into cut (a) through \Eq{eq:sewing} gives $w_i \ge 0 + w_j - 4 = w_j - 4$,
+so the one-loop bound can relax by as much as four units.
+Whether the two-loop selection rule survives therefore depends entirely on controlling the rational parts of these one-loop objects.
+Accordingly, we separate the two-loop zeros into those requiring no rational-part information, which are scheme independent, and those sensitive to it, which are scheme dependent.
+
 \section{Scheme-Independent Zeros}
 
 We first collect the two-loop zeros that follow from tree-level data alone and are therefore scheme independent. 
 The length selection rule of Ref.~\cite{Bern:2019wie} already forbids a large class of entries: the form-factor side of any cut of $\mathcal O_j$ appearing in Eq.~\eqref{eq:master} needs at least $\ell_j$ legs, so an operator $\mathcal O_j$ cannot renormalize a shorter operator $\mathcal O_i$ at two loops when $\ell_j - \ell_i \ge 2$, since no such diagram can avoid a scaleless integral. Thus, $\gamma^{(2)}_{ij} = 0$ if $\ell_i < \ell_j - 1$.
 
 At the boundary $\ell_i = \ell_j - 1$, since $\gamma_{ij}^{(1)} = 0$, the operator mixing first occurs at two loops, and leg counting collapses the master formula in \Eq{eq:master} onto the single cut (c). 
-Indeed, the $\beta$-function term $\delta_{kj}\sum_g\beta^{(1)}_g\partial_g\Re F^{(1)}_k$ is proportional to a form factor of $\Op_j$ itself, which is non-zero only on an external state with at least $\ell_j$ legs (fewer legs are forbidden by particle content at tree level and force scaleless integrals at one loop), whereas $X_i$ carries only $\ell_i=\ell_j-1$.
-The IR term vanishes because $\ell_i\neq\ell_j$, as noted above.
+Indeed, the $\beta$-function term $\delta_{kj}\sum_g\beta^{(1)}_g\partial_g\Re F^{(1)}_k$ is proportional to a form factor of $\Op_j$ itself, which is non-zero only on an external state with at least $\ell_j$ legs (fewer legs are forbidden by particle content at tree level and force scaleless integrals at one loop \cite{Bern:2019wie}), whereas $X_i$ carries only $\ell_i=\ell_j-1$.
+%The IR term vanishes because $\ell_i\neq\ell_j$, as noted above.
+The IR term vanishes because it dresses $F^{(0)}_j(X_i)$ and $F^{(1)}_j(X_i)$, which are zero for $\ell_i < \ell_j$.
 The iteration term $\Delta\gamma^{(1)}_{kj}\Re F^{(1)}_k(X_i)$ vanishes by the same counting applied twice: $\Delta\gamma^{(1)}_{kj}\neq0$ requires $\ell_k\ge\ell_j$, while $F^{(1)}_k(X_i)\neq0$ requires $\ell_i\ge\ell_k$, so together $\ell_i\ge\ell_j$.
 Cuts (a) and (b) are likewise absent, since, with two cut legs, they yield at least $4+\ell_j-4=\ell_j$ external legs
 \cite{Bern:2019wie,Bern:2020ikv,EliasMiro:2020tdv,Caron-Huot:2016cwu,EliasMiro:2021jgu}.
@@ -55,7 +172,7 @@ This selection rule can easily be generalized to an arbitrary loop order by foll
 \label{eq:gen}
     \gamma^{(L+1)}_{ij} = 0  \ \ \ \text{if} \ \  \ \ell_i = \ell_j-L \ \land \  \big(w_i < w_j - 2L  \ \lor  \ \wb_i < \wb_j - 2L\big) \,,
 \end{equation}
-with the last two conditions becoming $w_i < w_j - 2(L+1)$ and $\wb_i < \wb_j - 2(L+1)$ in the presence of non-holomorphic Yukawa couplings, since, by the length selection rule \cite{Bern:2019wie} applied to the case $\ell_i = \ell_j - L$, the only non-vanishing contributions to $\gamma_{ij}^{(L+1)}$ are given by $(L+2)$-particle cuts of tree amplitudes and form factors. 
+with the last two conditions becoming $w_i < w_j - 2(L+1)$ and $\wb_i < \wb_j - 2(L+1)$ in the presence of non-holomorphic Yukawa couplings, since, by the length selection rule \cite{Bern:2019wie} applied to the case $\ell_i = \ell_j - L$, the only non-vanishing contributions to $\gamma_{ij}^{(L+1)}$ are given by $(L+2)$-particle cuts of tree amplitudes and form factors.
 
 \section{Scheme-Dependent Zeros}
 
@@ -76,6 +193,8 @@ $\widehat{\mathcal O}_j = \sum_i Z_{ij}\,\mathcal O_i$, with $Z_{ij} = \delta_{i
 \label{eq:cov}
 \end{equation}
 where $[f^{(1)},\gamma^{(1)}]_{ij} = \sum_k (f^{(1)}_{ik}\gamma^{(1)}_{kj} - \gamma^{(1)}_{ik}f^{(1)}_{kj})$, while one-loop and IR anomalous dimensions are unaffected.
+In particular, the zeros of \Eq{eq:dl1} are scheme independent provided the finite renormalization does not mix operators into shorter ones, i.e., if it does not spoil the length selection rule.
+
 The derivation of \Eq{eq:dl2} proceeds in two steps: first, we bound the logarithmic and rational parts of the one-loop objects entering \Eq{eq:master}, and, second, we show that the only contributions reaching the region where $w_i < w_j - 4$ or $\wb_i < \wb_j - 4$ have exactly the form of the last two terms of \Eq{eq:cov}, so that a choice of $f^{(1)}$ can remove them.
 
 The amplitude $\M^{(1)}$ entering cut (a) is bounded immediately.
@@ -88,9 +207,11 @@ Its logarithms are fixed by the two-particle discontinuities, each a product of 
 the discontinuity in $s_T = (\sum_{a \in T} p_a)^2$ factorizes into a renormalizable tree amplitude of at least four legs ($w,\wb \ge 4$)
 glued to a tree form factor of $\Op_j$ ($w \ge w_j$ and $\wb \ge \wb_j$).
 By \Eq{eq:sewing} every discontinuity then requires $w(X) \ge w_j$ and $\wb(X) \ge \wb_j$ --- the one-loop selection rule of \Eq{eq:1lhsr} applied to the cut --- so, below the bound, all discontinuities vanish and, with them, every logarithm and every UV and IR divergence \cite{Craig:2019wmo}.
-The form factor is thus finite and purely rational for $w(X) < w_j$ or $\wb(X) < \wb_j$, or below $w_j-2$ and $\wb_j-2$ in the presence of non-holomorphic Yukawa couplings.
-Four-dimensional cuts do not determine this rational part \cite{Bern:1994zx}, but its kinematic poles do,
-up to local terms.
+%The form factor is thus finite and purely rational for $w(X) < w_j$ or $\wb(X) < \wb_j$, or below $w_j-2$ and $\wb_j-2$ in the presence of non-holomorphic Yukawa couplings.
+The form factor is thus finite and purely rational for $w(X) < w_j$ or $\wb(X) < \wb_j$, or, in the presence of non-holomorphic Yukawa couplings, for $w(X) <w_j-2$ or $\wb(X) <\wb_j-2$.
+Four-dimensional cuts do not determine this rational part \cite{Bern:1994zx}, 
+%but its kinematic poles do, up to local terms.
+but its kinematic poles can determine its structure, up to local terms.
 We now show that, whenever $w(X) < w_j - 2$ or $\wb(X) < \wb_j - 2$, the one-loop form factor $F^{(1)}_j(X)$ can be written as
 \begin{equation}
 \label{eq:contact}
@@ -105,7 +226,8 @@ multiplicity and
 kinematics, which is what a finite operator renormalization generates.
 
 We prove \Eq{eq:contact} by induction on the number of legs $n$ of $X$.
-Being purely rational in the region where $w(X) < w_j - 2$ or $\wb(X) < \wb_j - 2$, $F^{(1)}_j(X)$ can have at most kinematic poles. At the minimal multiplicity $n = \ell_j$, any such pole would involve a form factor with fewer than $\ell_j$ legs, which vanishes identically since, at tree level, it is forbidden by particle content and, at one loop, every candidate diagram contains a scaleless integral \cite{Bern:2019wie}.
+Being purely rational in the region where $w(X) < w_j - 2$ or $\wb(X) < \wb_j - 2$, $F^{(1)}_j(X)$ can have at most kinematic poles.
+At the minimal multiplicity $n = \ell_j$, any such pole would involve a form factor with fewer than $\ell_j$ legs, which vanishes identically since, at tree level, it is forbidden by particle content and, at one loop, every candidate diagram contains a scaleless integral \cite{Bern:2019wie}.
 $F^{(1)}_j(X)$ is therefore regular, i.e., a polynomial, and matching
 it onto the independent contact structures of dimension-$d$ operators defines the constants
 $\kappa^{(1)}_{ij}$ for $\ell_i = \ell_j$.
@@ -122,9 +244,15 @@ $F^{(1)}_j$ vanishes identically by the same leg counting, forcing $\kappa^{(1)}
 	\label{fig:poles}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-For $n > \ell_j$, assume that \Eq{eq:contact} holds at all lower multiplicities and consider the subtracted object $\widehat F^{(1)}_j(X) = F^{(1)}_j(X) - \sum_i \kappa^{(1)}_{ij} F^{(0)}_i(X)$, with the constants fixed at those multiplicities.
+For $n > \ell_j$, assume that \Eq{eq:contact} holds at all lower multiplicities and consider the subtracted object
+\begin{equation}
+    \widehat F^{(1)}_j(X) = F^{(1)}_j(X) - \sum_i \kappa^{(1)}_{ij} F^{(0)}_i(X)\,,
+\end{equation}
+with the constants fixed at those multiplicities.
 In any factorization channel of $X$, at least two legs move to the amplitude side, leaving the operator insertion on a configuration $Y$ with fewer than $n$ legs. Sewing the two corners across the single internal line gives $w(X) = w(\M) + w(Y) - 2$.
-The residue splits by loop order, as illustrated in Figure~\ref{fig:poles}: (a) a one-loop amplitude times a tree form factor, or (b) a tree amplitude times a lower-point one-loop form factor.
+The residue splits by loop order, as illustrated in Figure~\ref{fig:poles}: (a) a one-loop amplitude times a tree form factor, or (b) a tree amplitude times a lower-point one-loop form factor.\footnote{One-loop factorization allows for a third structure, not shown: a tree amplitude times a tree form
+factor dressed by a universal factorization function \cite{Bern:1995ix}.
+However, this term carries no helicity weight and therefore obeys the tree bound $w(X)\ge w_j$.}
 The first split requires $w(X) = w(\M^{(1)}) + w(Y) - 2 \ge 0 + w_j - 2$ and is thus absent below the bound.
 In the second split, $w(\M^{(0)}) \ge 2$ implies $w(Y) \le w(X) < w_j - 2$, so that the lower-point form factor is evaluated below the bound, where the inductive hypothesis applies. Since the tree structures $F^{(0)}_i(X)$ factorize in the same channel with the same tree amplitude corner, the residue of the subtracted object is $\M^{(0)} \widehat F^{(1)}_j(Y)$, which vanishes.
 Having no residue in any channel, $\widehat F^{(1)}_j(X)$ is a new contact structure that is absorbed into $\kappa^{(1)}_{ij}$ for targets with $\ell_i = n$.
@@ -135,8 +263,10 @@ Residues factorize rigorously on multi-particle channels, where the factorizatio
 On the two-particle channel of a pair $(a,b)$, one-loop rational terms exhibit a richer singular behavior \cite{Bern:2005hs,Bern:2005ji,Bern:2005cq}: besides the pole in $s_{ab}$, they develop single and double poles in a single bracket, $\agl{a}{b}^{-1}$ and $\agl{a}{b}^{-2}$, at generic $\sqr{a}{b}$ (and conjugates).
 The double poles have no tree-level counterparts, and the single-bracket single poles --- absent at real momenta and known as unreal poles --- have residues that are neither fixed by factorization nor controlled by a general theorem.
 We assume that, on configurations below the bound, this singular behavior nevertheless retains the factorized form of Figure~\ref{fig:poles}, with $a$ and $b$ merged into a single on-shell leg: an amplitude corner times a lower-point form factor of $\Op_j$, possibly dressed by functions carrying no little-group weight, which do not affect the counting.
-The values of the residues are never used: the corner is a three-point object, carrying $w,\wb \ge 2$ at tree level like every renormalizable tree amplitude and $w,\wb \ge 0$ at one loop, so the two splits above apply unchanged and the singular behavior vanishes below the bound regardless of the residues.
-This factorized form is established for real collinear kinematics \cite{Bern:1995ix,Kosower:1999xi} and is assumed here in its continuation to complex momenta.
+%The values of the residues are never used: the corner is a three-point object, carrying $w,\wb \ge 2$ at tree level like every renormalizable tree amplitude and $w,\wb \ge 0$ at one loop, so the two splits above apply unchanged and the singular behavior vanishes below the bound regardless of the residues.
+Only the little-group weights of the residues are used: the corner is a three-point object, carrying $w,\wb \ge 2$ at tree level like every renormalizable tree amplitude and $w,\wb \ge 0$ at one loop, so the two splits above apply unchanged and the singular behavior vanishes below the bound.
+%This factorized form is established for real collinear kinematics \cite{Bern:1995ix,Kosower:1999xi} and is assumed here in its continuation to complex momenta.
+At leading power in real collinear kinematics, this factorized form is a theorem for amplitudes \cite{Bern:1995ix,Kosower:1999xi}. However, for complex momenta no general theorem exists, and our results for $\ell_i \ge \ell_j$ depend on this assumption.
 
 As a cross-check, we have verified that \Eq{eq:contact} is consistent with the vanishing one-loop rational terms of the four-point amplitudes with an insertion of a dimension-six operator computed in Ref.~\cite{Craig:2019wmo}.
 
@@ -152,7 +282,7 @@ Removing them by the choice $f^{(1)}_{ij} = - \kappa^{(1)}_{ij}$ defines a schem
 in which every term of the master formula of \Eq{eq:master} vanishes in this region, establishing
 \Eq{eq:dl2}, robust against non-holomorphic Yukawa couplings.
 We name this scheme the \textit{holomorphic scheme}.
-By \Eq{eq:cov}, any two schemes that realize these zeros differ by redefinitions $f^{(1)}_{ij}$ whose effects are confined to $w_i \ge w_j - 4$ and $\wb_i \ge \wb_j - 4$, so the scheme is unique up to such redefinitions.
+%By \Eq{eq:cov}, any two schemes that realize these zeros differ by redefinitions $f^{(1)}_{ij}$ whose effects are confined to $w_i \ge w_j - 4$ and $\wb_i \ge \wb_j - 4$, so the scheme is unique up to such redefinitions.
 
 In a generic scheme, such as $\MSbar$, these entries are generally non-zero but carry no independent
 two-loop information. Indeed, \Eq{eq:cov} yields
