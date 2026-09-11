@@ -13,7 +13,9 @@ L.~C.~Bresciani and N.~Selimovic,\\[0pt]
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\noindent Although 
+\section{Introduction}
+
+Although 
 naive dimensional analysis
 permits many operator mixings, anomalous-dimension matrices are often remarkably sparse. 
 At one loop, these unexpected zeros were traced back to several complementary structures. 
@@ -34,11 +36,26 @@ By employing on-shell methods,
 we show that a substantial structure nevertheless survives: when the source operator is one unit longer than the target, helicity selection rules yield two-loop zeros that are scheme independent, being fixed by tree-level data alone, while for all remaining mixings a suitable scheme reveals a broader holomorphic pattern.
 This distinction identifies which entries contain genuinely new two-loop information and which are fixed by lower-order data.
 
-\lb{Insert outline.}
+The chapter is organized as follows. In Section~\ref{sec:2loopsetup} we define the holomorphic and anti-holomorphic weights together with the operator length,
+and recall how the on-shell approach of Chapter~\ref{ch:RGEmethod} relates anomalous dimensions to
+unitarity cuts of form factors. We collect there the one-loop selection rules and the two-loop master
+formula, and identify the rational parts of the one-loop amplitudes and form factors as the only
+obstruction to extending the one-loop argument. In Section~\ref{sec:2loopSI} we derive the zeros that
+require no information on these rational parts. For a source operator one unit longer than the target
+the master formula collapses onto a single three-particle cut of tree-level objects, which yields a
+two-loop helicity selection rule that is scheme independent and that generalizes to an arbitrary loop
+order. In Section~\ref{sec:2loopSD} we address the remaining mixings, for which the target is at least
+as long as the source. We bound the logarithmic and rational parts of the one-loop objects entering
+the master formula, show that below a given weight the one-loop form factors reduce to tree structures
+of lower-weight operators with constant coefficients, and use this result to construct a scheme in
+which a broader set of zeros holds. The same coefficients fix the corresponding entries in any other
+scheme in terms of one-loop data alone. In Section~\ref{sec:2loopapplications} we apply the two
+selection rules to the anomalous-dimension matrices of operators of mass dimension five, six, seven,
+and eight. Section~\ref{sec:2loopconclusions} is dedicated to our conclusions.
 
-\section{Weights and Cuts}
+\section{Weights, Lengths, and Cuts\label{sec:2loopsetup}}
 
-To formulate these results precisely, we work in a four-dimensional non-Abelian gauge theory in which massless particles of spin $0$ (scalars $\phi$), $\frac{1}{2}$ (chiral fermions $\psi_\alpha,\bar\psi_{\dot\alpha}$), and $1$ (vectors with field strengths decomposed into self-dual and anti-self-dual components $F_{\alpha\beta},\bar F_{\dot\alpha\dot\beta}$) interact through marginal and irrelevant operators.
+To formulate these results precisely, we work in a four-dimensional non-Abelian gauge theory in which massless particles of spin $0$ (scalars $\phi$), $\frac{1}{2}$ (chiral fermions $\psi_\alpha,\overline\psi_{\dot\alpha}$), and $1$ (vectors with field strengths decomposed into self-dual and anti-self-dual components $F_{\alpha\beta},\overline F_{\dot\alpha\dot\beta}$) interact through marginal and irrelevant operators.
 The higher-dimensional operators in
 \begin{equation}
     \mathcal L^{(d)} = \sum_i c_i \, \mathcal O_i
@@ -62,7 +79,7 @@ w(X)=n-\sum_a h_a \,,
 \wb(X)=n+\sum_a h_a \,,
 \label{eq:weights}
 \end{equation}
-so that $F,\psi,\phi,\bar\psi,\bar F$ carry $(w,\wb)=(0,2)$, $(\tfrac12,\tfrac32)$, $(1,1)$, $(\tfrac32,\tfrac12)$, $(2,0)$, respectively. 
+so that $F,\psi,\phi,\overline\psi,\overline F$ carry $(w,\wb)=(0,2)$, $(\tfrac12,\tfrac32)$, $(1,1)$, $(\tfrac32,\tfrac12)$, $(2,0)$, respectively. 
 We define the weights $(w_i,\wb_i)$ associated with an operator $\mathcal O_i$ as those of the leading
 minimal configuration $X_i$ produced by a single insertion of $\Op_i$. 
 Any tree form factor containing that insertion has $w\ge w_i$ and $\wb\ge\wb_i$ \cite{Cheung:2015aba}: attaching renormalizable vertices can only raise the weight, since every renormalizable tree amplitude
@@ -75,7 +92,7 @@ Its main result \cite{Caron-Huot:2016cwu},
     e^{-i\pi D} F_i^* = S F_i^*\,,
     \label{eq:chw}
 \end{equation}
-with $F_i(X;q) = \mel{X}{\mathcal O_i(q)}{0}$ the form factor of the operator $\mathcal O_i(q)$ injecting off-shell momentum $q$, relates the dilatation operator $D=\sum_a p_a^\mu \, \partial/\partial p_a^\mu$, which acts as $-\mu \, \partial_\mu$ on massless form factors in dimensional regularization, to the phase of the scattering matrix $S$. 
+with $F_i(X;q) = \mel{X}{\mathcal O_i(q)}{0}$ the form factor of the operator $\mathcal O_i(q)$ injecting off-shell momentum $q$, relates the dilatation operator $D=\sum_a p_a^\mu \, \partial/\partial p_a^\mu$, which acts as $-\mu \, \partial/\partial\mu$ on massless form factors in dimensional regularization, to the phase of the scattering matrix $S$. 
 Form factors obey the Callan--Symanzik equation \cite{Callan:1970yg,Symanzik:1970rt},
 and their dependence on the renormalization scale then encodes the UV mixing of operator insertions, together with $\beta$-function and infrared (IR) contributions.
 
@@ -96,7 +113,7 @@ where $\Delta\gamma_{i j}^{(L)} = \gamma_{i j}^{(L)} - \gamma_{ij}^{(L),\mathrm{
 with $\otimes_n$ denoting the integration over the $n$-body phase space of the intermediate states in the product.
 $\gamma_{ij}^{(L),\mathrm{IR}}$ collects the IR anomalous dimensions, generated by the soft and collinear singularities of the external states \cite{Sterman:2002qn,Becher:2009cu,Chiu:2009mg}. They dress lower-loop form factors of the same operator on the same external state without changing the particle content or helicities.
 The entry $\gamma^{(L),\text{IR}}_{ij}$ can therefore be non-zero only if a lower-loop form factor of $\mathcal O_j$ is non-zero on $X_i$ \cite{Catani:1998bh}. In particular, $\Delta\gamma_{ij}^{(L)} = \gamma_{ij}^{(L)}$ if $F^{(L')}_j(X_i)=0$ for all $L'<L$, which holds for $\ell_i < \ell_j$.
-Moreover, renormalizable tree amplitudes with at least four legs carry $w,\wb \ge 4$ in the absence of non-holomorphic Yukawa couplings, otherwise $w,\wb \ge 2$ \cite{Cheung:2015aba}.\footnote{A Yukawa coupling $y\phi\psi^2$ is holomorphic, involving only $\phi$ and not $\bar\phi$, while a companion coupling $y'\bar\phi\psi^2$ makes the sector non-holomorphic as it allows the exceptional four-fermion amplitude $\mathcal M^{(0)}(\psi^+\psi^+\psi^+\psi^+)$ at $w=2$ to be non-zero \cite{Cheung:2015aba}.}
+Moreover, renormalizable tree amplitudes with at least four legs carry $w,\wb \ge 4$ in the absence of non-holomorphic Yukawa couplings, otherwise $w,\wb \ge 2$ \cite{Cheung:2015aba}.\footnote{A Yukawa coupling $y\phi\psi^2$ is holomorphic, involving only $\phi$ and not $\overline\phi$, while a companion coupling $y'\overline\phi\psi^2$ makes the sector non-holomorphic as it allows the exceptional four-fermion amplitude $\mathcal M^{(0)}(\psi^+\psi^+\psi^+\psi^+)$ at $w=2$ to be non-zero \cite{Cheung:2015aba}.}
 Adding the further information that any tree form factor of $\mathcal O_j$ has $w \ge w_j$ and $\wb \ge \wb_j$, we find from Eq.~\eqref{eq:sewing} that the above two-particle cut $\mathcal M^{(0)} \otimes_2  F_j^{(0)}$ must carry $w\ge w_j$ and $\wb\ge \wb_j$ ($w\ge w_j-2$ and $\wb\ge \wb_j-2$ if non-holomorphic Yukawa couplings are present).
 This is precisely the content of the helicity selection rule of Ref.~\cite{Cheung:2015aba}:
 \begin{equation}
@@ -104,21 +121,25 @@ This is precisely the content of the helicity selection rule of Ref.~\cite{Cheun
     \label{eq:1lhsr}
 \end{equation}
 absent non-holomorphic Yukawa couplings, which relax the bound by two units.
-Moreover, $\gamma_{ij}^{(1)} = 0$ if $\ell_i < \ell_j$, since then no one-loop diagram exists or does not contain a scaleless integral \cite{Bern:2019wie}.
+Moreover,
+\begin{equation}
+    \gamma_{ij}^{(1)} = 0 \ \ \ \text{if} \ \ \  \ell_i < \ell_j\,,
+\end{equation}
+since then no one-loop diagram exists or does not contain a scaleless integral \cite{Bern:2019wie}.
 
 The two-loop anomalous-dimension matrix can be extracted from the master formula~\cite{Bern:2020ikv}
 \begin{equation}
 \label{eq:master}
 \Delta\gamma^{(2)}_{i j}F^{(0)}_i(X_i)
-=-\frac{1}{\pi}\big[\Re \mathcal M \Re F_j\big]^{(2)}(X_i)-\sum_k \left(\Delta\gamma_{kj}^{(1)}+\delta_{kj}\sum_g\beta^{(1)}_g\partial_g\right)\Re F^{(1)}_k(X_i) \,,
+=-\frac{1}{\pi}\big[\Re \mathcal M \Re F_j\big]^{(2)}(X_i)-\sum_k \left(\Delta\gamma_{kj}^{(1)}+\delta_{kj}\sum_g\beta^{(1)}_g\frac{\partial}{\partial g}\right)\Re F^{(1)}_k(X_i) \,,
 \end{equation}
 where $\beta^{(L)}_g$ is the $L$-loop $\beta$-function of the marginal couplings, collectively denoted as $g$.
 Three unitarity cuts contribute to \Eq{eq:master},
 \begin{equation}
 \big[\M F_j\big]^{(2)}=
-\underbrace{\mathcal M^{(1)} \otimes_2 F^{(0)}_j}_{\rm (a)}
-+\underbrace{\mathcal M^{(0)} \otimes_2 F^{(1)}_j}_{\rm (b)}
-+\underbrace{\M^{(0)} \otimes_3  F^{(0)}_j}_{\rm (c)} \,,
+\,\underbrace{\mathcal M^{(1)} \otimes_2 F^{(0)}_j}_{\rm (a)}
+\,+\,\underbrace{\mathcal M^{(0)} \otimes_2 F^{(1)}_j}_{\rm (b)}
+\,+\,\underbrace{\M^{(0)} \otimes_3  F^{(0)}_j}_{\rm (c)} \,,
 \label{eq:threecuts}
 \end{equation}
 and are shown in Figure~\ref{fig:cuts}.
@@ -140,13 +161,16 @@ so the one-loop bound can relax by as much as four units.
 Whether the two-loop selection rule survives therefore depends entirely on controlling the rational parts of these one-loop objects.
 Accordingly, we separate the two-loop zeros into those requiring no rational-part information, which are scheme independent, and those sensitive to it, which are scheme dependent.
 
-\section{Scheme-Independent Zeros}
+\section{Scheme-Independent Zeros\label{sec:2loopSI}}
 
 We first collect the two-loop zeros that follow from tree-level data alone and are therefore scheme independent. 
-The length selection rule of Ref.~\cite{Bern:2019wie} already forbids a large class of entries: the form-factor side of any cut of $\mathcal O_j$ appearing in Eq.~\eqref{eq:master} needs at least $\ell_j$ legs, so an operator $\mathcal O_j$ cannot renormalize a shorter operator $\mathcal O_i$ at two loops when $\ell_j - \ell_i \ge 2$, since no such diagram can avoid a scaleless integral. Thus, $\gamma^{(2)}_{ij} = 0$ if $\ell_i < \ell_j - 1$.
+The length selection rule of Ref.~\cite{Bern:2019wie} already forbids a large class of entries: the form-factor side of any cut of $\mathcal O_j$ appearing in Eq.~\eqref{eq:master} needs at least $\ell_j$ legs, so an operator $\mathcal O_j$ cannot renormalize a shorter operator $\mathcal O_i$ at two loops when $\ell_j - \ell_i \ge 2$, since no such diagram can avoid a scaleless integral. Thus,
+\begin{equation}
+    \gamma^{(2)}_{ij} = 0 \ \ \ \text{if} \ \ \ \ell_i < \ell_j - 1\,.
+\end{equation}
 
 At the boundary $\ell_i = \ell_j - 1$, since $\gamma_{ij}^{(1)} = 0$, the operator mixing first occurs at two loops, and leg counting collapses the master formula in \Eq{eq:master} onto the single cut (c). 
-Indeed, the $\beta$-function term $\delta_{kj}\sum_g\beta^{(1)}_g\partial_g\Re F^{(1)}_k$ is proportional to a form factor of $\Op_j$ itself, which is non-zero only on an external state with at least $\ell_j$ legs (fewer legs are forbidden by particle content at tree level and force scaleless integrals at one loop \cite{Bern:2019wie}), whereas $X_i$ carries only $\ell_i=\ell_j-1$.
+Indeed, the $\beta$-function term $\delta_{kj}\sum_g\beta^{(1)}_g\,\partial/\partial g\,\Re F^{(1)}_k$ is proportional to a form factor of $\Op_j$ itself, which is non-zero only on an external state with at least $\ell_j$ legs (fewer legs are forbidden by particle content at tree level and force scaleless integrals at one loop \cite{Bern:2019wie}), whereas $X_i$ carries only $\ell_i=\ell_j-1$.
 %The IR term vanishes because $\ell_i\neq\ell_j$, as noted above.
 The IR term vanishes because it dresses $F^{(0)}_j(X_i)$ and $F^{(1)}_j(X_i)$, which are zero for $\ell_i < \ell_j$.
 The iteration term $\Delta\gamma^{(1)}_{kj}\Re F^{(1)}_k(X_i)$ vanishes by the same counting applied twice: $\Delta\gamma^{(1)}_{kj}\neq0$ requires $\ell_k\ge\ell_j$, while $F^{(1)}_k(X_i)\neq0$ requires $\ell_i\ge\ell_k$, so together $\ell_i\ge\ell_j$.
@@ -172,9 +196,12 @@ This selection rule can easily be generalized to an arbitrary loop order by foll
 \label{eq:gen}
     \gamma^{(L+1)}_{ij} = 0  \ \ \ \text{if} \ \  \ \ell_i = \ell_j-L \ \land \  \big(w_i < w_j - 2L  \ \lor  \ \wb_i < \wb_j - 2L\big) \,,
 \end{equation}
-with the last two conditions becoming $w_i < w_j - 2(L+1)$ and $\wb_i < \wb_j - 2(L+1)$ in the presence of non-holomorphic Yukawa couplings, since, by the length selection rule \cite{Bern:2019wie} applied to the case $\ell_i = \ell_j - L$, the only non-vanishing contributions to $\gamma_{ij}^{(L+1)}$ are given by $(L+2)$-particle cuts of tree amplitudes and form factors.
+with the last two conditions becoming $w_i < w_j - 2(L+1)$ and $\wb_i < \wb_j - 2(L+1)$ in the presence of non-holomorphic Yukawa couplings, since, by the length selection rule \cite{Bern:2019wie} applied to the case $\ell_i = \ell_j - L$, the only non-vanishing contributions to $\gamma_{ij}^{(L+1)}$ are given by $(L+2)$-particle cuts of tree amplitudes and form factors. This also implies
+\begin{equation}
+    \gamma^{(L+1)}_{ij} = 0  \ \ \ \text{if} \ \  \ \ell_i < \ell_j-L\,.
+\end{equation}
 
-\section{Scheme-Dependent Zeros}
+\section{Scheme-Dependent Zeros\label{sec:2loopSD}}
 
 We find the following extension of the two-loop helicity selection rule of \Eq{eq:dl1} to the case $\ell_i \ge \ell_j$:
 \begin{equation}
@@ -189,7 +216,7 @@ $\widehat{\mathcal O}_j = \sum_i Z_{ij}\,\mathcal O_i$, with $Z_{ij} = \delta_{i
 \widehat\gamma^{(2)}_{ij}
 =\gamma^{(2)}_{ij}
 -[f^{(1)},\gamma^{(1)}]_{ij}
--\sum_g\beta^{(1)}_g\partial_g f^{(1)}_{ij}\,,
+-\sum_g\beta^{(1)}_g\frac{\partial}{\partial g} f^{(1)}_{ij}\,,
 \label{eq:cov}
 \end{equation}
 where $[f^{(1)},\gamma^{(1)}]_{ij} = \sum_k (f^{(1)}_{ik}\gamma^{(1)}_{kj} - \gamma^{(1)}_{ik}f^{(1)}_{kj})$, while one-loop and IR anomalous dimensions are unaffected.
@@ -288,7 +315,7 @@ In a generic scheme, such as $\MSbar$, these entries are generally non-zero but 
 two-loop information. Indeed, \Eq{eq:cov} yields
 \begin{equation}
 \label{eq:onedet}
-    \gamma^{(2)}_{ij} = -[\kappa^{(1)},\gamma^{(1)}]_{ij} - \sum_g\beta_g^{(1)}\partial_g \kappa^{(1)}_{ij} \,,
+    \gamma^{(2)}_{ij} = -[\kappa^{(1)},\gamma^{(1)}]_{ij} - \sum_g\beta_g^{(1)}\frac{\partial}{\partial g} \kappa^{(1)}_{ij} \,,
 \end{equation}
 where every quantity on the right is a one-loop object.
 The entire block of the two-loop anomalous-dimension matrix with $\ell_i \ge \ell_j$ and either $w_i < w_j - 4$ or
@@ -298,9 +325,9 @@ Obtaining such an entry requires no two-loop integral as the only new ingredient
 coefficients $\kappa^{(1)}_{ij}$, 
 read off from \Eq{eq:contact} as the coefficients of the target tree structure in the source one-loop form factor evaluated on the minimal configuration $X_i$.
 
-\section{Applications}
+\section{Applications\label{sec:2loopapplications}}
 
-As a concrete application of these results, we summarize in Tables \ref{tab:dim5}, \ref{tab:dim6}, \ref{tab:dim7}, and \ref{tab:dim8} the structure that the selection rules of
+As a concrete application of these results, we summarize in Tables~\ref{tab:dim5}, \ref{tab:dim6}, \ref{tab:dim7}, and \ref{tab:dim8} the structure that the selection rules of
 Eqs.~\eqref{eq:dl1} and \eqref{eq:dl2} impose on the two-loop anomalous-dimension matrix at operator
 dimensions five, six, seven, and eight, respectively.
 
@@ -309,7 +336,7 @@ dimensions five, six, seven, and eight, respectively.
 \input{tables/2loopdim7}
 \input{tables/2loopdim8}
 
-\section{Conclusions}
+\section{Conclusions\label{sec:2loopconclusions}}
 
 We have established general non-renormalization theorems at two loops, showing that helicity remains an active constraint on operator mixings beyond one loop. Besides uncovering broad classes of previously unknown zeros, the theorems already provide sharp checks on recent explicit calculations. 
 In particular, the scheme-independent zeros discovered here provide an independent four-dimensional handle for validating the treatment of potentially ambiguous $\gamma_5$-odd traces; see, e.g., Ref.~\cite{Born:2026xkr}. 

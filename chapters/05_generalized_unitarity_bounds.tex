@@ -15,7 +15,69 @@ L.~C.~Bresciani, G.~Levati and P.~Paradisi,\\
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
 
-\lb{Insert incipit and outline of the chapter.}
+\section{Introduction}
+
+New interactions of nature can be probed through a wide variety of experimental tests, encompassing direct searches of new particles at high-energy colliders, indirect signals in low-energy precision measurements, as well as cosmological observations. 
+On the theoretical side, perturbative unitarity --- relying on the properties of the scattering $S$-matrix --- provides an independent and complementary way to infer upper limits on the strength of such interactions, irrespectively of any experimental information.
+Generally, unitarity violation signals the breakdown of the low-energy description of a theory which can be restored by introducing new degrees of freedom or a new strong dynamics at the scale where unitarity is broken.
+In the past, unitarity bounds for the $WW$ scattering process led to the famous no-lose Higgs theorem, which implied an upper bound on the Higgs boson mass below the TeV scale~\cite{Lee:1977yc,Lee:1977eg}.
+Such a theoretical prediction was of paramount importance in motivating the construction of the LHC at CERN. 
+
+More recently, unitarity bounds have been extensively discussed in the literature to assess the range of validity of Effective Field Theories (EFTs)~\cite{Gounaris:1994cm,Corbett:2014ora,Corbett:2017qgl,DiLuzio:2017chi,DiLuzio:2016sur,Mahmud:2024iyn,Allwicher:2021jkr,Cohen:2021ucp,Abu-Ajamieh:2020yqi,Cao:2023qks,Eboli:2026ccq,Degrande:2025uil,Almeida:2020ylr,Cohen:2021gdw,Brivio:2021fog,Falkowski:2019tft,Chang:2019vez,Alonso:2025ksv}.
+Indeed, non-renormalizable interactions generate scattering amplitudes that grow with energy, thus leading to unitarity violation at some large energy scale. 
+As a result, a correct interpretation of experimental data, such as those inherent to tails of kinematical distributions, has to be necessarily supplemented by unitarity bounds.
+
+% The standard way of implementing unitarity bounds relies on $2\to 2$ scatterings of particles with helicities $h_i$ and proceeds in two steps:
+
+% i) expansion of the helicity amplitudes into partial waves $a_{h_i}^J$ with fixed total angular momentum $J$ by means of the Wigner rotation matrix~\cite{Jacob:1959at} and
+
+% ii) diagonalization of the partial wave scattering matrix.
+% In this coupled channel analysis, the most stringent limit is then obtained by imposing the 
+% partial wave unitarity bound $|a_{h_i}^J|_{\rm max} \lesssim 1$ on the largest eigenvalue.
+
+The standard way of implementing unitarity bounds relies on $2\to 2$ scattering processes involving particles with helicities $h_i$ and proceeds in two steps:
+\begin{enumerate}
+    \item Decomposition of the helicity amplitudes $\mathcal A$ into partial waves $a^J$ with fixed total angular momentum $J$ by means of the Wigner (small) $d$-matrix~\cite{Jacob:1959at,Varshalovich:1988ifq}:
+    \begin{equation}
+        \mathcal A_{h_1,h_2\to h_3,h_4}(s,\theta,\varphi) = 8\pi \sum_{J} (2J+1)\,a^J_{h_1,h_2\to h_3,h_4}(s)\,d^J_{h_1-h_2,h_3-h_4}(\theta)\,e^{i(h_1-h_2-h_3+h_4)\varphi}\,,
+    \end{equation}
+    where $\sqrt{s}$, $\theta$, and $\varphi$ are the center-of-mass energy, the polar scattering angle, and the azimuthal angle, respectively, the sum over $J$ starts from $\max(\abs{h_1-h_2},\abs{h_3-h_4})$, and the $d$-matrix elements $d^J_{m,m'}$, defined as
+    \begin{equation}
+        d_{m,m'}^J(\theta) = \mel{J,m}{e^{-i\theta J_y}}{J,m'}\,,
+    \end{equation}
+    satisfy the orthogonality relation
+    \begin{equation}
+        \int_{-1}^1 \dd \cos\theta \, d^J_{m,m'}(\theta)\,d^{J'}_{m,m'}(\theta) = \frac{2}{2J+1}\,\delta^{JJ'}
+    \end{equation}
+    and the completeness relation
+    \begin{equation}
+        \frac{1}{2}\sum_{J} (2J+1)\,d^J_{m,m'}(\theta)\,d^J_{m,m'}(\theta')=\delta(\cos\theta-\cos\theta')\,;
+    \end{equation}
+
+    \item Diagonalization of the partial-wave scattering matrix. In this coupled-channel analysis, the most stringent limit is then obtained by imposing the partial-wave unitarity bound $\abs*{a^J}\le 1$ on the largest eigenvalues.
+\end{enumerate}
+
+Although very popular, the above method suffers from two serious shortcomings that significantly reduce its regime of applicability. On the one hand, partial-wave decompositions are known only for $2\to 2$ processes. 
+However, since in many cases $2 \to N$ (with $N > 2$) amplitudes show a faster growth with energy than $2 \to 2$ amplitudes, unitarity bounds from $2 \to N$ processes
+are expected to dominate at high energies, which can be probed at future colliders such as FCC-ee~\cite{FCC:2018byv} or a high-energy muon collider~\cite{Accettura:2023ked}.
+
+On the other hand, even in the $2\to 2$ case, a standard partial-wave decomposition for spin-2 or higher-spin theories --- relevant for EFTs of gravity --- is impracticable given the difficulty in evaluating the amplitudes via Feynman rules.
+In this respect, on-shell methods seem to be the ideal tool also to probe possible unitarity violations of EFTs at high energies.
+
+The primary goal of this chapter is to generalize the formulation of partial-wave unitarity bounds in order to overcome the above shortcomings. 
+In particular, we elaborate on a vectorial formalism~\cite{Jiang:2020rwz}, based on the spinor-helicity formalism~\cite{Dixon:2013uaa}, which
+will allow us to determine the amplitude basis thanks to the amplitude-operator correspondence~\cite{Shadmi:2018xan,Durieux:2019eor,Dong:2021vxo,Li:2022tec}. 
+As a result, we find the generalization of the Wigner $d$-matrix entering the partial-wave expansion of $N \to M$ scattering amplitudes. 
+This will enable us to set the most stringent partial-wave unitarity bounds on those EFT interactions that generate contact $2\to 3$ scattering amplitudes.
+
+Furthermore, working in a Minkowski background, we discuss partial-wave unitarity 
+bounds for EFTs of gravity and higher-spin theories, which have been conjectured 
+to be connected to weakly coupled conformal field theories through the AdS/CFT correspondence~\cite{Klebanov:2002ja}. The recent direct observation of gravitational waves from merging black holes opens the possibility of probing the theory of gravity in the strong regime at an unprecedented level. It is therefore very interesting to explore which EFT extensions of gravity could be detected. In this respect, our work serves as an important guide for exploring viable models that are consistent with first principles of quantum field theory.
+
+As an interesting byproduct of our study, we analyze for the first time the complementarity and interplay of positivity bounds~\cite{Adams:2006sv} --- stemming from the analyticity and causality of scattering amplitudes --- and partial-wave unitarity bounds. The resulting constraints will be of utmost importance to connect experimental data at colliders to fundamental properties of EFTs. Examples include the possibility to 
+use the above bounds as a prior in statistical interpretations and to design phenomenological studies to test positivity and partial-wave unitarity bounds at colliders.
+
+\lb{Insert outline of the chapter.}
 
 \section{Formalism\label{sec:PWUB_formalism}}
 
@@ -400,7 +462,7 @@ The versatility of the spinor-helicity formalism in handling particles of arbitr
 We focus on the P- and CP-violating Lagrangian:
 \begin{equation}
 \label{eq:Lag-quartic}
-    \frac{\mathcal L^{(S)}}{\sqrt{-g}} = c_1^{(S)}\,( \mathcal Q^{(S)})^2 + c_2^{(S)}\, (\widetilde{\mathcal Q}^{(S)})^2 + c_3^{(S)}\,  \mathcal Q^{(S)} \,\widetilde{\mathcal Q}^{(S)}
+    \frac{\mathcal L^{(S)}}{\sqrt{-g}} = c_1^{(S)}\left( \mathcal Q^{(S)}\right)^2 + c_2^{(S)}\left(\widetilde{\mathcal Q}^{(S)}\right)^2 + c_3^{(S)}\,  \mathcal Q^{(S)} \,\widetilde{\mathcal Q}^{(S)}
 \end{equation}
 %
 where
@@ -417,7 +479,7 @@ where
 $\widetilde F_{\mu\nu}=\frac{1}{2} \epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}$ is the dual photon field-strength tensor, $\widetilde R_{\mu\nu\rho\sigma} = \frac{1}{2} \epsilon_{\mu\nu\alpha\beta}R^{\alpha\beta}{}_{\rho\sigma}$ is the dual Riemann tensor,\footnote{The convention for the Levi-Civita tensor is $\epsilon^{0123}=1/\sqrt{-g}$.} $\Mpl^2=(8\pi G_{\text{N}})^{-1}$ is the Planck mass squared,
 and $c_i^{(S)}$ are dimensionful Wilson coefficients with $[c_i^{(S)}]=-4S$. 
 %
-For $S=1$, we recover the electromagnetic Euler-Heisenberg Lagrangian~\cite{Heisenberg:1936nmg}, while, for $S=2$, we obtain the eight-derivative corrections to the gravitational Einstein-Hilbert action~\cite{Endlich:2017tqa}.
+For $S=1$, we recover the electromagnetic Euler--Heisenberg Lagrangian~\cite{Heisenberg:1936nmg}, while, for $S=2$, we obtain the eight-derivative corrections to the gravitational Einstein-Hilbert action~\cite{Endlich:2017tqa}.
 In both cases, the three operators appearing in Eq.~\eqref{eq:Lag-quartic} constitute 
 a basis for such effective dimension-$(4S+4)$ operators~\cite{Ruhdorfer:2019qmk,Li:2023wdz}.
 
