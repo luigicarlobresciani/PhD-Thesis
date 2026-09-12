@@ -17,8 +17,8 @@ L.~C.~Bresciani, G.~Levati and P.~Paradisi,\\
 
 \section{Introduction}
 
-New interactions of nature can be probed through a wide variety of experimental tests, encompassing direct searches of new particles at high-energy colliders, indirect signals in low-energy precision measurements, as well as cosmological observations. 
-On the theoretical side, perturbative unitarity --- relying on the properties of the scattering $S$-matrix --- provides an independent and complementary way to infer upper limits on the strength of such interactions, irrespectively of any experimental information.
+New interactions of Nature can be probed through a wide variety of experimental tests, encompassing direct searches of new particles at high-energy colliders, indirect signals in low-energy precision measurements, as well as cosmological observations. 
+On the theoretical side, perturbative unitarity --- relying on the properties of the scattering $S$-matrix --- provides an independent and complementary way to infer upper limits on the strength of such interactions, irrespective of any experimental information.
 Generally, unitarity violation signals the breakdown of the low-energy description of a theory which can be restored by introducing new degrees of freedom or a new strong dynamics at the scale where unitarity is broken.
 In the past, unitarity bounds for the $WW$ scattering process led to the famous no-lose Higgs theorem, which implied an upper bound on the Higgs boson mass below the TeV scale~\cite{Lee:1977yc,Lee:1977eg}.
 Such a theoretical prediction was of paramount importance in motivating the construction of the LHC at CERN. 
@@ -54,30 +54,51 @@ The standard way of implementing unitarity bounds relies on $2\to 2$ scattering 
         \frac{1}{2}\sum_{J} (2J+1)\,d^J_{m,m'}(\theta)\,d^J_{m,m'}(\theta')=\delta(\cos\theta-\cos\theta')\,;
     \end{equation}
 
-    \item Diagonalization of the partial-wave scattering matrix. In this coupled-channel analysis, the most stringent limit is then obtained by imposing the partial-wave unitarity bound $\abs*{a^J}\le 1$ on the largest eigenvalues.
+    \item Diagonalization of the partial-wave scattering matrix. In this coupled-channel analysis, the most stringent limit is then obtained by imposing the partial-wave unitarity bound $\abs*{a^J}\le 1$ on the largest eigenvalue.
 \end{enumerate}
 
 Although very popular, the above method suffers from two serious shortcomings that significantly reduce its regime of applicability. On the one hand, partial-wave decompositions are known only for $2\to 2$ processes. 
 However, since in many cases $2 \to N$ (with $N > 2$) amplitudes show a faster growth with energy than $2 \to 2$ amplitudes, unitarity bounds from $2 \to N$ processes
-are expected to dominate at high energies, which can be probed at future colliders such as FCC-ee~\cite{FCC:2018byv} or a high-energy muon collider~\cite{Accettura:2023ked}.
+are expected to dominate at high energies, which can be probed at the High-Luminosity LHC
+and at future colliders such as the FCC~\cite{FCC:2018byv} or a high-energy muon
+collider~\cite{Accettura:2023ked}.
 
 On the other hand, even in the $2\to 2$ case, a standard partial-wave decomposition for spin-2 or higher-spin theories --- relevant for EFTs of gravity --- is impracticable given the difficulty in evaluating the amplitudes via Feynman rules.
 In this respect, on-shell methods seem to be the ideal tool also to probe possible unitarity violations of EFTs at high energies.
 
 The primary goal of this chapter is to generalize the formulation of partial-wave unitarity bounds in order to overcome the above shortcomings. 
-In particular, we elaborate on a vectorial formalism~\cite{Jiang:2020rwz}, based on the spinor-helicity formalism~\cite{Dixon:2013uaa}, which
-will allow us to determine the amplitude basis thanks to the amplitude-operator correspondence~\cite{Shadmi:2018xan,Durieux:2019eor,Dong:2021vxo,Li:2022tec}. 
+% In particular, we elaborate on a vectorial formalism~\cite{Jiang:2020rwz}, based on the spinor-helicity formalism~\cite{Dixon:2013uaa}, which
+% will allow us to determine the amplitude basis thanks to the amplitude-operator correspondence~\cite{Shadmi:2018xan,Durieux:2019eor,Dong:2021vxo,Li:2022tec}. 
+In particular, we elaborate on a vectorial formalism~\cite{Jiang:2020rwz}, based on the
+spinor-helicity formalism~\cite{Dixon:2013uaa} introduced in Chapter~\ref{ch:amplitudes}, which
+allows us to determine the amplitude basis through the amplitude-operator
+correspondence~\cite{Shadmi:2018xan,Durieux:2019eor,Dong:2021vxo,Li:2022tec}.
 As a result, we find the generalization of the Wigner $d$-matrix entering the partial-wave expansion of $N \to M$ scattering amplitudes. 
 This will enable us to set the most stringent partial-wave unitarity bounds on those EFT interactions that generate contact $2\to 3$ scattering amplitudes.
 
 Furthermore, working in a Minkowski background, we discuss partial-wave unitarity 
 bounds for EFTs of gravity and higher-spin theories, which have been conjectured 
-to be connected to weakly coupled conformal field theories through the AdS/CFT correspondence~\cite{Klebanov:2002ja}. The recent direct observation of gravitational waves from merging black holes opens the possibility of probing the theory of gravity in the strong regime at an unprecedented level. It is therefore very interesting to explore which EFT extensions of gravity could be detected. In this respect, our work serves as an important guide for exploring viable models that are consistent with first principles of quantum field theory.
+to be connected to weakly coupled conformal field theories through the AdS/CFT correspondence~\cite{Klebanov:2002ja}. The recent direct observation of gravitational waves from merging black holes~\cite{LIGOScientific:2016aoc,LIGOScientific:2018mvr,KAGRA:2021vkt} opens the possibility of probing the theory of gravity in the strong regime at an unprecedented level. It is therefore very interesting to explore which EFT extensions of gravity could be detected. In this respect, our work serves as an important guide for exploring viable models that are consistent with first principles of quantum field theory.
 
 As an interesting byproduct of our study, we analyze for the first time the complementarity and interplay of positivity bounds~\cite{Adams:2006sv} --- stemming from the analyticity and causality of scattering amplitudes --- and partial-wave unitarity bounds. The resulting constraints will be of utmost importance to connect experimental data at colliders to fundamental properties of EFTs. Examples include the possibility to 
 use the above bounds as a prior in statistical interpretations and to design phenomenological studies to test positivity and partial-wave unitarity bounds at colliders.
 
-\lb{Insert outline of the chapter.}
+The chapter is organized as follows. In Section~\ref{sec:PWUB_formalism} we formulate the partial-wave
+decomposition in vectorial form, constructing the angular-momentum basis from the Clebsch--Gordan
+coefficients of the Poincaré group and fixing its normalization so that the unitarity bounds retain
+their standard form. We then give an operative procedure that determines the basis directly from
+kinematic monomials in spinor-helicity variables, by diagonalizing the square of the Pauli--Lubanski
+operator, without reference to the Clebsch--Gordan coefficients themselves. In
+Section~\ref{sec:PWUBgravity} we apply the method to the $2\to 2$ scattering of particles of arbitrary
+spin $S$, deriving the unitarity bounds on the quartic operators of the Euler--Heisenberg Lagrangian
+and on the eight-derivative corrections to the Einstein--Hilbert action, and we compare them with the
+corresponding positivity bounds, quantifying the reduction of the allowed parameter space. In
+Section~\ref{sec:PWUBNtoM} we turn to processes with more than two particles in the final state and
+determine the bounds on the dimension-six and dimension-eight operators of the Standard Model EFT that
+generate contact $2\to 3$ amplitudes, identifying the center-of-mass energy above which these bounds
+supersede the ones derived from $2\to 2$ processes. Section~\ref{sec:PWUBconclusions} is dedicated to our
+conclusions. Finally, in Appendix~\ref{app:2-to-3_basis} we report the angular-momentum basis for
+$2 \to 3$ amplitudes at generic values of $J$.
 
 \section{Formalism\label{sec:PWUB_formalism}}
 
@@ -332,7 +353,7 @@ intermediate channel $X$,
     \; \delta^{JJ'}\,,
 \end{gather}
 %
-which, when applied to the generalized optical theorem,
+which, when applied to the generalized optical theorem of Section~\ref{sec:unitarity}
 %
 \begin{gather}
     \ket*{\mathcal A_{i\to f}} - \ket*{\mathcal A_{f\to i}^*} = i \sum_X \int \text d \Phi_X\, \ket*{\mathcal A_{i\to X}}\otimes\ket*{\mathcal A_{f\to X}^* }\,,
@@ -401,7 +422,7 @@ which, when applied to the generalized optical theorem,
     \draw[<-] (n7) -- (n5);
     \draw[<-] (n8) -- (n5);
     \node[] (txtf) at (3,0) {\scriptsize$f$};
-    \end{tikzpicture}
+    \end{tikzpicture}\,,
 \end{gather}
 leads to  
 %
@@ -453,13 +474,13 @@ partial-wave coefficients for $N\to M$ scattering processes (with $N,M \geq 2$) 
 
 As an interesting result of our analysis, in Appendix~\ref{app:2-to-3_basis} we report the angular-momentum basis for $2 \to 3$ amplitudes that holds for generic values of $J$.
 
-\section{Effective Field Theory of Gravity and Light-by-Light Scattering}
+\section{Effective Field Theory of Gravity and Light-by-Light Scattering\label{sec:PWUBgravity}}
 
 As a first application of the above method, we analyze the unitarity bounds for the EFT of gravity and light-by-light scattering involving operators with four gravitons and photons, respectively.
 %
 The versatility of the spinor-helicity formalism in handling particles of arbitrary spin~\cite{Arkani-Hamed:2017jhn} allows us to approach the problem in a unified manner.
 
-We focus on the P- and CP-violating Lagrangian:
+We focus on the most general quartic Lagrangian, which includes the P- and CP-violating interaction proportional to $c_3^{(S)}$:
 \begin{equation}
 \label{eq:Lag-quartic}
     \frac{\mathcal L^{(S)}}{\sqrt{-g}} = c_1^{(S)}\left( \mathcal Q^{(S)}\right)^2 + c_2^{(S)}\left(\widetilde{\mathcal Q}^{(S)}\right)^2 + c_3^{(S)}\,  \mathcal Q^{(S)} \,\widetilde{\mathcal Q}^{(S)}
@@ -652,7 +673,7 @@ Alternative approaches to deal with the above singularity include the smearing m
 \includegraphics[width=\textwidth]{images/s1_plots_v3.pdf}
 \includegraphics[width=\textwidth]{images/s2_plots_v3.pdf}
 \caption{Regions allowed by partial-wave unitarity bounds (red, Eq.~\eqref{eq:PUbounds}) 
-and positivity bounds (blue, Eq.~\eqref{eq:positivitybounds}) for the Euler-Heisenberg EFT
+and positivity bounds (blue, Eq.~\eqref{eq:positivitybounds}) for the Euler--Heisenberg EFT
 (upper panel, $S=1$) and the EFT of gravity (lower panel, $S=2$), in the
 $(s^{2S}c_{1}^{(S)},s^{2S}c_{2}^{(S)})$ plane for different values of $s^{2S}c_3^{(S)}$.
 \label{fig:s1}}
@@ -661,7 +682,7 @@ $(s^{2S}c_{1}^{(S)},s^{2S}c_{2}^{(S)})$ plane for different values of $s^{2S}c_3
 \begin{figure}[tb]
     \centering
     \includegraphics[scale = 0.90]{images/s1_plots_v2.pdf}
-    \caption{Contours of the regions allowed by the partial-wave unitarity bounds (left panel, Eq.~\eqref{eq:PUbounds}) combined with the positivity constraints (right panel, Eq.~\eqref{eq:positivitybounds}) for the Euler-Heisenberg EFT ($S=1$) in the $(s^{2}c_{1}^{(1)},s^{2}c_{3}^{(1)})$ plane and computed for different values of $s^{2}c_2^{(1)}$.}
+    \caption{Contours of the regions allowed by the partial-wave unitarity bounds (left panel, Eq.~\eqref{eq:PUbounds}) combined with the positivity constraints (right panel, Eq.~\eqref{eq:positivitybounds}) for the Euler--Heisenberg EFT ($S=1$) in the $(s^{2}c_{1}^{(1)},s^{2}c_{3}^{(1)})$ plane and computed for different values of $s^{2}c_2^{(1)}$.}
     \label{fig:s1_v2}
 \end{figure}
 
@@ -672,7 +693,11 @@ $(s^{2S}c_{1}^{(S)},s^{2S}c_{2}^{(S)})$ plane for different values of $s^{2S}c_3
     \label{fig:s2_v2}
 \end{figure}
 
-Additional and complementary constraints on the EFT parameter space are represented by positivity bounds, which stem from the analyticity and causality of scattering amplitudes~\cite{Adams:2006sv}. In particular, they impose specific inequalities on the Wilson coefficients to ensure compatibility with a well-behaved UV completion.
+% Additional and complementary constraints on the EFT parameter space are represented by positivity bounds, which stem from the analyticity and causality of scattering amplitudes~\cite{Adams:2006sv}. In particular, they impose specific inequalities on the Wilson coefficients to ensure compatibility with a well-behaved UV completion.
+Additional and complementary constraints on the EFT parameter space are represented by positivity
+bounds~\cite{Adams:2006sv}, which stem from the analyticity and causality of scattering amplitudes
+and were derived in Section~\ref{sec:analyticity}. In particular, they impose specific inequalities
+on the Wilson coefficients to ensure compatibility with a well-behaved UV completion.
 %
 In our scenarios, they read $\abs*{c_-^{(S)}} \le c_+^{(S)}$, or, equivalently,
 %
@@ -704,7 +729,7 @@ In particular, for fixed values of the center-of-mass energy, we find
 %
 which is a monotonically decreasing function of $S$.
 
-\section{\texorpdfstring{$N \to M$ Scattering Amplitudes}{N-to-M Scattering Amplitudes}}
+\section{\texorpdfstring{$N \to M$ Scattering Amplitudes}{N-to-M Scattering Amplitudes}\label{sec:PWUBNtoM}}
 
 Another important advantage of our method over standard techniques 
 is its capability of addressing partial-wave unitarity 
@@ -842,15 +867,15 @@ arising from $2\to 2$ and $2\to 3$ scattering processes as induced
 by $\mathcal L^{(6)}$ and $\mathcal L^{(8)}$; see 
 Eqs.~\eqref{eq:SMEFT_6} and \eqref{eq:SMEFT_8}.
 
-\section{Conclusions}
+\section{Conclusions\label{sec:PWUBconclusions}}
 
 In this chapter we elaborated on the application of on-shell methods for generalizing the formulation of partial-wave unitarity bounds. 
 
-In particular, we provided the general angular momentum basis for $2 \to 3$ amplitudes, extending previous results obtained by the method of the reduced scattering matrix~\cite{Chang:2019vez,Falkowski:2019tft,Cohen:2021ucp,Mahmud:2025wye}, which works in the limit of $J=0$.
+In particular, we provided the general angular-momentum basis for $2 \to 3$ amplitudes, extending previous results obtained by the method of the reduced scattering matrix~\cite{Chang:2019vez,Falkowski:2019tft,Cohen:2021ucp,Mahmud:2025wye}, which works in the limit of $J=0$.
 As an illustration of our results, we discussed unitarity bounds stemming from $2 \to 3$ scattering processes as induced by dimension-six and -eight SMEFT operators that might be probed at high-energy future colliders; see Figure~\ref{SMEFT_plot}.
-Moreover, we considered unitarity bounds for spin-2 or higher-spin theories --- relevant for effective field theories of gravity --- that are not approachable by standard methods; see Figures~\ref{fig:s1} and \ref{fig:s2_v2}. 
+Moreover, we considered unitarity bounds for spin-2 or higher-spin theories --- relevant for EFTs of gravity --- that are not approachable by standard methods; see Figures~\ref{fig:s1} and \ref{fig:s2_v2}. 
 
-Finally, we emphasized the complementarity of positivity and partial-wave unitarity bounds to probe the parameter space of effective field theories, as shown in Figures~\ref{fig:s1}--\ref{fig:s2_v2}.
+Finally, we emphasized the complementarity of positivity and partial-wave unitarity bounds to probe the parameter space of EFTs, as shown in Figures~\ref{fig:s1}--\ref{fig:s2_v2}.
 
 \begin{subappendices}
 \input{chapters/app_2-to-3_basis}

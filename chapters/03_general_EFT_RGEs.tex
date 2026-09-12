@@ -13,9 +13,9 @@ J.~Aebischer, L.~C.~Bresciani and N.~Selimovic,\\
 [\href{https://doi.org/10.48550/arXiv.2502.14030}{arXiv:2502.14030} [hep-ph]];\\[0.5em]
 J.~Aebischer, L.~C.~Bresciani and N.~Selimovic,\\
 ``Anomalous dimension of a general effective gauge theory. Part II. Fermionic sector,''\\
-\href{https://doi.org/10.1007/JHEP08(2025)209}{JHEP \textbf{08} (2025), 209}
+\href{https://doi.org/10.1007/JHEP09(2026)159}{JHEP \textbf{09} (2026), 159}
 %doi:10.1007/JHEP08(2025)209
-[\href{https://doi.org/10.48550/arXiv.2502.14030}{arXiv:2502.14030} [hep-ph]].
+[\href{https://doi.org/10.48550/arXiv.2512.16890}{arXiv:2512.16890} [hep-ph]].
 
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
@@ -102,6 +102,24 @@ Section~\ref{sec:gEFTLEFT}, and the $O(n)$ scalar theory in Section~\ref{sec:gEF
 providing a valuable consistency check, these applications serve as a guide to the use of the general
 results in specific theories. Section~\ref{sec:gEFTconclusions} is dedicated to our conclusions.
 
+% The chapter is organized as follows. In Section~\ref{sec:EFT} we set up the general effective gauge
+% theory, introducing the renormalizable interactions and classifying the higher-dimensional operators
+% of mass dimension five and six together with their minimal form factors. In
+% Section~\ref{sec:gEFTexamples} we recall the ingredients of the on-shell method and work out two
+% representative anomalous dimensions in detail, the self-mixing of the $\phi^2F^2$ class, which
+% displays the mechanics of the computation, and the mixing of $\phi^2F^2$ into $\psi^2\phi^3$, which
+% shows how the helicity selection rules organize the two Wilson coefficients into a single holomorphic
+% combination. The complete RGEs are collected in Section~\ref{sec:gEFTresults}, ordered by decreasing
+% mass dimension from the dimension-six and dimension-five operators down to the renormalizable
+% couplings. They are then
+% applied to specific theories, namely the SMEFT in Section~\ref{sec:gEFTSMEFT}, where we reproduce the
+% entire bosonic sector and a representative anomalous dimension of the fermionic one, the LEFT in
+% Section~\ref{sec:gEFTLEFT}, restricted to the fermion masses, the dimension-five dipole operators, and
+% the running that these induce on the gauge couplings and topological angles, and the $O(n)$ scalar
+% theory in Section~\ref{sec:gEFTOn}. Besides providing a valuable consistency check, these
+% applications serve as a guide to the use of the general results in specific theories.
+% Section~\ref{sec:gEFTconclusions} is dedicated to our conclusions.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General Effective Gauge Theory}
 \label{sec:EFT}
@@ -121,7 +139,7 @@ where the individual parts are defined in the following subsections in Eqs.~\eqr
 \subsection{Renormalizable Interactions}
 %%%%%%%%%%%%%%%%
 
-We start by introducing the most general Lagrangian up to mass dimension four that contains an arbitrary number of real scalar fields $\phi_a$, gauge fields with field strengths $F_{\mu\nu}^{A_\alpha}$, and left-handed Weyl spinors $\psi_i$:\footnote{For the two-component notation we follow the conventions in \cite{Dreiner:2008tw}.}
+We start by introducing the most general Lagrangian up to mass dimension four that contains an arbitrary number of real scalar fields $\phi_a$, gauge fields with field strengths $F_{\mu\nu}^{A_\alpha}$, and left-handed Weyl spinors $\psi_i$:\footnote{For the two-component notation we follow the conventions in Ref.~\cite{Dreiner:2008tw}.}
 \begin{align}\label{eq:L4}
 \mathcal{L}^{(4)} &=  \mathcal{L}^{(4)}_{\text{bos}} + \mathcal{L}^{(4)}_{\text{fer}}\,,\\
     \mathcal{L}^{(4)}_{\text{bos}} &= -\frac{1}{4}\sum_{\alpha=1}^{N_G}\sum_{\beta=1}^{N_G}\xi^{A_\alpha B_\beta} F^{A_\alpha}_{\mu\nu}F^{{B_\beta}\mu\nu}+ \sum_{\alpha=1}^{N_G}\sum_{\beta=1}^{N_G} \tildee \xi^{A_\alpha B_\beta} F^{A_\alpha}_{\mu\nu}\tildee F^{{B_\beta}\,\mu\nu}  + \frac{1}{2} \eta_{ab} (D_\mu\phi)_{a}(D^\mu\phi)_b\nonumber\\
@@ -209,27 +227,32 @@ The quadratic Casimir $C_2$ and Dynkin indices $S_2$ for the different scalar an
 \subsection{Higher-Dimensional Operator Classification}
 
 A basis of physical operators at a given mass dimension can be conveniently constructed by analyzing the independent kinematic structures associated with the contact amplitudes of the EFT~\cite{Shadmi:2018xan,Cheung:2016drk,Falkowski:2019zdo,Durieux:2019siw,Li:2022tec,DeAngelis:2022qco,Durieux:2019eor}.
-In the following, we perform such a construction for operators up to mass dimension six.
+In the following, we perform such a construction for operators up to mass dimension six working with the massless spinor-helicity formalism of Section~\ref{sec:spinorhelicity}.
 
-We work with the massless spinor-helicity formalism, where a light-like momentum $p$ is decomposed in terms of the helicity spinors $\lambda$ and $\tildee \lambda$ as
+% We work with the massless spinor-helicity formalism, where a light-like momentum $p$ is decomposed in terms of the helicity spinors $\lambda$ and $\tildee \lambda$ as
+% \begin{equation}
+%     p_{\alpha\dot\alpha} = p_\mu \,\sigma^\mu_{\alpha\dot\alpha} = \lambda_\alpha\, \tildee \lambda_{\dot\alpha} \,.
+% \end{equation}
+% Here, $\sigma^\mu = (\mathbb 1_{2\times 2},\vec \sigma)$ and the spinors $\lambda_\alpha$ and $\tildee \lambda^{\dot\alpha}$ transform in the $(1/2,0)$ and $(0,1/2)$ representations of $SL(2,\mathbb C)$, respectively.
+% In this framework, the Lorentz-invariant inner products are given by\footnote{We use the convention $\epsilon^{12}=\epsilon^{\dot 1 \dot 2} = -\epsilon_{12}=-\epsilon_{\dot 1 \dot 2} = 1$.}
+% \begin{gather}
+%     \agl{i}{j} = \lambda_i{}^\alpha \,\lambda_j{}_\alpha = \epsilon_{\alpha\beta}\, \lambda_i{}^\alpha\, \lambda_j{}^\beta = -\agl{j}{i}\,,\\
+%     \sqr{i}{j} = \tildee \lambda_i{}_{\dot\alpha}\, \tildee \lambda_j{}^{\dot \alpha} = -\epsilon_{\dot\alpha\dot\beta}\, \tildee \lambda_i{}^{\dot\alpha}\, \tildee \lambda_j{}^{\dot \beta} = -\sqr{j}{i}\,.
+% \end{gather}
+% The Mandelstam invariants can then be expressed as 
+% \begin{equation}
+%     s_{ij}=2p_i\cdot p_j = \agl{i}{j}\sqr{j}{i}\,.
+% \end{equation}
+% Additionally, for real momenta, square and angle products are related via 
+% \begin{equation}
+%     \agl{i}{j} = \sqr{j}{i}^*\,.
+% \end{equation}
+% Such angle and square brackets are very useful when decomposing scattering amplitudes. 
+In four spacetime dimensions, $n$-point amplitudes have mass dimension
 \begin{equation}
-    p_{\alpha\dot\alpha} = p_\mu \,\sigma^\mu_{\alpha\dot\alpha} = \lambda_\alpha\, \tildee \lambda_{\dot\alpha} \,.
+    [\mathcal M_n]=4-n\,.
 \end{equation}
-Here, $\sigma^\mu = (\mathbb 1_{2\times 2},\vec \sigma)$ and the spinors $\lambda_\alpha$ and $\tildee \lambda^{\dot\alpha}$ transform in the $(1/2,0)$ and $(0,1/2)$ representations of $SL(2,\mathbb C)$, respectively.
-In this framework, the Lorentz-invariant inner products are given by\footnote{We use the convention $\epsilon^{12}=\epsilon^{\dot 1 \dot 2} = -\epsilon_{12}=-\epsilon_{\dot 1 \dot 2} = 1$.}
-\begin{gather}
-    \agl{i}{j} = \lambda_i{}^\alpha \,\lambda_j{}_\alpha = \epsilon_{\alpha\beta}\, \lambda_i{}^\alpha\, \lambda_j{}^\beta = -\agl{j}{i}\,,\\
-    \sqr{i}{j} = \tildee \lambda_i{}_{\dot\alpha}\, \tildee \lambda_j{}^{\dot \alpha} = -\epsilon_{\dot\alpha\dot\beta}\, \tildee \lambda_i{}^{\dot\alpha}\, \tildee \lambda_j{}^{\dot \beta} = -\sqr{j}{i}\,.
-\end{gather}
-The Mandelstam invariants can then be expressed as 
-\begin{equation}
-    s_{ij}=2p_i\cdot p_j = \agl{i}{j}\sqr{j}{i}\,.
-\end{equation}
-Additionally, for real momenta, square and angle products are related via 
-\begin{equation}
-    \agl{i}{j} = \sqr{j}{i}^*\,.
-\end{equation}
-Such angle and square brackets are very useful when decomposing scattering amplitudes. In four spacetime dimensions, $n$-point amplitudes have mass dimension $[\mathcal M_n]=4-n$. Furthermore, contact amplitudes $\mathcal{M}$ are polynomials in the inner products and can be schematically written as
+Furthermore, contact amplitudes $\mathcal{M}$ generated by the insertion of an effective operator are polynomials in the angle and square inner products and can be schematically written as
 \begin{equation}
     \mathcal M = C_i \times \mathcal K_i\,,
 \end{equation}
@@ -237,18 +260,18 @@ where $C_i$ denotes the Wilson coefficient associated with the operator $\mathca
 \begin{equation}
     [\mathcal K_i] = [\mathcal O_i] - \ell(\mathcal O_i) \ge 0\,.
 \end{equation}
-Here, $\ell(\mathcal O_i)$ denotes the length of the operator, namely the number of fundamental fields it is composed of.
+Here, $\ell(\mathcal O_i)$ denotes the length of the operator, namely the minimal number of fundamental fields it contains.
 Different kinematic structures can be related via momentum conservation, $\sum_{i=1}^n p_i = 0$, or Schouten identities,
 \begin{align}
     \agl{i}{j}\agl{k}{\ell} + \agl{k}{i}\agl{j}{\ell} + \agl{j}{k}\agl{i}{\ell} &= 0\,,\label{eq:schhoutenid1}\\
     \sqr{i}{j}\sqr{k}{\ell} + \sqr{k}{i}\sqr{j}{\ell} + \sqr{j}{k}\sqr{i}{\ell} &= 0\label{eq:schhoutenid2}\,.
 \end{align}
-Moreover, on-shell three-particle amplitudes vanish due to momentum conservation.
-Nevertheless, they can be constructed by assuming complex momenta~\cite{Witten:2003nn}, and, once the particle helicities $\{h_1,h_2,h_3\}$ are fixed, they are uniquely determined by Poincaré invariance, locality, and dimensional analysis~\cite{Benincasa:2007xk}:
+Moreover, on-shell three-particle amplitudes vanish due to momentum conservation for real momenta or are constant (the latter possibility holds only for the cubic scalar interaction).
+Nevertheless, they can be constructed by assuming complex momenta~\cite{Witten:2003nn}, and, once the particle helicities $\{h_1,h_2,h_3\}$ are fixed, they are uniquely determined by Poincaré invariance, locality, and dimensional analysis~\cite{Benincasa:2007xk}, as shown in Section~\ref{sec:3pointamplitudes}:
 \begin{equation}
     \mathcal M(1^{h_1},2^{h_2},3^{h_3}) = 
     \begin{cases}
-        C_{\text{H}}\, \agl{1}{2}^{a_3} \agl{2}{3}^{a_1} \agl{3}{1}^{a_2} & \text{if }h_1+h_2+h_3<0\,,\\  C_{\text{A}}\, \sqr{1}{2}^{-a_3} \sqr{2}{3}^{-a_1} \sqr{3}{1}^{-a_2} & \text{if }h_1+h_2+h_3>0\,,
+        C_{\mathsf H}\, \agl{1}{2}^{a_3} \agl{2}{3}^{a_1} \agl{3}{1}^{a_2} & \text{if }h_1+h_2+h_3<0\,,\\  C_{\mathsf A}\, \sqr{1}{2}^{-a_3} \sqr{2}{3}^{-a_1} \sqr{3}{1}^{-a_2} & \text{if }h_1+h_2+h_3>0\,,
     \end{cases}
 \end{equation}
 with
@@ -257,15 +280,15 @@ with
     a_2 = h_2-h_3-h_1\,,\qquad
     a_3 = h_3-h_1-h_2\,,
 \end{equation}
-and $C_{\text{H}}$ and $C_{\text{A}}$ are arbitrary coefficients with mass dimension given by
+and $C_{\mathsf H}$ and $C_{\mathsf A}$ are arbitrary coefficients with mass dimension given by
 \begin{equation}
-    [C_{\text{H}}] = 1+h_1+h_2+h_3\,,\qquad 
-    [C_{\text{A}}] = 1-h_1-h_2-h_3\,.
+    [C_{\mathsf H}] = 1+h_1+h_2+h_3\,,\qquad 
+    [C_{\mathsf A}] = 1-h_1-h_2-h_3\,.
 \end{equation}
 
-Therefore, we can classify all \emph{on-shell} independent kinematic polynomials and the corresponding \emph{physical} operators as follows:
+Therefore, we can classify all \emph{on-shell} independent kinematic polynomials and the corresponding \emph{physical} operators as follows.
 \begin{itemize}
-    \item For dimension-five operators, where we have $[\mathcal K_i] = 5 - \ell(\mathcal O_i)$:
+    \item For dimension-five operators $[\mathcal K_i] = 5 - \ell(\mathcal O_i)$:
     \begin{align}
         \ell_i &= 5
         &&
@@ -395,13 +418,13 @@ Therefore, we can classify all \emph{on-shell} independent kinematic polynomials
         \end{cases}
     \end{align}
 \end{itemize}
-The scalar and fermion fields are denoted with $\phi$ and $\psi$, respectively, while we use $F$ for the gauge field strengths. The kinematic polynomials with angle brackets substituted by square ones correspond to operators with right-handed fields. 
+The scalar and fermion fields are denoted with $\phi$ and $\psi$, respectively, while we use $F$ for the gauge field strengths. The kinematic polynomials with angle brackets substituted by square ones and vice versa correspond to Hermitian conjugate operators. 
 
 Finally, the symmetries of the Wilson coefficients are inherited by those of the kinematic structures.
 This implies that, for bosonic operators, if a kinematic polynomial is (anti-)symmetric under the exchange of two spinors, then the Wilson coefficient must also be (anti-)symmetric in the associated pair of gauge indices.
-For fermionic operators, instead, Fermi-Dirac statistics requires the amplitude to be antisymmetric under the exchange of two identical fermions, so that the above conclusion is reversed: a kinematic polynomial that is symmetric (antisymmetric) under the exchange of two spinors must be contracted with a Wilson coefficient that is antisymmetric (symmetric) in the associated pair of gauge indices.
+For fermionic operators, instead, Fermi--Dirac statistics requires the amplitude to be anti-symmetric under the exchange of two identical fermions, so that the above conclusion is reversed: a kinematic polynomial that is symmetric (anti-symmetric) under the exchange of two spinors must be contracted with a Wilson coefficient that is anti-symmetric (symmetric) in the associated pair of gauge indices.
 
-In the following, we report the basis of operators adopted in this thesis.
+In the following, we report the basis of operators adopted in this chapter.
 Regarding the bosonic operators, we choose to work with Hermitian operators so that all the components of the Wilson coefficients are real.
 
 
@@ -559,6 +582,10 @@ In this notation, one finds the following contributions from $\mathcal R_{D^2\ph
     \frac{1}{3}\left[\dot{\tildee C}_{D^2\phi^4}\right]_{dabc}+\left[\dot{\overline C}_{D^2\phi^4}\right]_{dabc}
     \right)\,,\label{eq:phi3<-Ctildeandbar}
 \end{align}
+where
+\begin{equation}
+    \dot C = 16\pi^2\,\mu \dv[]{}{\mu}C\,,
+\end{equation}
 which have to be taken into account and added to the results presented in Section~\ref{sec:gEFTresults}.
 With $\sum_{\sigma(I)}$ we denote the sum over all permutations of the set of indices $I$, and $\sum_{\sigma(I\times J)} = \sum_{\sigma(I)}\sum_{\sigma(J)}$.
 
@@ -578,7 +605,7 @@ coefficients $C_{\phi^2F^2}$ and $C_{\phi^2\widetilde F^2}$ into a single holomo
 combination, a feature that is manifest on shell but obscured in the standard
 Feynman-diagrammatic approach.
 
-The on-shell method itself is reviewed in Chapter~\ref{ch:RGEmethod}. Here we merely recall
+The on-shell method itself is discussed in Chapter~\ref{ch:RGEmethod}. Here we merely recall
 the ingredients needed to follow the two computations.
 At one loop and in the massless limit, the anomalous dimensions follow from the master
 formulae
@@ -596,13 +623,14 @@ $\mathcal O_i$ evaluated on an outgoing on-shell state $\bra{\vec n}$, and the s
 indicates the Gaussian fixed point, where all Wilson coefficients vanish.
 The right-hand sides involve the convolution of a tree-level form factor with a tree-level
 amplitude, which amounts to a sum of two-particle unitarity cuts,
-\begin{equation}
-    (\mathcal M F_j)(1,\dotsc,n) =
+\begin{align}
+    (\mathcal M F_j)(1,\dotsc,n) &=
     \sum_{k=2}^{n}\,\sum_{\{x,y\}} \int \text{dLIPS}_2 \sum_{h_x,h_y}
     F_j(x^{h_x},y^{h_y},k+1,\dotsc,n)\,
-    \mathcal M(1,\dotsc,k;x^{h_x},y^{h_y})\,,
+    \mathcal M(1,\dotsc,k;x^{h_x},y^{h_y})\nonumber \\
+    &\quad + \text{permutations}\,,
     \label{eq:cutconvolution}
-\end{equation}
+\end{align}
 where $\mathcal M(\vec n;\vec m) = \mel{\vec n}{\mathcal M}{\vec m}$ and $\text{dLIPS}_2$ is
 the two-body Lorentz-invariant phase-space measure.
 The infrared anomalous dimension $\gamma_{i,\text{IR}}$ results from soft and collinear particle emissions~\cite{Sterman:2002qn,Becher:2009cu,Chiu:2009mg}.
@@ -610,7 +638,7 @@ The soft divergences are isolated by the Stokes procedure \cite{Mastrolia:2009dr
 non-rational terms manifest and thus allows them to be discarded, since they cannot
 contribute to the ultraviolet running.
 The collinear anomalous dimensions $\gamma_c$ depend only on the external states associated
-with $\mathcal O_i$ and are given in Eqs.~\eqref{eq:coll_vector}--\eqref{eq:coll_fermion}.
+with $\mathcal O_i$ and are collected in Eqs.~\eqref{eq:coll_vector}--\eqref{eq:coll_fermion}.
 
 The phase-space integrals are evaluated using the Stokes parameterization
 \cite{Mastrolia:2009dr}, which is particularly efficient in the presence of infrared
@@ -640,7 +668,7 @@ such that $p_x+p_y = p_a+p_b$, and, accordingly,
 In all the diagrams that follow, red blobs denote tree-level form factors with an
 insertion of a higher-dimensional operator, blue blobs denote tree-level amplitudes
 built solely from the marginal interactions of $\mathcal L^{(4)}$, and dashed gray lines
-indicate the two-particle cut.
+indicate two-particle unitarity cuts.
 
 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%
@@ -3879,7 +3907,7 @@ The pieces proportional to $g_1^4$, $g_1^2g_2^2$, and $g_2^4$  give, before symm
     &+ \epsilon ^{J K L} C_{HD}  \Sigma _{a b}^{L} \Sigma _{c f}^{J} + \epsilon ^{I J K} \Big(16 C_{H\Box} \left(\theta _{a f}^{I} \theta _{b c}^{J}+\theta _{a c}^{J} \theta _{b f}^{I}\right)\nonumber\\ 
     &+ \epsilon ^{I L M} \epsilon^{J M N} C_{HD} \Sigma _{a b}^{L} \Sigma _{c f}^{N} \Big) \Big) \Big]\,.\nonumber
     \end{align}
-After symmetrizing the full expression, all terms involving at least one $\theta^Y$ or $\theta^I$ matrix vanish since they are antisymmetric. This in turn implies that all terms proportional to $C_{H\Box}$ vanish. After exploiting the identity in Eq.~\eqref{eq:thetaI_thetaJ} the remaining contribution is given by
+After symmetrizing the full expression, all terms involving at least one $\theta^Y$ or $\theta^I$ matrix vanish since they are anti-symmetric. This in turn implies that all terms proportional to $C_{H\Box}$ vanish. After exploiting the identity in Eq.~\eqref{eq:thetaI_thetaJ} the remaining contribution is given by
 \begin{align}
     \left[\dot C_{\phi^6}\right]_{abcdef} = -\frac{3}{32}C_{HD}(g_1^2+g_2^2)^2 \delta_{(ab}\delta_{cd}\delta_{ef)}\,,
 \end{align}
