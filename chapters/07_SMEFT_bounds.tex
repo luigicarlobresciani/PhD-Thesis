@@ -1,4 +1,4 @@
-\chapter{Unitarity and Sum-Rule Bounds in the Standard Model Effective Field Theory}
+\chapter{Unitarity and Sum-Rule Bounds in the Standard Model Effective Field Theory\label{ch:SMEFT_bounds}}
 
 \begin{flushright}
 \small
@@ -15,19 +15,194 @@ L.~C.~Bresciani, P.~Paradisi and A.~Sainaghi,\\[0pt]
 
 \section{Introduction}
 
-\section{Conclusions}
+\section{Unitarity Bounds\label{sec:SMEFT_unitaritybounds}}
+
+To compute the unitarity bounds, we adopt the method developed in Chapter~\ref{ch:generalizedUB}, which allows one to project a generic scattering amplitude $\ket*{\mathcal{A}_{i\to f}}$ onto a kinematic basis $\ket*{\mathcal{B}^J_{i\to f}}$ with definite angular momentum $J$, as follows:
+\begin{equation}
+\ket{\mathcal{A}_{i\to f}}=\sum_J a_{i\to f}^J \ket*{\mathcal{B}_{i\to f}^J}\,,
+\end{equation}
+where $a_{i\to f}^J$ denote the partial-wave coefficients and the elements of the kinematic basis are normalized as 
+\begin{equation}
+    \langle \mathcal B^J_{i\to f}|\mathcal B^{J'}_{i\to f}\rangle = \int \dd\Phi_i \dd\Phi_f \, \mathcal B^{J'}_{i\to f} \left(\mathcal B^J_{i\to f}\right)^* = (2J+1)\delta^{JJ'}\,,
+\end{equation}
+where $\dd\Phi_{i,f}$ refers to the phase-space measure associated with the initial and final states.
+In terms of $a_{i\to f}^J$, the partial-wave unitarity bounds 
+take the form
+%
+\begin{equation}\label{unitarity bound general}
+\abs*{\Re a_{i\to i}^J}\leq 1\,,
+\quad
+0\leq \Im a_{i\to i}^J\leq 2\,,
+\quad
+\abs*{a_{i\to f}^J}\leq 1\,,
+\end{equation}
+with $i \neq f$.
+Further details on the construction of the basis and on the derivation of these bounds have been given in Chapter~\ref{ch:generalizedUB}.
+
+Using this framework, we systematically computed the partial-wave unitarity bounds 
+for all dimension-six SMEFT Wilson coefficients in the Warsaw basis \cite{Grzadkowski:2010es}, reported in Appendix~\ref{app:SMEFT_conv} with the relevant conventions. 
+The resulting bounds in the single-flavor limit are summarized in Table~\ref{tab:UniBounds}.
 
 \input{tables/SMEFT_bounds}
 
+Several comments are in order. 
+In contrast to the common practice in SMEFT analyses, where only one or a few operators are considered at a time, the unitarity bound associated with each Wilson coefficient is obtained by marginalizing over all other SMEFT coefficients. 
+In practice, the marginalized bound on each coefficient is its largest value allowed by unitarity with all remaining coefficients free to vary. Since the partial-wave coefficients depend linearly on the Wilson coefficients,
+Eq.~\eqref{unitarity bound general} carves out a convex region in coefficient space,
+and each marginalized bound is the projection of this region onto the corresponding
+axis. Moreover, since all scattering channels are considered, the region is bounded. Indeed, by the amplitude/operator correspondence, the number of independent amplitudes equals that of independent operators, so that the unitarity conditions constrain every possible direction in coefficient space. Thus, the numbers in Table~\ref{tab:UniBounds} should be interpreted as conservative one-dimensional projections of the full coupled-channel unitarity region, rather than as single-operator bounds.
+This procedure is particularly relevant for coefficients that contribute to the same scattering amplitudes. This occurs for the following classes of operators:
+\begin{itemize}
+    \item $O_{\varphi \Box}$ and $O_{\varphi D}$;
+    \item All pairs involving either a field-strength tensor $X$ or its dual $\widetilde X$;
+    \item All pairs containing fermionic bilinears in the singlet or triplet (octet) representations of $SU(2)$ ($SU(3)$).
+\end{itemize}
+Representative examples are shown in Figures~\ref{fig:uni3} and \ref{fig:1-flavor unitary+sum rules}.
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1.25]{images/C_H4D2.pdf}\quad
+    \includegraphics[scale=1.25]{images/C_Hl_and_C_Hq.pdf}\\
+    \includegraphics[scale=1.25]{images/C_quqd_and_C_lequ.pdf}
+    \caption{Parameter space allowed by unitarity bounds in the plane of Wilson coefficients in the single-flavor limit.
+    In the two lower plots, we also show the dependence on the relative complex phases $\operatorname{arg}(C_{quqd}^{(1)}/C_{quqd}^{(8)})$ and $\operatorname{arg}(C_{\ell equ}^{(1)}/C_{\ell equ}^{(3)})$.}
+    \label{fig:uni3}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1.25]{images/C_lq.pdf}\qquad
+    \includegraphics[scale=1.25]{images/C_qq.pdf}\\
+    \includegraphics[scale=1.25]{images/C_qu.pdf}\qquad
+    \includegraphics[scale=1.25]{images/C_ud.pdf}
+    \caption{Parameter space allowed by unitarity bounds (blue) and spinning sum rules, discussed in Section~\ref{sec:SMEFT_sumrules}, in the cases of scalar (orange) and vector (green) dominance, 
+    in the single-flavor limit. The missing plot for the Wilson coefficients $C_{qd}^{(1,8)}$ is identical to that of $C_{qu}^{(1,8)}$.}
+    \label{fig:1-flavor unitary+sum rules}
+\end{figure}
+
+To fully exploit the power of this method, we performed a fully coupled-channel analysis for each operator. In particular, to compute the amplitude of a process mediated by a given SMEFT operator, we considered all possible initial and final states in all allowed helicity, gauge, and flavor configurations. 
+At dimension six the leading numerical constraints often arise from the lowest-multiplicity channels. Nevertheless, the general $N \to M$ formalism \cite{Bresciani:2025toe} is essential for a uniform treatment of all operator classes, including $\varphi^6$ and $\psi^2\varphi^3$, and makes the inclusion of higher-multiplicity channels automatic
+whenever they yield the leading energy growth.
+For practical purposes, we present in Table~\ref{tab:UniBounds} the unitarity bounds assuming single-flavor fermions, due to the large number of independent components arising from Wilson coefficients with multiple flavor indices.
+The multi-flavor scenario is considered in Section~\ref{sec:SMEFT_multiflavor}.
+
+Lastly, for operators of the type $X^3$ involving three gauge field strengths, the unitarity bounds were computed using amplitudes that include both the SM contribution and at most one SMEFT insertion, effectively truncating the calculation at $\mathcal{O}(1/\Lambda^2)$ at the amplitude level. 
+Contributions of order $1/\Lambda^4$ could, in principle, yield stronger bounds, especially when the gauge coupling is small; however, including them without simultaneously accounting for dimension-eight operators would be inconsistent.
+Indeed, from positivity constraints, the presence of a dimension-six operator of type $X^3$ necessarily implies the existence of a dimension-eight operator of type $X^4$, which would inevitably affect the resulting unitarity bounds; see Ref.~\cite{Ghosh:2022qqq}.
+
+Comparing the results in Table \ref{tab:UniBounds} with previous SMEFT analyses \cite{Corbett:2014ora,Corbett:2017qgl,Cao:2023qks}, we derive unitarity bounds for the complete set of four-fermion operators and for operators involving at least one gluon field, which were not covered in those works.
+With this method, such bounds are straightforward to obtain compared to alternative approaches. Moreover, the fully exploited coupled-channel analysis allows us to derive stronger bounds than those previously reported. 
+
+Overall, our bounds on purely bosonic operators agree with those in Ref.~\cite{Cao:2023qks}, except for a factor-of-two difference arising from Eq.~\eqref{unitarity bound general}, as that work conventionally imposed $|a_{i\to f}^J|\leq 2$ for the partial-wave coefficients. In contrast, the bounds on operators involving fermions exhibit larger discrepancies, which we attribute to the combined effects of the coupled-channel analysis and the marginalization procedure. In particular, operators of the type $\psi^2 X\varphi$ and $\psi^2\varphi^2 D$ show case-by-case differences of up to a factor of two. Overall, our bounds are always more stringent, except for $O_{\varphi ud}$, for which our bound is weaker by a factor of $\sqrt{2}$.
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[]{images/matrixplot.pdf}
+    \caption{Structure of scattering matrix associated with the $q\overline q \to q \overline q$ processes in the three-flavor scenario under the $U(2)^5$ flavor symmetry. The dimension of the matrix is $324=18^2$ as each $q$ or $\overline q$ contains $3\times 3\times 2$ degrees of freedom. To obtain its analytic eigenvalues, the Mathematica package \textsc{SP}$\mathbb{Q}$\textsc{R}~\cite{Chestnov:2025svg} has been used, exploiting finite-field methods.}
+    \label{fig:matrixplot}
+\end{figure}
+
+\subsection{Examples}
+
+\subsubsection{$\varphi^6$ Operator}
+
+\subsubsection{$e^2 \varphi^2 D$ Operator}
+
+\subsection{Results}
+
+\section{Spinning Sum-Rule Bounds\label{sec:SMEFT_sumrules}}
+
+\subsection{Limitations}
+
+\section{Bounds on Flavorful Four-Fermion Operators\label{sec:SMEFT_multiflavor}}
+
+\section{Phenomenological Applications\label{sec:SMEFT_pheno}}
+
+To assess the phenomenological impact of the theoretical bounds discussed above, it is useful to examine their complementarity with both current and anticipated future experimental constraints.
+
+We first analyze the unitarity bounds for purely bosonic operators. Figure~\ref{fig:histogram} shows the minimum energy scales $E_*$ at which the bounds in Table~\ref{tab:UniBounds} are violated, assuming Wilson coefficients are taken from the 95\% CL marginalized intervals of Ref.~\cite{Celada:2024mcf}, using linear (blue) and quadratic (orange) fits.
+%
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1.25]{images/histogram.pdf}
+    \caption{Minimum energy scales $E_*$ at which the unitarity bounds in Table~\ref{tab:UniBounds} are violated for each purely bosonic Wilson coefficient in Ref.~\cite{Celada:2024mcf}, using the 95\% CL marginalized intervals from linear (blue) and quadratic (orange) fits.}
+    \label{fig:histogram}
+\end{figure}
+
+Moreover, Figure~\ref{fig:3plotsa} presents both the unitarity bounds and the experimental constraints from LEP and (HL-)LHC diboson data on the Wilson coefficients of the operators $O_{\varphi q}^{(1)}$ and $O_{\varphi q}^{(3)}$.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1]{images/dibosonv2.pdf}
+    \caption{Experimental and unitarity constraints on the Wilson coefficients of the operators $O_{\varphi q}^{(1)} = \sum_{p=1,2}i(\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline q_p \gamma^\mu q_p)$ and $O_{\varphi q}^{(3)} = \sum_{p=1,2}i(\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu^I \varphi)(\overline q_p \sigma^I \gamma^\mu q_p)$. Experimental limits correspond to $95\%$ CL marginalized intervals \cite{Celada:2024mcf}.}
+    \label{fig:3plotsa}
+\end{figure}
+The experimental limits correspond to 95\% CL marginalized intervals obtained from a linear fit \cite{Celada:2024mcf}. As shown, the unitarity bounds --- scaling as $(\sqrt{s}/4\,\mathrm{TeV})^2$ --- are significantly stronger than those from LEP alone, but remain weaker than the constraints derived from the combined LEP and (HL-)LHC data.
+
+As a third example, we consider the global analysis of LHC Run II data in the top sector induced by the four-quark operators $O_{Qq}^{1,8}$ and $O_{Qq}^{3,8}$, where the experimental limits are obtained from a quadratic fit \cite{Brivio:2019ius}.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1]{images/top.pdf}
+    \caption{Experimental and unitarity constraints on the Wilson coefficients of the 
+    operators $O_{Qq}^{1,8} = \sum_{p=1,2}(\overline q_3 \gamma_\mu T^A q_3)(\overline q_p \gamma^\mu T^A q_p)$ and $O_{Qq}^{3,8} = \sum_{p=1,2}(\overline q_3 \gamma_\mu T^A \sigma^I q_3)(\overline q_p \gamma^\mu T^A \sigma^I q_p)$. 
+    Experimental limits correspond to $68\%$ CL and are derived from a quadratic fit \cite{Brivio:2019ius}. Here, the sum rules select the region where $C_{Qq}^{1,8}-(1\pm 2)C_{Qq}^{3,8}$ are positive (negative) for scalar (vector) completions.}
+    \label{fig:3plotsb}
+\end{figure}
+Most of the measurements involve final states with a top-quark pair, including kinematic distributions, the charge asymmetry, and associated top-pair production with a weak boson. As shown in Figure~\ref{fig:3plotsb}, the unitarity bounds are quite competitive with the LHC experimental limits. Interestingly, the inclusion of sum rules --- corresponding to an underlying scalar or vector tree-level mediator of the four-fermion interactions --- selects complementary regions of the parameter space, thereby providing insight into the nature of the underlying NP dynamics.
+
+As a last example, we consider the comprehensive analysis of electroweak, flavor, and collider constraints on semileptonic 
+four-fermion operators $[O_{\ell q}^{(1)}]_{3333}$ and $[O_{\ell q}^{(3)}]_{3333}$ in the $U(2)^5$ scenario of Ref.~\cite{Allwicher:2023shc}, where NP predominantly couples to the third generation. Also in this case, as shown in Figure~\ref{fig:3plotsc}, the unitarity bounds and the sum-rule constraints are highly complementary and competitive with the experimental limits.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=1]{images/flavor.pdf}
+    \caption{Experimental and unitarity constraints on the Wilson coefficients of the 
+    operators $[O_{\ell q}^{(1)}]_{3333} = (\overline \ell_3 \gamma^\mu \ell_3)(\overline q_3 \gamma_\mu q_3)$ and $[O_{\ell q}^{(3)}]_{3333} = (\overline \ell_3 \gamma^\mu \sigma^I \ell_3)(\overline q_3 \gamma_\mu \sigma^I q_3)$.
+    Experimental limits correspond to $68\%$ CL \cite{Allwicher:2023shc}.}
+    \label{fig:3plotsc}
+\end{figure}
+In particular, it is noteworthy that the $1\sigma$ region of the global fit lies outside the regions preferred by the sum rules. 
+If the current experimental situation is confirmed and further strengthened, this would favor, for instance, an underlying $t$-channel UV completion.
+
+These experimental contours are not recomputed by imposing an additional unitarity cut; the unitarity bounds should instead be interpreted as a theoretical consistency overlay.
+
+As a final remark, the unitarity bounds constrain the
+combination $\hat s|C|/\Lambda^2$, so that the
+corresponding limits become increasingly stringent at
+larger values of the partonic center-of-mass energy
+$\sqrt{\hat s}$. Since perturbative unitarity determines
+the range of validity of the EFT, the relevant scale
+entering the bound is $\sqrt{\hat s}$, rather than the
+collider center-of-mass energy itself. This is
+particularly relevant for the HL-LHC: although it
+operates at the same collider energy as the LHC, its
+much larger integrated luminosity enables precision
+measurements deeper into the high-energy tails of
+differential distributions, thereby extending the range
+of partonic scales over which the SMEFT description can
+be meaningfully tested. Accordingly, while most collider
+constraints discussed here probe partonic
+center-of-mass energies of order
+$\sqrt{\hat s}\sim 2$~TeV, we display the unitarity
+bounds at $\sqrt{\hat s}=4$~TeV as a
+representative benchmark for the multi-TeV regime
+accessible in HL-LHC measurements. In realistic
+analyses with a broad partonic energy spectrum, the
+unitarity condition should instead be evaluated at the
+value of $\sqrt{\hat s}$ relevant for each event or
+kinematic bin, thereby defining the maximum hard scale
+up to which the SMEFT description remains
+perturbatively self-consistent.
+
+\section{Conclusions\label{sec:SMEFT_conclusions}}
+
 \begin{subappendices}
 
-\section{Conventions}
-In Table \ref{tab:WarsawBasis} we report the baryon-number-conserving dimension-six operators of the SMEFT in the Warsaw basis \cite{Grzadkowski:2010es}.
+\section{Conventions\label{app:SMEFT_conv}}
+In Table~\ref{tab:WarsawBasis} we report the baryon-number-conserving dimension-six operators of the SMEFT in the Warsaw basis \cite{Grzadkowski:2010es}.
 %
 \input{tables/SMEFT_operators}
 
-The relevant conventions are as follows: $\widetilde \varphi^j = \epsilon_{jk} (\varphi^k)^*$ (with $\epsilon^{12}=1$), $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu \varphi = \varphi^\dagger D_\mu \varphi - (D_\mu \varphi)^\dagger \varphi$ and $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu^I \varphi = \varphi^\dagger \sigma^I D_\mu \varphi - (D_\mu \varphi)^\dagger \sigma^I \varphi$, dual field-strength tensors are defined as $\widetilde X_{\mu\nu} = \frac{1}{2}\epsilon_{\mu\nu\rho\sigma}X^{\rho\sigma}$ (with $X=B,W^I,G^A$ and $\epsilon^{0123} = 1$), $\lambda^A_{\alpha\beta}$ are the Gell-Mann matrices and $\sigma^I_{jk}$ are the Pauli matrices, $T_{\alpha\beta}^A = \frac{1}{2}\lambda^A_{\alpha\beta}$ are the $SU(3)$ generators, and $\sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]$.
-The Minkowski metric, whose signature is relevant for the spinning sum rules, is $g_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$.
+The relevant conventions are as follows: $\widetilde \varphi^j = \epsilon^{jk} (\varphi^k)^*$ (with $\epsilon^{12}=1$), $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu \varphi = \varphi^\dagger D_\mu \varphi - (D_\mu \varphi)^\dagger \varphi$ and $\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu^I \varphi = \varphi^\dagger \sigma^I D_\mu \varphi - (D_\mu \varphi)^\dagger \sigma^I \varphi$, dual field-strength tensors are defined as $\widetilde X_{\mu\nu} = \frac{1}{2}\epsilon_{\mu\nu\rho\sigma}X^{\rho\sigma}$ (with $X=B,W^I,G^A$ and $\epsilon^{0123} = 1$), $\lambda^A_{\alpha\beta}$ are the Gell-Mann matrices and $\sigma^I_{jk}$ are the Pauli matrices, $T_{\alpha\beta}^A = \frac{1}{2}\lambda^A_{\alpha\beta}$ are the $SU(3)$ generators, and $\sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]$.
+The Minkowski metric, whose signature is relevant for the spinning sum rules, is $g_{\mu\nu} = \operatorname{diag}(+1,-1,-1,-1)$.
 
 \section{Further Details on Spinning Sum Rules\label{app: sum rules}}
 
@@ -56,7 +231,7 @@ rules discussed in the main text and Appendix~\ref{app: sum rules}, we match a
 representative set of single-field, tree-level UV completions \cite{deBlas:2017xtg}
 onto the third-generation semileptonic operators $[O_{\ell q}^{(1)}]_{3333}$ and
 $[O_{\ell q}^{(3)}]_{3333}$, whose unitarity and sum-rule constraints are shown in
-Figure~\ref{fig:3plots} (right). The results are collected in Table~\ref{tab:models}.
+Figure~\ref{fig:3plotsc}. The results are collected in Table~\ref{tab:models}.
 %
 \input{tables/UVcompletions}
 
@@ -69,7 +244,7 @@ Explicitly, the relevant combinations of Table~\ref{tab:sum_rules},
 $[C_{\ell q}^{(1)}]_{3333} \pm [C_{\ell q}^{(3)}]_{3333}$, are both non-negative for
 $\omega_1$ and $\zeta$, and both non-positive for $\mathcal{U}_2$ and $\mathcal{X}$,
 so that the scalar (vector) leptoquarks are correctly placed in the scalar-
-(vector-) dominated region of Figure~\ref{fig:3plots} (right).
+(vector-) dominated region of Figure~\ref{fig:3plotsc}.
 
 By contrast, the color-singlet vectors $\mathcal{B} \sim (1,1)_0$ and
 $\mathcal{W} \sim (1,3)_0$ couple separately to the lepton and quark currents and are exchanged in the $t$-channel. The boundary terms then no longer vanish, modifying Eq.~\eqref{eq: sum rules master equation}, and the sum-rule

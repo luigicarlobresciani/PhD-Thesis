@@ -1,18 +1,17 @@
-\begin{table}[tb]
+\begin{table}[tbp]
     \centering
     \renewcommand{\arraystretch}{1.3}
     \begin{NiceTabular}{cc|ccc|ccc|c}
-         & & $\phi F^2$ & $\psi^2 F$ & $\psi^2\phi^2$ & $\phi \overline F^2$ & $\overline\psi^2 \overline F$ & $\overline \psi^2\phi^2$ & $\phi^5$ \\
-         & $(w,\wb)$& $(1,5)$ & $(1,5)$ & $(3,5)$ & $(5,1)$ & $(5,1)$ & $(5,3)$ & $(5,5)$
-         \\ \hline
-         $\phi F^2$&$(1,5)$&&&\ccol&&&\ccol$\mathsf{H}$&$\mathsf{L}$\\
-         $\psi^2 F$&$(1,5)$&&&\ccol&&&\ccol$\mathsf{H}$&$\mathsf{L}$\\
-         $\psi^2 \phi^2$&$(3,5)$&&&&&&&\ccol\\ \hline
-         $\phi \overline F^2$&$(5,1)$&&&\ccol$\mathsf{H}$&&&\ccol&$\mathsf{L}$\\
-         $\overline \psi^2 \overline F$&$(5,1)$&&&\ccol$\mathsf{H}$&&&\ccol&$\mathsf{L}$\\
-         $\overline \psi^2 \phi^2$&$(5,3)$&&&&&&&\ccol\\ \hline
-         $\phi^5$&$(5,5)$&&&&&&&\\
+         & & $\phi F^2$ & $\psi^2 F$ & $\psi^2 \phi^2$ & $\phi \overline F^2$ & $\overline\psi^2 \overline F$ & $\overline\psi^2 \phi^2$ & $\phi^5$ \\
+         & $(w,\wb)$ & $(1,5)$ & $(1,5)$ & $(3,5)$ & $(5,1)$ & $(5,1)$ & $(5,3)$ & $(5,5)$ \\ \hline
+        $\phi F^2$ & $(1,5)$ & $(1)$ & $(1)$ & $(2)$ & $0_{(1)}$ & $0_{(1)}$ & \new $0_{(2)}$ & $(3)$ \\
+        $\psi^2 F$ & $(1,5)$ & $(1)$ & $(1)$ & $(2)$ & $0_{(1)}$ & $0_{(1)}$ & \new $0_{(2)}$ & \new $\times_{(3)}$ \\
+        $\psi^2 \phi^2$ & $(3,5)$ & $(1)$ & $(1)$ & $(1)$ & $0_{(1)}$ & $0_{(1)}$ & $y^2_{(1)}$ & $(2)$ \\ \hline
+        $\phi \overline F^2$ & $(5,1)$ & $0_{(1)}$ & $0_{(1)}$ & \new $0_{(2)}$ & $(1)$ & $(1)$ & $(2)$ & $(3)$ \\
+        $\overline\psi^2 \overline F$ & $(5,1)$ & $0_{(1)}$ & $0_{(1)}$ & \new $0_{(2)}$ & $(1)$ & $(1)$ & $(2)$ & \new $\times_{(3)}$ \\
+        $\overline\psi^2 \phi^2$ & $(5,3)$ & $0_{(1)}$ & $0_{(1)}$ & $\overline y^2_{(1)}$ & $(1)$ & $(1)$ & $(1)$ & $(2)$ \\ \hline
+        $\phi^5$ & $(5,5)$ & $(1)$ & $\times_{(1)}$ & $(1)$ & $(1)$ & $\times_{(1)}$ & $(1)$ & $(1)$ \\
     \end{NiceTabular}
-    \caption{Structure of the two-loop anomalous-dimension matrix for dimension-five operators. The entry in row $\mathcal O_i$ and column $\mathcal O_j$ corresponds to $\gamma^{(2)}_{ij}$. Entries labeled $\mathsf{L}$ vanish by the length selection rule \cite{Bern:2019wie}. The shaded cells define the scheme-independent region $\ell_i=\ell_j-1$, which is completely determined by three-particle cuts of tree-level objects. Within this region, $\mathsf{H}$ denotes entries that vanish by the helicity selection rule of \Eq{eq:dl1}.}
+    \caption{Structure of the anomalous-dimension matrix for general dimension-five operators. The entry in row $\mathcal O_i$ and column $\mathcal O_j$ refers to $\gamma^{(L)}_{ij}$ at the loop order $L=\max(1,1+\ell_j-\ell_i)$, the lowest order allowed by the length selection rule \cite{Bern:2019wie}. At that order the mixing is determined by $(L+1)$-particle cuts of tree-level objects. Entries $0_{(L)}$ vanish by the helicity selection rule of \Eq{eq:gen}. Entries $y^2_{(L)}$ and $\overline y^2_{(L)}$ vanish as well unless non-holomorphic Yukawa couplings are present. $\times_{(L)}$ marks entries that are not forbidden by \Eq{eq:gen} but for which no $(L+1)$-particle cut exists. $(L)$ denotes entries that need not vanish. Moreover, cells shaded in gray vanish at two loops in the holomorphic scheme, as implied by \Eq{eq:dl2} (first appearing at dimension six), while those shaded in blue correspond to previously unknown scheme-independent zeros.}
     \label{tab:dim5}
 \end{table}

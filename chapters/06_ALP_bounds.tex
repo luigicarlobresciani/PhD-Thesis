@@ -1,4 +1,4 @@
-\chapter{Unitarity and Positivity Bounds in the Axion-Like Particle Effective Field Theory}
+\chapter{Unitarity and Positivity Bounds in the Axion-Like Particle Effective Field Theory\label{ch:ALP_bounds}}
 
 \begin{flushright}
 \small
@@ -17,9 +17,64 @@ L.~C.~Bresciani, G.~Levati and P.~Paradisi,\\
 
 \section{Introduction}
 
-\lb{Insert incipit and outline of the chapter.}
+Axion-like particles (ALPs) were introduced in Chapter~\ref{ch:ALP_RGEs} as light spin-zero bosons
+arising in several extensions of the SM as the pseudo-Nambu--Goldstone bosons (pNGBs) of a global
+symmetry spontaneously broken at energies much larger than the electroweak
+scale~\cite{Jaeckel:2010ni,Marsh:2015xka,Irastorza:2018dyq,DiLuzio:2020wdo}. They generalize the QCD
+axion, since their mass and their symmetry-breaking scale are independent parameters to be probed by
+experiment. ALPs lighter than the MeV scale can leave their imprints in cosmological and
+astrophysical searches, while larger masses are explored at colliders and through a variety of rare
+processes~\cite{DiLuzio:2023ndz}. Their interactions with SM fields are conventionally described in a
+model-independent way by effective operators, starting at mass dimension five~\cite{Georgi:1986df}.
+The complete set of operators invariant under the shift symmetry has been systematically classified
+--- up to mass dimension eight --- in Refs.~\cite{Song:2023lxf,Grojean:2023tsd,Bertuzzo:2023slg}, in
+part by means of the same on-shell techniques~\cite{DeAngelis:2022qco,Li:2022tec} employed throughout
+this thesis.
 
-\section{Effective Field Theory for Axion-Like Particles}
+The pNGB nature of ALPs forbids non-derivative interactions with SM fields. As a result, ALP
+amplitudes exhibit an inherent growth with energy, which makes ALP EFTs particularly prone to strong
+unitarity constraints and singles them out as a natural arena for the partial-wave unitarity bounds
+formulated in Chapter~\ref{ch:generalizedUB}. The energy growth becomes steeper as the dimensionality
+of the operator increases, so that the constraints tighten with the mass dimension, while the
+expected phenomenological impact of the operator decreases. The two effects do not compensate each
+other, and higher-dimensional interactions can dominate physical observables over wide regions of the
+parameter space~\cite{Bertuzzo:2023slg}, which is what makes bounds on them worth deriving.
+
+The aim of this chapter is to apply the method of Chapter~\ref{ch:generalizedUB} extensively to ALP
+EFTs up to mass dimension eight, improving and generalizing previous results in the literature. We
+revisit the bounds of Ref.~\cite{Brivio:2021fog} on the dimension-five operators and extend them to
+weak-violating ALP interactions, which exhibit energy enhancements in several processes such as
+charged-meson and $W$-boson decays~\cite{Altmannshofer:2022ckw}. We then address the bounds on the
+dimension-seven and dimension-eight operators of
+Refs.~\cite{Song:2023lxf,Grojean:2023tsd,Bertuzzo:2023slg}.
+
+Finally, we evaluate the complete set of positivity bounds for ALP EFTs and discuss their
+complementarity and interplay with the partial-wave unitarity constraints, along the lines of
+Chapter~\ref{ch:generalizedUB}. Positivity bounds follow from requiring the EFT to be the low-energy
+limit of a unitary, local, and causal quantum field theory~\cite{Adams:2006sv}, as derived in
+Section~\ref{sec:analyticity}, and provide a powerful handle on the parameter space of consistent
+EFTs. They have been applied across a broad range of frameworks, including the
+SMEFT~\cite{Bellazzini:2018paj,Zhang:2020jyn,Bonnefoy:2025uzf,Bi:2019phv,Remmen:2019cyz,%
+Remmen:2020vts,Fuks:2020ujk,Yamashita:2020gtt,Gu:2020ldn,Bonnefoy:2020yee,Henriksson:2021ymi,%
+Zhang:2021eeo,Chala:2021wpj,Chala:2023jyx,Chala:2023xjy,Li:2022rag,Ghosh:2022qqq,Li:2022aby,%
+Gu:2023emi,Chen:2023bhu,Ye:2024rzr,Ye:2025zhs,Davighi:2023acq}, the Higgs
+EFT~\cite{Remmen:2024hry,Chakraborty:2024ciu}, and gravitational
+theories~\cite{Cheung:2016yqr,Bellazzini:2017fep,deRham:2017xox,Alberte:2020jsk,Hong:2023zgm,%
+Alviani:2024sxx,Tokuda:2020mlf,Alberte:2020bdz,Chiang:2022jep,deRham:2022gfe,Caron-Huot:2021rmr,%
+Alberte:2021dnj,Caron-Huot:2022ugt}.
+
+The chapter is organized as follows. In Section~\ref{sec:ALPUBeft} we present the ALP EFT, including
+effective operators up to mass dimension eight. In Section~\ref{sec:ALPUBunitarity} we systematically
+present the partial-wave unitarity bounds in our scenario, emphasizing the important role of a
+coupled-channel analysis. In Section~\ref{sec:positivity} we discuss positivity bounds for
+dimension-eight operators and their complementarity with partial-wave unitarity bounds.
+Section~\ref{sec:ALPUBpheno} is dedicated to some phenomenological applications of our results. Our
+conclusions are discussed in Section~\ref{sec:ALPUBconclusions}. Finally, in
+Appendix~\ref{app:ALPUBamplitudes} we list the relevant amplitudes to obtain the most stringent
+partial-wave unitarity bounds reported in the main text, while in Appendix~\ref{app:UVext} we test
+the obtained positivity bounds against a specific ultraviolet extension.
+
+\section{Effective Field Theory for Axion-Like Particles\label{sec:ALPUBeft}}
 
 ALP interactions with SM fields 
 are generated starting from dimension-five effective operators \cite{Georgi:1986df}.
@@ -35,8 +90,7 @@ The complete set of operators invariant under a shift symmetry has been systemat
 \input{tables/ALP_dim7}
 \input{tables/ALP_dim8}
 
-\section{Unitarity Bounds}
-\label{unitarity_bounds}
+\section{Unitarity Bounds\label{sec:ALPUBunitarity}}
 
 An interesting framework for performing a detailed analysis of unitarity constraints is that of EFTs for ALPs. 
 Indeed, the pNGB nature of the ALP forces its interactions with SM fields to be of derivative type and, therefore, to grow with the energy.
@@ -693,7 +747,11 @@ or, equivalently,
     0 &\ge\det(C_{\psi^2 H^2 D^3}^{(1)}+C_{\psi^2 H^2 D^3}^{(2)})\,,
 \end{align}
 for every $\psi = \ell,e,q,u,d$,
-which represent a generalization of the results presented in \cite{Chala:2023xjy} that accounts for non-vanishing off-diagonal entries of $C_{\psi^2 H^2 D^3}^{(1)}$ and $C_{\psi^2 H^2 D^3}^{(2)}$.\footnote{According to the results presented in \cite{Chala:2021wpj,Chala:2023jyx,Chala:2023xjy,Liao:2025npz}, one can notice that the positivity bound in Eq.~\eqref{eq:pos_smeft_psi2H2D3} is consistent with the fact that the one-loop renormalization group equation for the combination $C_{\psi^2 H^2 D^3}^{(1)}+C_{\psi^2 H^2 D^3}^{(2)}$, if restricted to the terms stemming from double insertions of dimension-six operators, is positive semidefinite. In fact, from \cite{Bakshi:2024wzz}, we have that, e.g., $\dv[]{}{\ln\mu}(C_{e^2 H^2 D^3}^{(1)pr}+C_{e^2 H^2 D^3}^{(2)pr}) \supset \frac{1}{4\pi^2} C_{He}^{pq}C_{He}^{qr}$, which is positive semidefinite since $C_{He}$ is a Hermitian matrix, being the Wilson coefficient associated with the operator $Q_{He} = i(H^\dagger \overset{\leftrightarrow}{D}_\mu H)(\overline e \gamma^\mu e)$ \cite{Grzadkowski:2010es}. One can check that the same is true for all the other $\psi$.}
+which represent a generalization of the results presented in \cite{Chala:2023xjy} that accounts for non-vanishing off-diagonal entries of $C_{\psi^2 H^2 D^3}^{(1)}$ and $C_{\psi^2 H^2 D^3}^{(2)}$.\footnote{According to the results presented in \cite{Chala:2021wpj,Chala:2023jyx,Chala:2023xjy,Liao:2025npz}, one can notice that the positivity bound in Eq.~\eqref{eq:pos_smeft_psi2H2D3} is consistent with the fact that the one-loop renormalization group equation for the combination $C_{\psi^2 H^2 D^3}^{(1)}+C_{\psi^2 H^2 D^3}^{(2)}$, if restricted to the terms stemming from double insertions of dimension-six operators, is positive semidefinite. In fact, from \cite{Bakshi:2024wzz}, we have that, e.g.,
+\begin{equation}
+    \mu\dv[]{}{\mu}(C_{e^2 H^2 D^3}^{(1)pr}+C_{e^2 H^2 D^3}^{(2)pr}) \supset \frac{1}{4\pi^2} C_{He}^{pq}C_{He}^{qr}\,,
+\end{equation}
+which is positive semidefinite since $C_{He}$ is a Hermitian matrix, being the Wilson coefficient associated with the operator $Q_{He} = i(H^\dagger \overset{\leftrightarrow}{D}_\mu H)(\overline e \gamma^\mu e)$ \cite{Grzadkowski:2010es}. One can check that the same is true for all the other $\psi$.}
 
 We note that the positivity bounds derived above are obtained at tree level. In the SMEFT context, it is known that one-loop corrections can
 quantitatively modify
@@ -710,8 +768,7 @@ derived here provide
 the leading-order constraints implied by analyticity, unitarity, and
 crossing symmetry.
 
-\section{Phenomenological Applications}
-\label{pheno} 
+\section{Phenomenological Applications\label{sec:ALPUBpheno}}
 
 In this section, we provide a few illustrative examples to emphasize the importance of imposing partial-wave unitarity bounds. As we will show, the size of physical effects in several observables can be drastically reduced once we assume perturbative unitarity to hold at a given energy scale.
 
@@ -739,7 +796,7 @@ The relevance of higher-dimensional ALP operators can be nicely illustrated thro
 In Figure~\ref{fig:crosssection}, we show the cross section for this process in the high-energy limit. The relevant Wilson coefficients are parameterized as $\coef{5}{\phi \ell e H}{ll} = i \, y_l/f$ and $\coef{7}{\phi \ell e H}{(1)ll} = \coef{7}{\phi \ell e H}{(2)ll} = 1/f^3$, where $f$ can be interpreted as the ALP decay constant.
 
 In the high-energy limit, the cross section of $l^+ l^- \to \phi h$ 
-is $\sigma = \sigma^{(5)} + \sigma^{(7)}$, where
+is $\sigma = \sigma^{(5)} + \sigma^{(7)}$, where\footnote{The interference term is absent since $\Re{\coef{5}{\phi \ell e H}{ll}\coef{7}{\phi \ell e H}{(1,2)ll}} = 0$ for the benchmark parameterization of the Wilson coefficients.}
 %
 \begin{equation}
     \sigma^{(7)} = \frac{s^2}{768\pi}\left[\abs{\coef{7}{\phi \ell e H}{(1)ll}}^2+\abs{\coef{7}{\phi \ell e H}{(2)ll}}^2+\Re{\coef{7}{\phi \ell e H}{(1)ll}\,\coef{7}{\phi \ell e H}{(2)ll *}}\right],
@@ -750,7 +807,7 @@ is $\sigma = \sigma^{(5)} + \sigma^{(7)}$, where
 On the other hand, the partial-wave unitarity bounds lead to the following conditions 
 %
 \begin{equation}
-    \sigma^{(7)} \le \frac{5\pi}{3s}\,,\qquad\qquad
+    \sigma^{(7)} \le \frac{5\pi}{3s}\,,\qquad
     \sigma^{(5)} \le \frac{\pi}{s}\,,
 \end{equation}
 %
@@ -822,7 +879,7 @@ Dedicated analyses for other rare $W$ decays by CMS could improve the bound on t
 
 As shown in Figure~\ref{fig:WV_gee}, unitarity bounds already exclude large regions of the parameter space for $\sqrt{s} = 1$~TeV and are typically stronger than the current experimental bounds on charged meson as well as $W$ boson decays.
 
-\section{Conclusions}
+\section{Conclusions\label{sec:ALPUBconclusions}}
 
 Axion-like particles (ALPs) are generic pseudo-Nambu--Goldstone bosons (pNGBs) emerging from the spontaneous breaking of some global symmetry 
 above the electroweak scale. The pNGB nature of ALPs forces their interactions with Standard Model fields to be derivative. Therefore, ALP interactions exhibit an inherent growth with the energy, possibly leading to the breakdown of perturbative unitarity at some large energy scale. 

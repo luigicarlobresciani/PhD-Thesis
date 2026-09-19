@@ -1,0 +1,894 @@
+\documentclass[a4paper,11pt]{article} 
+
+\pdfoutput=1
+
+\usepackage[x11names, svgnames, rgb, table]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{slashed}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{afterpage}
+\usepackage{physics}
+\usepackage{comment}
+\usepackage{emptypage}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+\usepackage{appendix}
+\usepackage{bbold}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{setspace}
+\usepackage{pifont}
+\usepackage{xfrac}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage[export]{adjustbox}
+\usepackage{amsthm}
+\usepackage{lmodern}
+
+\usepackage{colortbl}
+\usepackage{multirow}
+% Light gray for header rows
+\definecolor{hdrcolor}{gray}{0.9}
+%\definecolor{seccolor}{gray}{0.94}
+
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage{jheppub} 
+
+\hypersetup{
+    pdfencoding=unicode,
+	colorlinks=true,
+	urlcolor=RoyalBlue,
+	linkcolor=Maroon,
+	citecolor=ForestGreen,
+    pdftitle={},
+	pdfauthor={},
+	pdfdisplaydoctitle=true,
+	pdfstartview=FitH
+}
+
+\makeatletter\g@addto@macro\bfseries{\boldmath}\makeatother
+
+\newcommand{\agl}[2]{\langle#1 #2 \rangle}
+\newcommand{\sqr}[2]{\lbrack #1 #2 \rbrack}
+\newcommand{\rep}[1]{\mathbf{#1}}
+\newcommand{\repbar}[1]{\overline{\mathbf{#1}}}
+\newcommand{\txt}[1]{\textup{#1}}
+\newcommand{\sls}[1]{\slashed{#1}}
+\newcommand{\tildee}[1]{\widetilde{#1}}
+\newcommand{\ketsqr}[1]{|#1\rbrack}
+
+\newcommand{\Pij}[3]{\delta_{#1 #3}\delta_{#3 #2}}
+
+\newcommand{\pp}[1]{{\color{violet} #1}}
+\newcommand{\as}[1]{{\color{red} #1}}
+\newcommand{\lb}[1]{{\color{blue} #1}}
+
+\allowdisplaybreaks
+
+\title{Unitarity bounds and spinning sum rules in the flavorful SMEFT}
+
+\author[a,b]{Luigi C.~Bresciani,}
+\author[a,b]{Paride Paradisi,}
+\author[a,b,c]{Andrea Sainaghi}
+\affiliation[a]{Dipartimento di Fisica e Astronomia ``G.~Galilei'', Università degli Studi di Padova,\\Via F.~Marzolo 8,
+I-35131 Padova, Italy}
+\affiliation[b]{Istituto Nazionale di Fisica Nucleare, Sezione di Padova,\\Via F.~Marzolo 8,
+I-35131 Padova, Italy}
+\affiliation[c]{Physik-Institut, Universit\"at Z\"urich,\\Winterthurerstrasse 190, CH-8057 Z\"urich, Switzerland}
+
+\emailAdd{luigicarlo.bresciani@phd.unipd.it}
+\emailAdd{paride.paradisi@unipd.it}
+\emailAdd{andrea.sainaghi@phd.unipd.it}
+
+\abstract{[Abstract]}
+
+\begin{document}
+\maketitle
+\pagestyle{myplain}
+
+\clearpage
+\section{Introduction}
+[Introduction]
+
+\clearpage
+\section{Partial-wave unitarity bounds}
+%
+\subsection{Review of the method}
+To compute the unitarity bounds, we adopt the method developed in \cite{Bresciani:2025toe}, which allows one to project a generic scattering amplitude $\ket*{\mathcal{A}_{i\to f}}$ onto a kinematic basis $\ket*{\mathcal{B}^J_{i\to f}}$ with definite angular momentum $J$, as follows:
+\begin{equation}
+\ket*{\mathcal{A}_{i\to f}}=\sum_J a_{i\to f}^J \ket*{\mathcal{B}_{i\to f}^J}\,,
+\end{equation}
+where $a_{i\to f}^J$ denote the partial-wave coefficients and the elements of the kinematic basis are normalized as 
+\begin{equation}
+    \langle \mathcal B^J_{i\to f}|\mathcal B^{J'}_{i\to f}\rangle = \int \dd\Phi_i\, \dd\Phi_f \, \mathcal B^{J'}_{i\to f} \left(\mathcal B^J_{i\to f}\right)^* = (2J+1)\delta^{JJ'}\,,
+\end{equation}
+where $\dd\Phi_{i,f}$ refers to the phase-space measure associated with the initial and final states.\footnote{For massless particle, the phase-space volume is normalized as $\Phi_n = \frac{1}{8\pi(n-1)!(n-2)!}\big(\frac{\sqrt{s}}{4\pi}\big)^{2n-4}$.}
+In terms of $a_{i\to f}^J$, the partial-wave unitarity bounds 
+take the form
+%
+\begin{equation}\label{unitarity bound general}
+\abs*{\Re a_{i\to i}^J}\leq 1\,,
+\quad
+0\leq \Im a_{i\to i}^J\leq 2\,,
+\quad
+\abs*{a_{i\to f}^J}\leq 1\,,
+\end{equation}
+with $i \neq f$.
+Further details on the construction of the basis and on the derivation of these bounds can be found in \cite{Bresciani:2025toe,Bresciani:2025ojh,Jiang:2020rwz,Shu:2021qlr}. 
+
+Here we apply the method to compute the unitarity bounds associated to a couple of cases.
+As a matter of notation, we label each particle as $N_I$, where $N=1,2,3,...$ is the momentum label, while $I$ represent gauge quantum numbers. Also, to represent the antiparticle we put a bar on the momentum label $\bar{N}_I$. 
+
+\subsubsection{Example: \texorpdfstring{$O_\varphi$}{Ophi} operator}\label{sec:example O_phi}
+First, lets do for $O_\varphi=(\varphi^\dagger \varphi)^3$. Here we have $6$ particles involved, which makes the method very useful. We can consider $3\to3$ or $2\to 4$ processes. For $3\to3$ processes we have four possible amplitudes which read as follows
+\begin{comment}
+\begin{align}
+    \begin{aligned}
+        &\mathcal{A}(1_a,2_b,3_c;4_d,5_e,6_f)=\mathcal{A}(\bar{1}_a,\bar{2}_b,\bar{3}_c;\bar{4}_d,\bar{5}_e,\bar{6}_f)\\
+        &=6 C_\varphi\Big[\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}\Big]
+    \end{aligned}
+    \begin{aligned}
+        &\mathcal{A}(1_a,2_b,\bar{3}_c;4_d,5_e,\bar{6}_f)=\mathcal{A}(\bar{1}_a,\bar{2}_b,3_c;\bar{4}_d,\bar{5}_e,3_f)\\
+        &=6 C_\varphi\Big[\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{be}\delta^{cf}\Big]
+    \end{aligned}
+\end{align}
+\end{comment}
+\begin{align}
+    &\mathcal{A}(1_a,2_b,3_c\to 4_d,5_e,6_f)=\mathcal{A}(\bar{1}_a,\bar{2}_b,\bar{3}_c\to \bar{4}_d,\bar{5}_e,\bar{6}_f)=36\,\frac{C_\varphi}{\Lambda^2}\,\delta^{a(d|}\delta^{b|e|}\delta^{c|f)}\\
+    &\mathcal{A}(1_a,2_b,\bar{3}_c\to 4_d,5_e,\bar{6}_f)=\mathcal{A}(\bar{1}_a,\bar{2}_b,3_c\to \bar{4}_d,\bar{5}_e,6_f)=36\,\frac{C_\varphi}{\Lambda^2}\,\delta^{a(d|}\delta^{b|e|}\delta^{f|c)}
+\end{align}
+where $a,b,c,d,e,f=1,2$ are $\mathrm{SU}(2)_L$ indices and 
+\begin{equation}
+    \delta^{a(d|}\delta^{b|e|}\delta^{c|f)}=\frac{1}{6}\Big[\delta^{ad}\delta^{be}\delta^{cf}+\delta^{ad}\delta^{bf}\delta^{ce}+\delta^{ae}\delta^{bd}\delta^{cf}+\delta^{ae}\delta^{bf}\delta^{cd}+\delta^{af}\delta^{bd}\delta^{ce}+\delta^{af}\delta^{be}\delta^{cd}\Big]
+\end{equation}
+For $2\to4$ processes (and related $4\to2$ using crossing symmetry) we have three possible amplitudes which are 
+\begin{align}
+    &\mathcal{A}(1_a,2_b\to 3_c,4_d,5_e,\bar{6}_f)=\mathcal{A}(\bar{1}_a,\bar{2}_b\to \bar{3}_c,\bar{4}_d,\bar{5}_e,6_f)=36\,\frac{C_\varphi}{\Lambda^2}\,\delta^{a(c|}\delta^{b|d|}\delta^{f|e)}\\
+    &\mathcal{A}(1_a,\bar{2}_b\to 3_c,4_d,\bar{5}_e,\bar{6}_f)=36\,\frac{C_\varphi}{\Lambda^2}\,\delta^{a(b|}\delta^{e|c|}\delta^{f|d)}
+\end{align}
+Everything is at $J=0$ as all particles are scalars. Also, the phase space integration is trivial, and everything is matched into the basis elements $\mathcal{B}_{i\to f}^0$ with helicities $h_i=0$ for all particles. We have
+\begin{equation}\label{eq: basis element J=0 full h=0}
+    \mathcal{B}_{3\to 3}^0=\frac{256\pi^3}{s}\,,\qquad \mathcal{B}_{2\to 4}^0=\mathcal{B}_{4\to 2}^0=\frac{256\pi^3\sqrt{3}}{s}\,.
+\end{equation}
+The latter basis element is the inverse of the geometric mean between the 2- and 4-body phase-space volumes, i.e., $\mathcal{B}_{2\to 4}^0 = 1/\sqrt{\Phi_2 \Phi_4}$.
+Also, from a coupled-channel point of view, all amplitudes are in block-diagonal piece. For instance the block $\varphi\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag$ is in direct product to the block $\varphi\varphi\varphi\to \varphi\varphi\varphi$ or to any of the $2\to4$ and $4\to 2$ cases. We can therefore study each piece separately. For instance for $\varphi\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag$ we find the following partial wave coefficient
+\begin{equation}
+    a^0_{\varphi\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag}=\frac{s\,C_\varphi}{256\pi^3\Lambda^2}\begin{pmatrix}
+        18 & 0 & 0 & 6\sqrt{2} & 0 & 0 \\ 0 & 6 & 0 & 0 & 0 & 0 \\ 0 & 0 & 12 & 0 & 0 & 6\sqrt{2} \\ 6\sqrt{2} & 0 & 0 & 12 & 0 & 0 \\ 0 & 0 & 0 & 0 & 6 & 0 \\ 0 & 0 & 6\sqrt{2} & 0 & 0 & 18
+    \end{pmatrix}
+\end{equation}
+where the matrix for the coupled-channel analysis is $6\times 6$ as we have six independent $\mathrm{SU}(2)_L$ indices combinations, namely
+\begin{equation}
+    (a,b,c)\in\{(1,1),(1,2),(2,2)\}\otimes \{1,2\}
+\end{equation}
+as $a,b$ are associated to identical particles, while $c$ is not. Also notice that one has to add factors of $1/\sqrt{n!}$ anywhere $n$ identical particles with the same quantum numbers are involved in either initial or final states. 
+By computing the largest eigenvalue, we find the bound
+\begin{equation}
+    \frac{3\,s}{32\pi^3\Lambda^2}\abs{C_\varphi}\leq 1\,.
+\end{equation}
+
+Another diagonal block is given by $i,f\in\{\varphi\varphi^\dag,\varphi\varphi\varphi^\dag\varphi^\dag\}$. This provides
+\begin{equation}
+    a^0_{i\to f}=\begin{pmatrix}
+        \mathbb{O} & M_{\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag\varphi^\dag}\\ M_{\varphi\varphi\varphi^\dag\varphi^\dag\to \varphi\varphi^\dag} & \mathbb{O}
+    \end{pmatrix}=\begin{pmatrix}
+        \mathbb{O} & M_{\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag\varphi^\dag}\\ M^\dag_{\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag\varphi^\dag} & \mathbb{O}
+    \end{pmatrix}
+\end{equation}
+where
+\begin{equation}
+    M_{\varphi\varphi^\dag\to \varphi\varphi\varphi^\dag\varphi^\dag}=\frac{s}{256\pi^3\Lambda^2}C_\varphi\begin{pmatrix}
+        6\sqrt{3} & 0 & 0 & 0 & 4\sqrt{3} & 0 & 0 & 0 & 2\sqrt{3} \\ 0 & 2\sqrt{6} & 0 & 0 & 0 & 2\sqrt{6} & 0 & 0 & 0  \\ 0 & 0 & 0 & 2\sqrt{6} & 0 & 0 & 0 & \sqrt{6} & 0 \\ 2\sqrt{3} & 0 & 0 & 0 & 4\sqrt{3} & 0 & 0 & 0 & 6\sqrt{3}
+    \end{pmatrix}
+\end{equation}
+where the matrix for the coupled-channel analysis is $4\times 9$ as we have the following independent $\mathrm{SU}(2)_L$ indices combinations, namely
+\begin{equation}
+    (a,b)\in \{1,2\}\otimes \{1,2\}\qquad (c,d,e,f)\in\{(1,1),(1,2),(2,2)\}\otimes \{(1,1),(1,2),(2,2)\}
+\end{equation}
+By computing the largest eigenvalue, we find the bound
+\begin{equation}
+    \frac{3\sqrt{2}\,s}{64\pi^3\Lambda^2}|C_\varphi|\leq 1\,.
+\end{equation}
+
+Similarly, one can compute the bounds coming from the remaining diagonal-block sectors. Results are collected in Tab. \ref{tab:phi6 bounds - example}.
+
+Some comments are in order. The bounds with many particles in the initial or final states are weaker than the ones with an equal number of particle and antiparticles. This is due to the symmetry factor suppression $1/\sqrt{n}$. Also, the phase-space suppression factor can contribute into having more suppressed bounds, but in principle $2\to4$ and $3\to3$ are expected to provide similar bounds, as one can see from the basis elements in Eq. \eqref{eq: basis element J=0 full h=0}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c||c|c||c|c}
+\toprule
+\multirow{2}{*}{}
+& $\varphi\varphi\varphi^\dag\to\varphi\varphi\varphi^\dag$
+& $\varphi\varphi\varphi\to\varphi\varphi\varphi$
+& \multirow{2}{*}{$\varphi\varphi^\dag\to\varphi\varphi\varphi^\dag\varphi^\dag$}
+& $\varphi\varphi\to\varphi\varphi\varphi\varphi^\dag$
+\\
+& $\varphi\varphi^\dag\varphi^\dag\to\varphi\varphi^\dag\varphi^\dag$ & $\varphi^\dag\varphi^\dag\varphi^\dag\to\varphi^\dag\varphi^\dag\varphi^\dag$ & & $\varphi^\dag\varphi^\dag\to\varphi\varphi^\dag\varphi^\dag\varphi^\dag$ \\
+\hline 
+$C_\varphi$& $32\pi^3/3$ & $128\pi^3/3$ & $32\pi^3\sqrt{2}/3$ & $64\pi^3/\sqrt{6}$ \\
+\bottomrule
+\end{tabular}
+\caption{Bounds for $\varphi^6$.}
+\label{tab:phi6 bounds - example}
+\end{table}
+
+\subsubsection{Example: \texorpdfstring{$O_{\varphi e}$}{x} operator}\label{sec:example OHe}
+We consider the operator
+\begin{equation}
+    O_{\varphi e}=(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{e}_p \gamma^\mu e_r)
+\end{equation}
+This example allows us to see the non-trivial interplay between unitarity bounds at different angular momentum. The possible $2\to2$ amplitudes are given by
+\begin{align}
+    &\mathcal{A}(1_p^+,\bar{2}_r^- \to 3_a \bar{4}_b)= \frac{2}{\Lambda^2}[C_{\varphi e}]_{pr} \delta^{ab}[23]\langle31\rangle\\
+    &\mathcal{A}(1_p^+,2_a \to 3_r^+ 4_b)=\frac{2}{\Lambda^2} [C_{\varphi e}]_{rp} \delta^{ab}[23]\langle21\rangle
+\end{align}
+where the only allowed helicity for right-handed field is $h=+1/2$, and $p,r=1,2,3$ are flavor indices while $a,b=1,2$ are $\mathrm{SU}(2)_L$ indices. From helicity considerations we observe that the process $e\bar{e}\to \varphi\varphi^\dag$ is at $J=1$, while $e\varphi\to e\varphi$ is at $J=1/2$. 
+
+Working in single flavor assumption, by projecting the amplitude onto the partial wave at $J=1$ we find
+\begin{equation}
+    a^1_{i\to f}=\begin{pmatrix}
+        \mathbb{O} & M_1 \\ M^\dag_1 & \mathbb{O}
+    \end{pmatrix}\,,\qquad M_1=-\frac{\sqrt{2}\,s}{24\pi^2\Lambda^2} C_{\varphi e}\begin{pmatrix}
+        1 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+where $i,f\in\{e\bar{e},\varphi\varphi^\dag\}$ and the matrix for the coupled-channel analysis is $1\times 4$ as we have four independent $\mathrm{SU}(2)_L$ indices combinations, namely
+\begin{equation}
+    (a,b)\in\{1,2\}\otimes \{1,2\}
+\end{equation}
+By computing the largest eigenvalue, we find the bound
+\begin{equation}
+    \frac{s}{12\pi^2\Lambda^2}|C_{\varphi e}|\leq 1\,.
+\end{equation}
+Similarly, by projecting the second amplitude onto the partial wave at $J=1/2$ we find
+\begin{equation}
+    a^{1/2}_{e\varphi\to e\varphi}=\frac{s}{8\pi^2\Lambda^2} C_{\varphi e}\begin{pmatrix}
+        1 & 0 \\ 0 & 1
+    \end{pmatrix}
+\end{equation}
+By computing the largest eigenvalue, we find the bound
+\begin{equation}
+    \frac{s}{8\pi^2\Lambda^2}|C_{\varphi e}|\leq 1\,.
+\end{equation}
+
+Some comments are in order. In this case, the strongest bound comes from the smallest possible angular momentum $J$. Nevertheless, when considering fermionic states with higher quantum numbers, such as $\mathrm{SU}(2)_L$ or color, the bound coming from $J=1$ could become stronger. 
+
+\subsection{Results}
+Using this framework, we systematically computed the unitarity bounds 
+for all dimension-six SMEFT Wilson coefficients in the Warsaw basis \cite{Grzadkowski:2010es}, which are reported in Table \ref{tab:WarsawBasis}. The resulting bounds are summarized in Table \ref{tab:UniBounds}.
+
+\begin{table}[h!t!b]
+\renewcommand{\arraystretch}{1.5}
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{c | c|c | c|c| c|c| c|c| c}
+    \toprule
+    \rowcolor{hdrcolor}
+    \multicolumn{2}{c|}{{\boldmath$X^3$}} & \multicolumn{2}{c|}{{\boldmath$\varphi^6$}/{\boldmath$\varphi^4D^2$}} & \multicolumn{2}{c|}{{\boldmath$\psi^2\varphi^3$}} & \multicolumn{2}{c|}{{\boldmath$(\overline{L}L)(\overline{L}L)$}} & \multicolumn{2}{c}{{\boldmath$(\overline{L}R)(\overline{R}L)$}/{\boldmath$(\overline{L}R)(\overline{L}R)$}} \\
+    \hline
+    $O_G$ & $f^{ABC} G_\mu^{A\nu} G_\nu^{B\rho} G_\rho^{C\mu}$ & $O_\varphi$ & $(\varphi^\dagger \varphi)^3$ & $^\ddagger O_{e\varphi}$ & $(\varphi^\dagger \varphi)(\overline{\ell}_p e_r \varphi)$ & $O_{\ell\ell}$ & $(\overline{\ell}_p \gamma_\mu \ell_r)(\overline{\ell}_s \gamma^\mu \ell_t)$ & $^\ddagger O_{\ell edq}$ & $(\overline{\ell}_p^j e_r)(\overline{d}_s q_{tj})$ \\
+    
+    $O_{\widetilde{G}}$ & $f^{ABC} \widetilde{G}_\mu^{A\nu} G_\nu^{B\rho} G_\rho^{C\mu}$ & $O_{\varphi\Box}$ & $(\varphi^\dagger \varphi)\Box(\varphi^\dagger \varphi)$ & $^\ddagger O_{u\varphi}$ & $(\varphi^\dagger \varphi)(\overline{q}_p u_r \widetilde{\varphi})$ & $O_{qq}^{(1)}$ & $(\overline{q}_p \gamma_\mu q_r)(\overline{q}_s \gamma^\mu q_t)$ & $^\ddagger O_{quqd}^{(1)}$ & $(\overline{q}_p^j u_r)\epsilon_{jk}(\overline{q}_s^k d_t)$ \\
+    
+    $O_W$ & $\epsilon^{IJK} W_\mu^{I\nu} W_\nu^{J\rho} W_\rho^{K\mu}$ & $O_{\varphi D}$ & $(\varphi^\dagger D^\mu \varphi)^* (\varphi^\dagger D_\mu \varphi)$ & $^\ddagger O_{d\varphi}$ & $(\varphi^\dagger \varphi)(\overline{q}_p d_r \varphi)$ & $O_{qq}^{(3)}$ & $(\overline{q}_p \gamma_\mu \sigma^I q_r)(\overline{q}_s \gamma^\mu \sigma^I q_t)$ & $^\ddagger O_{quqd}^{(8)}$ & $(\overline{q}_p^j T^A u_r)\epsilon_{jk}(\overline{q}_s^k T^A d_t)$ \\
+    
+    $O_{\widetilde{W}}$ & $\epsilon^{IJK} \widetilde{W}_\mu^{I\nu} W_\nu^{J\rho} W_\rho^{K\mu}$ & & & & & $O_{\ell q}^{(1)}$ & $(\overline{\ell}_p \gamma_\mu \ell_r)(\overline{q}_s \gamma^\mu q_t)$ & $^\ddagger O_{\ell equ}^{(1)}$ & $(\overline{\ell}_p^j e_r)\epsilon_{jk}(\overline{q}_s^k u_t)$ \\
+    
+    & & & & & & $O_{\ell q}^{(3)}$ & $(\overline{\ell}_p \gamma_\mu \sigma^I \ell_r)(\overline{q}_s \gamma^\mu \sigma^I q_t)$ & $^\ddagger O_{\ell equ}^{(3)}$ & $(\overline{\ell}_p^j \sigma_{\mu\nu} e_r)\epsilon_{jk}(\overline{q}_s^k \sigma^{\mu\nu} u_t)$ \\
+    
+    \midrule
+    \rowcolor{hdrcolor}
+    \multicolumn{2}{c|}{{\boldmath$X^2\varphi^2$}} & \multicolumn{2}{c|}{{\boldmath$\psi^2 X \varphi$}} & \multicolumn{2}{c|}{{\boldmath$\psi^2\varphi^2D$}} & \multicolumn{2}{c|}{{\boldmath$(\overline{R}R)(\overline{R}R)$}} & \multicolumn{2}{c}{{\boldmath$(\overline{L}L)(\overline{R}R)$}} \\
+    \hline
+    $O_{\varphi G}$ & $(\varphi^\dagger \varphi) G_{\mu\nu}^A G^{A\mu\nu}$ & $^\ddagger O_{eW}$ & $(\overline{\ell}_p \sigma^{\mu\nu} e_r)\sigma^I \varphi W_{\mu\nu}^I$ & $O_{\varphi\ell}^{(1)}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{\ell}_p \gamma^\mu \ell_r)$ & $O_{ee}$ & $(\overline{e}_p \gamma_\mu e_r)(\overline{e}_s \gamma^\mu e_t)$ & $O_{\ell e}$ & $(\overline{\ell}_p \gamma_\mu \ell_r)(\overline{e}_s \gamma^\mu e_t)$ \\
+    
+    $O_{\varphi \widetilde{G}}$ & $(\varphi^\dagger \varphi) \widetilde{G}_{\mu\nu}^A G^{A\mu\nu}$ & $^\ddagger O_{eB}$ & $(\overline{\ell}_p \sigma^{\mu\nu} e_r)\varphi B_{\mu\nu}$ & $O_{\varphi\ell}^{(3)}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu^I \varphi)(\overline{\ell}_p \sigma^I \gamma^\mu \ell_r)$ & $O_{uu}$ & $(\overline{u}_p \gamma_\mu u_r)(\overline{u}_s \gamma^\mu u_t)$ & $O_{\ell u}$ & $(\overline{\ell}_p \gamma_\mu \ell_r)(\overline{u}_s \gamma^\mu u_t)$ \\
+    
+    $O_{\varphi W}$ & $(\varphi^\dagger \varphi) W_{\mu\nu}^I W^{I\mu\nu}$ & $^\ddagger O_{uG}$ & $(\overline{q}_p \sigma^{\mu\nu} T^A u_r)\widetilde{\varphi} G_{\mu\nu}^A$ & $O_{\varphi e}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{e}_p \gamma^\mu e_r)$ & $O_{dd}$ & $(\overline{d}_p \gamma_\mu d_r)(\overline{d}_s \gamma^\mu d_t)$ & $O_{\ell d}$ & $(\overline{\ell}_p \gamma_\mu \ell_r)(\overline{d}_s \gamma^\mu d_t)$ \\
+    
+    $O_{\varphi \widetilde{W}}$ & $(\varphi^\dagger \varphi) \widetilde{W}_{\mu\nu}^I W^{I\mu\nu}$ & $^\ddagger O_{uW}$ & $(\overline{q}_p \sigma^{\mu\nu} u_r)\sigma^I \widetilde{\varphi} W_{\mu\nu}^I$ & $O_{\varphi q}^{(1)}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{q}_p \gamma^\mu q_r)$ & $O_{eu}$ & $(\overline{e}_p \gamma_\mu e_r)(\overline{u}_s \gamma^\mu u_t)$ & $O_{qe}$ & $(\overline{q}_p \gamma_\mu q_r)(\overline{e}_s \gamma^\mu e_t)$ \\
+    
+    $O_{\varphi B}$ & $(\varphi^\dagger \varphi) B_{\mu\nu} B^{\mu\nu}$ & $^\ddagger O_{uB}$ & $(\overline{q}_p \sigma^{\mu\nu} u_r)\widetilde{\varphi} B_{\mu\nu}$ & $O_{\varphi q}^{(3)}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu^I \varphi)(\overline{q}_p \sigma^I \gamma^\mu q_r)$ & $O_{ed}$ & $(\overline{e}_p \gamma_\mu e_r)(\overline{d}_s \gamma^\mu d_t)$ & $O_{qu}^{(1)}$ & $(\overline{q}_p \gamma_\mu q_r)(\overline{u}_s \gamma^\mu u_t)$ \\
+    
+    $O_{\varphi \widetilde{B}}$ & $(\varphi^\dagger \varphi) \widetilde{B}_{\mu\nu} B^{\mu\nu}$ & $^\ddagger O_{dG}$ & $(\overline{q}_p \sigma^{\mu\nu} T^A d_r)\varphi G_{\mu\nu}^A$ & $O_{\varphi u}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{u}_p \gamma^\mu u_r)$ & $O_{ud}^{(1)}$ & $(\overline{u}_p \gamma_\mu u_r)(\overline{d}_s \gamma^\mu d_t)$ & $O_{qu}^{(8)}$ & $(\overline{q}_p \gamma_\mu T^A q_r)(\overline{u}_s \gamma^\mu T^A u_t)$ \\
+    
+    $O_{\varphi WB}$ & $(\varphi^\dagger \sigma^I \varphi) W_{\mu\nu}^I B^{\mu\nu}$ & $^\ddagger O_{dW}$ & $(\overline{q}_p \sigma^{\mu\nu} d_r)\sigma^I \varphi W_{\mu\nu}^I$ & $O_{\varphi d}$ & $(\varphi^\dagger i\overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline{d}_p \gamma^\mu d_r)$ & $O_{ud}^{(8)}$ & $(\overline{u}_p \gamma_\mu T^A u_r)(\overline{d}_s \gamma^\mu T^A d_t)$ & $O_{qd}^{(1)}$ & $(\overline{q}_p \gamma_\mu q_r)(\overline{d}_s \gamma^\mu d_t)$ \\
+    
+    $O_{\varphi \widetilde{W}B}$ & $(\varphi^\dagger \sigma^I \varphi) \widetilde{W}_{\mu\nu}^I B^{\mu\nu}$ & $^\ddagger O_{dB}$ & $(\overline{q}_p \sigma^{\mu\nu} d_r)\varphi B_{\mu\nu}$ & $^\ddagger O_{\varphi ud}$ & $(\widetilde{\varphi}^\dagger i D_\mu \varphi)(\overline{u}_p \gamma^\mu d_r)$ & & & $O_{qd}^{(8)}$ & $(\overline{q}_p \gamma_\mu T^A q_r)(\overline{d}_s \gamma^\mu T^A d_t)$ \\
+    \bottomrule
+    \end{tabular}
+    }
+    \caption{Dimension-six operators of the SMEFT in the Warsaw basis \cite{Grzadkowski:2010es} that conserve baryon number. Non-Hermitian operators are denoted with $^\ddagger O$ and the corresponding Hermitian conjugates must be included in the Lagrangian.}
+    \label{tab:WarsawBasis}
+\end{table}
+
+\begin{table}[h!t!b]
+\renewcommand{\arraystretch}{1.5}
+    \centering
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    \toprule
+    \rowcolor{hdrcolor}
+    \multicolumn{2}{c|}{{\boldmath$X^3$}} & \multicolumn{2}{c|}{{\boldmath$\varphi^6$}/{\boldmath$\varphi^4D^2$}} & \multicolumn{2}{c|}{{\boldmath$   \psi^2\varphi^3$}} & \multicolumn{2}{c|}{{\boldmath$(\overline{L}L)(\overline{L}L)$}} & \multicolumn{2}{c}{{\boldmath$(\overline{L}R)(\overline{R}L)$}/{\boldmath$(\overline{L}R)(\overline{L}R)$}}\\
+    \hline
+    $C_G$ & $4\pi/(9g_s)$ & $C_\varphi$ & $32\pi^3/3$ & $C_{e\varphi}$ & $32\pi^2/\sqrt{3}$ & $C_{\ell\ell}$ & $2\pi$ & $C_{\ell e dq}$ & $8\pi/\sqrt{3}$ \\
+    
+    $C_{\widetilde G}$ & $4\pi/(9g_s)$ & $C_{\varphi\Box}$ & $8\pi/3$ & $C_{u\varphi}$ & $32\pi^2/3$ & $C_{qq}^{(1)}$ & $6\pi/5$ & $C_{quqd}^{(1)}$ & $16\pi(1+\sqrt{2})/9$\\ 
+        
+    $C_W$ & $2\pi/(3g)$ &$C_{\varphi D}$ & $32\pi/3$ & $C_{d\varphi}$ & $32\pi^2/3$ & $C_{qq}^{(3)}$ & $4\pi/3$ & $C_{quqd}^{(8)}$ & $4\pi(2+7\sqrt{2})/3$\\
+    
+    $C_{\widetilde W}$ & $2\pi/(3g)$ & & & & & $C_{\ell q}^{(1)}$ & $2\pi\sqrt{3}$ & $C_{\ell equ}^{(1)}$ & $8\pi/\sqrt{3}$ \\
+
+    &&&&&&  $C_{\ell q}^{(3)}$ & $2\pi$ & $C_{\ell e qu}^{(3)}$ & $(2+\sqrt{2})\pi/3$   \\
+    
+         \midrule
+         \rowcolor{hdrcolor}
+         \multicolumn{2}{c|}{{\boldmath$X^2\varphi^2$}} & \multicolumn{2}{c|}{{\boldmath$\psi^2 X \varphi$}} & \multicolumn{2}{c|}{{\boldmath$\psi^2\varphi^2D$}} & \multicolumn{2}{c|}{{\boldmath$(\overline{R}R)(\overline{R}R)$}} & \multicolumn{2}{c}{{\boldmath$(\overline{L}L)(\overline{R}R)$}}\\
+         \hline
+         $C_{\varphi G}$ & $\pi$ & $C_{eW}$ & $4\pi\sqrt{2/3}$ & $C_{\varphi \ell}^{(1)}$ & $8\pi$ & $C_{ee}$ & $2\pi$ & $C_{\ell e}$ & $4\pi$ \\
+         
+         $C_{\varphi \widetilde G}$ & $\pi$ & $C_{eB}$ & $4\pi$ & $C_{\varphi \ell}^{(3)}$ & $8\pi/3$ & $C_{uu}$ & $3\pi/2$ & $C_{\ell u}$ & $4\pi$\\
+         
+         $C_{\varphi W}$ & $2\pi\sqrt{2/3}$ & $C_{uG}$ & $2\pi\sqrt{3}$ & $C_{\varphi e}$ & $8\pi$ & $C_{dd}$ & $3\pi/2$ & $C_{\ell d}$ & $4\pi$\\
+         
+         $C_{\varphi \widetilde W}$ & $2\pi\sqrt{2/3}$ & $C_{uW}$ & $4\pi\sqrt{2/3}$ & $C_{\varphi q}^{(1)}$ & $2\pi\sqrt{6}$ & $C_{eu}$ & $4\pi$ & $C_{q e}$ & $4\pi$ \\
+         
+        $C_{\varphi B}$ & $2\pi\sqrt{2}$ & $C_{uB}$ & $4\pi$ & $C_{\varphi q}^{(3)}$ & $8\pi/3$ & $C_{ed}$ & $4\pi$ & $C_{q u}^{(1)}$ & $2\pi\sqrt{2}$\\
+        
+        $C_{\varphi \widetilde B}$ & $2\pi\sqrt{2}$ & $C_{dG}$ & $2\pi\sqrt{3}$ & $C_{\varphi u}$ & $4\pi \sqrt{3}$ & $C_{ud}^{(1)}$ & $4\pi$ & $C_{q u}^{(8)}$ & $3\pi(1+1/\sqrt{2})$\\
+        
+        $C_{\varphi W B}$ & $4\pi$ & $C_{dW}$ & $4\pi\sqrt{2/3}$ & $C_{\varphi d}$ & $4\pi\sqrt{3}$ & $C_{ud}^{(8)}$ & $8\pi$ & $C_{qd}^{(1)}$ & $2\pi\sqrt{2}$\\
+        
+        $C_{\varphi \widetilde W B}$ & $4\pi$ & $C_{dB}$ & $4\pi$ & $C_{\varphi ud}$ & $8\pi$ & & & $C_{q d}^{(8)}$ & $3\pi(1+1/\sqrt{2})$ \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Unitarity bounds on the modulus of the baryon-number-conserving dimension-six SMEFT Wilson coefficients in the Warsaw basis \cite{Grzadkowski:2010es}, obtained by marginalizing over all other SMEFT coefficients (see Table \ref{tab:WarsawBasis}). The factors $s/\Lambda^2$ are left implicit, i.e., the reported values constrain the combination $s|C|/\Lambda^2$. Fermionic operators are considered to the single-flavor limit.}
+    \label{tab:UniBounds}
+\end{table}
+
+Several comments are in order. 
+In contrast to the common practice in SMEFT analyses, where only one or a few operators are considered at a time, the unitarity bound associated with each Wilson coefficient is obtained by marginalizing over all other SMEFT coefficients. This procedure is particularly relevant for coefficients that contribute to the same scattering amplitudes. This occurs for the following classes of operators: \textit{(i)} $(O_{\varphi \Box}, O_{\varphi D})$; \textit{(ii)} all pairs involving either a field-strength tensor $X$ or its dual $\widetilde X$; and \textit{(iii)} all pairs containing fermionic bilinears in the singlet or triplet (octet) representations of $\mathrm{SU}(2)$ ($\mathrm{SU}(3)$). Lastly, the bounds come from considering scattering amplitudes mediated by only the contact SMEFT interactions, as the SM contribution is expected to not break unitarity at all energy scales \footnote{The only exception is the case of $X^3$ operators, which required a SM times SMEFT contribution, more details are present in the dedicated section below.}. Moreover, everything has been computed assuming a single-flavor assumption for each fermion field. The generalization to the multi-flavor case is postponed in a dedicated section below.
+
+To fully exploit the power of this method, we performed a fully coupled-channel analysis for each operator. 
+In particular, to compute the amplitude of a process mediated by a given SMEFT operator, we considered all possible initial and final states in all allowed helicity, gauge, and flavor configurations. At dimension six the leading numerical constraints often arise from the lowest-multiplicity channels. Nevertheless, the general $N \to M$ formalism \cite{Bresciani:2025toe} is essential for a uniform treatment of all operator classes, including $\varphi^6$ and $\psi^2\varphi^3$, and makes the inclusion of higher-multiplicity channels automatic
+whenever they yield the leading energy growth. 
+
+Comparing the results in Table \ref{tab:UniBounds} with previous SMEFT analyses \cite{Corbett:2014ora,Corbett:2017qgl,Cao:2023qks}, we derive unitarity bounds for the complete set of four-fermion operators and for operators involving at least one gluon field, which were not covered in those works. With this method, such bounds are straightforward to obtain compared to alternative approaches. Moreover, the fully exploited coupled-channel analysis allows us to derive stronger bounds than those previously reported. 
+
+In what follows we discuss in detail each class one by one, showing the power of a fully coupled channel analysis and the importance of considering all the possible channels, and not just the ones at lowest angular momentum $J$.
+
+
+\subsubsection{Purely bosonic operators}
+Considering $2\to2$ scattering processes, we have the following processes at $J=0$
+\begin{equation}
+    \varphi_i\varphi^{(\dag)}_j \to \varphi_k \varphi^{(\dag)}_\ell\,,\qquad X^IX^J\to \varphi_i\varphi^\dag_j\,,\qquad X^IX^J\to X^KX^L\,,
+\end{equation}
+where $i,j,k,\ell$ are $\mathrm{SU}(2)_L$ indices under the (anti)fundamental representation, while $I,J,K,L$ are indices labelling the adjoint representations of gauge groups, and $X=B,W,G$. By performing a fully-coupled channel analysis we find \as{Need to add also $C_X$ maybe}
+\begin{gather}
+    \dfrac{s}{2\Lambda^2}\left[C_{\varphi\Box}+\sqrt{C_{\varphi\Box}^2+\frac{32}{9}|C_{\varphi B}+iC_{\varphi\Tilde{B}}|^2+\frac{32}{3}|C_{\varphi W}+iC_{\varphi\Tilde{W}}|^2}\right]\leq \dfrac{8\pi}{3}\\
+    \dfrac{s}{2\Lambda^2}\left[(C_{\varphi D}-C_{\varphi\Box})+\sqrt{(C_{\varphi D}-C_{\varphi\Box})^2+16|C_{\varphi WB}+iC_{\varphi\Tilde{W}B}|^2+36|g C_W|^2}\right]\leq 8\pi
+\end{gather}
+After marginalization we find the results in Table \ref{tab:UniBounds}. The same processes are at work also for the angular momentum $J=1$. Nevertheless, as expected, the resulting unitarity bounds are all subleading compared to the $J=0$ ones. 
+
+The only correlated bounds arise for operators $O_{\varphi \Box},O_{\varphi D}$. Hence, it is instructive to show graphically their correlation, which is pictured in Fig. \ref{fig:uniCHbox,D}. From this is clear how the marginalization procedure is relevant: assuming $C_{\varphi\Box}=0$, we would have found a bound for $C_{\varphi D}$ too strong compared to the actual one, which allows for larger values as long as $C_{\varphi\Box}\neq 0$.
+
+\begin{figure}[h!t!b!]
+\centering
+    \includegraphics[width=0.4\textwidth]{letter_images/C_H4D2.pdf}
+    \caption{Parameter space allowed by unitarity bounds in the plane of Wilson coefficients $C_{\varphi\Box},C_{\varphi D}$.}
+    \label{fig:uniCHbox,D}
+\end{figure}
+
+Regarding operators of type $X^3$, the unitarity bounds are computed using amplitudes that include both the SM contribution and at most one SMEFT insertion, effectively truncating the calculation at $\mathcal{O}(1/\Lambda^2)$ at the amplitude level. 
+Contributions of order $\mathcal{O}(1/\Lambda^4)$ could, in principle, yield stronger bounds, especially when the gauge coupling is small; however, including them without simultaneously accounting for dimension-eight operators would be inconsistent.
+Indeed, from positivity constraints, the presence of a dimension-six operator of type $X^3$ necessarily implies the existence of a dimension-eight operator of type $X^4$, which would inevitably affect the resulting unitarity bounds; see \cite{Ghosh:2022qqq}.
+
+Comparing to previous literature, overall our bounds on purely bosonic operators agree with those in Ref.~\cite{Cao:2023qks}, except for a factor-of-two difference arising from Eq.~\eqref{unitarity bound general}, as that work conventionally imposed $|a_{i\to f}^J|\leq 2$ for the partial-wave coefficients. \\
+
+Considering only $2\to 2$ processes would mean neglecting the contribution from $O_{\varphi}$. In fact, at $J=0$ we have the following $2\to4$ and $3\to3$ processes
+\begin{equation}
+    \varphi_i\varphi_j^{(\dag)}\to \varphi_k\varphi_\ell\varphi_m^{(\dag)}\varphi^\dag_n\,,\qquad\varphi_i\varphi_j^{(\dag)}\varphi_k^{\dag}\to\varphi_\ell\varphi_m^{(\dag)}\varphi_n^\dag\,.
+\end{equation}
+The bounds are intensively computed in sec. \ref{sec:example O_phi} and from the results contained in that section is clear how is important to compute all the different channels, as you may not be able to tell immediately which one would provide the strongest contribution. 
+
+
+\subsubsection{Operators with a fermionic bilinear}
+Consider $2\to 2$ processes, the lowest angular momentum allowed starts at $J=1/2$ with the following processes
+\begin{gather}
+    \psi_R^{\alpha,p}\varphi_j\to \psi_L^{i,\beta,r}X^I\,,\qquad \psi_R^{\alpha,p}X^I\to \psi_L^{i,\beta,r}\varphi_j^\dag\,,\\
+    \psi_R^{\alpha,p}\varphi_i\to\psi_R^{\beta,r}\varphi_j\,,\qquad    \psi_L^{k,\alpha,p}\varphi_i\to\psi_L^{\ell,\beta,r}\varphi_j\,,
+\end{gather}
+where $\alpha,\beta$ are $\mathrm{SU}(3)_C$ indices under the (anti)fundamental representation, while $L,R$ indicate the chirality of the fermion fields. Moreover, at $J=1$ we have the following additional channels
+\begin{equation}
+    \psi_R^{\alpha,p}\bar \psi_L^{i,\beta,r}\to X^I\varphi_j^\dag\,,\qquad \psi_R^{\alpha,p}\bar \psi_R^{\beta,r}\to\varphi_i\varphi_j^\dag\,, \qquad \psi_L^{k,\alpha,p}\bar \psi_L^{\ell,\beta,r}\to\varphi_i\varphi_j^\dag\,.
+\end{equation}
+We computed the unitarity bounds associated to each one of these channels, and the results are summarized in Table \ref{tab: UB for psi^2 Xphi and psi^2phi^2D} (see also the explicit computation in Sec. \ref{sec:example OHe} for $O_{\varphi e}$). Remarkably, for operators of type $\psi^2X\varphi$ the bounds at $J=1/2$ are better than the ones at $J=1$. Instead, for operators of type $\psi^2\varphi^2D$, it depends case by case, as in the fully coupled-channel analysis it can happen that color DOFs sum up making the bound at $J=1$ stronger, even if in principle it is expected to be more suppressed.
+
+\begin{table}[h!tb]
+\renewcommand{\arraystretch}{1.5}
+\centering
+\begin{tabular}{c|cc||c|cc}
+\toprule
+\rowcolor{hdrcolor}
+\boldmath$\psi^2X\varphi$ & \boldmath$J=1/2$ & \boldmath$J=1$
+& \boldmath$\psi^2\varphi^2D$ & \boldmath$J=1/2$ & \boldmath$J=1$ \\
+\hline
+$C_{eW}$ & $4\pi\sqrt{2/3}$ & $4\pi\sqrt{3}$ 
+& $C_{\varphi e}$ & $8\pi$ & $12\pi$ \\
+
+$C_{eB}$ & $4\pi$ & $12\pi$ 
+& $C_{\varphi u}$ & $8\pi$ & $4\pi\sqrt{3}$ \\
+
+$C_{uW}$ & $4\pi\sqrt{2/3}$ & $4\pi$ 
+& $C_{\varphi d}$ & $8\pi$ & $4\pi\sqrt{3}$ \\
+
+$C_{dW}$ & $4\pi\sqrt{2/3}$ & $4\pi$ 
+& $C_{\varphi ud}$ & $8\pi$ & $4\pi\sqrt{6}$ \\
+
+$C_{uB}$ & $4\pi$ & $4\pi\sqrt{3}$ 
+& $C_{\varphi \ell}^{(1)}$ & $8\pi$ & $6\pi\sqrt{2}$ \\
+
+$C_{dB}$ & $4\pi$ & $4\pi\sqrt{3}$ 
+& $C_{\varphi \ell}^{(3)}$ & $8\pi/3$ & $6\pi\sqrt{2}$ \\
+
+$C_{uG}$ & $2\pi\sqrt{3}$ & $12\pi\sqrt{2}$ 
+& $C_{\varphi q}^{(1)}$ & $8\pi$ & $2\pi\sqrt{6}$ \\
+
+$C_{dG}$ & $2\pi\sqrt{3}$ & $12\pi\sqrt{2}$ 
+& $C_{\varphi q}^{(3)}$ & $8\pi/3$ & $2\pi\sqrt{6}$ \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of the unitarity bounds on the modulus of the individual Wilson coefficients associated with the operator classes $\psi^2 X \varphi$ and $\psi^2 \varphi^2 D$ resulting from partial waves with $J=1/2$ and $J=1$.}
+\label{tab: UB for psi^2 Xphi and psi^2phi^2D}
+\end{table}
+
+In general, the correlations between these operators are "trivial", with the only exception of operators $O_{\varphi q}^{(1,3)}$ and $O_{\varphi \ell}^{(1,3)}$, where their correlations are explicitly shown in Fig. \ref{fig:uni CHq,l 13}.
+
+\begin{figure}[h!t!b!]
+\centering
+\includegraphics[width=0.4\textwidth]{letter_images/C_Hl_and_C_Hq.pdf}
+    \caption{Parameter space allowed by unitarity bounds in the plane of Wilson coefficients in the single-flavor limit. \as{I would split those into two plots as we have space}}
+    \label{fig:uni CHq,l 13}
+\end{figure}
+
+In contrast to previous literature, the bounds on operators involving fermions exhibit larger discrepancies, which we attribute to the combined effects of the coupled-channel analysis and the marginalization procedure. In particular, operators of the type $\psi^2 X\varphi$ and $\psi^2\varphi^2 D$ show case-by-case differences of up to a factor of two. Overall, our bounds are always more stringent, except for $O_{\varphi ud}$, for which our bound is weaker by a factor of $\sqrt{2}$. 
+
+\subsubsection{Four-fermion operators}
+In this case we have that the angular momentum $J$ at work in a given channel depends strongly on the chirality of the fermion. In particular, we have at $J=0$ the following processes
+\begin{gather}
+    \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\psi_L^{\ell,\delta,t}\,,\\
+    \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\overline\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\overline\psi_L^{j,\delta,t}\,,
+\end{gather}
+while, at $J=1$
+\begin{gather}
+    \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\overline\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\overline\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\overline\psi_L^{\ell,\delta,t}\,,\\
+    \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\overline\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\psi_L^{j,\delta,t}\,.
+\end{gather}
+We computed the unitarity bounds associated to each one of these channels, and the results are summarized in Table \ref{tab: UB for psi^4}. Remarkably, most of the times the unitarity bounds computed at $J=0$ dominates, but not always, stressing once again the importance to not stop at the smallest allowed angular momentum if there are multiple DOFs contributing in the coupled-channel analysis.
+
+In this case there are many non-trivial correlations among different operators. The results shown in this Table are taken just by assuming the others to be zero. The relevant correlation plots are shown in Figs. \ref{fig:1-flavor unitary+sum rules} and \ref{fig:unicomplexphase Cquqd, Cellequ}.
+
+\begin{table}[h!tb]
+\renewcommand{\arraystretch}{1.5}
+\centering
+\begin{tabular}{c|cc||c|cc}
+\toprule
+\rowcolor{hdrcolor}\boldmath$(\overline L L)(\overline L L)$ & \boldmath$J=0$ & \boldmath$J=1$
+& {\boldmath$(\overline{L}R)(\overline{R}L)$} and {\boldmath$(\overline{L}R)(\overline{L}R)$} & \boldmath$J=0$ & \boldmath$J=1$ \\
+\hline
+$C_{\ell\ell}$ & $2\pi$ & $2\pi$ 
+& $C_{\ell e d q}$ & $8\pi/\sqrt{3}$ & $24\pi$ \\
+
+$C_{qq}^{(1)}$ & $2\pi$ & $6\pi/7$ 
+& $C_{quqd}^{(1)}$ & $16\pi/7$ & $24\pi$ \\
+
+$C_{qq}^{(3)}$ & $2\pi$ & $6\pi/5$ 
+& $C_{quqd}^{(8)}$ & $12\pi$ & $36\pi$ \\
+
+$C_{\ell q}^{(1)}$ & $4\pi$ & $2\pi\sqrt{3}$ 
+& $C_{\ell equ}^{(1)}$ & $8\pi/\sqrt{3}$ & $24\pi\sqrt{2}$ \\
+
+$C_{\ell q}^{(3)}$ & $4\pi/3$ & $2\pi\sqrt{3}$ 
+& $C_{\ell e qu}^{(3)}$ & $2\pi\sqrt{2}/3$ & $2\pi\sqrt{3}$ \\
+\midrule
+\rowcolor{hdrcolor}\boldmath$(\overline RR)(\overline RR)$ & \boldmath$J=0$ & \boldmath$J=1$
+& \boldmath$(\overline L L)(\overline R R)$ &\boldmath$J=0$ & \boldmath$J=1$ \\
+\hline
+$C_{ee}$ & $2\pi$ & $3\pi$ 
+& $C_{\ell e}$ & $4\pi$ & $6\pi\sqrt{2}$ \\
+
+$C_{uu}$ & $2\pi$ & $3\pi/2$ 
+& $C_{\ell u}$ & $4\pi$ & $2\pi\sqrt{6}$ \\
+
+$C_{dd}$ & $2\pi$ & $3\pi/2$ 
+& $C_{\ell d}$ & $4\pi$ & $2\pi\sqrt{6}$ \\
+
+$C_{eu}$ & $4\pi$ & $4\pi\sqrt{3}$ 
+& $C_{qe}$ & $4\pi$ & $2\pi\sqrt{6}$ \\
+
+$C_{ed}$ & $4\pi$ & $4\pi\sqrt{3}$ 
+& $C_{qu}^{(1)}$ & $4\pi$ & $2\pi\sqrt{2}$ \\
+
+$C_{ud}^{(1)}$ & $4\pi$ & $4\pi$ 
+& $C_{qu}^{(8)}$ & $3\pi$ & $12\pi\sqrt{2}$ \\
+
+$C_{ud}^{(8)}$ & $6\pi$ & $9\pi$ 
+& $C_{qd}^{(1)}$ & $4\pi$ & $2\pi\sqrt{2}$ \\
+&& & $C_{qd}^{(8)}$ & $3\pi$ & $12\pi\sqrt{2}$ \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of the unitarity bounds on the modulus of the individual Wilson coefficients associated with the four-fermion operators resulting from partial waves with $J=0$ and $J=1$.}
+\label{tab: UB for psi^4}
+\end{table}
+
+\begin{figure}[h!t!b!]
+%    \centering
+    \hspace{-3.mm}
+    \includegraphics[width=0.26\textwidth]{letter_images/C_lq.pdf}\hspace{-2.mm}%
+%    \hfill
+    \includegraphics[width=0.26\textwidth]{letter_images/C_qq.pdf}\hspace{-2.mm}%
+%    \hfill
+    \includegraphics[width=0.26\textwidth]{letter_images/C_qu.pdf}\hspace{-2.mm}%
+%    \hfill
+    \includegraphics[width=0.26\textwidth]{letter_images/C_ud.pdf}
+    \caption{Parameter space allowed by unitarity bounds (blue) and spinning sum rules in the cases of scalar (orange) and vector (green) dominance, 
+    in the single-flavor limit. The missing plot for the Wilson coefficients $C_{qd}^{(1,8)}$ is identical to that of $C_{qu}^{(1,8)}$. \as{I would remove the sum rules and make bigger the plots, maybe in two rows.}}
+    \label{fig:1-flavor unitary+sum rules}
+\end{figure}
+
+\begin{figure}[h!t!b!]
+\centering
+\includegraphics[width=0.8\textwidth]{letter_images/C_quqd_and_C_lequ.pdf}
+    \caption{We show the dependence on the relative complex phases $\mathrm{arg}(C_{quqd}^{(1)}/C_{quqd}^{(8)})$ and $\mathrm{arg}(C_{\ell equ}^{(1)}/C_{\ell equ}^{(3)})$.}
+    \label{fig:unicomplexphase Cquqd, Cellequ}
+\end{figure}
+
+
+\clearpage
+
+\section{Spinning sum rules}
+\subsection{sum rules in the SMEFT}
+
+The analyticity of the S-matrix, together with partial-wave unitarity, allows one to derive additional theoretical constraints on effective four-fermion interactions beyond the unitarity bounds discussed above. In particular, Refs.~\cite{Low:2009di,Azatov:2021ygj,Gu:2020thj,Remmen:2020uze,Remmen:2022orj,Altmannshofer:2023bfk,Altmannshofer:2025lun} have introduced new dispersion relations that yield either spin-dependent sum rules or constraints on the high-energy behavior of scattering amplitudes. Remarkably, the resulting pattern of SMEFT inequalities can be used to infer characteristic features of the underlying UV dynamics, indicating whether it is dominated by scalar or vector particles. A detailed derivation of such constraints is provided in Ref.~\cite{Remmen:2020uze}, where the authors used a basis that is different from the more conventional Warsaw basis. Following Ref.~\cite{Remmen:2020uze}, we consider the amplitude $\mathcal{A}_{\alpha\beta}(s,t)$, where $s$ and $t$ are the usual Mandelstam variables associated with an elastic scattering process of
+two fermions whose quantum numbers (e.g., flavor and helicity) are collectively denoted by $\alpha$ and $\beta$.
+Expanding the UV amplitude in partial waves of fixed total angular momentum, $a_{\alpha\beta}^{J}(s)$, we find\footnote{Note that our partial-wave coefficients are normalized differently from those of Ref.~\cite{Remmen:2020uze}.}
+\begin{equation}
+    \begin{split}
+        &\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\alpha\beta}(s,0)+C_{\alpha\beta}^{(s,\infty)}=-\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0)-C_{   \overline\alpha\beta}^{(s,\infty)} \\
+        &=8\int_{s_0}^\infty \dfrac{\dd s}{s^2}\left\{-\Im a_{\overline{\alpha}\beta}^{0}(s)+\sum_{J=1}^\infty(2J+1)\Big[\Im a_{\alpha\beta}^{J}(s)-\Im a_{\overline{\alpha}\beta}^{J}(s)\Big]\right\}\,,
+    \end{split}
+\end{equation}
+where $s_0$ is the characteristic mass scale of the UV completion, and the boundary term is defined as follows
+\begin{equation}
+    C_{\alpha\beta}^{(s,\infty)}=\Res_{s=\infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s^2}=-\lim_{|s|\to \infty}\dfrac{1}{s}\mathcal{A}_{\alpha\beta}(s,0)\,.
+\end{equation}
+If the boundary term vanishes, then it is possible to prove that also all partial waves $a_{\alpha\beta}^{J}$ and $a_{\overline\alpha\beta}^{J}$ for $J\geq2$ vanish as well (together with $\Im a_{\overline\alpha\beta}^{1}=0$). Under this condition, the relation above now reads as follows \cite{Remmen:2020uze}
+%
+\begin{equation}\label{eq: sum rules master equation}
+    \lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0) = -\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{ \alpha\beta}(s,0) =8\int_{s_0}^\infty \dfrac{\dd s}{s^2}\left(\Im a_{\overline{\alpha}\beta}^{0}(s)-3\Im a_{\alpha\beta}^{1}(s)\right)\,,
+\end{equation}
+Dominance of spin-0 (spin-1) states in the UV theory implies that the left-hand side of Eq.~\eqref{eq: sum rules master equation} is positive (negative) definite for any choice of $\alpha$ and $\beta$.
+This property can be exploited to derive sum rules among the flavor-dependent entries of the Wilson coefficients of $\psi^4$ SMEFT operators, or between different $\psi^4$ operators with the same fermionic content. For completeness, we report in the following the sum-rule bounds associated with SMEFT operators in the Warsaw basis, since in Ref.~\cite{Remmen:2020uze} different conventions are used.
+In particular, the combinations of Wilson coefficients reported in Table \ref{tab:sum_rules}, when contracted with $\alpha_p \alpha_r^* \beta^*_s \beta_t$, are positive (negative) if the completion is dominated by scalars (vectors).
+
+
+\begin{table}[h!t!b!]
+\renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{cc}
+    \toprule
+    \rowcolor{hdrcolor}
+    \textbf{Operator class} & \textbf{Spinning sum rules} \\
+    \midrule
+    \multirow{6}{*}{\boldmath$(\overline{R}R)(\overline{R}R)$} &
+    $[C_{ee}]_{prst}$ \\
+    & $[C_{uu}]_{prst}$\,, \qquad $[C_{uu}]_{prst} + [C_{uu}]_{ptsr}$ \\
+    & $[C_{dd}]_{prst}$\,, \qquad $[C_{dd}]_{prst} + [C_{dd}]_{ptsr}$ \\
+    & $[C_{eu}]_{prst}$\,, \qquad $[C_{ed}]_{prst}$ \\
+    & $[C_{ud}^{(1)}]_{prst}+\tfrac{1}{4}[C_{ud}^{(8)}]_{prst}$ \\
+    & $[C_{ud}^{(1)}]_{prst}-\tfrac{1}{6}[C_{ud}^{(8)}]_{prst}$ \\
+    \midrule
+    \multirow{5}{*}{\boldmath$(\overline{L}L)(\overline{L}L)$} &
+    $[C_{\ell\ell}]_{prst}$\,, \qquad $[C_{\ell\ell}]_{prst} + [C_{\ell\ell}]_{ptsr}$ \\
+    & $[C_{qq}^{(1)}]_{prst} + [C_{qq}^{(1)}]_{ptsr} + [C_{qq}^{(3)}]_{prst} + [C_{qq}^{(3)}]_{ptsr}$ \\
+    & $[C_{qq}^{(1)}]_{prst} - [C_{qq}^{(3)}]_{prst} + 2[C_{qq}^{(3)}]_{ptsr}$ \\
+    & $[C_{\ell q}^{(1)}]_{prst} + [C_{\ell q}^{(3)}]_{prst}$ \\
+    & $[C_{\ell q}^{(1)}]_{prst} - [C_{\ell q}^{(3)}]_{prst}$ \\
+    \midrule
+    \multirow{6}{*}{\boldmath$(\overline{L}L)(\overline{R}R)$} &
+    $-[C_{\ell e}]_{prst}$\,, \qquad $-[C_{\ell u}]_{prst}$ \\
+    & $-[C_{\ell d}]_{prst}$\,, \qquad $-[C_{qe}]_{prst}$ \\
+    & $-[C_{qu}^{(1)}]_{prst} - \tfrac{1}{4}[C_{qu}^{(8)}]_{prst}$ \\
+    & $-[C_{qu}^{(1)}]_{prst} + \tfrac{1}{6}[C_{qu}^{(8)}]_{prst}$ \\
+    & $-[C_{qd}^{(1)}]_{prst} - \tfrac{1}{4}[C_{qd}^{(8)}]_{prst}$ \\
+    & $-[C_{qd}^{(1)}]_{prst} + \tfrac{1}{6}[C_{qd}^{(8)}]_{prst}$ \\
+    \bottomrule
+    \end{tabular}
+    \caption{Combinations of four-fermion Wilson coefficients that, when contracted with $\alpha_p \alpha_r^* \beta^*_s \beta_t$, are positive (negative) if the UV completion is dominated by scalars (vectors).}
+    \label{tab:sum_rules}
+\end{table}
+
+Lastly, we point out that in principle sum rules related to all dimension-six SMEFT Wilson coefficients have been derived. Nevertheless, they depend heavily on the field state superpositions ($\alpha,\beta$ vectors). Hence, even in case of vanishing boundary terms, they never provide a specific positiveness/negativeness of the Wilson coefficients unlike it happens for $\psi^4$ operators. For pure-Higgs we have that boundary terms are in general present and SU$(2)$-configuration dependent, so no information can be robustly gotten. For $H^2\psi^2D$ we have that we need to choose a configuration for the higgses, but then there is no information left for the fermion-flavour indices as there are no spinning sum rules there, so each flavour can have its relative sign, plus eventully boundary terms.
+
+As an illustration, Fig.~\ref{fig:1-flavor unitary+sum rules} shows the parameter space allowed by the unitarity bounds (blue) and the spinning sum rules under scalar (orange) and vector (green) dominance for four-fermion Wilson coefficients in the single-flavor limit. 
+Stronger bounds generally arise in the three-flavor scenario and can be explored using the accompanying interactive Mathematica file.
+We emphasize, however, that these bounds have some limitations that may lead to their violation \cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj,Gu:2020thj}.
+
+\subsection{Application of sum rules}
+We show how to derive spinning sum rules associated to any four-fermion operator of interest. For scalar dominance we have to impose the conditions
+\begin{equation}
+    b^\psi_{prst}\alpha_p \alpha_r^* \beta^*_s \beta_t\geq0\qquad \forall\alpha,\beta
+\end{equation}
+where $\alpha,\beta$ are complex three-vectors in the flavor space, and $b_{prst}^\psi$ are in Table \ref{tab:sum_rules}. This is a double-quadratic form in $\alpha$ and $\beta$. Hence, we can first find the condition for this inequality to hold $\forall\alpha$ vectors, which is a quadratic form. Hence, we take the $3\times 3$ matrices
+\begin{equation}
+    [M^\psi]_{pr}\equiv b^\psi_{prst}\beta^*_s \beta_t
+\end{equation}
+and we compute the eigenvalues. Then we impose all the eigenvalues to be positive $\forall\beta$. Without loss of generality, we parameterize the $\beta$-vector as follows
+\begin{equation}
+    \beta=\{e^{i\delta_1}\beta_1,\sqrt{1-\beta_1^2-\beta_3^2},e^{i\delta_3}\beta_3\}\,.
+\end{equation}
+It turns out that the eigenvalues of $M^\psi$ are always in one of the following forms
+\begin{equation}
+    f_1(x)=a_1+b_1x\,,\qquad f_2(x)=a_2 + b_2x - \sqrt{c_2^2 + d_2x + e_2x^2}
+\end{equation}
+with $x=\beta_3^2$. Hence, to impose all eigenvalues to be positive $\forall\beta$ means that we need to impose $f_{1,2}(x)\geq0$ $\forall x\in[0,1]$. This is equivalent to require (see App. \ref{sec:appendix, logical expression} for more details)
+\begin{align}
+    &\Delta_1(a_1,b_1)= a_1\geq0 \land a_1+b_1\geq 0\,,\\
+    &\Delta_2(a_2,b_2,c_2,d_2,e_2) = 
+    a_2 \ge 0 
+    \ \land \
+    a_2+b_2 \ge 0
+    \ \land \ 
+    (a_2+b_2)^2 - c_2^2 - d_2 - e_2 \ge 0 \nonumber
+    \\& \qquad\qquad
+    \land \
+    \Big[e_2 - b_2^2 \ge 0 \ \lor\  (2a_2b_2-d_2)(2a_2b_2-d_2+2b_2^2-2e_2) \ge 0 \nonumber 
+    \\& \qquad\qquad
+    \lor \ 4(b_2^2-e_2)(a_2^2-c_2^2)-(2a_2b_2-d_2)^2 \ge 0\Big] \ \land \ 
+    a_2^2 - c_2^2 \ge 0\,.
+\end{align}
+
+For the vector-dominance regime we follow the same steps, but requiring all eigenvalues to be negative-definite. 
+
+\subsection{Limitations - examples}
+Despite their usefulness in constraining the allowed ranges of the $\psi^4$ SMEFT coefficients, we emphasize that these bounds are subject to some limitations that may lead to their violation \cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj,Gu:2020thj}.
+In particular, it has been pointed out in Refs.~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj} that non-vanishing boundary terms arise in the presence of $t$-channel UV completions. One can verify that spinning sum-rule bounds are satisfied by all tree-level scalar UV completions \cite{deBlas:2017xtg}, while they can in general be violated by vector $t$-channel UV completions.
+
+In the following we provide explicit UV models that violate these sum rules in the low-energy regime. There are three possible sources of violation:
+\begin{itemize}
+    \item First, the sum rules are derived under the assumption of tree-level UV completions, whereas one-loop UV completions can violate these constraints (see, e.g., \cite{Azatov:2021ygj}).
+    \item Second, UV completions involving a non-trivial interplay of both spin-0 and spin-1 states can generically evade these bounds, since the right-hand side of Eq.~\eqref{eq: sum rules master equation} is no longer positive- or negative-definite for arbitrary configurations of $\alpha$ and $\beta$.
+    \item Third, boundary terms may in general be non-vanishing, thereby spoiling the definiteness of Eq.~\eqref{eq: sum rules master equation}. 
+\end{itemize}
+
+The first case has been analyzed by \cite{Azatov:2021ygj}. 
+
+The second case can be seen by the following counter-example. Let us have a vector and scalar interactions
+\begin{equation}
+    \mathcal{L}\supset A_\mu\left(c\, \overline{\mu}_R\gamma^\mu e_R+h.c.\right)+\left(y\,\phi\overline{\tau}_R \mu_R^c+h.c.\right)
+\end{equation}
+Here $\phi$ is $\mathcal{S}_2$ of Granada dictionary. Here we see that $(C_{ee})_{prst}$ is generated such that it is not positive- or negative-definite. It is easy to check that $b_{\alpha\beta}^{e}>0$ for $\alpha=\beta\propto(0,1,1)$ while $<0$ for $\alpha=\beta\propto(1,1,0)$. Nevertheless, one can argue that if, for instance, $M_\phi\gg M_A$, then you recover with good approximation the expected negative definiteness of the sum rule.  
+
+The third case is the most problematic one, as tree-level UV completions for $\psi^4$ operator generally arise in UV models. What happens here is that the boundary term usually exactly matches the low-energy amplitude, while the UV partial waves vanish. Lets take an explicit example of a neutral vector boson $\mathcal{B}_\mu\sim(\bold1,\bold1,0)$ 
+\begin{equation}
+    \mathcal{L}\supset -y^e_{mn}\bar e_R^m \gamma^\mu e_R^n \mathcal{B}_\mu-y^u_{mn}\bar u_R^m \gamma^\mu u_R^n \mathcal{B}_\mu
+\end{equation}
+at low energy
+\begin{equation}
+    \mathcal{L}\supset \dfrac{1}{M_\mathcal{B}^2}[C_{eu}]_{prst}\bar e_R^p\gamma^\mu e_R^r\bar u_R^s\gamma_\mu u_R^t\,,\qquad [C_{eu}]_{prst}= -y^e_{pr} y^u_{st}
+\end{equation}
+Here 
+\begin{equation}
+    \lim_{s\to 0}\partial_s\mathcal{A}_{\alpha\beta}(s,0)= \dfrac{2}{M_\mathcal{B}^2}[C_{eu}]_{prst}\alpha^*_p\alpha_r\beta^*_s\beta_t 
+\end{equation}
+as the sum rule is fully contained in the boundary term, which is 
+\begin{equation}
+    C^{(s,\infty)}_{\alpha\beta}=-\lim_{s\to \infty}\dfrac{1}{s}\mathcal{A}_{\alpha\beta}(s,0)=-\dfrac{2}{M_\mathcal{B}^2}[C_{eu}]_{prst}\alpha^*_p\alpha_r\beta^*_s\beta_t
+\end{equation}
+Also the UV partial wave vanishes as
+\begin{equation}
+    \Im a_{\alpha\beta}^1\propto \delta(t-M_\mathcal{B}^2)=0\,.
+\end{equation}
+Still, $t+s$-channel UV completions dominated by a vector can satisfy the sum rules under some conditions of the UV completion. Taking the same example, but focusing on the low-energy Lagrangian
+\begin{equation}
+    \mathcal{L}\supset \dfrac{1}{M_{\mathcal{B}}^2}[C_{ee}]_{prst}\bar e_R^p\gamma^\mu e_R^r\bar e_R^s\gamma_\mu e_R^t\,,\qquad [C_{ee}]_{prst}= -\dfrac{1}{2}y^e_{pr} y^e_{st}
+\end{equation}
+Here we find
+\begin{equation}
+    \lim_{s\to 0}\partial_s\mathcal{A}_{\alpha\beta}(s,0)= \dfrac{2}{M_\mathcal{B}^2}\left([C_{ee}]_{prst}\alpha^*_p\alpha_r\beta^*_s\beta_t+[C_{ee}]_{prst}\alpha^*_p\beta_r\beta^*_s\alpha_t \right)
+\end{equation}
+The first term is also present in the boundary term, so as long as is positive or negative definite, namely
+\begin{equation}
+    y^e_{pr}\alpha^*_p\alpha_r>0, <0\,\qquad \forall\alpha\,,
+\end{equation}
+then the sum rules are satisfied, as the boundary term happens to be positive-definite, hence not spoiling the overall negative-definiteness imposed by the sum rule for vector UV completion. If you want to fit for a certain UV model, then this information can be useful. Also, many reasonable $t+s$-channel UV models satisfy this condition.
+
+%\subsection{Other models}
+%DM models: \cite{Cirelli:2024ssz,Arina:2025zpi}
+
+\clearpage
+
+\section{Four-Fermion in multiflavor}
+
+
+\subsection{Flavor symmetries}
+In the SMEFT the basis of $\psi^4$ operators accounts for thousands of independent coefficients if one turns on all the intricate flavor structure of SM fermions. In this regard, the need of specific hypothesis about symmetries and symmetry-breakings in the flavour sector plays an important role in addressing the key question of what information we can get from the theoretical bounds derived in the last sections. The drawback is that this necessarily introduces some model dependence. Still, in the literature reasonable flavor hypotheses have been proposed and used in many BSM studies, in order to deal with the large proliferation of independent $\psi^4$ Wilson coefficients. 
+
+Historically, the most famous one is the Minimal Flavor Violation (MFV) hypothesis, firstly introduced by \cite{DAmbrosio:2002vsn} for the quark sector, and consequently extended to the leptons \cite{Cirigliano:2005ck}. It assumes that the SM fermions are charged under the following global flavor symmetry group
+\begin{equation}
+    G_{\text{MFV}}\equiv\mathrm{U}(3)^5=\mathrm{U}(3)_q\times\mathrm{U}(3)_u\times\mathrm{U}(3)_d\times\mathrm{U}(3)_\ell\times\mathrm{U}(3)_e\,,
+\end{equation}
+where each SM fermion is a three-vector in the flavor space which transforms as a fundamental under one of these $\mathrm{U}(3)$ group as follows
+\begin{align}
+    q\to U_q q\,,\quad \ell\to U_\ell \ell\,,\quad u\to U_u u\,,\quad d\to U_d d\,,\quad e\to U_e e\,.
+\end{align}
+The only interaction terms in the Standard Model Lagrangian that explicitly break $G_{\text{MFV}}$ are the Yukawa matrices $Y_u$, $Y_d$, and $Y_e$ which are promoted to be spurions transforming as
+\begin{equation}
+    Y_u\to U_q Y_u U_u^\dag\,,\quad Y_d\to U_q Y_d U_d^\dag\,,\quad Y_u\to U_\ell Y_e U_e^\dag\,.
+\end{equation}
+Assuming that also the new physics respects $G_{\text{MFV}}$, we have that the number of independent coefficients in four-fermion operators gets reduced by a lot. This because possible MFV-violating terms can arise only upon proper Yukawa insertions in the Wilson coefficient, weighted by an overall unknown $\mathcal{O}(1)$ number. The classification of the independent structures arising in SMEFT at dimension-six has been done in Ref. \cite{Faroughy:2020ina}. Furthermore, since all the entries of the Yukawa matrices are nearly vanishing but $[Y_u]_{33}\approx y_t\approx 1$, we can neglect all the flavor structures involving any insertion of $Y_d,Y_e$ and retaining only the exact ones and those up to $Y_u^2$ insertions\footnote{In principle, since $y_t\approx1$, an arbitrary number of $Y_u$ insertions should be considered, but this would mean an effectively breaking of $\mathrm{U}(3)_q\times \mathrm{U}(3)_u\to \mathrm{U}(2)_q\times \mathrm{U}(2)_u$. We decided to stop at $\mathcal{O}(Y_u^2)$.}. In this way we have that the independent coefficients of $\psi^4$ operators reduce from $\mathcal{O}(1000)$ to $\mathcal{O}(10)$. 
+
+Another theoretically motivated flavor hypothesis is based on the assumption that the first two generations of each fermion species transform collectively as doublets while the third generation is treated as a singlet. Concretely, the flavor symmetry is taken to be
+\begin{equation}
+    G_{F}\equiv\mathrm{U}(2)^5=\mathrm{U}(2)_q\times\mathrm{U}(2)_u\times\mathrm{U}(2)_d\times\mathrm{U}(2)_\ell\times\mathrm{U}(2)_e\,,
+\end{equation}
+where the fermion fields decompose as $\psi = (\psi^a,\psi_3)$, with $a=1,2$ and $\psi=q,u,d,\ell,e$.  The classification of the independent structures arising in SMEFT at dimension-six has been done in Ref. \cite{Faroughy:2020ina}. In this flavor hypothesis there is no unique or well motivated choice of spurions that parameterize the breaking of such a scenario \cite{Faroughy:2020ina,Greljo:2022cah}. Nevertheless, they are always expected to be little. Hence, we are interested only in the exact flavor structures. Also in this case, we have that the independent coefficients of $\psi^4$ operators reduce from $\mathcal{O}(1000)$ to $\mathcal{O}(10)$.
+
+In the following we list all the structures for all the $\psi^4$ operators. It is important to stress that we make explicit symmetrization over the Wilson coefficients as then we need to compute eigenvalues of quadratic forms as we need 
+\begin{equation}
+    [C_{\psi\psi}]_{prst}=[C_{\psi\psi}]^*_{rpts}=[C_{\psi\psi}]^*_{tsrp}\,,
+\end{equation}
+while for different fermion types
+\begin{equation}
+    [C_{\psi\chi}]_{prst}=[C_{\psi\chi}]^*_{rpst}=[C_{\psi\chi}]^*_{prts}\,.
+\end{equation}
+\lb{Is it true?}
+
+\subsection{Some results, plots etc}
+Assuming such flavor assumptions, we are able to provide reasonable unitarity bounds for the SMEFT Wilson coefficients involving fermionic fields in the multi-flavor case. For instance, for operator $O_{\ell\ell}$ under MFV hypothesis we have only two independent coefficients, which are
+\begin{equation}
+    [C_{\ell\ell}]_{prst} = C_{\ell\ell}^{(1)}\delta_{pr}\delta_{st} + C_{\ell\ell}^{(2)}\delta_{pt}\delta_{rs}\,.
+\end{equation}
+This allows us to show in a 2-dimensional plot the resulting theoretical bound, which are pictured in Fig. \ref{fig:Oll_mfv}.
+
+More generically, we provide a Supplemental Material that includes an interactive Mathematica file containing both analytic and numerical unitarity bounds for four-fermion operators in the three-flavor scenario, under the Minimal Flavor Violation (MFV) and $\mathrm{U}(2)^5$ flavor assumptions \cite{Faroughy:2020ina,Greljo:2022cah}. Below we provide a list of all the operator structures are marginalized bound for each independent coefficient of each operator under both MFV and $\mathrm{U}(2)^5$ flavor hypotheses. In Table \ref{tab:summary}, we provide the hyperlinks to tables of marginalized partial-wave unitarity bounds and figures of the corresponding constraint regions in the MFV and $\mathrm{U}(2)^5$ flavor symmetry scenarios.
+
+\begin{table}[h!tb]
+\renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \rowcolor{hdrcolor} \textbf{Operator class}     & \textbf{Operator(s)} & \textbf{Table} & \textbf{Figure(s)}  \\
+    \midrule
+    \multirow{3}{*}{\boldmath$(\overline LL)(\overline LL)$}     & $O_{\ell \ell}$ &\ref{tab:Oll_UB} & \ref{fig:Oll_mfv} (MFV), \ref{fig:Oll_u2} ($\mathrm{U}(2)^5$)  \\
+    & $O_{qq}^{(1,3)}$ &\ref{tab:Oqq_UB}&\ref{fig:Oqq_mfv} (MFV), \ref{fig:Oqq_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{\ell q}^{(1,3)}$ &\ref{tab:Olq_UB}& \ref{fig:Olq_mfv} (MFV), \ref{fig:Olq_u2} ($\mathrm{U}(2)^5$) \\
+    \midrule
+    \multirow{6}{*}{\boldmath$(\overline RR)(\overline RR)$} & $O_{ee}$ & \ref{tab:Oee_UB} & \ref{fig:Oee_u2} ($\mathrm{U}(2)^5$)  \\
+    & $O_{uu}$ &\ref{tab:Ouu_UB}&\ref{fig:Ouu_mfv} (MFV), \ref{fig:Ouu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{dd}$ &\ref{tab:Odd_UB}& \ref{fig:Odd_mfv} (MFV), \ref{fig:Ouu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{eu}$ &\ref{tab:Oeu_UB}& \ref{fig:Oeu_mfv} (MFV), \ref{fig:Oeu_u2} ($\mathrm{U}(2)^5$)  \\
+    & $O_{ed}$ &\ref{tab:Oed_UB}&  \ref{fig:Oeu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{ud}^{(1,8)}$ &\ref{tab:Oud_UB}& \ref{fig:Oud_mfv} (MFV), \ref{fig:Oud_u2} ($\mathrm{U}(2)^5$) \\
+    \midrule
+    \multirow{6}{*}{\boldmath$(\overline LL)(\overline RR)$} & $O_{\ell e}$ &\ref{tab:Ole_UB} &  \ref{fig:Ole_u2} ($\mathrm{U}(2)^5$)  \\
+    & $O_{\ell u}$ &\ref{tab:Olu_UB}& \ref{fig:Olu_mfv} (MFV), \ref{fig:Olu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{\ell d}$ &\ref{tab:Old_UB}&  \ref{fig:Olu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{qe}$ &\ref{tab:Oqe_UB}& \ref{fig:Oqe_mfv} (MFV), \ref{fig:Oqe_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{qu}^{(1,8)}$ &\ref{tab:Oqu_UB}& \ref{fig:Oqu_mfv} (MFV), \ref{fig:Oqu_u2} ($\mathrm{U}(2)^5$) \\
+    & $O_{qd}^{(1,8)}$ &\ref{tab:Oqd_UB}& \ref{fig:Oqd_mfv} (MFV), \ref{fig:Oqu_u2} ($\mathrm{U}(2)^5$) \\
+    \bottomrule
+    \end{tabular}
+    \caption{Hyperlinks to tables of marginalized partial-wave unitarity bounds and figures of the corresponding constraint regions in the MFV and $\mathrm{U}(2)^5$ flavor symmetry scenarios.}
+    \label{tab:summary}
+\end{table}
+
+\clearpage
+
+\input{tables_flavor}
+\input{figures_flavor}
+
+\subsection{Phenomenology}
+\as{We show some (other) pheno results for these operators. For instance $a_\tau$ at LEP, $\mu\mu\to\mu\tau$ etc etc}
+
+\clearpage
+\section{Conclusions}
+
+\acknowledgments
+We thank Giulio Crisanti for helping us.
+
+\clearpage
+\appendix
+
+\section{Mathematical tools}
+
+\subsection{Logical expression}\label{sec:appendix, logical expression}
+
+The function $f(x) = a + bx - \sqrt{c^2 + dx + ex^2}$ --- assumed real on $[0,1]$ and with $a,b,c,d,e\in\mathbb{R}$ --- is such that $f(x) \ge 0$ for every $x \in [0,1]$ if and only if the system of inequalities
+\begin{align}
+    \Delta(a,b,c,d,e) &= 
+    a \ge 0 
+    \ \land \
+    a+b \ge 0
+    \ \land \ 
+    a^2 - c^2 \ge 0
+    \ \land \ 
+    (a+b)^2 - c^2 -d-e \ge 0 \nonumber
+    \\& \quad
+    \land \
+    [e - b^2 \ge 0 \ \lor\  (2ab-d)(2ab-d+2b^2-2e) \ge 0 \nonumber 
+    \\& \quad
+    \lor \ 4(b^2-e)(a^2-c^2)-(2ab-d)^2 \ge 0]
+\end{align}
+is true.
+
+To prove this, note that,
+since $g(x)=c^2 + dx + ex^2 \ge 0$ on $[0,1]$ by assumption, $f(x) \ge 0$ on $[0,1]$ is equivalent to $\ell(x) = a + bx \ge 0$ and $h(x) = \ell(x)^2 -g(x) \ge 0$ on $[0,1]$. The latter reads $h(x) = \alpha x^2 + \beta x + \gamma$, with $\alpha = b^2-e$, $\beta = 2ab-d$, and $\gamma=a^2-c^2$.
+Thus, it is sufficient to prove that $p(x) = \alpha x^2+\beta x + \gamma \ge 0$ on $[0,1]$ if and only if
+    \begin{equation}\label{eq:lemma}
+        \gamma\ge0 \ \land \ \alpha+\beta+\gamma\ge0 \ \land \
+    [\alpha\le0 \ \lor \ \beta(\beta+2\alpha)\ge0 \ \lor \ 4\alpha\gamma-\beta^2\ge0 ] \,.
+    \end{equation}
+Indeed, $\Delta$ is exactly Eq.~\eqref{eq:lemma} applied to $\ell$ and $h$.
+The first two conditions in Eq.~\eqref{eq:lemma} are $p(0)\ge 0$ and $p(1)\ge 0$, thus they are necessary; assume them in what follows. If $\alpha \le 0$, then $p$ is concave and has its minimum on $[0,1]$ at an endpoint, so $p\ge 0$; instead, if $\alpha >0$, the vertex is at $x_\ast = -\beta/(2\alpha)$, and
+\begin{equation}
+    x_\ast\le0 \iff \beta\ge0 \,, \qquad x_\ast\ge1 \iff \beta+2\alpha\le0 \,,
+\end{equation}
+so $x_\ast \notin (0,1)$ if and only if $\beta(\beta+2\alpha)\ge 0$, in which case the minimum is again at an endpoint and $p\ge 0$. Otherwise, $x_\ast \in (0,1)$ and $\min_{[0,1]} p = p(x_\ast) = (4\alpha\gamma-\beta^2)/(4\alpha)$, which has the same sign as $4\alpha\gamma-\beta^2$. The last condition is then both necessary and sufficient. 
+
+\subsection{Eigenvalues of Jordan--Wielandt matrices}
+Given the Hermitian Jordan--Wielandt matrix
+\begin{equation}
+    M=\begin{pmatrix}
+        \mathbb{O}_{m\times m} & A \\ A^\dag & \mathbb{O}_{n\times n}
+    \end{pmatrix}
+\end{equation}
+of size $m+n$,
+with $A\in \mathbb{C}^{m \times n}$,
+we have that its characteristic polynomial --- with the convention $p_X(x) = \det[x\mathbb{1}-X]$ --- is
+\begin{equation}
+    p_M(x)=x^{n-m}\,p_{AA^\dag}(x^2) = x^{m-n}\,p_{A^\dag A}(x^2) \,,
+\end{equation}
+which means that the eigenvalues of $M$ can be computed as the positive and negative square roots of the eigenvalues of $AA^\dag$ if $m\le n$ (of $A^\dag A$ if $m > n$), together with additional $\abs{n-m}$ vanishing eigenvalues. 
+%
+
+To prove this, consider a generic block matrix that takes the form
+\begin{equation}
+    \begin{pmatrix}
+        P & Q \\ R & S
+    \end{pmatrix}\,.
+\end{equation}
+If $S$ is invertible, then
+\begin{equation}
+    \begin{pmatrix}
+        P & Q \\ R & S
+    \end{pmatrix}
+    \begin{pmatrix} \mathbb{1} & \mathbb{O} \\ -S^{-1}R & \mathbb{1} 
+    \end{pmatrix}
+    =
+    \begin{pmatrix} P-QS^{-1}R & Q \\ \mathbb{O} & S 
+    \end{pmatrix}\,,
+\end{equation}
+which implies that 
+\begin{equation}
+    \det[\begin{pmatrix} P & Q \\ R & S \end{pmatrix}]=\det[P-QS^{-1}R] \det[S]\,.
+\end{equation}
+By applying this to the matrix $x\mathbb{1}_{(m+n)\times(m+n)}-M$, we find the result above.
+
+% Bibliography
+\clearpage
+\bibliographystyle{JHEP}
+\bibliography{long_paper_bib}
+
+\end{document}
