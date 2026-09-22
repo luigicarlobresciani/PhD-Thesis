@@ -101,7 +101,30 @@ One could then question the approach itself of putting unitarity bounds on highe
 However, this is not necessarily the case, as was shown, for instance, in \cite{Bertuzzo:2023slg} for the production of a Higgs-ALP pair at a lepton collider: the impact of the dimension-seven operators $\partial_\mu \phi \,D^\mu \overline \ell H e$ and $\partial_\mu \phi \,\overline \ell H D_\mu e$ on the total cross section was shown there to be significantly larger than that due to the dimension-five operator $\phi \,\overline{\ell} H e$ in a wide region of the parameter space.
 
 Motivated by these considerations, we stress the possible relevance of placing unitarity constraints on higher-dimensional ALP interactions, which constitute the subject of this section. 
-\lb{To write something about the method for computing the bounds.}
+
+The bounds derived below rest on the on-shell formalism of Chapter~\ref{ch:generalizedUB}, which we
+recall here in the form used throughout. Any scattering amplitude $\ket*{\mathcal A_{i\to f}}$
+admits the decomposition
+\begin{equation}\label{eq:ALP_pwd}
+    \ket*{\mathcal A_{i\to f}} = \sum_J a^J_{i\to f}\,\ket*{\mathcal B^J_{i\to f}}
+\end{equation}
+over a basis $\ket*{\mathcal B^J_{i\to f}}$ of states of definite total angular momentum $J$, whose
+elements are fixed by the normalization
+\begin{equation}\label{eq:ALP_norm}
+    \langle \mathcal B^J_{i\to f}|\mathcal B^{J'}_{i\to f}\rangle = \int \dd\Phi_i \,\dd\Phi_f \, \mathcal B^{J'}_{i\to f} \left(\mathcal B^J_{i\to f}\right)^* = (2J+1)\,\delta^{JJ'}\,,
+\end{equation}
+with $\dd\Phi_{i,f}$ the phase-space measures of the initial and final states. With this choice, the
+partial-wave coefficients $a^J_{i\to f}$ obey
+\begin{equation}\label{eq:ALP_unitarity_bounds}
+    \abs*{\Re a^J_{i\to i}}\le 1\,,\qquad
+    0\le \Im a^J_{i\to i}\le 2\,,\qquad
+    \abs*{a^J_{i\to f}}\le 1\,,
+\end{equation}
+with $i\neq f$,
+which are the inequalities imposed in what follows. We refer to
+Chapter~\ref{ch:generalizedUB} for the explicit construction of the basis, obtained by diagonalizing
+the Pauli--Lubanski operator on a set of independent spinor-helicity monomials, and for the
+derivation of Eq.~\eqref{eq:ALP_unitarity_bounds}.
 
 \subsection{Dimension-Five and -Six Operators}
 

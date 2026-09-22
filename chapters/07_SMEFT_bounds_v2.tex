@@ -5,13 +5,10 @@
 
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 
-\textit{This chapter is based on Ref.~\cite{Bresciani:2026acy} and on a companion paper:}\\[0.5em]
+\textit{This chapter is based on Ref.~\cite{Bresciani:2026acy}:}\\[0.5em]
 L.~C.~Bresciani, P.~Paradisi and A.~Sainaghi,\\[0pt]
 ``Unitarity bounds and sum rules in the SMEFT,''\\[0pt]
-[\href{https://doi.org/10.48550/arXiv.2603.03423}{arXiv:2603.03423} [hep-ph]];\\[0.5em]
-L.~C.~Bresciani, P.~Paradisi and A.~Sainaghi,\\[0pt]
-``Unitarity bounds and spinning sum rules in the flavorful SMEFT,''\\[0pt]
-(to be published).
+[\href{https://doi.org/10.48550/arXiv.2603.03423}{arXiv:2603.03423} [hep-ph]].
 
 {\color{chapterpaperrule}\rule{\textwidth}{0.5pt}}
 \end{flushright}
@@ -26,7 +23,7 @@ deviations from the SM by introducing higher-dimensional operators constructed f
 respecting its symmetries, namely the
 SMEFT~\cite{Buchmuller:1985jz,Grzadkowski:2010es,Brivio:2017vri,Isidori:2023pyp,Aebischer:2025qhh}.
 
-As discussed in Chapter~\ref{ch:generalizedUB}, a key theoretical consistency requirement for any EFT
+As discussed in Chapter~\ref{ch:generalizedUB}, a key theoretical consistency requirement for any theory
 is perturbative unitarity, derived from the fundamental properties of the scattering
 $S$-matrix~\cite{Jacob:1959at}. The resulting bounds are inherently perturbative, being derived at
 tree level, and therefore do not represent sharp exclusions. Their saturation signals the breakdown
@@ -127,31 +124,50 @@ This procedure is particularly relevant for coefficients that contribute to the 
 \end{itemize}
 Representative examples are shown in Figures~\ref{fig:uni3} and \ref{fig:1-flavor unitary+sum rules}.
 
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[scale=1.25]{images/C_H4D2.pdf}\quad
+%     \includegraphics[scale=1.25]{images/C_Hl_and_C_Hq.pdf}\\
+%     \includegraphics[scale=1.25]{images/C_quqd_and_C_lequ.pdf}
+%     \caption{Parameter space allowed by unitarity bounds in the plane of Wilson coefficients in the single-flavor limit.
+%     In the two lower plots, we also show the dependence on the relative complex phases $\operatorname{arg}(C_{quqd}^{(1)}/C_{quqd}^{(8)})$ and $\operatorname{arg}(C_{\ell equ}^{(1)}/C_{\ell equ}^{(3)})$.}
+%     \label{fig:uni3}
+% \end{figure}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1.25]{images/C_H4D2.pdf}\quad
-    \includegraphics[scale=1.25]{images/C_Hl_and_C_Hq.pdf}\\
-    \includegraphics[scale=1.25]{images/C_quqd_and_C_lequ.pdf}
+    \includegraphics[width=0.25\textwidth]{images/C_H4D2.pdf}\hfill
+    \includegraphics[width=0.25\textwidth]{images/C_Hl_and_C_Hq.pdf}\hfill
+    \includegraphics[width=0.48\textwidth]{images/C_quqd_and_C_lequ.pdf}
     \caption{Parameter space allowed by unitarity bounds in the plane of Wilson coefficients in the single-flavor limit.
     In the two lower plots, we also show the dependence on the relative complex phases $\operatorname{arg}(C_{quqd}^{(1)}/C_{quqd}^{(8)})$ and $\operatorname{arg}(C_{\ell equ}^{(1)}/C_{\ell equ}^{(3)})$.}
     \label{fig:uni3}
 \end{figure}
 
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[scale=1.25]{images/C_lq.pdf}\qquad
+%     \includegraphics[scale=1.25]{images/C_qq.pdf}\\
+%     \includegraphics[scale=1.25]{images/C_qu.pdf}\qquad
+%     \includegraphics[scale=1.25]{images/C_ud.pdf}
+%     \caption{Parameter space allowed by unitarity bounds (blue) and spinning sum rules, discussed in Section~\ref{sec:SMEFT_sumrules}, in the cases of scalar (orange) and vector (green) dominance, 
+%     in the single-flavor limit. The missing plot for the Wilson coefficients $C_{qd}^{(1,8)}$ is identical to that of $C_{qu}^{(1,8)}$.}
+%     \label{fig:1-flavor unitary+sum rules}
+% \end{figure}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1.25]{images/C_lq.pdf}\qquad
-    \includegraphics[scale=1.25]{images/C_qq.pdf}\\
-    \includegraphics[scale=1.25]{images/C_qu.pdf}\qquad
-    \includegraphics[scale=1.25]{images/C_ud.pdf}
+    \includegraphics[width=0.25\textwidth]{images/C_lq.pdf}\hfill
+    \includegraphics[width=0.25\textwidth]{images/C_qq.pdf}\hfill
+    \includegraphics[width=0.25\textwidth]{images/C_qu.pdf}\hfill
+    \includegraphics[width=0.25\textwidth]{images/C_ud.pdf}
     \caption{Parameter space allowed by unitarity bounds (blue) and spinning sum rules, discussed in Section~\ref{sec:SMEFT_sumrules}, in the cases of scalar (orange) and vector (green) dominance, 
     in the single-flavor limit. The missing plot for the Wilson coefficients $C_{qd}^{(1,8)}$ is identical to that of $C_{qu}^{(1,8)}$.}
     \label{fig:1-flavor unitary+sum rules}
 \end{figure}
 
-To fully exploit the power of this method, we performed a fully coupled-channel analysis,
+To fully exploit the power of this method, we performed a fully coupled-channel analysis
 %for each operator. In particular, to compute the amplitude of a process mediated by a given SMEFT operator, we 
 %considered all possible initial and final states in all allowed helicity, gauge, and flavor configurations.
-considering all possible initial and final states in all allowed helicity, gauge, and flavor configurations.
+by considering all possible initial and final states in all allowed helicity, gauge, and flavor configurations.
 At dimension six, the leading numerical constraints often arise from the lowest-multiplicity channels. Nevertheless, the general $N \to M$ formalism of Chapter~\ref{ch:generalizedUB} is essential for a uniform treatment of all operator classes, including $\varphi^6$ and $\psi^2\varphi^3$, and makes the inclusion of higher-multiplicity channels automatic
 whenever they yield the leading energy growth.
 For practical purposes, we present in Table~\ref{tab:UniBounds} the unitarity bounds assuming single-flavor fermions, due to the large number of independent components arising from Wilson coefficients with multiple flavor indices.
@@ -256,29 +272,42 @@ dispersion relations have been introduced in
 Refs.~\cite{Low:2009di,Azatov:2021ygj,Gu:2020thj,Remmen:2020uze,Remmen:2022orj,Altmannshofer:2023bfk,%
 Altmannshofer:2025lun}, and we derive here the resulting inequalities in the Warsaw basis.
 
+% Following Ref.~\cite{Remmen:2020uze}, we consider the amplitude $\mathcal{A}_{\alpha\beta}(s,t)$,
+% where $s$ and $t$ are the usual Mandelstam variables associated with an elastic scattering process of
+% two fermions whose quantum numbers, such as flavor and helicity, are collectively denoted by $\alpha$
+% and $\beta$. Expanding the UV amplitude in partial waves of fixed total angular momentum,
+% $a_{\alpha\beta}^{J}(s)$, one finds\footnote{Note that our partial-wave coefficients are normalized
+% differently from those of Ref.~\cite{Remmen:2020uze}.}
 Following Ref.~\cite{Remmen:2020uze}, we consider the amplitude $\mathcal{A}_{\alpha\beta}(s,t)$,
-where $s$ and $t$ are the usual Mandelstam variables associated with an elastic scattering process of
-two fermions whose quantum numbers, such as flavor and helicity, are collectively denoted by $\alpha$
-and $\beta$. Expanding the UV amplitude in partial waves of fixed total angular momentum,
-$a_{\alpha\beta}^{J}(s)$, one finds\footnote{Note that our partial-wave coefficients are normalized
+where $s$ and $t$ are the usual Mandelstam variables associated with the elastic scattering of two
+fermions of opposite helicity, whose internal quantum numbers, such as flavor and gauge charges, are
+collectively denoted by $\alpha$ and $\beta$. We write $\overline\alpha$ for the state obtained by
+crossing, with conjugated quantum numbers and reversed helicity. The initial state then carries one
+unit of net helicity, so that its partial-wave expansion starts at $J=1$, whereas the crossed one has
+vanishing net helicity and starts at $J=0$. Expanding the UV amplitude in partial waves of fixed
+total angular momentum, $a_{\alpha\beta}^{J}(s)$, one finds\footnote{Note that our partial-wave coefficients are normalized
 differently from those of Ref.~\cite{Remmen:2020uze}.}
-\begin{equation}\label{eq: sum rules with boundary}
-    \begin{split}
-        \lim_{s\rightarrow 0}&\partial_s\mathcal{A}_{\alpha\beta}(s,0)+C_{\alpha\beta}^{(s,\infty)}=-\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0)-C_{\overline\alpha\beta}^{(s,\infty)} \\
-        &=8\int_{s_0}^\infty \frac{\dd s}{s^2}\left\{-\Im a_{\overline{\alpha}\beta}^{0}(s)+\sum_{J=1}^\infty(2J+1)\Big[\Im a_{\alpha\beta}^{J}(s)-\Im a_{\overline{\alpha}\beta}^{J}(s)\Big]\right\}\,,
-    \end{split}
-\end{equation}
+\begin{multline}\label{eq: sum rules with boundary}
+        \lim_{s\to 0}\partial_s\mathcal{A}_{\alpha\beta}(s,0)+C_{\alpha\beta}^{(s,\infty)}=-\lim_{s\to 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0)-C_{\overline\alpha\beta}^{(s,\infty)} \\
+        =8\int_{s_0}^\infty \frac{\dd s}{s^2}\left[-\Im a_{\overline{\alpha}\beta}^{0}(s)+\sum_{J=1}^\infty(2J+1)\left(\Im a_{\alpha\beta}^{J}(s)-\Im a_{\overline{\alpha}\beta}^{J}(s)\right)\right]\,,
+\end{multline}
 where $s_0$ is the characteristic mass-squared scale of the UV completion and the boundary term is
 defined as
 \begin{equation}
-    C_{\alpha\beta}^{(s,\infty)}=\Res_{s=\infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s^2}=-\lim_{\abs{s}\to \infty}\frac{1}{s}\mathcal{A}_{\alpha\beta}(s,0)\,.
+    C_{\alpha\beta}^{(s,\infty)}=\Res_{s=\infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s^2}=-\lim_{\abs{s}\to \infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s}\,.
 \end{equation}
-If the boundary term vanishes, one can show that all partial waves $a_{\alpha\beta}^{J}$ and
-$a_{\overline\alpha\beta}^{J}$ with $J\geq2$ vanish as well, together with $\Im
-a_{\overline\alpha\beta}^{1}$. Under this condition, Eq.~\eqref{eq: sum rules with boundary} reduces
-to~\cite{Remmen:2020uze}
+The same contour argument applied to the coefficient of $t$ in $\mathcal{A}_{\alpha\beta}(0,t)$
+yields a second, beyond-forward dispersion relation, with its own boundary term
+$C^{(t,\infty)}_{\alpha\beta}$. Since the dimension-six amplitude of two opposite-helicity fermions
+is proportional to $[13]\langle 24\rangle$, the sum of the two relations has a vanishing left-hand
+side up to boundary terms, while on the right-hand side every partial wave enters with a
+non-negative weight. If all boundary terms vanish and the partial-wave expansion converges, each
+contribution must then vanish separately, so that $\Im a_{\alpha\beta}^{J}$ and
+$\Im a_{\overline\alpha\beta}^{J}$ vanish for every $J\geq2$, together with
+$\Im a_{\overline\alpha\beta}^{1}$. Only a scalar and a vector channel are left, and
+Eq.~\eqref{eq: sum rules with boundary} reduces to~\cite{Remmen:2020uze}
 \begin{equation}\label{eq: sum rules master equation}
-    \lim_{s\rightarrow 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0) = -\lim_{s\rightarrow 0}\partial_s\mathcal{A}_{ \alpha\beta}(s,0) =8\int_{s_0}^\infty \frac{\dd s}{s^2}\left(\Im a_{\overline{\alpha}\beta}^{0}(s)-3\Im a_{\alpha\beta}^{1}(s)\right)\,.
+    \lim_{s\to 0}\partial_s\mathcal{A}_{\overline \alpha\beta}(s,0) = -\lim_{s\to 0}\partial_s\mathcal{A}_{ \alpha\beta}(s,0) =8\int_{s_0}^\infty \frac{\dd s}{s^2}\left(\Im a_{\overline{\alpha}\beta}^{0}(s)-3\Im a_{\alpha\beta}^{1}(s)\right)\,.
 \end{equation}
 Dominance of spin-0 (spin-1) states in the UV theory implies that the left-hand side of
 Eq.~\eqref{eq: sum rules master equation} is positive (negative) definite for any choice of $\alpha$
@@ -291,14 +320,30 @@ dominated by scalars (vectors).
 %
 \input{tables/SMEFT_sum_rules}
 %
-Sum rules can in principle be derived for all dimension-six SMEFT Wilson coefficients. They depend,
-however, on the superposition of field states encoded in the vectors $\alpha$ and $\beta$, so that,
-even when the boundary terms vanish, they do not translate into a definite sign of the Wilson
-coefficients, unlike what happens for $\psi^4$ operators. For purely bosonic operators the boundary
-terms are generically present and depend on the $SU(2)_L$ configuration, so that no robust
-information can be extracted. For $\psi^2\varphi^2D$ operators one has to fix a configuration for the
-Higgs fields, after which no information is left for the flavor indices, since no spinning sum rules
-arise there.
+
+% Sum rules can in principle be derived for all dimension-six SMEFT Wilson coefficients. They depend,
+% however, on the superposition of field states encoded in the vectors $\alpha$ and $\beta$, so that,
+% even when the boundary terms vanish, they do not translate into a definite sign of the Wilson
+% coefficients, unlike what happens for $\psi^4$ operators.
+% For purely bosonic operators the boundary
+% terms are generically present and depend on the $SU(2)_L$ configuration, so that no robust
+% information can be extracted. For $\psi^2\varphi^2D$ operators one has to fix a configuration for the
+% Higgs fields, after which no information is left for the flavor indices, since no spinning sum rules
+% arise there~\cite{Remmen:2022orj}.
+
+Spinning sum rules are not confined to four-fermion operators, but only for the latter do they
+translate into a definite sign of a Wilson coefficient. For the purely bosonic operators of the class
+$\varphi^4 D^2$, they can still be constructed, although only for a restricted cone of combinations of the
+corresponding coefficients, and with the correlation between sign and spin reversed with respect to
+the fermionic case~\cite{Remmen:2022orj}. For operators involving gauge bosons, the boundary terms are
+generically present and depend on the $SU(2)_L$ configuration, so that the sum rules are of
+indefinite sign. What survives is the sharper statement that, if the boundary terms vanish, the UV
+amplitudes mediating elastic vector scattering must vanish identically~\cite{Remmen:2022orj}. For
+$\psi^2\varphi^2D$ operators, one has to fix a configuration for the Higgs fields, and no spinning sum
+rule arises. The dispersion relations remain informative --- vanishing boundary terms force the UV to
+be dominated by a fermionic mode --- but they no longer discriminate between scalar and vector
+dominance~\cite{Remmen:2022orj}.
+
 
 As an illustration, Figure~\ref{fig:1-flavor unitary+sum rules} shows the parameter space allowed by
 the unitarity bounds and by the spinning sum rules under scalar and vector dominance for four-fermion
@@ -319,7 +364,7 @@ introducing the $3\times 3$ matrices
 \begin{equation}
     M^\psi_{pr}= b^\psi_{prst}\,\beta^*_s \beta_t
 \end{equation}
-and requiring all their eigenvalues to be positive for every $\beta$. Without loss of generality, we
+and requiring all their eigenvalues to be non-negative for every $\beta$. Without loss of generality, we
 parameterize
 \begin{equation}
     \beta=
@@ -333,17 +378,17 @@ parameterize
 % \end{equation}
 and in all the cases encountered, the eigenvalues of $M^\psi$ take the form
 \begin{equation}\label{eq:eigenvalue form}
-    f(x)=a + bx \pm \sqrt{c^2 + dx + ex^2}\,,\qquad x=\beta_1^2+\beta^2_2\,,
+    f_\pm(x)=a + bx \pm \sqrt{c^2 + dx + ex^2}\,,\qquad x=\beta_1^2+\beta^2_2\,,
 \end{equation}
 with $a,b,c,d,e\in\mathbb{R}$.
 Requiring all eigenvalues to be positive for
-every $\beta$ is therefore equivalent to requiring $f(x)\geq0$ for every $x\in[0,1]$.
+every $\beta$ is therefore equivalent to requiring $f_-(x)\geq0$ for every $x\in[0,1]$.
 
 % This last step is what makes the procedure practicable. 
 Scanning numerically over $\beta$ would give
-only a sampled, and therefore inconclusive, version of the constraint, whereas the positivity of $f$
+only a sampled, and therefore inconclusive, version of the constraint, whereas the positivity of $f_-$
 on the unit interval can be traded for a finite set of algebraic inequalities among the coefficients
-$a,b,c,d,e$, which are themselves functions of the Wilson coefficients. Explicitly, $f(x)\geq0$ for
+$a,b,c,d,e$, which are themselves functions of the Wilson coefficients. Explicitly, $f_-(x)\geq0$ for
 every $x\in[0,1]$ if and only if
 \begin{align}\label{eq:Delta}
     \Delta(a,b,c,d,e) &= 
@@ -361,8 +406,7 @@ every $x\in[0,1]$ if and only if
     \lor \ 4(b^2-e)(a^2-c^2)-(2ab-d)^2 \ge 0]
 \end{align}
 holds, as proved in Appendix~\ref{sec:appendix, logical expression}.
-For vector dominance one follows the same steps, requiring instead all eigenvalues to be negative
-definite.
+For vector dominance one follows the same steps, requiring instead all eigenvalues to be non-positive.
 
 \subsection{Limitations}
 
@@ -371,7 +415,7 @@ spinning sum rules are considerably more model dependent and hold only under a s
 assumptions whose violation invalidates the corresponding
 inequalities~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj,Gu:2020thj}. In particular:
 \begin{itemize}
-    \item They assume tree-level UV completions and can be violated at loop level~\cite{Azatov:2021ygj};
+    \item They assume tree-level UV completions and can be violated at loop level~\cite{Azatov:2021ygj,Remmen:2020uze};
     \item They assume dominance by states of definite spin, so that completions involving a
     non-trivial interplay of spin-0 and spin-1 states can evade them, since the right-hand side of
     Eq.~\eqref{eq: sum rules master equation} ceases to be sign definite for arbitrary configurations
@@ -380,14 +424,16 @@ inequalities~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj,Gu:2020thj}. In 
     particular for vector $t$-channel UV
     completions~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj}.
 \end{itemize}
-The last condition is the most problematic one, since tree-level UV completions of $\psi^4$
-operators generically arise in new-physics models.
+% The last condition is the most problematic one, since tree-level UV completions of $\psi^4$
+% operators generically arise in new-physics models.
+The last condition is the most restrictive one in practice, since $t$-channel vector mediators of
+four-fermion operators arise generically in new-physics models.
 
 This residual model dependence is, however, physically informative. A coefficient lying outside the
 scalar- and vector-dominated regions does not exclude a UV completion but points to a more
 structured one, such as a vector $t$-channel mediator, a loop-level origin, or a mixed-spin spectrum.
 In Appendix~\ref{app:SMEFT_UV} we verify this picture explicitly by matching a representative set of
-tree-level UV completions of Ref.~\cite{deBlas:2017xtg}. All scalar completions satisfy the
+tree-level UV completions of Ref.~\cite{deBlas:2017xtg}. All the scalar completions considered there satisfy the
 sum-rule constraints, whereas vector $t$-channel completions can violate them.
 
 \section{Bounds on Flavorful Four-Fermion Operators\label{sec:SMEFT_multiflavor}}
@@ -480,14 +526,14 @@ Interestingly, one can notice that setting some coefficients to zero forces the 
 This can be seen, e.g., in two panels of Figure~\ref{fig:Olq_mfv} and eighteen panels of Figure~\ref{fig:Olq_u2}, where the sum-rule regions collapse to lines or points.
 
 Even under these flavor hypotheses, the coupled-channel analysis remains demanding. As an illustration,
-Figure~\ref{fig:matrixplot} shows the structure of the scattering matrix --- whose analytic
-eigenvalues were obtained with finite-field methods~\cite{Chestnov:2025svg} --- associated with the
+Figure~\ref{fig:matrixplot} shows the structure of the scattering matrix --- whose
+eigenvalues were obtained analytically with finite-field methods~\cite{Chestnov:2025svg} --- associated with the
 $q\overline q \to q \overline q$ processes in the three-flavor $U(2)^5$ scenario, considered for obtaining the bounds associated with $O_{qq}^{(1,3)}$.
 %
 \begin{figure}[htbp]
     \centering
-    \includegraphics[]{images/matrixplot.pdf}
-    \caption{Structure of scattering matrix associated with the $q\overline q \to q \overline q$ processes in the three-flavor scenario under the $U(2)^5$ flavor symmetry. The dimension of the matrix is $324=18^2$ as each $q$ or $\overline q$ contains $3\times 3\times 2$ degrees of freedom. To obtain its analytic eigenvalues, the Mathematica package \textsc{SP}$\mathbb{Q}$\textsc{R}~\cite{Chestnov:2025svg} has been used, exploiting finite-field methods.}
+    \includegraphics[scale=0.9]{images/matrixplot.pdf}
+    \caption{Structure of scattering matrix associated with the $q\overline q \to q \overline q$ processes in the three-flavor scenario under the $U(2)^5$ flavor symmetry. The dimension of the matrix is $324=18^2$ as each $q$ or $\overline q$ contains $3\times 3\times 2$ degrees of freedom. To obtain its eigenvalues analytically, finite-field methods have been employed~\cite{Chestnov:2025svg}.}
     \label{fig:matrixplot}
 \end{figure}
 
@@ -503,7 +549,7 @@ We first analyze the unitarity bounds for purely bosonic operators. Figure~\ref{
 %
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1.25]{images/histogram.pdf}
+    \includegraphics[scale=1.0]{images/histogram.pdf}
     \caption{Minimum energy scales $E_*$ at which the unitarity bounds in Table~\ref{tab:UniBounds} are violated for each purely bosonic Wilson coefficient in Ref.~\cite{Celada:2024mcf}, using the 95\% CL marginalized intervals from linear (blue) and quadratic (orange) fits.}
     \label{fig:histogram}
 \end{figure}
@@ -679,11 +725,11 @@ $x \in [0,1]$ if and only if
     \ \land \ 
     a^2 - c^2 \ge 0
     \ \land \ 
-    (a+b)^2 - c^2 -d-e \ge 0 
+    (a+b)^2 - c^2 -d-e \ge 0 \nonumber
     \\& \quad
     \land \
     [e - b^2 \ge 0 \ \lor\  (2ab-d)(2ab-d+2b^2-2e) \ge 0 
-    \\& \quad
+    \nonumber \\& \quad
     \lor \ 4(b^2-e)(a^2-c^2)-(2ab-d)^2 \ge 0]
 \end{align}
 holds, which is the condition quoted in Eq.~\eqref{eq:Delta} of the main text.

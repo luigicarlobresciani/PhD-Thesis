@@ -1,46 +1,56 @@
 \chapter{Introduction}
 
-\begin{comment}
-\begin{equation}
-    \begin{tikzpicture}[baseline={(current bounding box.center)}]
-                \begin{feynman}[small]
-                \node [draw=red!80!black, circle, minimum size=0.5cm,
-           fill=red!15] (a) {\(F_j\)};
-                \vertex [below right=1.7cm of a] (b) {\(y\)};
-                \vertex [above right=1.7cm of a] (c) {\(x\)} ;
-                \vertex [below left=1.7cm of a] (d) {\(2\)} ;
-                \vertex [above left=1.7cm of a] (e) {\(1\)};
-                \diagram*{
-                    (b) -- [] (a),
-                    (a) -- [] (c),
-                    (a) -- [] (d),
-                    (a) -- [] (e),
-                };
-                \end{feynman}
-                \end{tikzpicture}
-                \,
-	\begin{tikzpicture}[baseline={(current bounding box.center)}]
-	\draw[dashed,red,very thick] (0.0, -1.4) -- (0.0, 1.4);
-	\end{tikzpicture}
-	\,
-    \begin{tikzpicture}[baseline={(current bounding box.center)}]
-                \begin{feynman}[small]
-                \node [draw=blue!80!black, circle, minimum size=0.5cm,
-           fill=blue!15] (a) {\(\mathcal M\)};
-                \vertex [below right=1.7cm of a] (b) {\(4\)};
-                \vertex [above right=1.7cm of a] (c) {\(3\)} ;
-                \vertex [below left=1.7cm of a] (d) {} ;
-                \vertex [above left=1.7cm of a] (e) {};
-                \diagram*{
-                    (a) -- [] (b),
-                    (a) -- [] (c),
-                    (a) -- [] (d),
-                    (a) -- [] (e),
-                };
-                \end{feynman}
-                \end{tikzpicture}
-\end{equation}
-\end{comment}
+
+% \begin{equation}
+%     \begin{tikzpicture}[baseline={(current bounding box.center)}]
+%                 \begin{feynman}[small]
+%                 \node [draw=red!80!black, circle, minimum size=0.5cm,
+%            fill=red!15] (a) {\(F_j\)};
+%                 \vertex [below right=1.7cm of a] (b) {\(y\)};
+%                 \vertex [above right=1.7cm of a] (c) {\(x\)} ;
+%                 \vertex [below left=1.7cm of a] (d) {\(2\)} ;
+%                 \vertex [above left=1.7cm of a] (e) {\(1\)};
+%                 \diagram*{
+%                     (b) -- [] (a),
+%                     (a) -- [] (c),
+%                     (a) -- [] (d),
+%                     (a) -- [] (e),
+%                 };
+%                 \end{feynman}
+%                 \end{tikzpicture}
+%                 \,
+% 	\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% 	\draw[dashed,red,very thick] (0.0, -1.4) -- (0.0, 1.4);
+% 	\end{tikzpicture}
+% 	\,
+%     \begin{tikzpicture}[baseline={(current bounding box.center)}]
+%                 \begin{feynman}[small]
+%                 \node [draw=blue!80!black, circle, minimum size=0.5cm,
+%            fill=blue!15] (a) {\(\mathcal M\)};
+%                 \vertex [below right=1.7cm of a] (b) {\(4\)};
+%                 \vertex [above right=1.7cm of a] (c) {\(3\)} ;
+%                 \vertex [below left=1.7cm of a] (d) {} ;
+%                 \vertex [above left=1.7cm of a] (e) {};
+%                 \diagram*{
+%                     (a) -- [] (b),
+%                     (a) -- [] (c),
+%                     (a) -- [] (d),
+%                     (a) -- [] (e),
+%                 };
+%                 \end{feynman}
+%                 \end{tikzpicture}
+% \end{equation}
+
+
+1. frame inerente la tesi (il caso di fisica interessante che ha motivato lo studio)
+
+2. stato dell'arte
+
+3. i miei contributi in cui mi sono cimentato (dai anche una panoramica più ampia) (risalta/motiva le tecniche usate, motiva l'approccio massless (nei problemi analizzati la parte UV è molto più importante per running e unitarietà, e qui nascono nuove simmetrie che rimarrebbero nascoste/oscurate nell'IR e poi menziona Nima per massive spinor helicity dicendo che alcuni pro rimangono nonostante il caso sia più complicato)) aggiungi anche i limiting factor, spiega perché le tecniche sono particolarmente efficaci nel contesto di EFT, semplificazioni clamorose (zeri, etc.), molta confidenza sui risultati, accesso agli insights della teoria.
+
+4. spiega le tecniche e tools che ho imparato e messo a frutto
+
+5. outline
 
 \section{The Effective-Field-Theory Paradigm}
 
@@ -49,3 +59,4 @@
 \section{Synopsis of the Thesis}
 
 The thesis is organized as follows.
+Usa itemize.
