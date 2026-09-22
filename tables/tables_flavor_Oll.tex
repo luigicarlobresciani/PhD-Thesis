@@ -1,0 +1,56 @@
+% ============================================================
+%  TABLE 1 — Q_{ell ell}
+% ============================================================
+\begin{table}[tbp]
+\centering
+{\small
+% ---- info block ----
+\begin{tabular}{ll}
+    \textbf{Operator:} & $\boxed{O_{\ell\ell} = (\overline\ell_p \gamma^\mu \ell_r)(\overline\ell_s \gamma_\mu \ell_t)}$ \\[0.2cm]
+    \textbf{MFV decomposition:} &
+        $[C_{\ell\ell}]_{prst} = C_{\ell\ell}^{(1)}\delta_{pr}\delta_{st} + C_{\ell\ell}^{(2)}\delta_{pt}\delta_{rs}$ \\[0.15cm]
+    \textbf{$U(2)^5$ decomposition:} &
+        $[C_{\ell\ell}]_{prst} =
+            C_{\ell\ell}^{(1)}\Pij{p}{r}{a}\Pij{s}{t}{b}
+            + C_{\ell\ell}^{(2)}(\Pij{s}{t}{a}\delta_{p3}\delta_{3r} + \Pij{p}{r}{a}\delta_{s3}\delta_{3t})$ \\
+        & $\phantom{[C_{\ell\ell}]_{prst} ={}}
+            + C_{\ell\ell}^{(3)}\delta_{p3}\delta_{3r}\delta_{s3}\delta_{3t}
+            + C_{\ell\ell}^{(4)}\Pij{s}{r}{a}\Pij{p}{t}{b}
+            $ \\
+        & $\phantom{[C_{\ell\ell}]_{prst} ={}}+ C_{\ell\ell}^{(5)}(\Pij{p}{t}{a}\delta_{s3}\delta_{3r} + \Pij{s}{r}{a}\delta_{p3}\delta_{3t})$ \\
+\end{tabular}
+\\[0.3cm]
+% ---- bounds table ----
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ccccc}
+    \toprule
+    \rowcolor{hdrcolor}
+    \textbf{Symmetry} & \textbf{Coefficient}
+        & \textbf{Unitarity bound}
+        & \textbf{Scalar dominance}
+        & \textbf{Vector dominance} \\
+    \midrule
+    % --- MFV section ---
+    %\rowcolor{seccolor}
+    %\multicolumn{5}{l}{\textit{Minimal Flavor Violation}} 
+    %\\
+    \multirow{2}{*}{MFV}
+        & $C_{\ell\ell}^{(1)}$ & $[-6.28,\, 6.28]$ & $[0,\, 6.28]$      & $[-6.28,\, 0]$    \\
+        & $C_{\ell\ell}^{(2)}$ & $[-8.38,\, 8.38]$ & $[-6.28,\, 3.77]$  & $[-3.77,\, 6.28]$ \\
+    \midrule
+    % --- U(2)^5 section ---
+    %\rowcolor{seccolor}
+    %\multicolumn{5}{l}{\textit{$U(2)^5$ Flavor Symmetry}} \\
+    \multirow{5}{*}{$U(2)^5$}
+        & $C_{\ell\ell}^{(1)}$ & $[-6.28,\, 6.28]$ & $[0,\, 6.28]$     & $[-6.28,\, 0]$    \\
+        & $C_{\ell\ell}^{(2)}$ & $[-6.28,\, 6.28]$ & $[0,\, 6.28]$     & $[-6.28,\, 0]$    \\
+        & $C_{\ell\ell}^{(3)}$ & $[-6.28,\, 6.28]$ & $[0,\, 6.28]$     & $[-6.28,\, 0]$    \\
+        & $C_{\ell\ell}^{(4)}$ & $[-12.6,\, 12.6]$ & $[-6.28,\, 4.71]$ & $[-4.71,\, 6.28]$ \\
+        & $C_{\ell\ell}^{(5)}$ & $[-12.6,\, 12.6]$ & $[-6.28,\, 4.14]$ & $[-4.14,\, 6.28]$ \\
+    \bottomrule
+\end{tabular}}
+\caption{Marginalized partial-wave unitarity bounds for $O_{\ell\ell}$ under MFV and $U(2)^5$
+flavor symmetry, with and without spinning sum rules under scalar or vector dominance in the UV.
+Bounds are intervals $[a,b]$ with $(s/\Lambda^2)C \in [a,b]$, rounded to 3 significant digits.}
+\label{tab:Oll_UB}
+\end{table}

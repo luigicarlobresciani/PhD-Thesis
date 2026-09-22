@@ -127,6 +127,7 @@
 \newcommand{\fontsections}{\usefont{T1}{lmr}{b}{n}}
 
 
+
 \begin{comment}
 \makeatletter
 \def\cleardoublepage{%
@@ -199,3 +200,9 @@
     ([shift={(-1.2mm, 1.2mm)}]#1) -- ([shift={(1.2mm,-1.2mm)}]#1);}
 
 \newcommand{\Pij}[3]{\delta_{#1 #3}\delta_{#3 #2}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\l@chapter}{\bfseries}{\fontsections}{}{\PackageWarning{toc}{l@chapter not patched}}
+\patchcmd{\l@part}{\bfseries}{\fontsections}{}{\PackageWarning{toc}{l@part not patched}}
+\makeatother

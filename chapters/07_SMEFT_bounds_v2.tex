@@ -74,20 +74,20 @@ of Chapter~\ref{ch:generalizedUB} to the dimension-six SMEFT and collect the mar
 the complete set of Wilson coefficients in the single-flavor limit. In
 Section~\ref{sec:SMEFT_sumrules} we derive the spinning sum rules for four-fermion operators in the
 Warsaw basis, describing how they are turned into inequalities on the Wilson coefficients and under
-which conditions they may fail. In Section~\ref{sec:SMEFT_multiflavor} we relax the single-flavor
-assumption and present the bounds on four-fermion operators under the MFV and $U(2)^5$ flavor
+which conditions they may fail. In Section~\ref{sec:SMEFT_multiflavor} we present the bounds on four-fermion operators under the MFV and $U(2)^5$ flavor
 hypotheses. Section~\ref{sec:SMEFT_pheno} is dedicated to the phenomenological applications of our
 results and to their interplay with current and projected experimental limits. Our conclusions are
 presented in Section~\ref{sec:SMEFT_conclusions}. Finally, Appendix~\ref{app:SMEFT_conv} collects the
 operator basis and our conventions, Appendix~\ref{app:SMEFT_UV} matches a representative set of
-ultraviolet completions onto the semileptonic operators, and Appendix~\ref{app:SMEFT_math} gathers
-the mathematical tools used in the derivation of the bounds.
+UV completions onto the semileptonic operators, Appendix~\ref{app:SMEFT_math} gathers the
+mathematical tools used in the derivation of the bounds, and Appendix~\ref{app:SMEFT_flavorresults}
+reports the complete set of bounds on the flavorful four-fermion operators.
 
 \section{Unitarity Bounds\label{sec:SMEFT_unitaritybounds}}
 
 To compute the unitarity bounds, we adopt the method developed in Chapter~\ref{ch:generalizedUB}, which allows one to project a generic scattering amplitude $\ket*{\mathcal{A}_{i\to f}}$ onto a kinematic basis $\ket*{\mathcal{B}^J_{i\to f}}$ with definite angular momentum $J$, as follows:
 \begin{equation}
-\ket{\mathcal{A}_{i\to f}}=\sum_J a_{i\to f}^J \ket*{\mathcal{B}_{i\to f}^J}\,,
+\ket*{\mathcal{A}_{i\to f}}=\sum_J a_{i\to f}^J \ket*{\mathcal{B}_{i\to f}^J}\,,
 \end{equation}
 where $a_{i\to f}^J$ denote the partial-wave coefficients and the elements of the kinematic basis are normalized as 
 \begin{equation}
@@ -127,7 +127,7 @@ This procedure is particularly relevant for coefficients that contribute to the 
 \end{itemize}
 Representative examples are shown in Figures~\ref{fig:uni3} and \ref{fig:1-flavor unitary+sum rules}.
 
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1.25]{images/C_H4D2.pdf}\quad
     \includegraphics[scale=1.25]{images/C_Hl_and_C_Hq.pdf}\\
@@ -137,7 +137,7 @@ Representative examples are shown in Figures~\ref{fig:uni3} and \ref{fig:1-flavo
     \label{fig:uni3}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1.25]{images/C_lq.pdf}\qquad
     \includegraphics[scale=1.25]{images/C_qq.pdf}\\
@@ -148,44 +148,93 @@ Representative examples are shown in Figures~\ref{fig:uni3} and \ref{fig:1-flavo
     \label{fig:1-flavor unitary+sum rules}
 \end{figure}
 
-To fully exploit the power of this method, we performed a complete coupled-channel analysis. In particular, to compute the amplitude of a process mediated by a given SMEFT operator, we considered all possible initial and final states in all allowed helicity, gauge, and flavor configurations. 
-At dimension six the leading numerical constraints often arise from the lowest-multiplicity channels. Nevertheless, the general $N \to M$ formalism of Chapter~\ref{ch:generalizedUB} is essential for a uniform treatment of all operator classes, including $\varphi^6$ and $\psi^2\varphi^3$, and makes the inclusion of higher-multiplicity channels automatic
+To fully exploit the power of this method, we performed a fully coupled-channel analysis,
+%for each operator. In particular, to compute the amplitude of a process mediated by a given SMEFT operator, we 
+%considered all possible initial and final states in all allowed helicity, gauge, and flavor configurations.
+considering all possible initial and final states in all allowed helicity, gauge, and flavor configurations.
+At dimension six, the leading numerical constraints often arise from the lowest-multiplicity channels. Nevertheless, the general $N \to M$ formalism of Chapter~\ref{ch:generalizedUB} is essential for a uniform treatment of all operator classes, including $\varphi^6$ and $\psi^2\varphi^3$, and makes the inclusion of higher-multiplicity channels automatic
 whenever they yield the leading energy growth.
 For practical purposes, we present in Table~\ref{tab:UniBounds} the unitarity bounds assuming single-flavor fermions, due to the large number of independent components arising from Wilson coefficients with multiple flavor indices.
 The multi-flavor scenario is considered in Section~\ref{sec:SMEFT_multiflavor}.
 
 The coupled-channel analysis also requires care in the choice of the angular momentum at which the
-bound is imposed. For operators containing a single fermionic bilinear, the lowest allowed angular
-momentum in $2\to2$ processes is $J=1/2$, reached through the channels
+bound is imposed. 
+% For operators containing a single fermionic bilinear, the lowest allowed angular
+% momentum in $2\to2$ processes is $J=1/2$, reached through the channels
+% \begin{gather}
+%     \psi_R^{\alpha,p}\varphi_j\to \psi_L^{i,\beta,r}X^I\,,\qquad \psi_R^{\alpha,p}X^I\to \psi_L^{i,\beta,r}\varphi_j^\dagger\,,\\
+%     \psi_R^{\alpha,p}\varphi_i\to\psi_R^{\beta,r}\varphi_j\,,\qquad    \psi_L^{k,\alpha,p}\varphi_i\to\psi_L^{\ell,\beta,r}\varphi_j\,,
+% \end{gather}
+% where $\alpha,\beta$ are $SU(3)_c$ indices in the (anti)fundamental representation and $L,R$ denote
+% the chirality of the fermion fields, while at $J=1$ the additional channels are
+% \begin{equation}
+%     \psi_R^{\alpha,p}\overline \psi_L^{i,\beta,r}\to X^I\varphi_j^\dagger\,,\qquad \psi_R^{\alpha,p}\overline \psi_R^{\beta,r}\to\varphi_i\varphi_j^\dagger\,, \qquad \psi_L^{k,\alpha,p}\overline \psi_L^{\ell,\beta,r}\to\varphi_i\varphi_j^\dagger\,.
+% \end{equation}
+Operators containing a single fermionic bilinear generate $2\to2$ processes with
+two fermionic and two bosonic external legs. Since a pair of fermions carries integer total angular
+momentum, half-integer values of $J$ are reached only when one fermion sits in the initial and one in
+the final state, and the lowest allowed value is then $J=1/2$. A minimal set of such channels is
 \begin{gather}
-    \psi_R^{\alpha,p}\varphi_j\to \psi_L^{i,\beta,r}X^I\,,\qquad \psi_R^{\alpha,p}X^I\to \psi_L^{i,\beta,r}\varphi_j^\dagger\,,\\
-    \psi_R^{\alpha,p}\varphi_i\to\psi_R^{\beta,r}\varphi_j\,,\qquad    \psi_L^{k,\alpha,p}\varphi_i\to\psi_L^{\ell,\beta,r}\varphi_j\,,
+    \psi_R^{a,p}\,\varphi^{b} \to \psi_R^{c,r}\,\varphi^{d}\,,\qquad
+    \psi_L^{a,p}\,\varphi^{b} \to \psi_L^{c,r}\,\varphi^{d}\,,\qquad
+    \psi_R^{a,p}\,\varphi^{b} \to \psi_L^{c,r}\,X^{d}\,,
 \end{gather}
-where $\alpha,\beta$ are $SU(3)_c$ indices in the (anti-)fundamental representation and $L,R$ denote
-the chirality of the fermion fields, while at $J=1$ the additional channels are
-\begin{equation}
-    \psi_R^{\alpha,p}\overline \psi_L^{i,\beta,r}\to X^I\varphi_j^\dagger\,,\qquad \psi_R^{\alpha,p}\overline \psi_R^{\beta,r}\to\varphi_i\varphi_j^\dagger\,, \qquad \psi_L^{k,\alpha,p}\overline \psi_L^{\ell,\beta,r}\to\varphi_i\varphi_j^\dagger\,.
-\end{equation}
+where $a,b,c,d$ collectively denote the gauge indices of each field, $p,r$ are flavor
+indices, and $L,R$ denote the chirality of the fermions. The first two channels arise from the
+chirality-preserving bilinears of the class $\psi^2\varphi^2D$, the third from the
+chirality-violating ones of the class $\psi^2X\varphi$. All the remaining $J=1/2$ channels, such as
+$\psi_R^{a,p}X^{b}\to\psi_L^{c,r}\varphi^{\dagger d}$, follow from these by applying C, P, T, or
+combinations thereof.
+Integer values of $J$ instead require both fermions on the same side. For $J=1$, a
+minimal set of channels is
+\begin{gather}
+    \psi_R^{a,p}\,\overline\psi_R^{b,r} \to \varphi^{c}\,\varphi^{\dagger d}\,,\qquad
+    \psi_L^{a,p}\,\overline\psi_L^{b,r} \to \varphi^{c}\,\varphi^{\dagger d}\,,\qquad
+    \psi_R^{a,p}\,\overline\psi_L^{b,r} \to X^{c}\,\varphi^{\dagger d}\,,
+\end{gather}
+% where in the first two the chirality-preserving fermion pair already carries one unit of angular
+% momentum along the collision axis, while in the third the chirality-violating pair carries none and
+% the bound comes instead from the vector in the final state. 
+where the minimum $J$ of each pair is set by its helicity difference, which is one unit for
+the first two initial states and, in the third, for the final state.
+Again, all the remaining channels follow
+by applying C, P, T, or combinations thereof.
 The resulting bounds are compared in Table~\ref{tab: UB for psi^2 Xphi and psi^2phi^2D}. For
 operators of type $\psi^2X\varphi$ the $J=1/2$ bounds are always the stronger ones, whereas for
-operators of type $\psi^2\varphi^2D$ the outcome depends on the case at hand, since in the fully
+operators of type $\psi^2\varphi^2D$ the outcome depends on the case at hand, since in the
 coupled-channel analysis the color degrees of freedom can add up and make the $J=1$ bound stronger,
-even though it would naively be expected to be more suppressed.
+even though it would naively be expected to be suppressed.
 
 \input{tables/SMEFT_J_bilinear}
 
-For four-fermion operators, the relevant angular momentum depends on the chirality of the fermions considered in the scattering processes. The channels contributing at $J=0$ are
+% For four-fermion operators the relevant angular momentum depends strongly on the chirality of the
+% external fermions. The channels contributing at $J=0$ are
+% \begin{gather}
+%     \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\psi_L^{\ell,\delta,t}\,,\\
+%     \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\overline\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\overline\psi_L^{j,\delta,t}\,,
+% \end{gather}
+% while those contributing at $J=1$ are
+% \begin{gather}
+%     \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\overline\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\overline\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\overline\psi_L^{\ell,\delta,t}\,,\\
+%     \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\overline\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\psi_L^{j,\delta,t}\,.
+% \end{gather}
+For four-fermion operators, the relevant angular momentum is again fixed by the chirality of the
+external fermions. A minimal set of channels contributing at $J=0$ is
 \begin{gather}
-    \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\psi_L^{\ell,\delta,t}\,,\\
-    \psi_R^{\alpha,p}\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\overline\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\overline\psi_L^{j,\delta,t}\,,
+    \psi_R^{a,p}\psi_R^{b,r}\to\psi_R^{c,s}\psi_R^{d,t}\,,\qquad
+    \psi_R^{a,p}\psi_R^{b,r}\to\psi_L^{c,s}\psi_L^{d,t}\,,\qquad
+    \psi_R^{a,p}\overline\psi_L^{b,r}\to\psi_R^{c,s}\overline\psi_L^{d,t}\,,
 \end{gather}
-while those contributing at $J=1$ are
+while at $J=1$ it is
 \begin{gather}
-    \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_R^{\gamma,s}\overline\psi_R^{\delta,t}\,,\qquad \psi_L^{i,\alpha,p}\overline\psi_L^{j,\beta,r}\to\psi_L^{k,\gamma,s}\overline\psi_L^{\ell,\delta,t}\,,\\
-    \psi_R^{\alpha,p}\overline\psi_R^{\beta,r}\to\psi_L^{i,\gamma,s}\overline\psi_L^{j,\delta,t}\,,\qquad \psi_R^{\alpha,p}\psi_L^{i,\beta,r}\to\psi_R^{\gamma,s}\psi_L^{j,\delta,t}\,.
+    \psi_R^{a,p}\overline\psi_R^{b,r}\to\psi_R^{c,s}\overline\psi_R^{d,t}\,,\qquad
+    \psi_R^{a,p}\overline\psi_R^{b,r}\to\psi_L^{c,s}\overline\psi_L^{d,t}\,,\qquad
+    \psi_R^{a,p}\psi_L^{b,r}\to\psi_R^{c,s}\psi_L^{d,t}\,.
 \end{gather}
-The corresponding bounds are compared in Table~\ref{tab: UB for psi^4}. In most cases the $J=0$ bound
-dominates, but not always, which stresses once again that one cannot stop at the smallest allowed
+All the remaining channels follow by applying C, P, T, or
+combinations thereof.
+The corresponding bounds are compared in Table~\ref{tab: UB for psi^4}. In most cases, the $J=0$ bound
+dominates, but not always, which stresses once again that, to obtain the most stringent bounds, one cannot stop at the smallest allowed
 angular momentum whenever several degrees of freedom contribute to the coupled-channel analysis.
 
 \input{tables/SMEFT_J_fourfermion}
@@ -197,18 +246,15 @@ Indeed, from positivity constraints, the presence of a dimension-six operator of
 Comparing the results in Table \ref{tab:UniBounds} with previous SMEFT analyses \cite{Corbett:2014ora,Corbett:2017qgl,Cao:2023qks}, we derive unitarity bounds for the complete set of four-fermion operators and for operators involving at least one gluon field, which were not covered in those works.
 With this method, such bounds are straightforward to obtain compared to alternative approaches. Moreover, the fully exploited coupled-channel analysis allows us to derive stronger bounds than those previously reported. 
 
-Overall, our bounds on purely bosonic operators agree with those in Ref.~\cite{Cao:2023qks}, except for a factor-of-two difference arising from Eq.~\eqref{unitarity bound general}, as that work conventionally imposed $|a_{i\to f}^J|\leq 2$ on the partial-wave coefficients. In contrast, the bounds on operators involving fermions exhibit larger discrepancies, which we attribute to the combined effects of the coupled-channel analysis and the marginalization procedure. In particular, operators of the type $\psi^2 X\varphi$ and $\psi^2\varphi^2 D$ show case-by-case differences of up to a factor of two. Overall, our bounds are always more stringent, except for $O_{\varphi ud}$, for which our bound is weaker by a factor of $\sqrt{2}$.
+Overall, our bounds on purely bosonic operators agree with those in Ref.~\cite{Cao:2023qks}, except for a factor-of-two difference arising from Eq.~\eqref{unitarity bound general}, as that work conventionally imposed $|a_{i\to f}^J|\leq 2$ for the partial-wave coefficients. In contrast, the bounds on operators involving fermions exhibit larger discrepancies, which we attribute to the combined effects of the coupled-channel analysis and the marginalization procedure. In particular, operators of the type $\psi^2 X\varphi$ and $\psi^2\varphi^2 D$ show case-by-case differences of up to a factor of two. Overall, our bounds are always more stringent, except for $O_{\varphi ud}$, for which our bound is weaker by a factor of $\sqrt{2}$.
 
 \section{Spinning Sum-Rule Bounds\label{sec:SMEFT_sumrules}}
 
-The analyticity of the $S$-matrix, together with partial-wave unitarity, allows one to derive
-additional theoretical constraints on effective four-fermion interactions beyond the unitarity bounds
-discussed above. In particular,
+As anticipated in the introduction, the analyticity of the $S$-matrix, together with partial-wave
+unitarity, yields additional constraints on effective four-fermion interactions. The relevant
+dispersion relations have been introduced in
 Refs.~\cite{Low:2009di,Azatov:2021ygj,Gu:2020thj,Remmen:2020uze,Remmen:2022orj,Altmannshofer:2023bfk,%
-Altmannshofer:2025lun} have introduced dispersion relations that yield either spin-dependent sum
-rules or constraints on the high-energy behavior of scattering amplitudes. Remarkably, the resulting
-pattern of SMEFT inequalities can be used to infer characteristic features of the underlying UV
-dynamics, indicating whether it is dominated by scalar or vector particles.
+Altmannshofer:2025lun}, and we derive here the resulting inequalities in the Warsaw basis.
 
 Following Ref.~\cite{Remmen:2020uze}, we consider the amplitude $\mathcal{A}_{\alpha\beta}(s,t)$,
 where $s$ and $t$ are the usual Mandelstam variables associated with an elastic scattering process of
@@ -225,7 +271,7 @@ differently from those of Ref.~\cite{Remmen:2020uze}.}
 where $s_0$ is the characteristic mass-squared scale of the UV completion and the boundary term is
 defined as
 \begin{equation}
-    C_{\alpha\beta}^{(s,\infty)}=\Res_{s=\infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s^2}=-\lim_{\abs{s}\to \infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s}\,.
+    C_{\alpha\beta}^{(s,\infty)}=\Res_{s=\infty}\frac{\mathcal{A}_{\alpha\beta}(s,0)}{s^2}=-\lim_{\abs{s}\to \infty}\frac{1}{s}\mathcal{A}_{\alpha\beta}(s,0)\,.
 \end{equation}
 If the boundary term vanishes, one can show that all partial waves $a_{\alpha\beta}^{J}$ and
 $a_{\overline\alpha\beta}^{J}$ with $J\geq2$ vanish as well, together with $\Im
@@ -259,7 +305,7 @@ the unitarity bounds and by the spinning sum rules under scalar and vector domin
 Wilson coefficients in the single-flavor limit. Stronger bounds generally arise in the three-flavor
 scenario, which is the subject of Section~\ref{sec:SMEFT_multiflavor}.
 
-\subsection{Applications}
+\subsection{Application}
 
 We now describe how the sum rules associated with a given four-fermion operator are turned into
 inequalities on its Wilson coefficients. For scalar dominance one has to impose
@@ -271,24 +317,33 @@ combinations of Table~\ref{tab:sum_rules}. This is a double quadratic form in $\
 We therefore first impose the inequality for every $\alpha$, which amounts to a quadratic form, by
 introducing the $3\times 3$ matrices
 \begin{equation}
-    [M^\psi]_{pr}\equiv b^\psi_{prst}\,\beta^*_s \beta_t
+    M^\psi_{pr}= b^\psi_{prst}\,\beta^*_s \beta_t
 \end{equation}
 and requiring all their eigenvalues to be positive for every $\beta$. Without loss of generality, we
 parameterize
 \begin{equation}
-    \beta=\{e^{i\delta_1}\beta_1,\sqrt{1-\beta_1^2-\beta_3^2},e^{i\delta_3}\beta_3\}\,,
+    \beta=
+    \begin{pmatrix}
+        e^{i\delta_1}\beta_1 \\ e^{i\delta_2}\beta_2 \\ \sqrt{1-\beta_1^2-\beta_2^2}
+    \end{pmatrix}\,,
 \end{equation}
-so that the eigenvalues of $M^\psi$ always take the form
+% so that the eigenvalues of $M^\psi$ always take the form
+% \begin{equation}\label{eq:eigenvalue form}
+%     f(x)=a + bx - \sqrt{c^2 + dx + ex^2}\,,\qquad x=\beta_3^2\,,
+% \end{equation}
+and in all the cases encountered, the eigenvalues of $M^\psi$ take the form
 \begin{equation}\label{eq:eigenvalue form}
-    f(x)=a + bx - \sqrt{c^2 + dx + ex^2}\,,\qquad x=\beta_3^2\,.
+    f(x)=a + bx \pm \sqrt{c^2 + dx + ex^2}\,,\qquad x=\beta_1^2+\beta^2_2\,,
 \end{equation}
+with $a,b,c,d,e\in\mathbb{R}$.
 Requiring all eigenvalues to be positive for
 every $\beta$ is therefore equivalent to requiring $f(x)\geq0$ for every $x\in[0,1]$.
 
-This last step is what makes the procedure practicable. Scanning numerically over $\beta$ would give
+% This last step is what makes the procedure practicable. 
+Scanning numerically over $\beta$ would give
 only a sampled, and therefore inconclusive, version of the constraint, whereas the positivity of $f$
 on the unit interval can be traded for a finite set of algebraic inequalities among the coefficients
-$a,b,c,d,e$, which are themselves linear in the Wilson coefficients. Explicitly, $f(x)\geq0$ for
+$a,b,c,d,e$, which are themselves functions of the Wilson coefficients. Explicitly, $f(x)\geq0$ for
 every $x\in[0,1]$ if and only if
 \begin{align}\label{eq:Delta}
     \Delta(a,b,c,d,e) &= 
@@ -316,24 +371,23 @@ spinning sum rules are considerably more model dependent and hold only under a s
 assumptions whose violation invalidates the corresponding
 inequalities~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj,Gu:2020thj}. In particular:
 \begin{itemize}
-    \item They assume tree-level ultraviolet completions and can be violated at one
-    loop~\cite{Azatov:2021ygj};
+    \item They assume tree-level UV completions and can be violated at loop level~\cite{Azatov:2021ygj};
     \item They assume dominance by states of definite spin, so that completions involving a
     non-trivial interplay of spin-0 and spin-1 states can evade them, since the right-hand side of
     Eq.~\eqref{eq: sum rules master equation} ceases to be sign definite for arbitrary configurations
     of $\alpha$ and $\beta$;
     \item They rely on the vanishing of the boundary terms in the dispersion relation, which fails in
-    particular for vector $t$-channel ultraviolet
+    particular for vector $t$-channel UV
     completions~\cite{Remmen:2020uze,Remmen:2022orj,Azatov:2021ygj}.
 \end{itemize}
-The last condition is the most problematic one, since tree-level ultraviolet completions of $\psi^4$
+The last condition is the most problematic one, since tree-level UV completions of $\psi^4$
 operators generically arise in new-physics models.
 
 This residual model dependence is, however, physically informative. A coefficient lying outside the
-scalar- and vector-dominated regions does not exclude an ultraviolet completion but points to a more
+scalar- and vector-dominated regions does not exclude a UV completion but points to a more
 structured one, such as a vector $t$-channel mediator, a loop-level origin, or a mixed-spin spectrum.
 In Appendix~\ref{app:SMEFT_UV} we verify this picture explicitly by matching a representative set of
-tree-level ultraviolet completions of Ref.~\cite{deBlas:2017xtg}. All scalar completions satisfy the
+tree-level UV completions of Ref.~\cite{deBlas:2017xtg}. All scalar completions satisfy the
 sum-rule constraints, whereas vector $t$-channel completions can violate them.
 
 \section{Bounds on Flavorful Four-Fermion Operators\label{sec:SMEFT_multiflavor}}
@@ -354,19 +408,19 @@ in Ref.~\cite{DAmbrosio:2002vsn} for the quark sector and subsequently extended 
 leptons~\cite{Cirigliano:2005ck}. It assumes that the SM fermions are charged under the global flavor
 symmetry group
 \begin{equation}
-    G_{\text{MFV}}= U(3)^5=U(3)_q\times U(3)_u\times U(3)_d\times U(3)_\ell\times U(3)_e\,,
+    G_{\rm MFV}\equiv U(3)^5=U(3)_q\times U(3)_u\times U(3)_d\times U(3)_\ell\times U(3)_e\,,
 \end{equation}
 where each SM fermion is a three-vector in flavor space transforming in the fundamental
 representation of one of these factors,
 \begin{equation}
     q\to U_q\, q\,,\quad \ell\to U_\ell\, \ell\,,\quad u\to U_u\, u\,,\quad d\to U_d\, d\,,\quad e\to U_e\, e\,.
 \end{equation}
-The only interactions in the SM Lagrangian that explicitly break $G_{\text{MFV}}$ are the Yukawa
+The only interactions in the SM Lagrangian that explicitly break $G_{\rm MFV}$ are the Yukawa
 matrices $Y_u$, $Y_d$ and $Y_e$, which are promoted to spurions transforming as
 \begin{equation}
     Y_u\to U_q Y_u U_u^\dagger\,,\quad Y_d\to U_q Y_d U_d^\dagger\,,\quad Y_e\to U_\ell Y_e U_e^\dagger\,.
 \end{equation}
-Assuming that new physics also respects $G_{\text{MFV}}$, the number of independent coefficients in
+Assuming that new physics also respects $G_{\rm MFV}$, the number of independent coefficients in
 four-fermion operators is strongly reduced, since MFV-violating terms can arise only through
 appropriate Yukawa insertions in the Wilson coefficients, weighted by unknown $\mathcal O(1)$
 numbers. The classification of the independent structures arising at dimension six was carried out in
@@ -382,9 +436,9 @@ Another theoretically motivated hypothesis assumes that the first two generation
 species transform collectively as doublets while the third generation is a singlet. The flavor
 symmetry is then
 \begin{equation}
-    G_{F}= U(2)^5=U(2)_q\times U(2)_u\times U(2)_d\times U(2)_\ell\times U(2)_e\,,
+    G_{\rm F}\equiv U(2)^5=U(2)_q\times U(2)_u\times U(2)_d\times U(2)_\ell\times U(2)_e\,,
 \end{equation}
-where the fermion fields decompose as $\psi = (\psi^a,\psi_3)$, with $a=1,2$ and
+where the fermion fields decompose as $\psi = (\psi_a,\psi_3)$, with $a=1,2$ and
 $\psi=q,u,d,\ell,e$. The classification of the independent structures at dimension six was again
 carried out in Ref.~\cite{Faroughy:2020ina}. In this case there is no unique or well-motivated choice
 of spurions parameterizing the breaking of the symmetry~\cite{Faroughy:2020ina,Greljo:2022cah}, but
@@ -396,46 +450,50 @@ In the following we make the symmetrization of the Wilson coefficients explicit,
 require computing eigenvalues of quadratic forms. For operators built from a single fermion species
 we use
 \begin{equation}
-    [C_{\psi\psi}]_{prst}=[C_{\psi\psi}]^*_{rpts}=[C_{\psi\psi}]^*_{tsrp}\,,
+    [C_{\psi\psi}]_{prst}=[C_{\psi\psi}]_{stpr}=[C_{\psi\psi}]^*_{rpts}\,,
 \end{equation}
 while for different fermion types
 \begin{equation}
     [C_{\psi\chi}]_{prst}=[C_{\psi\chi}]^*_{rpts}\,.
 \end{equation}
 
-\subsection{Results}
+\subsection{\texorpdfstring{Example: $O_{\ell q}^{(1)}$ and $O_{\ell q}^{(3)}$}{Example: Olq(1) and Olq(3)}}
 
 Under these flavor hypotheses we are able to provide unitarity bounds for the SMEFT Wilson
-coefficients involving fermionic fields in the multi-flavor case. As an example, under MFV the
-operator $O_{\ell\ell}$ has only two independent coefficients,
+coefficients involving fermionic fields in the multi-flavor case. As a representative example, we
+discuss here the operators $O_{\ell q}^{(1,3)}$. Under MFV each of them admits two independent
+coefficients,
 \begin{equation}
-    [C_{\ell\ell}]_{prst} = C_{\ell\ell}^{(1)}\delta_{pr}\delta_{st} + C_{\ell\ell}^{(2)}\delta_{pt}\delta_{rs}\,,
+    [C_{\ell q}^{(i)}]_{prst} = C_{\ell q}^{(i,1)}\delta_{pr}\delta_{st}
+    + C_{\ell q}^{(i,2)}\delta_{pr}(Y_u Y_u^\dagger)_{st}\,,\qquad i=1,3\,,
 \end{equation}
-so that the resulting theoretical bound can be displayed in a two-dimensional plot, as shown in
-Figure~\ref{fig:Oll_mfv}.
+while under $U(2)^5$ the independent structures are four for each $i$. The corresponding marginalized
+bounds are collected in Table~\ref{tab:Olq_UB}, and the allowed regions are shown in
+Figures~\ref{fig:Olq_mfv} and \ref{fig:Olq_u2} as two-dimensional slices, in which the remaining
+independent coefficients are set to zero.
 
-Even under these hypotheses the coupled-channel analysis remains demanding. As an illustration,
-Figure~\ref{fig:matrixplot} shows the structure of the scattering matrix associated with the
-$q\overline q \to q \overline q$ processes in the three-flavor $U(2)^5$ scenario, whose analytic
-eigenvalues were obtained with finite-field methods.
+\input{tables/tables_flavor_Olq}
+
+\input{images/flavor/figures_flavor_Olq}
+
+Interestingly, one can notice that setting some coefficients to zero forces the other coefficients to vanish as well in order to satisfy the sum-rule constraints.
+This can be seen, e.g., in two panels of Figure~\ref{fig:Olq_mfv} and eighteen panels of Figure~\ref{fig:Olq_u2}, where the sum-rule regions collapse to lines or points.
+
+Even under these flavor hypotheses, the coupled-channel analysis remains demanding. As an illustration,
+Figure~\ref{fig:matrixplot} shows the structure of the scattering matrix --- whose analytic
+eigenvalues were obtained with finite-field methods~\cite{Chestnov:2025svg} --- associated with the
+$q\overline q \to q \overline q$ processes in the three-flavor $U(2)^5$ scenario, considered for obtaining the bounds associated with $O_{qq}^{(1,3)}$.
 %
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[]{images/matrixplot.pdf}
     \caption{Structure of scattering matrix associated with the $q\overline q \to q \overline q$ processes in the three-flavor scenario under the $U(2)^5$ flavor symmetry. The dimension of the matrix is $324=18^2$ as each $q$ or $\overline q$ contains $3\times 3\times 2$ degrees of freedom. To obtain its analytic eigenvalues, the Mathematica package \textsc{SP}$\mathbb{Q}$\textsc{R}~\cite{Chestnov:2025svg} has been used, exploiting finite-field methods.}
     \label{fig:matrixplot}
 \end{figure}
 
-In the following we list all the operator structures together with the marginalized bound on each
-independent coefficient, for both the MFV and the $U(2)^5$ flavor hypotheses. Table~\ref{tab:summary}
-collects the references to the tables of marginalized bounds and to the figures of the corresponding
-allowed regions.
-
-\input{tables/flavor_hyperlinks}
-
-\input{tables/tables_flavor}
-
-\input{images/flavor/figures_flavor}
+The same analysis has been carried out for all the remaining four-fermion operators. Since the
+resulting set of flavor structures, bounds, and allowed regions is extensive, we collect it in
+Appendix~\ref{app:SMEFT_flavorresults}.
 
 \section{Phenomenological Applications\label{sec:SMEFT_pheno}}
 
@@ -443,7 +501,7 @@ To assess the phenomenological impact of the theoretical bounds discussed above,
 
 We first analyze the unitarity bounds for purely bosonic operators. Figure~\ref{fig:histogram} shows the minimum energy scales $E_*$ at which the bounds in Table~\ref{tab:UniBounds} are violated, assuming Wilson coefficients are taken from the 95\% CL marginalized intervals of Ref.~\cite{Celada:2024mcf}, using linear (blue) and quadratic (orange) fits.
 %
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1.25]{images/histogram.pdf}
     \caption{Minimum energy scales $E_*$ at which the unitarity bounds in Table~\ref{tab:UniBounds} are violated for each purely bosonic Wilson coefficient in Ref.~\cite{Celada:2024mcf}, using the 95\% CL marginalized intervals from linear (blue) and quadratic (orange) fits.}
@@ -451,16 +509,16 @@ We first analyze the unitarity bounds for purely bosonic operators. Figure~\ref{
 \end{figure}
 
 Moreover, Figure~\ref{fig:3plotsa} presents both the unitarity bounds and the experimental constraints from LEP and (HL-)LHC diboson data on the Wilson coefficients of the operators $O_{\varphi q}^{(1)}$ and $O_{\varphi q}^{(3)}$.
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{images/dibosonv2.pdf}
     \caption{Experimental and unitarity constraints on the Wilson coefficients of the operators $O_{\varphi q}^{(1)} = \sum_{p=1,2}i(\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu \varphi)(\overline q_p \gamma^\mu q_p)$ and $O_{\varphi q}^{(3)} = \sum_{p=1,2}i(\varphi^\dagger \overset{\leftrightarrow}{D}{}_\mu^I \varphi)(\overline q_p \sigma^I \gamma^\mu q_p)$. Experimental limits correspond to $95\%$ CL marginalized intervals \cite{Celada:2024mcf}.}
     \label{fig:3plotsa}
 \end{figure}
-The experimental limits correspond to 95\% CL marginalized intervals obtained from a linear fit \cite{Celada:2024mcf}. As shown, the unitarity bounds --- scaling as $(\sqrt{s}/4\,\mathrm{TeV})^2$ --- are significantly stronger than those from LEP alone, but remain weaker than the constraints derived from the combined LEP and (HL-)LHC data.
+The experimental limits correspond to 95\% CL marginalized intervals obtained from a linear fit \cite{Celada:2024mcf}. As shown, the unitarity bounds --- scaling as $(\sqrt{s}/4~\mathrm{TeV})^2$ --- are significantly stronger than those from LEP alone, but remain weaker than the constraints derived from the combined LEP and (HL-)LHC data.
 
 As a third example, we consider the global analysis of LHC Run II data in the top sector induced by the four-quark operators $O_{Qq}^{1,8}$ and $O_{Qq}^{3,8}$, where the experimental limits are obtained from a quadratic fit \cite{Brivio:2019ius}.
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{images/top.pdf}
     \caption{Experimental and unitarity constraints on the Wilson coefficients of the 
@@ -468,11 +526,11 @@ As a third example, we consider the global analysis of LHC Run II data in the to
     Experimental limits correspond to $68\%$ CL and are derived from a quadratic fit \cite{Brivio:2019ius}. Here, the sum rules select the region where $C_{Qq}^{1,8}-(1\pm 2)C_{Qq}^{3,8}$ are positive (negative) for scalar (vector) completions.}
     \label{fig:3plotsb}
 \end{figure}
-Most of the measurements involve final states with a top-quark pair, including kinematic distributions, the charge asymmetry, and associated top-pair production with a weak boson. As shown in Figure~\ref{fig:3plotsb}, the unitarity bounds are quite competitive with the LHC experimental limits. Interestingly, the inclusion of sum rules --- corresponding to an underlying scalar or vector tree-level mediator of the four-fermion interactions --- selects complementary regions of the parameter space, thereby providing insight into the nature of the underlying NP dynamics.
+Most of the measurements involve final states with a top-quark pair, including kinematic distributions, the charge asymmetry, and associated top-pair production with a weak boson. As shown in Figure~\ref{fig:3plotsb}, the unitarity bounds are quite competitive with the LHC experimental limits. Interestingly, the inclusion of sum rules --- corresponding to an underlying scalar or vector tree-level mediator of the four-fermion interactions --- selects complementary regions of the parameter space, thereby providing insight into the nature of the underlying new-physics dynamics.
 
 As a last example, we consider the comprehensive analysis of electroweak, flavor, and collider constraints on semileptonic 
-four-fermion operators $[O_{\ell q}^{(1)}]_{3333}$ and $[O_{\ell q}^{(3)}]_{3333}$ in the $U(2)^5$ scenario of Ref.~\cite{Allwicher:2023shc}, where NP predominantly couples to the third generation. Also in this case, as shown in Figure~\ref{fig:3plotsc}, the unitarity bounds and the sum-rule constraints are highly complementary and competitive with the experimental limits.
-\begin{figure}[tb]
+four-fermion operators $[O_{\ell q}^{(1)}]_{3333}$ and $[O_{\ell q}^{(3)}]_{3333}$ in the $U(2)^5$ scenario of Ref.~\cite{Allwicher:2023shc}, where new physics predominantly couples to the third generation. Also in this case, as shown in Figure~\ref{fig:3plotsc}, the unitarity bounds and the sum-rule constraints are highly complementary and competitive with the experimental limits.
+\begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{images/flavor.pdf}
     \caption{Experimental and unitarity constraints on the Wilson coefficients of the 
@@ -492,7 +550,9 @@ larger values of the partonic center-of-mass energy
 $\sqrt{\hat s}$. Since perturbative unitarity determines
 the range of validity of the EFT, the relevant scale
 entering the bound is $\sqrt{\hat s}$, rather than the
-collider center-of-mass energy itself. This is
+collider center-of-mass energy itself. 
+
+This is
 particularly relevant for the HL-LHC: although it
 operates at the same collider energy as the LHC, its
 much larger integrated luminosity enables precision
@@ -505,7 +565,9 @@ center-of-mass energies of order
 $\sqrt{\hat s}\sim 2$~TeV, we display the unitarity
 bounds at $\sqrt{\hat s}=4$~TeV as a
 representative benchmark for the multi-TeV regime
-accessible in HL-LHC measurements. In realistic
+accessible in HL-LHC measurements. 
+
+In realistic
 analyses with a broad partonic energy spectrum, the
 unitarity condition should instead be evaluated at the
 value of $\sqrt{\hat s}$ relevant for each event or
@@ -535,11 +597,9 @@ in previous SMEFT studies~\cite{Corbett:2014ora,Corbett:2017qgl,Cao:2023qks}. Th
 formalism of Chapter~\ref{ch:generalizedUB} was essential to treat all operator classes uniformly,
 and in particular to constrain $O_\varphi$, which admits no $2\to2$ channel at all.
 
-We then derived the spinning sum rules for four-fermion operators in the Warsaw basis, keeping track
-of the boundary terms of the dispersion relation, and gave an operative procedure to translate them
+We then derived the spinning sum rules for four-fermion operators in the Warsaw basis and provided an operative procedure to translate them
 into inequalities on the Wilson coefficients in flavor space. We also delimited their regime of
-validity, identifying three distinct mechanisms through which they can fail, and illustrated each of
-them with explicit ultraviolet completions.
+validity, identifying three distinct mechanisms through which they can fail and illustrated them with explicit UV completions.
 
 Relaxing the single-flavor assumption, we presented the bounds on four-fermion operators under the
 MFV and $U(2)^5$ flavor hypotheses, which reduce the $\mathcal O(1000)$ independent coefficients to
@@ -553,7 +613,7 @@ strengthened by imposing the sum rules. Interestingly, the sum rules select comp
 the parameter space, thereby providing insight into the nature of the underlying new-physics
 dynamics.
 
-More broadly, the framework developed here establishes the first systematic, perturbativity-based
+More broadly, the framework developed here establishes the first systematic, per\-tur\-ba\-ti\-vi\-ty-based
 criterion that naturally incorporates operator correlations and can be directly implemented in
 present and future global SMEFT analyses, collider phenomenology, and Monte Carlo event generation.
 The results derived in this chapter strengthen the connection between theoretical and experimental
@@ -605,13 +665,30 @@ completions satisfy them.
 
 \subsection{Logical Expression}\label{sec:appendix, logical expression}
 
-The function $f(x) = a + bx - \sqrt{c^2 + dx + ex^2}$ of Eq.~\eqref{eq:eigenvalue form} --- assumed
-real on $[0,1]$ and with $a,b,c,d,e\in\mathbb{R}$ --- is such that $f(x) \ge 0$ for every
-$x \in [0,1]$ if and only if the system of inequalities $\Delta(a,b,c,d,e)$ of Eq.~\eqref{eq:Delta}
-is satisfied.
+In this appendix we prove the statement used in Section~\ref{sec:SMEFT_sumrules}. The function
+\begin{equation}
+    f(x) = a + bx - \sqrt{c^2 + dx + ex^2}\,,
+\end{equation}
+assumed real on $[0,1]$ and with $a,b,c,d,e\in\mathbb{R}$, satisfies $f(x) \ge 0$ for every
+$x \in [0,1]$ if and only if
+\begin{align}
+    \Delta(a,b,c,d,e) &= 
+    a \ge 0 
+    \ \land \
+    a+b \ge 0
+    \ \land \ 
+    a^2 - c^2 \ge 0
+    \ \land \ 
+    (a+b)^2 - c^2 -d-e \ge 0 
+    \\& \quad
+    \land \
+    [e - b^2 \ge 0 \ \lor\  (2ab-d)(2ab-d+2b^2-2e) \ge 0 
+    \\& \quad
+    \lor \ 4(b^2-e)(a^2-c^2)-(2ab-d)^2 \ge 0]
+\end{align}
+holds, which is the condition quoted in Eq.~\eqref{eq:Delta} of the main text.
 
-To prove this, note that,
-since $g(x)=c^2 + dx + ex^2 \ge 0$ on $[0,1]$ by assumption, $f(x) \ge 0$ on $[0,1]$ is equivalent to $\ell(x) = a + bx \ge 0$ and $h(x) = \ell(x)^2 -g(x) \ge 0$ on $[0,1]$. The latter reads $h(x) = \alpha x^2 + \beta x + \gamma$, with $\alpha = b^2-e$, $\beta = 2ab-d$, and $\gamma=a^2-c^2$.
+Since $g(x)=c^2 + dx + ex^2 \ge 0$ on $[0,1]$ by assumption, $f(x) \ge 0$ on $[0,1]$ is equivalent to $\ell(x) = a + bx \ge 0$ and $h(x) = \ell(x)^2 -g(x) \ge 0$ on $[0,1]$. The latter reads $h(x) = \alpha x^2 + \beta x + \gamma$, with $\alpha = b^2-e$, $\beta = 2ab-d$, and $\gamma=a^2-c^2$.
 Thus, it is sufficient to prove that $p(x) = \alpha x^2+\beta x + \gamma \ge 0$ on $[0,1]$ if and only if
     \begin{equation}\label{eq:lemma}
         \gamma\ge0 \ \land \ \alpha+\beta+\gamma\ge0 \ \land \
@@ -629,16 +706,16 @@ so $x_\ast \notin (0,1)$ if and only if $\beta(\beta+2\alpha)\ge 0$, in which ca
 Given the Hermitian Jordan--Wielandt matrix
 \begin{equation}
     M=\begin{pmatrix}
-        \mathbb{O}_{m\times m} & A \\ A^\dag & \mathbb{O}_{n\times n}
+        \mathbb{O}_{m\times m} & A \\ A^\dagger & \mathbb{O}_{n\times n}
     \end{pmatrix}
 \end{equation}
 of size $m+n$,
 with $A\in \mathbb{C}^{m \times n}$,
 we have that its characteristic polynomial --- with the convention $p_X(x) = \det(x\mathbb{1}-X)$ --- is
 \begin{equation}
-    p_M(x)=x^{n-m}\,p_{AA^\dag}(x^2) = x^{m-n}\,p_{A^\dag A}(x^2) \,,
+    p_M(x)=x^{n-m}\,p_{AA^\dagger}(x^2) = x^{m-n}\,p_{A^\dagger A}(x^2) \,,
 \end{equation}
-which means that the eigenvalues of $M$ can be computed as the positive and negative square roots of the eigenvalues of $AA^\dag$ if $m\le n$ (of $A^\dag A$ if $m > n$), together with additional $\abs{n-m}$ vanishing eigenvalues. 
+which means that the eigenvalues of $M$ can be computed as the positive and negative square roots of the eigenvalues of $AA^\dagger$ if $m\le n$ (of $A^\dagger A$ if $m > n$), together with additional $\abs{n-m}$ vanishing eigenvalues. 
 %
 
 To prove this, consider a generic block matrix that takes the form
@@ -663,5 +740,21 @@ which implies that
     \det\begin{pmatrix} P & Q \\ R & S \end{pmatrix}=\det(P-QS^{-1}R) \det S \,.
 \end{equation}
 By applying this to the matrix $x\mathbb{1}_{(m+n)\times(m+n)}-M$, we find the result above.
+
+\section{Complete Results for Flavorful Four-Fermion Operators\label{app:SMEFT_flavorresults}}
+
+In this appendix we collect the marginalized partial-wave unitarity bounds and the corresponding
+allowed regions for all the four-fermion operators under the MFV and $U(2)^5$ flavor hypotheses,
+obtained with the procedure described in Section~\ref{sec:SMEFT_multiflavor}. For each operator we
+report the independent flavor structures and the bound on each independent coefficient.
+Table~\ref{tab:summary} serves as an index to the tables and figures that follow. The case of
+$O_{\ell q}^{(1,3)}$, used as an illustration in the main text, is reported in
+Table~\ref{tab:Olq_UB} and in Figures~\ref{fig:Olq_mfv} and \ref{fig:Olq_u2}.
+
+\input{tables/flavor_hyperlinks}
+
+\input{tables/tables_flavor_rest}
+
+\input{images/flavor/figures_flavor_rest}
 
 \end{subappendices}

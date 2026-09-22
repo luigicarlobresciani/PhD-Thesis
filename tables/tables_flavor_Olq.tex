@@ -1,0 +1,58 @@
+\begin{table}[htbp]
+\centering
+{\small
+% ---- info block ----
+\begin{tabular}{ll}
+    \textbf{Operators:} &
+        $\boxed{O_{\ell q}^{(1)} = (\overline\ell_p \gamma^\mu \ell_r)(\overline q_s \gamma_\mu q_t),\quad O_{\ell q}^{(3)} = (\overline\ell_p \gamma^\mu \sigma^I \ell_r)(\overline q_s \gamma_\mu \sigma^I q_t)}$ \\[0.2cm]
+    \textbf{MFV decomposition:} &
+        $[C_{\ell q}^{(i)}]_{prst} =
+            C_{\ell q}^{(i,1)}\delta_{pr}\delta_{st}
+            + C_{\ell q}^{(i,2)}\delta_{pr}(Y_u Y_u^\dagger)_{st}$,\quad $i=1,3$ \\[0.15cm]
+    \textbf{$U(2)^5$ decomposition:} &
+        $[C_{\ell q}^{(i)}]_{prst} =
+            C_{\ell q}^{(i,1)}\Pij{p}{r}{a}\Pij{s}{t}{b}
+            + C_{\ell q}^{(i,2)}\delta_{p3}\delta_{3r}\Pij{s}{t}{a}
+            $ \\
+        & $\phantom{[C_{\ell q}^{(i)}]_{prst} ={}}+ C_{\ell q}^{(i,3)}\Pij{p}{r}{a}\delta_{s3}\delta_{3t}
+            + C_{\ell q}^{(i,4)}\delta_{p3}\delta_{3r}\delta_{s3}\delta_{3t}$,\quad $i=1,3$ \\
+\end{tabular}
+\\[0.3cm]
+% ---- bounds table ----
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ccccc}
+    \toprule
+    \rowcolor{hdrcolor}
+    \textbf{Symmetry} & \textbf{Coefficient}
+        & \textbf{Unitarity bound}
+        & \textbf{Scalar dominance}
+        & \textbf{Vector dominance} \\
+    \midrule
+    % --- MFV section ---
+    %\rowcolor{seccolor}
+    %\multicolumn{5}{l}{\textit{Minimal Flavor Violation}} \\
+    \multirow{4}{*}{MFV}
+        & $C_{\ell q}^{(1,1)}$ & $[-4.44,\, 4.44]$ & $[0,\, 4.44]$      & $[-4.44,\, 0]$    \\
+        & $C_{\ell q}^{(1,2)}$ & $[-7.70,\, 7.70]$ & $[-4.44,\, 6.28]$  & $[-6.28,\, 4.44]$ \\
+        & $C_{\ell q}^{(3,1)}$ & $[-4.44,\, 4.44]$ & $[-3.14,\, 4.44]$  & $[-4.44,\, 3.14]$ \\
+        & $C_{\ell q}^{(3,2)}$ & $[-7.70,\, 7.70]$ & $[-6.99,\, 7.70]$  & $[-7.70,\, 6.99]$ \\
+    \midrule
+    % --- U(2)^5 section ---
+    %\rowcolor{seccolor}
+    %\multicolumn{5}{l}{\textit{$U(2)^5$ Flavor Symmetry}} \\
+    \multirow{8}{*}{$U(2)^5$}
+        & $C_{\ell q}^{(1,1)}$ & $[-5.44,\, 5.44]$ & $[0,\, 5.44]$      & $[-5.44,\, 0]$    \\
+        & $C_{\ell q}^{(1,2)}$ & $[-7.70,\, 7.70]$ & $[0,\, 7.70]$      & $[-7.70,\, 0]$    \\
+        & $C_{\ell q}^{(1,3)}$ & $[-7.70,\, 7.70]$ & $[0,\, 7.70]$      & $[-7.70,\, 0]$    \\
+        & $C_{\ell q}^{(1,4)}$ & $[-10.9,\, 10.9]$ & $[0,\, 10.9]$      & $[-10.9,\, 0]$    \\
+        & $C_{\ell q}^{(3,1)}$ & $[-5.44,\, 5.44]$ & $[-3.14,\, 5.44]$  & $[-5.44,\, 3.14]$ \\
+        & $C_{\ell q}^{(3,2)}$ & $[-6.28,\, 6.28]$ & $[-3.14,\, 6.28]$  & $[-6.28,\, 3.14]$ \\
+        & $C_{\ell q}^{(3,3)}$ & $[-6.28,\, 6.28]$ & $[-3.14,\, 6.28]$  & $[-6.28,\, 3.14]$ \\
+        & $C_{\ell q}^{(3,4)}$ & $[-6.28,\, 6.28]$ & $[-3.14,\, 6.28]$  & $[-6.28,\, 3.14]$ \\
+    \bottomrule
+\end{tabular}}
+\caption{Marginalized partial-wave unitarity bounds for $O_{\ell q}^{(1,3)}$ under MFV and $U(2)^5$
+flavor symmetry, with and without spinning sum rules under scalar or vector dominance in the UV.
+Bounds are intervals $[a,b]$ with $(s/\Lambda^2)C \in [a,b]$, rounded to 3 significant digits.}
+\label{tab:Olq_UB}
+\end{table}
