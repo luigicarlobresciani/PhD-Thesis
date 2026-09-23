@@ -1,0 +1,468 @@
+\chapter{Introduction}
+\label{ch:intro}
+
+The discovery of the Higgs boson at the LHC~\cite{ATLAS:2012yve,CMS:2012qbp} completed the particle
+content of the Standard Model, and the measurements that followed have confirmed its predictions
+across all of its sectors. No additional particle has been observed, either at the LHC or in the
+broad range of lower-energy experiments that probe the same interactions indirectly. This success
+coexists with a list of questions that the Standard Model leaves unanswered. Some are observational,
+such as the nature of dark matter, the origin of neutrino masses, and the asymmetry between matter
+and antimatter. Others concern the structure of the theory itself, such as the smallness of the
+CP-violating angle of quantum chromodynamics, the hierarchical pattern of fermion masses and
+mixings, and the stability of the electroweak scale against large quantum corrections. It is
+therefore widely held that the Standard Model is the low-energy description of a more fundamental
+theory, whose new degrees of freedom appear at a scale $\Lambda$ larger than the energies explored
+so far.
+
+If that scale lies beyond direct reach, the new dynamics can only be seen through its indirect
+effects, and these take a universal form. At energies $E \ll \Lambda$, the heavy states cannot be
+produced, and their exchange reduces to local interactions among the light fields, suppressed by
+powers of $E/\Lambda$. Whatever the underlying theory is, its low-energy imprint is therefore
+captured by a finite number of coefficients multiplying higher-dimensional operators built out of
+the light fields. The search for physics beyond the Standard Model is thereby recast as the
+determination of these coefficients, and the effective field theory that organizes them becomes the
+common language in which direct searches, precision measurements, and model building can be compared.
+
+That language is useful only if two requirements are met. The coefficients are generated at the
+scale $\Lambda$ and measured at much lower energies, often several orders of magnitude apart, so
+their evolution between the two scales must be under control. At the same time, the coefficients
+cannot take arbitrary values, because the effective theory must be the low-energy limit of a
+consistent quantum field theory, which restricts the region they may occupy before any measurement
+is made. This thesis is concerned with both requirements. Its second part computes how the
+coefficients evolve through the anomalous dimensions of the corresponding operators and studies
+the structure of those anomalous dimensions. Its third part determines which regions of coefficient
+space are compatible with the unitarity, analyticity, and locality of the $S$-matrix. Both parts rely
+on the same set of tools, the on-shell methods for scattering amplitudes.
+
+\bigskip
+
+Both requirements are best stated within the logic of effective field theory, which is older than
+the Standard Model and not specific to it~\cite{Weinberg:1978kz,Georgi:1993mps,Manohar:2018aog}.
+Physics at a given scale depends on physics at much higher scales only through a small number of
+parameters, and the effects of heavy states decouple from low-energy observables as inverse powers
+of their masses~\cite{Appelquist:1974tg}. The Fermi theory of the weak interaction is the classic
+example. Below the $W$-boson mass, the exchange of a $W$ boson between two fermion currents reduces
+to a four-fermion contact interaction with a coupling proportional to $g^2/m_W^2$. The structure of
+the underlying gauge theory is visible only through the pattern of the effective couplings, and the
+violation of unitarity by the contact interaction at high energies signals that new degrees of
+freedom must appear, as the $W$ boson eventually did.
+
+Applied to physics beyond the Standard Model, this reasoning leads to writing the most general
+Lagrangian compatible with the light field content and with the symmetries assumed at low energies,
+\begin{equation}\label{eq:intro_Leff}
+    \mathcal L_{\rm EFT} = \mathcal L_{\rm SM} + \sum_i \frac{c_i}{\Lambda^{[\mathcal O_i]-4}}\,\mathcal O_i\,,
+\end{equation}
+where the operators $\mathcal O_i$ have mass dimension $[\mathcal O_i]>4$ and the dimensionless
+Wilson coefficients $c_i$ encode the unknown dynamics at the scale $\Lambda$. The expansion is
+organized by dimensional analysis. An operator of dimension $d$ contributes to an observable at the
+energy $E$ with a relative size $(E/\Lambda)^{d-4}$, so that to any given accuracy only a finite
+number of operators is needed, and the theory, although non-renormalizable in the traditional sense,
+is predictive order by order in $E/\Lambda$. The price is a proliferation of parameters. Truncating
+at a fixed order in $1/\Lambda$ leaves a finite but large set of coefficients, and much of the
+physical content of the construction lies in how those coefficients are related to one another and
+to experiment.
+
+The counting has a subtlety that matters for what follows. In most observables the leading effect of
+a dimension-six operator is its interference with the Standard Model amplitude, of order $c_i
+E^2/\Lambda^2$, while the square of the new contribution is of order $c_i^2E^4/\Lambda^4$, the same
+order as the interference of dimension-eight operators. Whether such squared terms are retained, as
+in the linear and quadratic fits of global analyses, is therefore a statement about the truncation
+of the expansion, and it matters most where the effects of the operators are largest, at high
+energies. The same growth with the energy that makes the tails of kinematic distributions sensitive
+to new physics thus also sets the limit of validity of the expansion, a point to which we return
+below.
+
+Writing down the operators is less straightforward than it may appear. Different operators can give
+identical contributions to every observable, since they are related by integration by parts, by the
+equations of motion of the light fields, by field redefinitions or, for fermions, by Fierz
+identities. A basis is a maximal set of operators that remain independent once all these relations
+are imposed, and only in such a basis are the Wilson coefficients uniquely defined. An equivalent
+characterization, used throughout this thesis, identifies each independent operator with an
+independent contact amplitude, that is, with a local kinematic structure consistent with the
+helicities and the internal quantum numbers of the external
+particles~\cite{Shadmi:2018xan,Durieux:2019eor,Dong:2021vxo,Li:2022tec}. This amplitude-operator
+correspondence bypasses the redundancies of the Lagrangian altogether, since operators that differ
+by a total derivative, by terms vanishing on shell or by a field redefinition generate the same
+on-shell amplitudes.
+
+The Standard Model Effective Field Theory
+(SMEFT)~\cite{Buchmuller:1985jz,Grzadkowski:2010es,Brivio:2017vri,Isidori:2023pyp,Aebischer:2025qhh}
+is the realization of Eq.~\eqref{eq:intro_Leff} built out of the Standard Model fields and invariant
+under its gauge group, with the Higgs boson in a linearly realized $SU(2)_L$ doublet. Its only
+operator at dimension five is the Weinberg operator, which generates Majorana masses for the
+neutrinos after electroweak symmetry breaking~\cite{Weinberg:1979sa}. At dimension six, the
+operators conserving baryon number reduce to $59$ independent structures for one generation of
+fermions, collected in the Warsaw basis~\cite{Grzadkowski:2010es}, which become $2499$ independent
+real parameters once the flavor structure of three generations is taken into
+account~\cite{Alonso:2013hga}. The SMEFT assumes that no light states other than those of the
+Standard Model exist below $\Lambda$, and it has become the reference framework for the combined
+interpretation of collider, electroweak and flavor data.
+
+That assumption is relaxed by the effective theory of axion-like particles (ALPs), which adds a
+light pseudoscalar $\phi$ to the Standard
+Model~\cite{Jaeckel:2010ni,Marsh:2015xka,Irastorza:2018dyq,DiLuzio:2020wdo}. A field of this kind is
+expected whenever an approximate global symmetry is spontaneously broken at a scale well above the
+electroweak one, since it is then the pseudo-Nambu--Goldstone boson of the broken symmetry, and its
+lightness is protected by the symmetry itself. It extends the QCD
+axion~\cite{Peccei:1977hh,Peccei:1977ur,Weinberg:1977ma,Wilczek:1977pj}, from which it differs in
+that its mass and the scale of symmetry breaking are not tied to each other. ALPs bear on several of
+the open questions listed above, including the strong CP problem, the flavor
+puzzle~\cite{Davidson:1981zd,Wilczek:1982rv,Berezhiani:1989fp,Calibbi:2016hwq,Greljo:2024evt}, the
+stability of the electroweak scale~\cite{Graham:2015cka} and the nature of dark
+matter~\cite{Abbott:1982af,Preskill:1982cy,Dine:1982ah,Davis:1986xc}. Their Goldstone origin shapes
+the way they couple to the Standard Model. An exact shift symmetry $\phi\to\phi+c$ allows couplings
+only through the derivative $\partial_\mu\phi$ or through the products of $\phi$ with $F\widetilde
+F$ and $G\widetilde G$, which change by a total derivative, so that the leading interactions arise
+at dimension five~\cite{Georgi:1986df} and are suppressed by the symmetry-breaking scale. The
+operators invariant under the shift symmetry are known up to dimension
+eight~\cite{Song:2023lxf,Grojean:2023tsd,Bertuzzo:2023slg}. If the symmetry is also broken
+explicitly, couplings such as $\phi FF$, $\phi GG$ and $\phi \overline f f$ become possible, and
+since they have CP properties opposite to those of the shift-symmetric ones, their simultaneous
+presence violates CP~\cite{Marciano:2016yhf,DiLuzio:2020oah}.
+
+The ALP recurs in both halves of this thesis for a reason worth making explicit, since each half
+exercises a different feature of its interactions. The mixing of its dimension-five couplings to
+gauge bosons into its couplings to fermions requires the insertion of a fermion mass, and
+controlling such mass insertions is one of the ingredients developed in the second part. Its
+derivative couplings, on the other hand, make the amplitudes grow with the energy, more steeply as
+the operator dimension increases, so that the ALP effective theory is particularly exposed to the
+unitarity constraints studied in the third part.
+
+Whichever effective theory is adopted, its coefficients are tied to the UV in two steps. In the
+first, known as matching, the heavy states are integrated out at a scale $\mu\sim\Lambda$, and the
+coefficients are fixed by requiring the effective theory to reproduce the low-energy amplitudes of
+the full theory. In a top-down approach, where a specific UV model is considered, this determines
+the $c_i(\Lambda)$ as functions of its couplings and masses. In a bottom-up approach, where no model
+is assumed, the $c_i$ are treated as free parameters to be constrained by data, and matching is what
+later translates those constraints into statements about specific models~\cite{deBlas:2017xtg}.
+Matching enters this thesis mostly as a check of the bounds derived in its third part.
+
+In the second step, known as running, the coefficients are evolved from $\mu\sim\Lambda$ down to the
+scale $\mu\sim E$ of the measurement, according to the renormalization-group
+equations~\cite{Callan:1970yg,Symanzik:1970rt}
+\begin{equation}\label{eq:intro_RGE}
+    \mu\frac{\dd c_i}{\dd\mu} = \sum_j \gamma_{ij}\,c_j + \dots\,,
+\end{equation}
+where $\gamma_{ij}$ is the anomalous-dimension matrix, which depends on the couplings and mass
+parameters of the theory, and the ellipsis denotes terms of higher order in the Wilson coefficients,
+arising from multiple insertions of higher-dimensional operators. Solving these equations resums the
+large logarithms of $\Lambda/E$ that would otherwise spoil perturbation theory. The diagonal entries
+of $\gamma_{ij}$ describe the multiplicative renormalization of each operator, while the
+off-diagonal ones describe operator mixing, by which a coefficient generated at $\Lambda$ induces,
+at lower energies, coefficients that were absent at the matching scale. Mixing is not restricted to
+operators of the same dimension. Operators of different dimensions can mix whenever the difference
+is compensated by the mass parameters of the theory, and products of lower-dimensional coefficients
+can source higher-dimensional operators. Running is the central subject of the second part of this
+thesis.
+
+\bigskip
+
+The first requirement, control over the evolution of the coefficients, therefore rests on the
+anomalous-dimension matrix, which is a necessary ingredient for interpreting experimental results in
+an effective theory. Its off-diagonal entries determine how a bound obtained on one operator
+translates into constraints on the coefficients of others, and they can make an observable sensitive
+to new physics that does not contribute to it at the matching scale. Electric dipole moments and
+flavor-violating decays are typical examples, since they are measured at or below the GeV scale with
+a precision that allows them to probe, through mixing, operators generated at the TeV scale or
+above. The one-loop anomalous-dimension matrix of the dimension-six SMEFT is known in
+full~\cite{Jenkins:2013zja,Jenkins:2013wua,Alonso:2013hga,Alonso:2014zka}, as is that of the
+Low-Energy Effective Field Theory (LEFT), which describes the physics below the electroweak
+scale~\cite{Jenkins:2017jig,Jenkins:2017dyc}, and the running of the ALP couplings has been studied
+at one loop~\cite{Bauer:2020jbp,Chala:2020wvs,DasBakshi:2023lca}.
+
+The ALP offers a concrete illustration of why mixing matters. When it is heavier than the scale of
+the measurement and is integrated out, its CP-violating couplings generate dimension-six operators
+such as the Weinberg operator and the electric and chromo-electric dipole operators of quarks and
+leptons, which are in turn constrained by measurements of electric dipole moments at very low
+energies. How strongly these measurements constrain the original ALP couplings depends on how the
+generated operators run down to the hadronic scale, and on how they mix with one another along the
+way.
+
+These computations showed that anomalous-dimension matrices are much sparser than dimensional
+analysis and power counting would suggest, since many mixings allowed by every symmetry of the
+theory vanish at one loop. In the SMEFT the vanishing entries follow a pattern reminiscent of the
+holomorphy of supersymmetric theories~\cite{Alonso:2014rga}, and several mechanisms have since been
+identified behind them, from supersymmetric embeddings of the one-loop
+computation~\cite{Elias-Miro:2014eia} to selection rules based on helicity~\cite{Cheung:2015aba}, on
+the length of the operators~\cite{Bern:2019wie}, on angular momentum~\cite{Jiang:2020rwz} and on
+color~\cite{Bern:2020ikv}. Diagrammatically these zeros are not manifest. They appear only once all
+Feynman diagrams contributing to a given mixing are summed and the result, obtained in a Green's
+basis that also contains operators vanishing on shell, is reduced to a basis of physical operators,
+so that they take the form of cancellations among terms that are individually non-zero and gauge
+dependent. In the on-shell language they follow instead from simple arguments, as discussed below,
+and can be predicted before any loop computation is performed.
+
+Whether comparable structures persist beyond one loop is a question of direct practical relevance.
+The separation between a UV theory at or above the TeV scale and the observables that constrain it
+most strongly, such as dipole moments and rare flavor transitions, spans several orders of
+magnitude, and the accuracy of the corresponding measurements is such that two-loop running is
+required in a growing number of
+analyses~\cite{Allwicher:2023aql,Stefanek:2024kds,Haisch:2024wnw,Olgoso:2025jot,Mantani:2026fao,Born:2026tgm,Haisch:2026eyq}.
+More fundamentally, whenever an entry of the anomalous-dimension matrix vanishes at one loop, the
+two-loop term is not a correction but the leading contribution to the corresponding mixing. The
+radiative decay $b\to s\gamma$ is a classic instance, since its rate is substantially enhanced by
+the mixing of four-quark operators into the photon dipole operator, which arises first at two
+loops~\cite{Buchalla:1995vs}. Knowing which two-loop entries vanish, and which are nevertheless
+fixed by one-loop information, therefore determines which effects can be neglected and which must be
+computed, at a time when two-loop calculations in effective theories are
+multiplying~\cite{Aebischer:2022anv,Jenkins:2023bls,Born:2024mgz,DiNoi:2024ajj,Naterop:2024cfx,Ibarra:2024tpt,Guedes:2025sax,Duhr:2025zqw,Naterop:2025lzc,DiNoi:2025tka,Zhang:2025ywe,Born:2026xkr}.
+The question is also subtler than at one loop. At one loop the anomalous dimensions do not depend on
+the renormalization scheme, whereas from two loops onwards they do, since a finite change of scheme
+at one loop feeds into the two-loop terms. Beyond one loop, moreover, loop-level objects enter the
+unitarity cuts from which the selection rules are derived, and the question becomes which zeros
+survive and in which sense they are independent of the scheme.
+
+A further difficulty is that anomalous dimensions depend on the field content and on the gauge group
+of the theory at hand. For renormalizable couplings this was addressed long ago by computing the
+renormalization-group equations of a general gauge theory with arbitrary scalars and fermions, from
+which those of any specific model follow by group-theoretic
+manipulations~\cite{Machacek:1983tz,Machacek:1983fi,Machacek:1984zw}. Extending this program to
+higher-dimensional operators is valuable for the same reason, and for a more specific one as well.
+The SMEFT and the ALP effective theory are both special cases of a theory with scalars and fermions
+in arbitrary representations of an arbitrary gauge group, together with its gauge bosons, and so are
+many other extensions of the Standard Model by light states, such as additional $U(1)$ gauge bosons,
+which can leave distinctive signatures through their mixing into the well-constrained operators of
+the SMEFT~\cite{Galda:2021hbr}. A general framework makes such effects accessible for any of these
+extensions once the group and the representations are specified, without a new loop computation.
+
+\bigskip
+
+The second requirement concerns the values the Wilson coefficients may take. Because the operators
+in Eq.~\eqref{eq:intro_Leff} have dimension larger than four, the amplitudes they generate grow with
+the energy, and at some point they become too large to be compatible with the conservation of
+probability. Unitarity of the $S$-matrix, projected onto states of definite total angular momentum,
+bounds each partial-wave amplitude by a number of order one. Since the partial-wave amplitude
+generated by a dimension-six operator in a $2\to2$ process grows as $c_i s/\Lambda^2$, the bound
+translates into an upper limit on $|c_i|$ that decreases with the energy, and the energy at which a
+given coefficient saturates it marks the scale at which the effective description ceases to be
+perturbatively reliable. Applied to the scattering of longitudinally polarized $W$ bosons, the same
+reasoning led to the no-lose theorem, which bounded the Higgs mass at about $1$~TeV, or, had there
+been no Higgs boson, placed the onset of new dynamics at that scale~\cite{Lee:1977yc,Lee:1977eg},
+and which weighed heavily in the case for building the LHC.
+
+In the effective-theory context, partial-wave unitarity bounds serve a related
+purpose~\cite{Gounaris:1994cm,Corbett:2014ora,Corbett:2017qgl,DiLuzio:2016sur,DiLuzio:2017chi,Falkowski:2019tft,Chang:2019vez,Cohen:2021ucp,Brivio:2021fog,Cao:2023qks}.
+As noted above, searches for new physics at colliders increasingly rely on the high-energy tails of
+kinematic distributions, and the same enhancement that makes those tails sensitive makes the
+truncation of Eq.~\eqref{eq:intro_Leff} questionable there. An interpretation of such data in terms
+of Wilson coefficients therefore requires a quantitative statement of where the effective
+description remains consistent, and unitarity bounds supply it from first principles, independently
+of any experimental input. Being tree-level statements, they do not exclude regions of parameter
+space in the strict sense. They indicate instead the energy above which the effective theory must be
+completed, by new states or by strong dynamics, which is the information needed to assess the
+validity of an effective-theory analysis.
+
+The standard implementation of these bounds decomposes $2\to2$ helicity amplitudes into partial
+waves by means of the Wigner $d$-matrices~\cite{Jacob:1959at}, and diagonalizes the matrix of
+partial-wave amplitudes connecting all states with the same quantum numbers, imposing the unitarity
+condition on its eigenvalues. This coupled-channel analysis is necessary, because coefficients that
+enter the same partial wave are correlated and must be constrained together. Since the partial-wave
+coefficients depend linearly on the Wilson coefficients, the unitarity conditions carve out a convex
+region in coefficient space, and the bound on a single coefficient obtained by letting all the
+others vary, known as a marginalized bound, is a projection of that region, conservative by
+construction and distinct from the bound obtained by switching on one operator at a time. The method
+is, however, tied to the kinematics of two-body states. Processes with more particles in the final
+state, whose amplitudes often grow faster with the energy and are therefore expected to dominate at
+the energies of the High-Luminosity LHC and of future
+colliders~\cite{FCC:2018byv,Accettura:2023ked}, lie outside it. This matters most for operators that
+generate no energy-growing $2\to2$ amplitude at all, the six-Higgs operator
+$(\varphi^\dagger\varphi)^3$ of the SMEFT being the simplest example, which the standard analysis
+cannot constrain. Even for $2\to2$ processes, moreover, the construction becomes impractical for
+particles of spin two or higher, relevant for effective theories of gravity, because the
+corresponding amplitudes are cumbersome to evaluate from Feynman rules.
+
+Unitarity is not the only property of the $S$-matrix that constrains the Wilson coefficients.
+Analyticity, which follows from causality, together with crossing symmetry relates the low-energy
+amplitude to its behavior at all energies through dispersion relations. For forward elastic
+scattering, the coefficient of $s^2$ at low energies is thereby expressed as an integral over the
+total cross section, which is positive, provided the amplitude grows more slowly than $s^2$ at high
+energies. When the effective theory is the low-energy limit of a unitary, local and causal
+completion, this yields inequalities on specific combinations of coefficients, known as positivity
+bounds~\cite{Adams:2006sv}. They are derived in Section~\ref{sec:analyticity} and apply most
+directly to operators whose forward amplitudes grow as $s^2$, which in the theories of interest
+arise at dimension eight, the quartic photon interactions of the Euler--Heisenberg Lagrangian being
+a familiar example. At dimension six the forward dispersion relation does not fix a sign. For
+four-fermion operators, however, spin-dependent dispersion relations, known as spinning sum rules,
+relate the sign of certain combinations of coefficients to the spin of the heavy states exchanged in
+the UV~\cite{Remmen:2020uze,Remmen:2022orj}, at the price of additional assumptions on the UV
+completion. Positivity and unitarity bounds are complementary in character, since the former
+restrict the signs of combinations of coefficients and the latter their magnitudes, so that the
+region allowed by both can be considerably smaller than either alone.
+
+These three classes of constraints rest on assumptions of increasing strength, which is worth
+keeping in mind whenever they are compared or combined. Partial-wave unitarity bounds require only
+that the effective theory be perturbatively consistent at the energy considered, and say nothing
+about its UV completion. Positivity bounds require that some unitary, local and causal completion
+exists, but not what it is. Spinning sum rules further assume a tree-level completion dominated by
+states of definite spin, together with a high-energy behavior of the amplitude soft enough for the
+contributions from infinity to vanish, which fails for instance when heavy vectors are exchanged in
+the $t$ channel. In exchange for these assumptions they return a different kind of information,
+whether the new dynamics is dominated by scalar or by vector states. A coefficient lying outside the
+regions selected by the sum rules therefore does not exclude a UV completion, but points to a more
+structured one, involving for instance vectors exchanged in the $t$ channel, loop effects or a
+mixture of spins.
+
+The practical interest of such constraints grows with the size of the parameter spaces involved.
+With about $2500$ independent coefficients at dimension six, the SMEFT has far more parameters than
+current data can constrain simultaneously, and global analyses~\cite{Brivio:2019ius,Celada:2024mcf}
+benefit from criteria that restrict the viable region without assuming a specific model. Constraints
+derived from first principles serve this purpose, and can be imposed directly in such analyses and
+in the generation of simulated events.
+
+\bigskip
+
+The two programs outlined above share a common technical obstacle. Computations in effective field
+theories become intricate rapidly, since the number of Feynman diagrams grows steeply with the
+number of loops and external legs, and higher operator dimensions, multiple operator insertions and
+external particles with spin each make the problem worse. The difficulty is not only one of size.
+Individual diagrams depend on the choice of gauge and on how the fields are continued off shell,
+only their sum being physical, and in the computation of anomalous dimensions the divergences must
+first be absorbed in the Green's basis and then projected onto the physical one through field
+redefinitions.
+
+On-shell methods remove these intermediate steps by never leaving the space of physical amplitudes.
+Their ingredients are gauge-invariant functions of the external momenta and helicities, constrained
+by unitarity, locality and
+analyticity~\cite{Mangano:1990by,Dixon:1996wi,Elvang:2013cua,Dixon:2013uaa,Cheung:2017pzi,Travaglini:2022uwo}.
+In this work, the decisive feature is less their efficiency than the fact that a single property of
+the $S$-matrix gives access to both of the questions addressed in this thesis.
+
+Unitarity relates the discontinuity of an amplitude to products of on-shell amplitudes of lower loop
+order~\cite{Bern:1994zx,Bern:1994cg,Britto:2004nc}. A unitarity cut puts the intermediate states on
+shell, so that the discontinuity is assembled from lower-order physical amplitudes alone. The same
+holds for the form factors of the operators, that is, for their matrix elements between the vacuum
+and on-shell multi-particle states, and here the discontinuity has a direct physical meaning, since
+the action of the dilatation operator on a form factor is fixed by the phase of the $S$-matrix, so
+that anomalous dimensions can be read off from unitarity
+cuts~\cite{Caron-Huot:2016cwu,EliasMiro:2020tdv,Baratella:2020lzz,Jiang:2020mhe,Bern:2020ikv}. The
+renormalization-group equations of the second part of this thesis are obtained in this way, as
+phase-space integrals of products of tree-level amplitudes and form factors. Read differently, the
+same discontinuity gives the bounds of the third part. Projected onto states of definite angular
+momentum, unitarity bounds the partial-wave coefficients, while combined with analyticity through a
+dispersion relation it confines the Wilson coefficients to a convex region. A single object, the
+unitarity cut of an on-shell amplitude, thus governs both how the Wilson coefficients evolve with
+the energy and where they are allowed to be.
+
+The formalism also has features that shape the results of the second part, one practical and one
+limiting. Unitarity-based methods are most naturally formulated for massless particles, whereas many
+phenomenologically relevant mixings, for instance between operators of opposite chirality, require
+insertions of fermion masses. The Higgs low-energy theorem~\cite{Ellis:1975ap,Shifman:1979eb} allows
+these leading mass effects to be captured by insertions of a zero-momentum Higgs boson, so that the
+formalism can remain massless throughout. On the other hand, four-dimensional unitarity cuts do not
+determine the finite rational terms of one-loop amplitudes and form factors, which have no
+discontinuity~\cite{Bern:1994zx,Bern:1994cg}. This is what divides the two-loop analysis into zeros
+that are fixed by tree-level data and hold in any scheme that preserves the length selection rule,
+and zeros that depend on the scheme, whose derivation requires in addition an assumption on the
+behavior of one-loop rational terms at complex-collinear kinematics.
+
+Within these limits, working with physical amplitudes changes what can be seen. Following
+Ref.~\cite{Cheung:2015aba}, one can assign to each operator a pair of weights $(w,\overline
+w)=(\ell-h,\ell+h)$, where the length $\ell$ is the number of particles in the simplest amplitude
+the operator generates and $h$ is their total helicity. The weights of the amplitudes entering a
+unitarity cut combine in a definite way, and the tree-level amplitudes of the renormalizable theory
+with four or more legs have $w,\overline w\ge4$, so that at one loop an operator renormalizes only
+operators whose weights are at least as large as its own, up to a shift by two units in the presence
+of Yukawa couplings of both holomorphic and anti-holomorphic type. Four-fermion operators, for
+instance, cannot renormalize the operators built from three field strengths, and the sparsity of
+anomalous-dimension matrices discussed above becomes a consequence of counting. Operators related by
+a symmetry, such as those differing only in their CP properties, acquire anomalous dimensions that
+are manifestly tied together, a relation hidden in the diagrammatic approach, where such operators
+have unrelated Feynman rules. For the unitarity bounds the gain is one of reach. Since the
+angular-momentum content of an amplitude can be read off from its spinor-helicity representation,
+the partial-wave decomposition can be constructed directly, for any number of external particles and
+any spin, by diagonalizing a Casimir operator of the Poincaré group, the square of the
+Pauli--Lubanski vector, on independent kinematic structures~\cite{Jiang:2020rwz,Shu:2021qlr}.
+Together with the amplitude-operator correspondence, this ensures that once processes of all the
+relevant multiplicities are included, every direction in the space of Wilson coefficients is
+constrained.
+
+The two halves of the thesis are related by more than a shared set of tools. Positivity, which in
+the third part constrains the values of the Wilson coefficients, also constrains their running,
+since the bounds must hold at every renormalization scale. This forbids certain operator mixings and
+fixes the sign of certain dimension-eight anomalous
+dimensions~\cite{Chala:2023jyx,Chala:2023xjy,Liao:2025npz}, and an instance of the same consistency
+appears in Chapter~\ref{ch:ALP_bounds}, where a positivity bound on dimension-eight operators is
+found to be compatible with the sign of the running induced by pairs of dimension-six operators. The
+zeros of the anomalous-dimension matrix and the positivity bounds have different origins, the former
+in helicity and length counting and the latter in analyticity, but they share a feature. Both are
+structures in the space of Wilson coefficients that are invisible at the level of the Lagrangian and
+become manifest on shell, and the results collected in this thesis explore them from both sides.
+
+The on-shell formalism required in the following chapters is collected in
+Chapter~\ref{ch:amplitudes}. It introduces the spinor-helicity variables and the polarizations of
+massless states up to spin two, discusses unitarity, locality and analyticity of the $S$-matrix,
+including the derivation of the dispersion relations and positivity bounds used in the third part,
+and illustrates how these principles fix three-particle amplitudes and determine higher-point ones
+recursively. The remaining technical ingredients, such as form factors, the relation between the
+dilatation operator and the $S$-matrix, and the angular-momentum basis, are introduced in the
+chapters where they are first needed.
+
+\bigskip
+
+The thesis is organized in four parts. The first, of which this Introduction is the opening chapter,
+sets out the motivation and the tools, and continues with the review of on-shell methods in
+Chapter~\ref{ch:amplitudes}. The second and third parts contain the original results. Each of their
+chapters is based on one or two of the articles listed at the beginning of this thesis, as indicated
+at its opening, is written so as to be readable on its own, and collects its technical material in
+appendices at its end. The fourth part contains the conclusions.
+
+The second part is devoted to the anomalous dimensions of effective field theories.
+Chapter~\ref{ch:RGEmethod}, based on Ref.~\cite{Bresciani:2023jsu}, reviews the relation between the
+dilatation operator and the phase of the $S$-matrix and derives from it master formulae for the
+anomalous dimensions at one and two loops, valid for the most general mixing among operators of
+different dimensions and for multiple operator insertions. It also shows how leading mass effects
+can be included through the Higgs low-energy theorem while the calculation remains massless. These
+formulae are the common tool of the three chapters that follow. Chapter~\ref{ch:ALP_RGEs}, based on
+Ref.~\cite{Bresciani:2024shu}, applies them to the one-loop renormalization of a CP-violating ALP
+coupled to Standard Model fields, above and below the electroweak scale, including the dimension-six
+operators generated once the ALP is integrated out, and compares the on-shell computation with a
+parallel one based on Feynman diagrams. Chapter~\ref{ch:generalEFT}, based on
+Refs.~\cite{Aebischer:2025zxg,Aebischer:2025ddl}, turns to a general effective gauge theory. We
+construct its physical operator basis up to dimension six and derive the complete one-loop
+renormalization-group equations for all its couplings at order $1/\Lambda^2$, from which those of a
+specific theory follow by group-theoretic manipulations alone. The SMEFT, the LEFT and the $O(n)$
+model serve both as cross-checks and as worked examples. Chapter~\ref{ch:2looptheorems}, based on
+Ref.~\cite{Bresciani:2026yuw}, asks which structure of the anomalous-dimension matrix survives
+beyond one loop. We show that helicity selection rules fix to zero, from tree-level data alone, the
+$L$-loop mixings of operators into operators $L-1$ units shorter whenever the weights differ
+sufficiently, a result that holds in every scheme preserving the length selection rule. For targets
+at least as long as the source, and assuming complex-collinear factorization, we construct a scheme
+in which further two-loop zeros hold, and show that in any other scheme the same entries are
+determined by one-loop data.
+
+The third part is devoted to theoretical constraints on the Wilson coefficients.
+Chapter~\ref{ch:generalizedUB}, based on Ref.~\cite{Bresciani:2025toe}, reformulates the
+partial-wave decomposition so that partial-wave coefficients become inner products between
+amplitudes and angular-momentum basis elements, the latter obtained by diagonalizing the square of
+the Pauli--Lubanski operator on spinor-helicity monomials. This extends partial-wave unitarity
+bounds to processes with arbitrary multiplicity and spin. We apply it to the quartic interactions of
+photons and gravitons, comparing the resulting bounds with positivity bounds, and to $2\to3$
+processes in the SMEFT, identifying the energies above which they supersede the $2\to2$ ones.
+Chapter~\ref{ch:ALP_bounds}, based on Ref.~\cite{Bresciani:2025ojh}, applies the formalism to the
+ALP effective theory up to dimension eight, including couplings to leptons that do not respect the
+$SU(2)_L$ symmetry, derives the complete set of positivity bounds on its dimension-eight operators,
+and compares both with collider searches and rare decays. Chapter~\ref{ch:SMEFT_bounds}, based on
+Ref.~\cite{Bresciani:2026acy} and on a companion article, performs a coupled-channel analysis of the
+dimension-six SMEFT over all helicity, gauge and flavor configurations, marginalizing each bound
+over the remaining coefficients. It derives spinning sum rules for four-fermion operators in the
+Warsaw basis together with a criterion to impose them in flavor space, extends the bounds to the
+minimal-flavor-violation~\cite{DAmbrosio:2002vsn,Cirigliano:2005ck} and
+$U(2)^5$~\cite{Allwicher:2023shc} hypotheses on the flavor structure, and compares them with current
+and projected experimental limits. The fourth part summarizes the results and discusses possible
+extensions.
+
+A few remarks may help the reader navigate the material. Chapter~\ref{ch:RGEmethod} is a
+prerequisite for the rest of the second part, and Chapter~\ref{ch:2looptheorems} relies in
+particular on its two-loop master formula, while Chapter~\ref{ch:generalizedUB} is a prerequisite
+for the rest of the third part, whose positivity bounds also draw on Section~\ref{sec:analyticity}.
+Several chapters contain extensive collections of results intended for consultation more than for
+continuous reading. This is the case for the class-by-class derivation of the anomalous dimensions
+of the ALP effective theory in Section~\ref{sec:ALPuvanomalousdim}, for the renormalization-group
+equations of the general effective gauge theory in Section~\ref{sec:gEFTresults}, for the tables of
+two-loop zeros in Section~\ref{sec:2loopapplications}, and for the bounds on flavorful four-fermion
+operators in Appendix~\ref{app:SMEFT_flavorresults}. As for the scope, the anomalous dimensions
+computed explicitly are one-loop quantities, while the statements about two loops and beyond concern
+the structure of the anomalous-dimension matrix, and the general effective gauge theory is treated
+at order $1/\Lambda^2$ for linearly realized gauge symmetries. The unitarity and positivity bounds
+are derived at tree level, and the regime of validity of the sum rules is discussed explicitly where
+they are used.
