@@ -63,7 +63,7 @@ Badger:2023eqz} constitute a very partial selection of it.
 The relevance of this framework for the present work goes beyond computational efficiency. Unitarity
 relates the discontinuity of an amplitude to products of on-shell amplitudes of lower loop order, so
 that ultraviolet and infrared information can be extracted without introducing off-shell Green's
-functions. The renormalization group equations derived in the second part of this thesis are obtained
+functions. The renormalization-group equations derived in the second part of this thesis are obtained
 in this way, and the theoretical bounds of the third part follow from combining analyticity with
 unitarity into inequalities on the coefficients of an effective Lagrangian.
 
@@ -811,8 +811,8 @@ The construction extends to superpositions of states. Given two one-particle sup
 \end{equation}
 over the species and polarizations available at low energy, the corresponding elastic amplitude reads
 \begin{equation}\label{eq:superposition}
-    \mathcal M(s,t) = \mathcal M(uv\to uv)
-    = \sum_{i,j,k,l} u_i^{*}v_j^{*}u_kv_l\,\mathcal M(kl\to ij)\,.
+    \mathcal M(s,t) = \mathcal M(u,v\to u,v)
+    = \sum_{i,j,k,l} u_i^{*}v_j^{*}u_kv_l\,\mathcal M(k,l\to i,j)\,.
 \end{equation}
 The
 argument above applies to it unchanged, and Eq.~\eqref{eq:positivity} becomes
@@ -958,8 +958,7 @@ To summarize, three-particle amplitudes have support on two different kinematic 
     \end{equation}
     implying $\lambda_1\propto \lambda_2 \propto \lambda_3$.
 \end{itemize}
-In both configurations, the four-momenta need to be complexified, so that $\lambda_i$ and $\tildee \lambda_i$ can be treated as independent variables. For real momenta the two configurations collapse onto each other, and any amplitude with
-non-trivial bracket dependence vanishes.
+In both configurations, the four-momenta need to be complexified, so that $\lambda_i$ and $\tildee \lambda_i$ can be treated as independent variables. For real momenta the two configurations collapse onto each other, and any amplitude with a positive total bracket degree vanishes, while one with a negative degree diverges.
 
 We can consider the following ansatz for the three-point amplitude of particles with helicities $h_i$:
 \begin{equation}
@@ -1106,7 +1105,7 @@ factorization poles of Eq.~\eqref{eq:factorization}, and analyticity allows thos
 reached by deforming the external kinematics into the complex plane. Two meromorphic functions with the same poles and residues differ by a function that is regular
 everywhere in the complex plane, and such a difference is absent when the deformed amplitude
 vanishes at large complex deformation. An amplitude can therefore be reconstructed from on-shell
-data of lower multiplicity whenever the deformation can be arranged to fall off in that limit. This is the content of the Britto--Cachazo--Feng--Witten (BCFW) recursion
+data of lower multiplicity whenever the deformation can be arranged to fall off in that limit. This is the content of the Britto--Cachazo--Feng--Witten recursion
 relation~\cite{Britto:2004ap,Britto:2005fq} and of its generalizations~\cite{Risager:2005vk,Cohen:2010mi,Kampf:2012fn,Cheung:2014dqa,Cheung:2015ota,Cheung:2015cba}.
 
 The construction starts from a complex deformation of two external legs. Choosing the pair $(i,j)$
