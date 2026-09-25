@@ -661,7 +661,7 @@ $P_I=\sum_{i\in I}p_i$ the momentum exchanged between the two halves, the residu
 single-particle pole factorizes into on-shell amplitudes of lower multiplicity
 \begin{equation}\label{eq:factorization}
     \lim_{P_I^2\to m^2} (P_I^2-m^2)\,\mathcal M_n
-    = \sum_{h}\mathcal M_{\abs{I}+1}\Big(\{i\}_{i\in I},(-P_I)^{-h}\Big)\,
+    = - \sum_{h}\mathcal M_{\abs{I}+1}\Big(\{i\}_{i\in I},(-P_I)^{-h}\Big)\,
       \mathcal M_{n-\abs{I}+1}\Big(P_I^{h},\{j\}_{j\notin I}\Big)\,,
 \end{equation}
 where the sum runs over the helicity states of the exchanged particle.
@@ -884,14 +884,14 @@ under the little group, so the degree is still carried entirely by the rational 
 prefactors. These degrees are counted by the \textit{helicity operator}
 \begin{equation}\label{eq:helicityop}
     \mathbb H_i = -\frac{1}{2}\lambda_i^\alpha \frac{\partial}{\partial \lambda_i^\alpha}
-    + \frac{1}{2}\tildee\lambda_{i\dot\alpha}\frac{\partial}{\partial \tildee\lambda_{i\dot\alpha}}\,,
+    + \frac{1}{2}\tildee\lambda_{i\dot\alpha}\frac{\partial}{\partial \tildee\lambda_{i\dot\alpha}}\,.
 \end{equation}
 %
-As an illustration, the polarization matrices of Eq.~\eqref{eq:polvecsmat} are eigenvectors with the expected eigenvalues,
+As an illustration, the polarization matrices of Eq.~\eqref{eq:polvecsmat} are eigenvectors with the expected eigenvalues:
 \begin{equation}
-    \mathbb H\,\varepsilon_{+}^{\dot\alpha\alpha}(p,\xi) = +\varepsilon_{+}^{\dot\alpha\alpha}(p,\xi)\,,
+    \mathbb H_i\,\varepsilon_{+}^{\dot\alpha\alpha}(p_i,\xi) = +\varepsilon_{+}^{\dot\alpha\alpha}(p_i,\xi)\,,
     \qquad
-    \mathbb H\,\varepsilon_{-}^{\dot\alpha\alpha}(p,\xi) = -\,\varepsilon_{-}^{\dot\alpha\alpha}(p,\xi)\,.
+    \mathbb H_i\,\varepsilon_{-}^{\dot\alpha\alpha}(p_i,\xi) = -\,\varepsilon_{-}^{\dot\alpha\alpha}(p_i,\xi)\,.
 \end{equation}
 
 Requiring the particle $i$ to have helicity $h_i$ therefore amounts to the homogeneity condition

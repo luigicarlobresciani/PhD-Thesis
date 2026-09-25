@@ -47,7 +47,7 @@ on specific ultraviolet completions. Physical observables are then obtained by c
 elements of the ALP EFT Lagrangian at those energy scales $E \ll \Lambda$ that are accessible by
 experiments. As a result, a crucial ingredient to make theoretical predictions is to run the ALP
 Lagrangian from the scale $\Lambda$ down to the experimental scale $E$. This goal can be achieved by
-evaluating the anomalous dimension matrix of the ALP effective operators.
+evaluating the anomalous-dimension matrix of the ALP effective operators.
 
 The renormalization group equations (RGEs) of the Standard Model EFT extended with a CP-odd ALP have
 been already computed at one-loop accuracy up to dimension-five operators using diagrammatic
@@ -2205,7 +2205,7 @@ a Higgs line, while dashed lines without arrows denote an ALP.}
 The operators in this class read
 \begin{align}
 Q_{\ell \ell}^{prst} &= (\overline{\ell}_p \gamma^\mu \ell_r)(\overline{\ell}_s \gamma_\mu \ell_t)\,,&&\\ Q_{q q}^{(1)prst} &= (\overline{q}_p \gamma^\mu q_r)(\overline{q}_s \gamma_\mu q_t)\,,  &Q_{q q}^{(3)prst} &= (\overline{q}_p \gamma^\mu \sigma^I q_r)(\overline{q}_s \gamma_\mu \sigma^I q_t)\,,   \\
-Q_{q \ell}^{(1)prst} &= (\overline{\ell}_p \gamma^\mu \ell_r)(\overline{q}_s \gamma_\mu q_t)\,,  &Q_{q \ell}^{(3)prst} &= (\overline{\ell}_p \gamma^\mu \sigma^I \ell_r)(\overline{q}_s \gamma_\mu \sigma^I q_t)\,,
+Q_{\ell q}^{(1)prst} &= (\overline{\ell}_p \gamma^\mu \ell_r)(\overline{q}_s \gamma_\mu q_t)\,,  &Q_{\ell q}^{(3)prst} &= (\overline{\ell}_p \gamma^\mu \sigma^I \ell_r)(\overline{q}_s \gamma_\mu \sigma^I q_t)\,,
 \end{align}
 while the corresponding RGEs are given by
 \begin{align}
@@ -2421,7 +2421,7 @@ Additionally, the on-shell method allows us to manifest some hidden structures o
 computation which are jeopardized in the standard approach.
 Indeed, owing to general symmetry arguments, one would expect the operator $\phi GG$ to
 renormalize precisely as $GG$, and, hence, just like the infrared anomalous dimension
-associated with a pair of photons, whose long-distance dynamics is clearly dictated by their
+associated with a pair of gluons, whose long-distance dynamics is clearly dictated by their
 kinetic term.
 The on-shell method formalizes this property in a rather elegant way: a simple inspection of
 the form of a few tree-level amplitudes directly allows us to solidly derive such a property.
@@ -2614,7 +2614,7 @@ such as the Weinberg operator $GG\tildee G$ and $GGG$, the (chromo-)magnetic and
 i.e., $\bar f \sigma\!\cdot\! F f$, $\bar f \sigma\!\cdot\! G f$,
 $\bar f \sigma\!\cdot\! F i\gamma_5 f$, and $\bar f \sigma\!\cdot\! G i\gamma_5 f$.
 
-A detailed derivation of the anomalous dimension matrix was carried out both with on-shell and standard techniques, 
+A detailed derivation of the anomalous-dimension matrix was carried out both with on-shell and standard techniques, 
 aiming to closely compare their virtues and shortcomings.
 %
 We found that on-shell methods are computationally advantageous compared to standard ones, owing to the
@@ -2661,7 +2661,7 @@ and the mass dimensions of the coupling constants only depend on the helicities:
     [g_\mathsf{H}]=1+h_1+h_2+h_3\,, &&
     [g_\mathsf{A}]=1-h_1-h_2-h_3\,.
 \end{align}
-Locality implies $[g_\mathsf{H}],[g_\mathsf{A}]<1$. Therefore, 
+Locality implies that the non-vanishing coupling has $[g]<1$. Therefore, 
 the consistent configuration is determined by the sign of the sum of the helicities: three-point amplitudes have support on the holomorphic (anti-holomorphic) one if $h_1+h_2+h_3<0$ ($h_1+h_2+h_3>0$).
 The case in which $h_1+h_2+h_3=0$ is trivial, as it can only correspond to a cubic scalar
 interaction, where $h_1=h_2=h_3=0$.
@@ -2779,7 +2779,7 @@ other computations.
 For instance, at one-loop level the infrared anomalous dimension can be parameterized, in any
 gauge theory, as
 \begin{equation}
-    \gamma_{\text{IR}} (\{p_i\}, \mu) = \frac{g^2}{4 \pi^2} \sum_{i<j} T^a_{ik} T^a_{kj} \log \frac{\mu}{-s_{ij}} + \sum_i \gamma_i^{\text{coll.}}\,,
+    \gamma_{\text{IR}} (\{p_i\}, \mu) = \frac{g^2}{4 \pi^2} \sum_{i<j} T^a_{ik} T^a_{kj} \log \frac{\mu^2}{-s_{ij}} + \sum_i \gamma_i^{\text{coll.}}\,,
 \end{equation}
 where $T_{ik}^a$ are the gauge-group generators acting on the particle $i$~\cite{Becher:2009cu}.
 The first term of the infrared anomalous dimension stems from soft wide-angle infrared
